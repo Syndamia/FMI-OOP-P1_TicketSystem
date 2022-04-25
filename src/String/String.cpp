@@ -14,9 +14,7 @@ void String::copyFrom(const String& other) {
 }
 
 void String::moveFrom(String&& other) {
-	str = other.str;
-	other.str = nullptr;
-	length = other.length;
+
 }
 
 /* Public */
@@ -53,8 +51,10 @@ String::String(String&& other) {
 
 String& String::operator=(String&& other) {
 	if (this != &other) {
-		free();
-		moveFrom(other);
+		delete[] str;
+		str = other.str;
+		other.str = nullptr;
+		length = other.length;
 	}
 	return *this;
 }
