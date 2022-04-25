@@ -2,7 +2,7 @@
 #define HEADER_STRING
 
 class String {
-	char* elems;
+	char* str;
 	unsigned count;
 	unsigned length;
 
@@ -11,6 +11,8 @@ class String {
 	void moveFrom(String&& other);
 
 public:
+	String(const char* str);
+
 	String();
 	String(const String& other);
 	String& operator=(const String& other);
