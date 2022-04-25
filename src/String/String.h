@@ -3,7 +3,6 @@
 
 class String {
 	char* str;
-	unsigned count;
 	unsigned length;
 
 	void free();
