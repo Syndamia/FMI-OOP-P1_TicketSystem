@@ -46,10 +46,12 @@ String::~String() {
 }
 
 String::String(String&& other) {
-	moveFrom(other);
+	str = other.str;
+	other.str = nullptr;
+	length = other.length;
 }
 
-String& String::operator=(const String& other) {
+String& String::operator=(String&& other) {
 	if (this != &other) {
 		free();
 		moveFrom(other);
