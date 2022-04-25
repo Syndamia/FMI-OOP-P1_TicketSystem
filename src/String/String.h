@@ -7,7 +7,6 @@ class String {
 
 	void free();
 	void copyFrom(const String& other);
-	void moveFrom(String&& other);
 
 public:
 	String(const char* str);

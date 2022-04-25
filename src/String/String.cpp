@@ -13,10 +13,6 @@ void String::copyFrom(const String& other) {
 	length = other.length;
 }
 
-void String::moveFrom(String&& other) {
-
-}
-
 /* Public */
 
 String::String(const char* str) {
@@ -57,4 +53,12 @@ String& String::operator=(String&& other) {
 		length = other.length;
 	}
 	return *this;
+}
+
+int String::compare(const String& other) {
+	return strcmp(str, other.str);
+}
+
+char String::operator[](unsigned index) {
+	return str[index];
 }
