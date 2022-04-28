@@ -54,5 +54,47 @@ T& List<T>::operator[](unsigned index) {
 
 template <class T>
 List<T>::List() {
-	
+	length = 8;
+	count = 0;
+	elements = new T[length];
+}
+
+template <class T>
+List<T>& List<T>::operator=(const List& other) {
+	if (this != &other) {
+		free();
+		copyFrom(other);
+	}
+	return *this;
+}
+
+template <class T>
+List<T>::List(const List& other) {
+	copyFrom(other);
+}
+
+template <class T>
+List<T>::~List() {
+	free();
+}
+
+// Move semantics
+
+template <class T>
+List<T>::List(List&& other) {
+	length = other.length;
+	count = other.count;
+	elements = other.elements;
+	other.elements = nullptr;
+}
+
+template <class T>
+List<T>& List<T>::operator=(List&& other) {
+	if (this != other) {
+		length = other.length;
+		count = other.count;
+		elements = other.elements;
+		other.elements = nullptr;
+	}
+	return *this;
 }
