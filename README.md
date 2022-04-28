@@ -3,7 +3,8 @@ TicketSystem: Project 1 from module OOP in FMI Uni-Sofia
 
 ## Initial structure
 
-![FMI-OOP-P1_TicketSystem Class Diagram](https://user-images.githubusercontent.com/46843671/165101458-e5799051-6459-49c4-b2c2-24f785ada0d1.png)
+![FMI-OOP-P1_TicketSystem Class Diagram](https://user-images.githubusercontent.com/46843671/165782133-4c8dffbb-f4f8-46e7-9d20-00531c98ef11.png)
+
 
 <details>
   <summary>Diagram source</summary>
@@ -46,16 +47,19 @@ TicketSystem: Project 1 from module OOP in FMI Uni-Sofia
 	[Reservation]<--[Event]
 
 	[EventSystem|
-		createEvent()
+    	List<Event> _events
+        unsigned _soonestUpcoming|
+		★createEvent()
     	cancelEvent()
-	    reserveTicket(char*, Date, unsigned, unsigned)
-    	cancelReservation()
-    	buyTicket()
-    	queryFreeSeats(Event)
-    	queryReservations(Event)
-    	queryBoughtTickets(Date, Date, Hall)
-    	queryMostVisited()
-    	queryInsufficientlyVisited()
+	    ★reserveTicket(char*, Date, unsigned, unsigned)
+    	★cancelTicketReservation()
+    	★buyTicket()
+        queryUpcoming(unsigned)
+    	★queryFreeSeats(Event)
+    	★queryReservations(Event)
+    	★queryBoughtTickets(Date, Date, Hall)
+    	☆queryMostVisited()
+    	☆queryInsufficientlyVisited()
 	]
 	[Event]<--[EventSystem]
 ]
