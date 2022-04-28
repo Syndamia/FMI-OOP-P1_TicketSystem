@@ -10,6 +10,7 @@ class List {
 	void resize();
 	void free();
 	void copyFrom(const List& other);
+
 public:
 	void add(const T& element);
 	bool removeAt(unsigned index);

@@ -90,7 +90,8 @@ List<T>::List(List&& other) {
 
 template <class T>
 List<T>& List<T>::operator=(List&& other) {
-	if (this != other) {
+	if (this != &other) {
+		free();
 		length = other.length;
 		count = other.count;
 		elements = other.elements;
