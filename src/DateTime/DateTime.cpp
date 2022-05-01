@@ -6,6 +6,8 @@ DateTime::DateTime(unsigned char hour, unsigned char minute, unsigned char day, 
 	this->year = year;
 }
 
-DateTime::compare(const DateTime& other) {
-	
+int DateTime::compare(const DateTime& other) {
+	if (year < other.year || month < other.month || day < other.day || hour < other.hour || minute < other.minute)
+		return -1;
+	return year > other.year && month > other.month && day > other.day && hour > other.hour && minute > other.minute;
 }
