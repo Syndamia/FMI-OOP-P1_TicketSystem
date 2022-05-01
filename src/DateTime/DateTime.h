@@ -13,15 +13,15 @@ public:
 	int compare(const DateTime& other);
 
 	unsigned short get_hour();
-	unsigned short set_hour();
+	bool set_hour(unsigned short newHour);
 	unsigned short get_minute();
-	unsigned short set_mintue();
+	bool set_minute(unsigned short newMinute);
 	unsigned short get_day();
-	unsigned short set_day();
+	bool set_day(unsigned short newDay);
 	unsigned short get_month();
-	unsigned short set_month();
+	bool set_month(unsigned short newMonth);
 	unsigned short get_year();
-	unsigned short set_year();
+	bool set_year(unsigned short newYear);
 };
 
 #endif
