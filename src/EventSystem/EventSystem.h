@@ -22,8 +22,11 @@ public:
 	StatusCode buyTicket();
 
 	void queryUpcoming(unsigned hallIndex);
-	unsigned queryFreeSeats(const Event& event);
-	void queryReservations(const Event& event);
+	unsigned queryFreeSeats(unsigned eventIndex);
+	void queryReservations(unsigned eventIndex);
+	void queryBoughtTickets(DateTime start, DateTime end, unsigned hall);
+	void queryMostVisited();
+	void queryInsufficientlyVisited();
 };
 
 #endif
