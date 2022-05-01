@@ -8,6 +8,8 @@ class Command {
 public:
 	Command(const char* nameInMenu, void (*exec)());
 	void run() const;
+
+	const char* get_nameInMenu();
 };
 
 #endif

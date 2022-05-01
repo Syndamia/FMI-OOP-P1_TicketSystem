@@ -9,3 +9,7 @@ Command::Command(const char* nameInMenu, void (*exec)()) {
 void Command::run() const {
 	exec();
 }
+
+const char* Command::get_nameInMenu() {
+	return nameInMenu;
+}
