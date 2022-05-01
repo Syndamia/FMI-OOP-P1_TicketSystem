@@ -6,5 +6,5 @@ void Menu::navigate() const {
 	for (unsigned i = 0; i < menuOptions.get_count(); i++)
 		printOrderedListElem(menuOptions[i].get_nameInMenu());
 
-	print("");
+	std::cout << "Execute No [0-" << menuOptions.get_count() << "]: ";
 }
