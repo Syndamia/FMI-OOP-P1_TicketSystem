@@ -1,5 +1,13 @@
 #include "DateTime.h"
 
+/* Private */
+
+bool DateTime::isLeapYear() {
+	return year % 400 == 0 || (year % 100 != 0 && year % 4 == 0);
+}
+
+/* Public */
+
 DateTime::DateTime(unsigned short hour, unsigned short minute, unsigned short day, unsigned short month, unsigned short year) {
 	this->hour = hour;
 	this->minute = minute;
