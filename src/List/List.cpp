@@ -50,6 +50,16 @@ T& List<T>::operator[](unsigned index) {
 	return elements[index];
 }
 
+template <class T>
+unsigned List<T>::get_length() const {
+	return length;
+}
+
+template <class T>
+unsigned List<T>::get_count() const {
+	return count;
+}
+
 // Rule of 4
 
 template <class T>

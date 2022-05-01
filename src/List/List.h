@@ -16,6 +16,9 @@ public:
 	bool removeAt(unsigned index);
 	T& operator[](unsigned index);
 
+	unsigned get_length() const;
+	unsigned get_count() const;
+
 	List();
 	List& operator=(const List& other);
 	List(const List& other);
