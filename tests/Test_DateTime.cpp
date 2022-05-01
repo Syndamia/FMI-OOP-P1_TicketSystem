@@ -38,19 +38,58 @@ TEST_SUITE("GettersAndSetters") {
 	}
 	TEST_CASE("HourSetter_ReturnTrue_WhenGivenCorrectValue") {
 		DateTime dt(h, m, d, M, y);
+		unsigned nh;
+		SUBCASE("SingleDigits") { nh = 2; }
+		SUBCASE("DoubleDigits") { nh = 10; }
+		SUBCASE("24hour") { nh = 17; }
+		SUBCASE("Zero") { nh = 0; }
 
-		CHECK_UNARY(dt.set_hour(2));
+		CHECK_UNARY(dt.set_hour(nh));
 	}
 	TEST_CASE("HourSetter_SetsValue_WhenGivenCorrectValue") {
 		DateTime dt(h, m, d, M, y);
-		dt.set_hour(9);
+		unsigned nh;
+		SUBCASE("SingleDigits") { nh = 2; }
+		SUBCASE("DoubleDigits") { nh = 10; }
+		SUBCASE("24hour") { nh = 17; }
+		SUBCASE("Zero") { nh = 0; }
+		dt.set_hour(nh);
 
-		CHECK_EQ(dt.get_hour(), 9);
+		CHECK_EQ(dt.get_hour(), nh);
 	}
 	TEST_CASE("HourSetter_ReturnsFalse_WhenGivenIncorrectValue") {
 		DateTime dt(h, m, d, M, y);
+		unsigned nh;
+		SUBCASE("TooBig") { nh = 891; }
 
-		CHECK_UNARY_FALSE(dt.set_hour(888));
+		CHECK_UNARY_FALSE(dt.set_hour(nh));
+	}
+
+	TEST_CASE("MinuteGetter_ReturnsCorrectValue_WhenCreatedWithValidValues") {
+		DateTime dt(h, m, d, M, y);
+
+		CHECK_EQ(dt.get_minute(), h);
+	}
+	TEST_CASE("MinuteSetter_ReturnTrue_WhenGivenCorrectValue") {
+		DateTime dt(h, m, d, M, y);
+		unsigned nm;
+		SUBCASE("SingleDigits") { nm = 2; }
+		SUBCASE("DoubleDigits") { nm = 10; }
+		SUBCASE("24hour") { nm = 17; }
+		SUBCASE("Zero") { nm = 0; }
+
+		CHECK_UNARY(dt.set_minute(nm));
+	}
+	TEST_CASE("MinuteSetter_SetsValue_WhenGivenCorrectValue") {
+		DateTime dt(h, m, d, M, y);
+		dt.set_minute(9);
+
+		CHECK_EQ(dt.get_minute(), 9);
+	}
+	TEST_CASE("MinuteSetter_ReturnsFalse_WhenGivenIncorrectValue") {
+		DateTime dt(h, m, d, M, y);
+
+		CHECK_UNARY_FALSE(dt.set_minute(888));
 	}
 }
 
