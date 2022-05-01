@@ -1,14 +1,9 @@
-#ifndef HEADER_CONSOLEINTERFACE_MENU
-#define HEADER_CONSOLEINTERFACE_MENU
+#ifndef HEADER_CONSOLEINTERFACE_COMMAND
+#define HEADER_CONSOLEINTERFACE_COMMAND
 
-#define exec (exec)(char input)
-
-class Menu {
+class Command {
 	char message[256];
-	void *exec;
-
-public:
-
+	void (*exec)(char input);
 };
 
 #endif
