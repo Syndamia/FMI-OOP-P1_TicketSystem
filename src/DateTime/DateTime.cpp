@@ -3,7 +3,8 @@
 /* Private */
 
 bool DateTime::isLeapYear() {
-	return year % 400 == 0 || (year % 100 != 0 && year % 4 == 0);
+	// Implements https://en.wikipedia.org/wiki/Leap_year#Gregorian_calendar
+	return year % 400 == 0 || year % 100 != 0 || year % 4 == 0;
 }
 
 /* Public */
