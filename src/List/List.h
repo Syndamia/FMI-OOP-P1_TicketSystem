@@ -12,6 +12,7 @@ class List {
 	void copyFrom(const List& other);
 
 public:
+	List(const T* elements, unsigned elementsCount);
 	void add(const T& element);
 	bool removeAt(unsigned index);
 	T& operator[](unsigned index);

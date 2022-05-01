@@ -29,6 +29,11 @@ void List<T>::copyFrom(const List& other) {
 /* Public */
 
 template <class T>
+List<T>::List(const T* elements, unsigned elementsCount) {
+
+}
+
+template <class T>
 void List<T>::add(const T& element) {
 	if (length == count) resize();
 
