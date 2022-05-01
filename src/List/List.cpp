@@ -29,8 +29,9 @@ void List<T>::copyFrom(const List& other) {
 /* Public */
 
 template <class T>
-List<T>::List(const T* elements, unsigned elementsCount) {
-
+List<T>::List(const T* elements, unsigned elementsCount) : List() {
+	for (unsigned i = 0; i < elementsCount; i++)
+		add(elements[i]);
 }
 
 template <class T>
