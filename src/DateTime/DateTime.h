@@ -9,6 +9,7 @@ class DateTime {
 	unsigned short year;
 
 	bool isLeapYear();
+	unsigned short daysInMonth();
 
 public:
 	DateTime(unsigned short hour, unsigned short minute, unsigned short day, unsigned short month, unsigned short year);
