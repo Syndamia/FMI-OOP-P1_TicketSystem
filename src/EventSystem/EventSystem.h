@@ -4,6 +4,7 @@
 #include "../List/List.h"
 
 #include "Event.h"
+#include "StatusCodes.h"
 
 class EventSystem {
 	List<Event> events;
@@ -11,6 +12,8 @@ class EventSystem {
 
 public:
 	EventSystem(const Event* events, unsigned eventCount);
+
+	
 };
 
 #endif
