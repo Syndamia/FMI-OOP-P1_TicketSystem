@@ -3,7 +3,9 @@
 
 enum StatusCode {
 	Ok,
-	Error,
+
+	E_Generic,
+	E_DoesntExist,
 
 	E_EventWillOverlap,
 };
