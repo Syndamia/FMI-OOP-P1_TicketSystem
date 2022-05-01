@@ -7,6 +7,14 @@ bool DateTime::isLeapYear() {
 	return year % 400 == 0 || year % 100 != 0 || year % 4 == 0;
 }
 
+unsigned short DateTime::daysInMonth() {
+	if (month == 2)
+		return 28 + isLeapYear();
+	if (month <= 7)
+		return 30 + month % 2;
+	return 31 - month % 2;
+}
+
 /* Public */
 
 DateTime::DateTime(unsigned short hour, unsigned short minute, unsigned short day, unsigned short month, unsigned short year) {
@@ -48,11 +56,21 @@ unsigned short DateTime::get_day() {
 	return day;
 }
 bool DateTime::set_day(unsigned short newDay) {
-	
+	if (newDay == 0 || newDay > daysInMonth())
+		return false;
+	day = newDay;
+	return true;
 }
 
-unsigned short get_month();
-bool set_month(unsigned short newMonth);
+unsigned short DateTime::get_month() {
+	return month;
+}
+bool DateTime::set_month(unsigned short newMonth) {
+	if (newMonth == 0 || newMonth > 12)
+		return false;
+	month = newMonth;
+	return true;
+}
 
 unsigned short DateTime::get_year() {
 	return year;
