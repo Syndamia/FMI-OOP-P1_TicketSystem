@@ -1,6 +1,9 @@
 #ifndef HEADER_DATETIME
 #define HEADER_DATETIME
 
+#include <istream>
+#include <ostream>
+
 class DateTime {
 	unsigned short hour;
 	unsigned short minute;
@@ -30,5 +33,8 @@ public:
 	unsigned short get_year();
 	bool set_year(unsigned short newYear);
 };
+
+std::istream& operator>>(std::istream& istr, DateTime& dt);
+std::ostream& operator<<(std::ostream& ostr, const DateTime& dt);
 
 #endif

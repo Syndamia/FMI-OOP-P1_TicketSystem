@@ -79,3 +79,14 @@ bool DateTime::set_year(unsigned short newYear) {
 	year = newYear;
 	return true;
 }
+
+/* Outside of class */
+
+std::istream& operator>>(std::istream& istr, DateTime& dt) {
+	unsigned short h, m, d, M, y;
+	istr >> h >> m >> d >> M >> y;
+	dt = DateTime(h, m, d, M, y);
+	return istr;
+}
+
+std::ostream& operator<<(std::ostream& ostr, const DateTime& dt);
