@@ -18,15 +18,15 @@ TEST_SUITE("Constructors") {
 		CHECK_EQ(dt.get_year(), y);
 	}
 	TEST_CASE("Ctor_ThrowsInvalidArgumentException_WhenGivenInvalidValues") {
-		unsigned short h = h, m = m, d = d, M = M, y = y;
-		SUBCASE("HourIsTooBig") { h = 194; }
-		SUBCASE("MinutesAreTooBig") { m = 7032; }
-		SUBCASE("DayIsZero") { d = 0; }
-		SUBCASE("DayIsTooBig") { d = 5721; }
-		SUBCASE("MonthIsZero") { M = 0; }
-		SUBCASE("MonthIsTooBig") { M = 15661; }
+		unsigned short nh = h, nm = m, nd = d, nM = M, ny = y;
+		SUBCASE("HourIsTooBig") { nh = 194; }
+		SUBCASE("MinutesAreTooBig") { nm = 7032; }
+		SUBCASE("DayIsZero") { nd = 0; }
+		SUBCASE("DayIsTooBig") { nd = 5721; }
+		SUBCASE("MonthIsZero") { nM = 0; }
+		SUBCASE("MonthIsTooBig") { nM = 15661; }
 
-		CHECK_THROWS_AS(DateTime dt(h, m, d, M, y), std::invalid_argument);
+		CHECK_THROWS_AS(DateTime dt(nh, nm, nd, nM, ny), std::invalid_argument);
 	}
 }
 
@@ -39,7 +39,18 @@ TEST_SUITE("GettersAndSetters") {
 	TEST_CASE("HourSetter_ReturnTrue_WhenGivenCorrectValue") {
 		DateTime dt(h, m, d, M, y);
 
-		CHECK_EQ
+		CHECK_UNARY(dt.set_hour(2));
+	}
+	TEST_CASE("HourSetter_SetsValue_WhenGivenCorrectValue") {
+		DateTime dt(h, m, d, M, y);
+		dt.set_hour(9);
+
+		CHECK_EQ(dt.get_hour(), 9);
+	}
+	TEST_CASE("HourSetter_ReturnsFalse_WhenGivenIncorrectValue") {
+		DateTime dt(h, m, d, M, y);
+
+		CHECK_UNARY_FALSE(dt.set_hour(888));
 	}
 }
 
