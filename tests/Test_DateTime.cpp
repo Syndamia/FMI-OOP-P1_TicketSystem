@@ -38,7 +38,7 @@ TEST_SUITE("GettersAndSetters") {
 	}
 	TEST_CASE("HourSetter_ReturnTrue_WhenGivenCorrectValue") {
 		DateTime dt(h, m, d, M, y);
-		unsigned nh;
+		unsigned nh = h;
 		SUBCASE("SingleDigits") { nh = 2; }
 		SUBCASE("DoubleDigits") { nh = 10; }
 		SUBCASE("24hour") { nh = 17; }
@@ -48,7 +48,7 @@ TEST_SUITE("GettersAndSetters") {
 	}
 	TEST_CASE("HourSetter_SetsValue_WhenGivenCorrectValue") {
 		DateTime dt(h, m, d, M, y);
-		unsigned nh;
+		unsigned nh = h;
 		SUBCASE("SingleDigits") { nh = 2; }
 		SUBCASE("DoubleDigits") { nh = 10; }
 		SUBCASE("24hour") { nh = 17; }
@@ -59,7 +59,7 @@ TEST_SUITE("GettersAndSetters") {
 	}
 	TEST_CASE("HourSetter_ReturnsFalse_WhenGivenIncorrectValue") {
 		DateTime dt(h, m, d, M, y);
-		unsigned nh;
+		unsigned nh = h;
 		SUBCASE("TooBig") { nh = 891; }
 
 		CHECK_UNARY_FALSE(dt.set_hour(nh));
@@ -72,24 +72,29 @@ TEST_SUITE("GettersAndSetters") {
 	}
 	TEST_CASE("MinuteSetter_ReturnTrue_WhenGivenCorrectValue") {
 		DateTime dt(h, m, d, M, y);
-		unsigned nm;
+		unsigned nm = m;
 		SUBCASE("SingleDigits") { nm = 2; }
-		SUBCASE("DoubleDigits") { nm = 10; }
-		SUBCASE("24hour") { nm = 17; }
+		SUBCASE("DoubleDigits") { nm = 52; }
 		SUBCASE("Zero") { nm = 0; }
 
 		CHECK_UNARY(dt.set_minute(nm));
 	}
 	TEST_CASE("MinuteSetter_SetsValue_WhenGivenCorrectValue") {
 		DateTime dt(h, m, d, M, y);
-		dt.set_minute(9);
+		unsigned nm = m;
+		SUBCASE("SingleDigits") { nm = 2; }
+		SUBCASE("DoubleDigits") { nm = 42; }
+		SUBCASE("Zero") { nm = 0; }
+		dt.set_minute(nm);
 
-		CHECK_EQ(dt.get_minute(), 9);
+		CHECK_EQ(dt.get_minute(), nm);
 	}
 	TEST_CASE("MinuteSetter_ReturnsFalse_WhenGivenIncorrectValue") {
 		DateTime dt(h, m, d, M, y);
+		unsigned nm = m;
+		SUBCASE("TooBig") { nm = 847; }
 
-		CHECK_UNARY_FALSE(dt.set_minute(888));
+		CHECK_UNARY_FALSE(dt.set_minute(nm));
 	}
 }
 
