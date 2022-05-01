@@ -1,6 +1,10 @@
 #include "Toolbox.h"
 #include <iostream>
 
+void print(const char* message) {
+	std::cout << message;
+}
+
 void printLine(const char* message) {
 	std::cout << message << std::endl;
 }
@@ -12,6 +16,6 @@ void printOrderedListElem(const char* message) {
 	printLine(message);
 }
 
-void resetOrderedList(int starter = 1) {
+void resetOrderedList(int starter) {
 	orderedListIndex = starter;
 }

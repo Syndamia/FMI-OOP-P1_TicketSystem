@@ -51,6 +51,11 @@ T& List<T>::operator[](unsigned index) {
 }
 
 template <class T>
+const T& List<T>::operator[](unsigned index) const {
+	return elements[index];
+}
+
+template <class T>
 unsigned List<T>::get_length() const {
 	return length;
 }

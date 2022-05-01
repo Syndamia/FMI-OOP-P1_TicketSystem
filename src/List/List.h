@@ -15,6 +15,7 @@ public:
 	void add(const T& element);
 	bool removeAt(unsigned index);
 	T& operator[](unsigned index);
+	const T& operator[](unsigned index) const;
 
 	unsigned get_length() const;
 	unsigned get_count() const;

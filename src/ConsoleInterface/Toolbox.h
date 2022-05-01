@@ -4,6 +4,6 @@
 void printLine(const char* message);
 
 void printOrderedListElem(const char* message);
-void resetOrderedList(int starter);
+void resetOrderedList(int starter = 1);
 
 #endif

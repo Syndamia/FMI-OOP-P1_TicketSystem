@@ -10,6 +10,6 @@ void Command::run() const {
 	exec();
 }
 
-const char* Command::get_nameInMenu() {
+const char* Command::get_nameInMenu() const {
 	return nameInMenu;
 }
