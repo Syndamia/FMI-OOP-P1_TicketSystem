@@ -2,14 +2,14 @@
 #define HEADER_DATETIME
 
 class DateTime {
-	unsigned hour;
-	unsigned minute;
-	unsigned day;
-	unsigned month;
-	unsigned year;
+	unsigned char hour;
+	unsigned char minute;
+	unsigned char day;
+	unsigned char month;
+	unsigned short year;
 
 public:
-	DateTime(unsigned hour, unsigned minute, unsigned day, unsigned month, unsigned year);
+	DateTime(unsigned char hour, unsigned char minute, unsigned char day, unsigned char month, unsigned short year);
 	int compare(const DateTime& other);
 };
 
