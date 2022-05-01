@@ -25,14 +25,13 @@ DateTime::DateTime(unsigned short hour, unsigned short minute, unsigned short da
 	this->year = year;
 }
 
-int DateTime::compare(const DateTime& other) {
+int DateTime::compare(const DateTime& other) const {
 	if (year < other.year || month < other.month || day < other.day || hour < other.hour || minute < other.minute)
 		return -1;
 	return year > other.year || month > other.month || day > other.day || hour > other.hour || minute > other.minute;
 }
 
-
-unsigned short DateTime::get_hour() {
+unsigned short DateTime::get_hour() const {
 	return hour;
 }
 bool DateTime::set_hour(unsigned short newHour) {
@@ -42,7 +41,7 @@ bool DateTime::set_hour(unsigned short newHour) {
 	return true;
 }
 
-unsigned short DateTime::get_minute() {
+unsigned short DateTime::get_minute() const {
 	return minute;
 }
 bool DateTime::set_minute(unsigned short newMinute) {
@@ -52,7 +51,7 @@ bool DateTime::set_minute(unsigned short newMinute) {
 	return true;
 }
 
-unsigned short DateTime::get_day() {
+unsigned short DateTime::get_day() const {
 	return day;
 }
 bool DateTime::set_day(unsigned short newDay) {
@@ -62,7 +61,7 @@ bool DateTime::set_day(unsigned short newDay) {
 	return true;
 }
 
-unsigned short DateTime::get_month() {
+unsigned short DateTime::get_month() const {
 	return month;
 }
 bool DateTime::set_month(unsigned short newMonth) {
@@ -72,7 +71,7 @@ bool DateTime::set_month(unsigned short newMonth) {
 	return true;
 }
 
-unsigned short DateTime::get_year() {
+unsigned short DateTime::get_year() const {
 	return year;
 }
 bool DateTime::set_year(unsigned short newYear) {
@@ -89,4 +88,8 @@ std::istream& operator>>(std::istream& istr, DateTime& dt) {
 	return istr;
 }
 
-std::ostream& operator<<(std::ostream& ostr, const DateTime& dt);
+std::ostream& operator<<(std::ostream& ostr, const DateTime& dt) {
+	bool padh = dt.get_hour() < 10, padm = dt.get_minute() < 10;
+	ostr << ((padh) ? "0" : "") << dt.get_hour() << ":" << ((padm) ? "0" : "") << dt.get_minute() << " " << dt.get_day() << "." << dt.get_month() << "." << dt.get_year();
+	return ostr;
+}

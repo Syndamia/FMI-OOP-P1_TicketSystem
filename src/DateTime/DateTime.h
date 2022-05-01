@@ -16,21 +16,21 @@ class DateTime {
 
 public:
 	DateTime(unsigned short hour, unsigned short minute, unsigned short day, unsigned short month, unsigned short year);
-	int compare(const DateTime& other);
+	int compare(const DateTime& other) const;
 
-	unsigned short get_hour();
+	unsigned short get_hour() const;
 	bool set_hour(unsigned short newHour);
 
-	unsigned short get_minute();
+	unsigned short get_minute() const;
 	bool set_minute(unsigned short newMinute);
 
-	unsigned short get_day();
+	unsigned short get_day() const;
 	bool set_day(unsigned short newDay);
 
-	unsigned short get_month();
+	unsigned short get_month() const;
 	bool set_month(unsigned short newMonth);
 
-	unsigned short get_year();
+	unsigned short get_year() const;
 	bool set_year(unsigned short newYear);
 };
 
