@@ -5,18 +5,20 @@
 
 TEST_SUITE_BEGIN("ClassDateTime");
 
+const unsigned short h = 5, m = 12, d = 19, M = 4, y = 2022; // valid values
+
 TEST_SUITE("Constructors") {
-	TEST_CASE("Ctor_SavesValues_WhenGivenCorrectOnes") {
-		unsigned short h = 5, m = 12, d = 19, M = 4, y = 2022;
+	TEST_CASE("Ctor_SavesValues_WhenGivenValidValues") {
 		DateTime dt(h, m, d, M, y);
+
 		CHECK_EQ(dt.get_hour(), h);
 		CHECK_EQ(dt.get_minute(), m);
 		CHECK_EQ(dt.get_day(), d);
 		CHECK_EQ(dt.get_month(), M);
 		CHECK_EQ(dt.get_year(), y);
 	}
-	TEST_CASE("Ctor_ThrowsInvalidArgumentException_WhenGivenIncorrectValues") {
-		unsigned short h = 5, m = 12, d = 19, M = 4, y = 2022;
+	TEST_CASE("Ctor_ThrowsInvalidArgumentException_WhenGivenInvalidValues") {
+		unsigned short h = h, m = m, d = d, M = M, y = y;
 		SUBCASE("HourIsTooBig") { h = 194; }
 		SUBCASE("MinutesAreTooBig") { m = 7032; }
 		SUBCASE("DayIsZero") { d = 0; }
@@ -25,6 +27,19 @@ TEST_SUITE("Constructors") {
 		SUBCASE("MonthIsTooBig") { M = 15661; }
 
 		CHECK_THROWS_AS(DateTime dt(h, m, d, M, y), std::invalid_argument);
+	}
+}
+
+TEST_SUITE("GettersAndSetters") {
+	TEST_CASE("HourGetter_ReturnsCorrectValue_WhenCreatedWithValidValues") {
+		DateTime dt(h, m, d, M, y);
+
+		CHECK_EQ(dt.get_hour(), h);
+	}
+	TEST_CASE("HourSetter_ReturnTrue_WhenGivenCorrectValue") {
+		DateTime dt(h, m, d, M, y);
+
+		CHECK_EQ
 	}
 }
 
