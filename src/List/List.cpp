@@ -43,10 +43,14 @@ void List<T>::add(const T& element) {
 
 template <class T>
 bool List<T>::insertAt(const T& element, unsigned index) {
-	if (index >= count)
-		return add(element);
+	if (index >= count) return add(element);
+	if (length == count) resize();
 
+	for (unsigned i = count; i > index; i--)
+		elements[i] = elements[i - 1];
 
+	elements[index] = element;
+	count++;
 }
 
 template <class T>
