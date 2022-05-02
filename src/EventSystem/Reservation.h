@@ -11,6 +11,7 @@ class Reservation {
 	char note[32];
 
 public:
+	Reservation();
 	Reservation(const Ticket& ticket, const char* password, const char* note);
 
 	void read(std::istream& istr);

@@ -6,6 +6,7 @@ class Ticket {
 	unsigned seat;
 
 public:
+	Ticket();
 	Ticket(unsigned row, unsigned seat);
 
 	unsigned get_row() const;
