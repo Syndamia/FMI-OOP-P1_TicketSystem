@@ -11,6 +11,8 @@ class EventSystem {
 	OrderedList<Event> events;
 	unsigned indSoonestUpcoming;
 
+	void updateSoonestUpcoming();
+
 public:
 	EventSystem(const Event* events, unsigned eventCount);
 

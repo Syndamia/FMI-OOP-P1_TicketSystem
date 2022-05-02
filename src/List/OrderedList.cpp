@@ -1,6 +1,9 @@
 #include "OrderedList.h"
 
 template <class T>
+OrderedList<T>::OrderedList() : OrderedList(nullptr, 0) {}
+
+template <class T>
 OrderedList<T>::OrderedList(const T* elements, unsigned elementsCount) : List<T>::List(elements, elementsCount) {}
 
 template <class T>

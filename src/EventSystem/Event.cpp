@@ -4,7 +4,7 @@
 
 Event::Event() : Event(nullptr, "", DateTime()) {}
 
-Event::Event(const Hall* hall, String name, DateTime time) {
+Event::Event(const Hall* hall, String name, DateTime time) : tickets(), reservations() {
 	this->hall = hall;
 	this->name = name;
 	this->time = time;
