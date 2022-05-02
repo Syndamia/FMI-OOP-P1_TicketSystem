@@ -8,7 +8,7 @@
 #include "StatusCodes.h"
 
 class EventSystem {
-	List<Event> events;
+	OrderedList<Event> events;
 	unsigned indSoonestUpcoming;
 
 public:
