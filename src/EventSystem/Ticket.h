@@ -17,6 +17,7 @@ public:
 
 	void read(std::istream& istr);
 	void write(std::ostream& ostr) const;
+	int compare(const Ticket& other) const;
 };
 
 #endif
