@@ -20,9 +20,11 @@ public:
 	Event();
 	Event(const Hall* hall, String name, DateTime time);
 
-	StatusCode reserveTicket();
-	StatusCode cancelReservation();
-	StatusCode buyReservation();
+	StatusCode reserveTicket(const Ticket& ticket, const char* password, const char* note);
+
+	StatusCode cancelReservation(const Ticket& ticket);
+
+	StatusCode buyReservation(const Reservation& reservation, const char* password);
 };
 
 #endif

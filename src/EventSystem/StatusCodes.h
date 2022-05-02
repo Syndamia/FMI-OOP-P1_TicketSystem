@@ -4,10 +4,18 @@
 enum StatusCode {
 	Ok,
 
+
+	W_TicketNotReserved,
+
+
 	E_Generic,
 	E_DoesntExist,
 
 	E_EventWillOverlap,
+
+	E_TicketAlreadyBought,
+	E_TicketAlreadyReserved,
+	E_WrongTicketPassword,
 };
 
 #endif
