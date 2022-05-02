@@ -19,3 +19,8 @@ void Ticket::read(std::istream& istr) {
 	istr.read((char*)&row, sizeof(row));
 	istr.read((char*)&row, sizeof(seat));
 }
+
+void Ticket::write(std::ostream& ostr) const {
+	ostr.write((const char*)&row, sizeof(row));
+	ostr.write((const char*)&seat, sizeof(seat));
+}
