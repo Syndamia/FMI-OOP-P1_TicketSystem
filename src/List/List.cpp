@@ -65,11 +65,12 @@ template <class T>
 std::istream& List<T>::read(std::istream& istr) {
 	istr.read((char*)&length, sizeof(length));
 	istr.read((char*)&count, sizeof(count));
+
 	delete[] elements;
 	elements = new T[length];
 
 	for (int i = 0; i < count; i++)
-		elements[i].read(istr);
+		elements[i].read(istr); // disgusting
 
 	return istr;
 }
