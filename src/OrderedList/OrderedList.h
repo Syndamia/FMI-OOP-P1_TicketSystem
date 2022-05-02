@@ -3,8 +3,13 @@
 
 #include "../List/List.h"
 
-class OrderedList : public List {
+template <class T>
+class OrderedList : public List<T> {
+public:
+	void add(const T& element) = delete;
+	bool insertAt(const T& element, unsigned index) = delete;
 
+	bool insert(const T& element);
 };
 
 #endif
