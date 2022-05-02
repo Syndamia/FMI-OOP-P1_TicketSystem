@@ -1,7 +1,7 @@
 #ifndef HEADER_EVENTSYSTEM_EVENT
 #define HEADER_EVENTSYSTEM_EVENT
 
-#include "../List/List.h"
+#include "../OrderedList/OrderedList.h"
 #include "../DateTime/DateTime.h"
 #include "../String/String.h"
 #include "../Venue/Hall.h"
@@ -10,8 +10,8 @@
 #include "StatusCodes.h"
 
 class Event {
-	List<Ticket> tickets;
-	List<Reservation> reservations;
+	OrderedList<Ticket> tickets;
+	OrderedList<Reservation> reservations;
 	DateTime time;
 	String name;
 	const Hall* hall;
