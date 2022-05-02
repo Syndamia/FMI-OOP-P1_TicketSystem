@@ -14,3 +14,7 @@ StatusCode Event::reserveTicket(const Ticket& ticket, const char* password, cons
 	reservations.add(Reservation(ticket, password, note));
 	return Success;
 }
+
+StatusCode Event::cancelReservation(const Ticket& ticket) {
+
+}

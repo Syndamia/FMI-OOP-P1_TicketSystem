@@ -17,6 +17,7 @@ class List {
 public:
 	List(const T* elements, unsigned elementsCount);
 	void add(const T& element);
+	bool insertAt(const T& element);
 	bool removeAt(unsigned index);
 	T& operator[](unsigned index);
 	const T& operator[](unsigned index) const;
