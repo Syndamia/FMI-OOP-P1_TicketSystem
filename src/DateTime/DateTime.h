@@ -15,6 +15,7 @@ class DateTime {
 	unsigned short daysInMonth();
 
 public:
+	DateTime();
 	DateTime(unsigned short hour, unsigned short minute, unsigned short day, unsigned short month, unsigned short year);
 	int compare(const DateTime& other) const;
 

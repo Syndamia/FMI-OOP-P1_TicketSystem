@@ -17,6 +17,8 @@ unsigned short DateTime::daysInMonth() {
 
 /* Public */
 
+DateTime::DateTime() : DateTime(12, 00, 01, 05, 2022) {}
+
 DateTime::DateTime(unsigned short hour, unsigned short minute, unsigned short day, unsigned short month, unsigned short year) {
 	this->hour = hour;
 	this->minute = minute;

@@ -14,7 +14,7 @@ class Event {
 	List<Reservation> reservations;
 	DateTime time;
 	String name;
-	Hall* hall;
+	const Hall* hall;
 
 public:
 	Event();

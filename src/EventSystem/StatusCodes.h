@@ -2,7 +2,7 @@
 #define HEADER_EVENTSYSTEM_STATUSCODES
 
 enum StatusCode {
-	Ok,
+	Success,
 
 
 	W_TicketNotReserved,
