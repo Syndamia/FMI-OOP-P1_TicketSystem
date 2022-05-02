@@ -17,7 +17,7 @@ public:
 	StatusCode createEvent();
 	StatusCode cancelEvent();
 
-	StatusCode reserveTicket(char* note, DateTime time, unsigned seatRow, unsigned seatColumn);
+	StatusCode reserveTicket(unsigned eventIndex, char* note, unsigned seatRow, unsigned seatColumn);
 	StatusCode cancelTicketReservation();
 	StatusCode buyTicket();
 
