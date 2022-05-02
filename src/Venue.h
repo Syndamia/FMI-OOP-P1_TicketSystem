@@ -12,8 +12,8 @@ class Venue {
 public:
 	Venue(const Hall* halls, unsigned hallCount, const EventSystem& es);
 
-	const List<Hall> get_halls() const;
-	const EventSystem get_es() const;
+	const List<Hall>& get_halls() const;
+	const EventSystem& get_es() const;
 };
 
 #endif
