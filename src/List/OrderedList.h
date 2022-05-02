@@ -6,6 +6,8 @@
 template <class T>
 class OrderedList : public List<T> {
 public:
+	OrderedList(const T* elements, unsigned elementsCount);
+
 	void add(const T& element) = delete;
 	bool insertAt(const T& element, unsigned index) = delete;
 

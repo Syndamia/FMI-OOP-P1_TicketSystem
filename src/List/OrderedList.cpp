@@ -1,6 +1,9 @@
 #include "OrderedList.h"
 
 template <class T>
+OrderedList<T>::OrderedList(const T* elements, unsigned elementsCount) : List<T>::List(elements, elementsCount) {}
+
+template <class T>
 bool OrderedList<T>::insert(const T& element) {
 	if (List<T>::length == List<T>::count) List<T>::resize();
 
