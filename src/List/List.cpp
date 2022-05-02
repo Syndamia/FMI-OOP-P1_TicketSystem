@@ -42,6 +42,11 @@ void List<T>::add(const T& element) {
 }
 
 template <class T>
+bool List<T>::insertAt(const T& element) {
+
+}
+
+template <class T>
 bool List<T>::removeAt(unsigned index) {
 	if (index >= count) return false;
 
