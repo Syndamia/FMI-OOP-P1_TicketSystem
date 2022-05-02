@@ -21,3 +21,7 @@ void Reservation::write(std::ostream& ostr) const {
 	ostr.write(password, sizeof(password));
 	ostr.write(note, sizeof(note));
 }
+
+int Reservation::compare(const Reservation& other) const {
+	return ticket.compare(other.ticket);
+}

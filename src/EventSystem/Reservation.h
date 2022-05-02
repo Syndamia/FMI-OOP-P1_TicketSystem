@@ -16,6 +16,7 @@ public:
 
 	void read(std::istream& istr);
 	void write(std::ostream& ostr) const;
+	int compare(const Reservation& other) const;
 };
 
 #endif

@@ -10,7 +10,9 @@ Event::Event(const Hall* hall, String name, DateTime time) {
 }
 
 StatusCode Event::reserveTicket(const Ticket& ticket, const char* password, const char* note) {
-	// TODO: if (reservations.contains(ticket) || tickets.contain(ticket)) return E_...
+	if (tickets.contain(ticket)) return E_TicketAlreadyBought;
+	if (reservations.contain(Reservation(ticket, "", ""))) return E_TicketAlreadyReserved;
+
 	reservations.insert(Reservation(ticket, password, note));
 	return Success;
 }

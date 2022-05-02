@@ -72,6 +72,11 @@ unsigned List<T>::findIndex(const T& element) const {
 }
 
 template <class T>
+bool List<T>::contain(const T& element) const {
+	return findIndex(element) < count;
+}
+
+template <class T>
 T& List<T>::operator[](unsigned index) {
 	return elements[index];
 }
