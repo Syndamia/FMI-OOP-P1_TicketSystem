@@ -7,7 +7,7 @@ Menu::Menu(const Command* commands, unsigned commandCount) {
 
 void Menu::navigate() const {
 	if (menuOptions.get_count() == 0) {
-		std::cout << "Menu is empty!" << std::endl;
+		printLine("Menu is empty!");
 		return;
 	}
 
@@ -17,7 +17,9 @@ void Menu::navigate() const {
 
 	unsigned buffer = 0;
 	while (0 == buffer || buffer >= menuOptions.get_count()) {
-		std::cout << "Execute No [1-" << menuOptions.get_count() << "]: ";
+		print("Execute No [1-");
+		print(menuOptions.get_count());
+		print("]: ");
 		std::cin >> buffer;
 	}
 
