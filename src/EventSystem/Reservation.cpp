@@ -4,6 +4,8 @@
 
 Reservation::Reservation() : Reservation(Ticket(), "", "") {}
 
+Reservation::Reservation(const Ticket& ticket) : Reservation(ticket, "", "") {}
+
 Reservation::Reservation(const Ticket& ticket, const char* password, const char* note) {
 	this->ticket = ticket;
 	strcpy(this->password, password);

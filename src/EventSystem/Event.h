@@ -24,7 +24,9 @@ public:
 
 	StatusCode cancelReservation(const Ticket& ticket);
 
-	StatusCode buyReservation(const Reservation& reservation, const char* password);
+	StatusCode buyTicket(const Ticket& ticket);
+
+	StatusCode buyTicketFromReservation(const Reservation& reservation, const char* password);
 };
 
 #endif
