@@ -20,7 +20,7 @@ void Menu::navigate() const {
 		print("Execute No [1-");
 		print(menuOptions.get_count());
 		print("]: ");
-		std::cin >> buffer;
+		read(buffer);
 	}
 
 	menuOptions[buffer - 1].run();

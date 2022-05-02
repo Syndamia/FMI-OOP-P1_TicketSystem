@@ -2,7 +2,10 @@
 #define HEADER_CONSOLEINTERFACE_TOOLBOX
 
 template <class T>
-void read(T* storage) {
+void read(T* storage);
+
+template <class T>
+void read(T& storage);
 
 template <class T>
 void print(const T* item);

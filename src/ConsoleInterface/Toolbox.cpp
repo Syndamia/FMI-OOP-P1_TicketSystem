@@ -7,6 +7,11 @@ void read(T* storage) {
 }
 
 template <class T>
+void read(T& storage) {
+	std::cin >> storage;
+}
+
+template <class T>
 void print(const T* item) {
 	std::cout << item;
 }
