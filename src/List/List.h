@@ -19,6 +19,8 @@ public:
 	void add(const T& element);
 	bool insertAt(const T& element, unsigned index);
 	bool removeAt(unsigned index);
+	unsigned findIndex(const T& element) const;
+	bool contains(const T& element) const;
 	T& operator[](unsigned index);
 	const T& operator[](unsigned index) const;
 

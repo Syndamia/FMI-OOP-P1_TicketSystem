@@ -64,6 +64,14 @@ bool List<T>::removeAt(unsigned index) {
 }
 
 template <class T>
+unsigned List<T>::findIndex(const T& element) const {
+	unsigned ind = 0;
+	while (ind < count && elements[ind].compare(element) != 0)
+		ind++;
+	return ind;
+}
+
+template <class T>
 T& List<T>::operator[](unsigned index) {
 	return elements[index];
 }

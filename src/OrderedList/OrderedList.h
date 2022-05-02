@@ -10,6 +10,7 @@ public:
 	bool insertAt(const T& element, unsigned index) = delete;
 
 	bool insert(const T& element);
+	// unsigned findIndex(const T& element) const; TODO: binary search
 };
 
 #endif
