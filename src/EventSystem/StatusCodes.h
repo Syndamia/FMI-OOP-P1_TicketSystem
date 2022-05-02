@@ -15,7 +15,8 @@ enum StatusCode {
 
 	E_TicketAlreadyBought,
 	E_TicketAlreadyReserved,
-	E_WrongTicketPassword,
+	E_ReservationDoesNotExist,
+	E_WrongReservationPassword,
 };
 
 #endif
