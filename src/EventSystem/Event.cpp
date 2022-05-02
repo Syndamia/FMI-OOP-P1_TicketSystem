@@ -36,9 +36,12 @@ StatusCode Event::buyTicket(const Ticket& ticket) {
 }
 
 StatusCode Event::buyTicketFromReservation(const Reservation& reservation, const char* password) {
-	if (!reservations.contain(reservation)) return E_ReservationDoesNotExist;
+	unsigned resInd = reservations.findIndex(reservation);
+	if (resInd == reservations.get_count()) return E_ReservationDoesNotExist;
 
 	if (!reservation.checkPassword(password)) return E_WrongReservationPassword;
 
-	reservations.removeAt
+	reservations.removeAt(resInd);
+	tickets.insert(reservation.get_ticket());
+	return Success;
 }

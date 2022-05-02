@@ -1,7 +1,7 @@
 #ifndef HEADER_ORDEREDLIST
 #define HEADER_ORDEREDLIST
 
-#include "../List/List.h"
+#include "List.h"
 
 template <class T>
 class OrderedList : public List<T> {

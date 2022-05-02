@@ -1,7 +1,7 @@
 #ifndef HEADER_EVENTSYSTEM_EVENT
 #define HEADER_EVENTSYSTEM_EVENT
 
-#include "../OrderedList/OrderedList.h"
+#include "../List/OrderedList.h"
 #include "../DateTime/DateTime.h"
 #include "../String/String.h"
 #include "../Venue/Hall.h"
