@@ -1,5 +1,6 @@
 #include "Reservation.h"
 #include <cstring>
+#include <ostream>
 
 Reservation::Reservation() : Reservation(Ticket(), "", "") {}
 
@@ -11,6 +12,12 @@ Reservation::Reservation(const Ticket& ticket, const char* password, const char*
 
 void Reservation::read(std::istream& istr) {
 	ticket.read(istr);
-	istr.read(password, sizeof(char) * 8);
-	istr.read(note, sizeof(char) * 32);
+	istr.read(password, sizeof(password));
+	istr.read(note, sizeof(note));
+}
+
+void Reservation::write(std::ostream& ostr) const {
+	ticket.write(ostr);
+	ostr.write(password, sizeof(password));
+	ostr.write(note, sizeof(note));
 }
