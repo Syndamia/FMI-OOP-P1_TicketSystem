@@ -1,6 +1,9 @@
 #ifndef HEADER_LIST
 #define HEADER_LIST
 
+#include "istream"
+#include "ostream"
+
 template <class T>
 class List {
 	T* elements;
@@ -17,6 +20,9 @@ public:
 	bool removeAt(unsigned index);
 	T& operator[](unsigned index);
 	const T& operator[](unsigned index) const;
+
+	std::istream read(std::istream& istr);
+	std::ostream write(std::istream& ostr);
 
 	unsigned get_length() const;
 	unsigned get_count() const;
