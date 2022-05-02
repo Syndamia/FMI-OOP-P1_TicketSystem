@@ -77,6 +77,12 @@ std::istream& List<T>::read(std::istream& istr) {
 
 template <class T>
 std::ostream& List<T>::write(std::ostream& ostr) const {
+	ostr.write((const char*)&length, sizeof(length));
+	ostr.write((const char*)&count, sizeof(count));
+
+	for (int i = 0; i < count; i++)
+		elements[i].write(ostr); // disgusting
+
 	return ostr;
 }
 
