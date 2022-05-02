@@ -42,7 +42,10 @@ void List<T>::add(const T& element) {
 }
 
 template <class T>
-bool List<T>::insertAt(const T& element) {
+bool List<T>::insertAt(const T& element, unsigned index) {
+	if (index >= count)
+		return add(element);
+
 
 }
 
