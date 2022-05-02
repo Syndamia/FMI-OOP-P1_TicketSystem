@@ -69,7 +69,7 @@ std::istream& List<T>::read(std::istream& istr) {
 	elements = new T[length];
 
 	for (int i = 0; i < count; i++)
-		istr >> elements[i];
+		elements[i].read(istr);
 
 	return istr;
 }
