@@ -21,8 +21,8 @@ public:
 	T& operator[](unsigned index);
 	const T& operator[](unsigned index) const;
 
-	std::istream read(std::istream& istr);
-	std::ostream write(std::istream& ostr);
+	std::istream& read(std::istream& istr);
+	std::ostream& write(std::ostream& ostr) const;
 
 	unsigned get_length() const;
 	unsigned get_count() const;

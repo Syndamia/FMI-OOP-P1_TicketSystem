@@ -62,6 +62,24 @@ const T& List<T>::operator[](unsigned index) const {
 }
 
 template <class T>
+std::istream& List<T>::read(std::istream& istr) {
+	istr.read((char*)&length, sizeof(length));
+	istr.read((char*)&count, sizeof(count));
+	delete[] elements;
+	elements = new T[length];
+
+	for (int i = 0; i < count; i++)
+		istr >> elements[i];
+
+	return istr;
+}
+
+template <class T>
+std::ostream& List<T>::write(std::ostream& ostr) const {
+	return ostr;
+}
+
+template <class T>
 unsigned List<T>::get_length() const {
 	return length;
 }
