@@ -4,7 +4,7 @@
 
 template <class T>
 void List<T>::resize() {
-	length <<= 1;
+	length = (length == 0) ? 8 : length << 1;
 	T* temp = new T[length];
 	for (int i = 0; i < count; i++)
 		temp[i] = elements[i];
@@ -29,7 +29,8 @@ void List<T>::copyFrom(const List& other) {
 /* Public */
 
 template <class T>
-List<T>::List(const T* elements, unsigned elementsCount) : List() {
+List<T>::List(const T* elements, unsigned elementsCount) {
+	count = length = 0;
 	for (unsigned i = 0; i < elementsCount; i++)
 		add(elements[i]);
 }
@@ -124,11 +125,7 @@ unsigned List<T>::get_count() const {
 // Rule of 4
 
 template <class T>
-List<T>::List() {
-	length = 8;
-	count = 0;
-	elements = new T[length];
-}
+List<T>::List() : List(nullptr, 0) {}
 
 template <class T>
 List<T>& List<T>::operator=(const List& other) {
