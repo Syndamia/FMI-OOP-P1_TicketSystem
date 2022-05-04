@@ -12,6 +12,14 @@ Reservation::Reservation(const Ticket& ticket, const char* password, const char*
 	strcpy(this->note, note);
 }
 
+bool Reservation::validPassword(const char* password) const {
+	return !strcmp(this->password, password);
+}
+
+const Ticket& Reservation::get_ticket() const {
+	return ticket;
+}
+
 void Reservation::read(std::istream& istr) {
 	ticket.read(istr);
 	istr.read(password, sizeof(password));

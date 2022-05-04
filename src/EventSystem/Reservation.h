@@ -15,7 +15,7 @@ public:
 	Reservation(const Ticket& ticket);
 	Reservation(const Ticket& ticket, const char* password, const char* note);
 
-	bool checkPassword(const char* password) const;
+	bool validPassword(const char* password) const;
 	const Ticket& get_ticket() const;
 
 	void read(std::istream& istr);

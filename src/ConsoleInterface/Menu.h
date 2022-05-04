@@ -2,7 +2,7 @@
 #define HEADER_CONSOLEINTERFACE_MENU
 
 #include "Command.h"
-#include "../List/List.h"
+#include "../List/List.hpp"
 
 class Menu {
 	List<Command> menuOptions;

@@ -1,4 +1,44 @@
-#include "List.h"
+#ifndef HEADER_LIST
+#define HEADER_LIST
+
+#include <istream>
+#include <ostream>
+
+template <class T>
+class List {
+protected:
+	T* elements;
+	unsigned length;
+	unsigned count;
+
+	void resize();
+	void free();
+	void copyFrom(const List& other);
+
+public:
+	List(const T* elements, unsigned elementsCount);
+	void add(const T& element);
+	void insertAt(const T& element, unsigned index);
+	bool removeAt(unsigned index);
+	unsigned findIndex(const T& element) const;
+	bool contain(const T& element) const;
+	T& operator[](unsigned index);
+	const T& operator[](unsigned index) const;
+
+	std::istream& read(std::istream& istr);
+	std::ostream& write(std::ostream& ostr) const;
+
+	unsigned get_length() const;
+	unsigned get_count() const;
+
+	List();
+	List& operator=(const List& other);
+	List(const List& other);
+	~List();
+
+	List(List&& other);
+	List& operator=(List&& other);
+};
 
 /* Private */
 
@@ -43,8 +83,8 @@ void List<T>::add(const T& element) {
 }
 
 template <class T>
-bool List<T>::insertAt(const T& element, unsigned index) {
-	if (index >= count) return add(element);
+void List<T>::insertAt(const T& element, unsigned index) {
+	if (index >= count) add(element);
 	if (length == count) resize();
 
 	for (unsigned i = count; i > index; i--)
@@ -58,10 +98,10 @@ template <class T>
 bool List<T>::removeAt(unsigned index) {
 	if (index >= count) return false;
 
-	delete elements[index];
 	for (int i = index; i < count; i++)
 		elements[i] = elements[i + 1];
-	elements[count--] = nullptr;
+	count--;
+	return true;
 }
 
 template <class T>
@@ -167,3 +207,5 @@ List<T>& List<T>::operator=(List&& other) {
 	}
 	return *this;
 }
+
+#endif

@@ -1,5 +1,5 @@
 #include "Menu.h"
-#include "Toolbox.h"
+#include "Toolbox.hpp"
 
 Menu::Menu(const Command* commands, unsigned commandCount) {
 	menuOptions = List<Command>(commands, commandCount);

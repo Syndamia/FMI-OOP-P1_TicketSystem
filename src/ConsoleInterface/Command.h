@@ -6,6 +6,7 @@ class Command {
 	void (*exec)();
 
 public:
+	Command();
 	Command(const char* nameInMenu, void (*exec)());
 	void run() const;
 

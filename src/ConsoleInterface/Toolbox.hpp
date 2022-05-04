@@ -1,4 +1,6 @@
-#include "Toolbox.h"
+#ifndef HEADER_CONSOLEINTERFACE_TOOLBOX
+#define HEADER_CONSOLEINTERFACE_TOOLBOX
+
 #include <iostream>
 
 template <class T>
@@ -38,6 +40,8 @@ void printOrderedListElem(const char* message) {
 	printLine(message);
 }
 
-void resetOrderedList(int starter) {
+void resetOrderedList(int starter = 1) {
 	orderedListIndex = starter;
 }
+
+#endif

@@ -1,7 +1,7 @@
 #ifndef HEADER_EVENTSYSTEM
 #define HEADER_EVENTSYSTEM
 
-#include "../List/OrderedList.h"
+#include "../List/OrderedList.hpp"
 #include "../DateTime/DateTime.h"
 
 #include "Event.h"
