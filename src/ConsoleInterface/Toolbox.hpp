@@ -55,7 +55,7 @@ void inputBoxLabel(const char* label) {
 template <typename T>
 void inputBox(const char* label, T* output) {
 	inputBoxLabel(label);
-	std::cin >> output;
+	std::cin >> *output;
 }
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth) {

@@ -7,6 +7,10 @@ Venue::Venue(const Hall* halls, unsigned hallCount, const EventSystem& es) {
 	this->es = es;
 }
 
+bool Venue::hallExists(unsigned hallIndex) const {
+	return hallIndex < halls.get_count();
+}
+
 bool Venue::hallExists(const Hall& hall) const {
 	return this->halls.contain(hall);
 }

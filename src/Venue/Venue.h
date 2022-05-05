@@ -13,6 +13,7 @@ public:
 	Venue();
 	Venue(const Hall* halls, unsigned hallCount, const EventSystem& es);
 
+	bool hallExists(unsigned hallIndex) const;
 	bool hallExists(const Hall& hall) const;
 
 	const List<Hall>& get_halls() const;

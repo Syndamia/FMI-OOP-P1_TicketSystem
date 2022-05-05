@@ -6,6 +6,8 @@
 Venue v;
 
 void command_newEvent() {
+	unsigned hallIndex;
+	inputBox("Enter hall index: ", &hallIndex);
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	
