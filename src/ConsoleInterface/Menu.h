@@ -8,7 +8,10 @@ class Menu {
 	List<Command> menuOptions;
 
 public:
+	Menu();
 	Menu(const Command* commands, unsigned commandCount);
+
+	void addCommand(const Command* command);
 	void navigate() const;
 };
 

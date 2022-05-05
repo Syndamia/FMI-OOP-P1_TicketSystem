@@ -32,6 +32,19 @@ void command_newEvent() {
 	handleStatusCode(v.get_es().createEvent(&v.get_halls()[hallIndex], name, dt));
 }
 
+void submenu_ticketManagement() {
+
+}
+
+void submenu_eventManagement() {
+
+}
+
+void submenu_reportManagement() {
+
+}
+const Menu mainMenu({ submenu_ticketManagement, submenu_eventManagement, submenu_reportManagement }, 3);
+
 void runUI(Venue& venue) {
 	v = venue;
 }
