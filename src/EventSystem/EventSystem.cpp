@@ -8,6 +8,7 @@ void EventSystem::updateSoonestUpcoming() {
 }
 
 unsigned EventSystem::indexOfEvent(const Date& dt) {
+	// TODO: make binary search
 	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
 		if (events[i].get_date().compare(dt) == 0)
 			return i;
@@ -16,10 +17,9 @@ unsigned EventSystem::indexOfEvent(const Date& dt) {
 }
 
 unsigned EventSystem::indexOfEvent(const char* name, const Date& dt) {
-	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
-		if (events[i].get_date().compare(dt) == 0 && events[i].get_name().compare(name) == 0)
-			return i;
-	}
+	unsigned ind = indexOfEvent(dt);
+	if (ind < events.get_count() && events[ind].get_name().compare(name) == 0)
+		return ind;
 	return events.get_count();
 }
 
