@@ -80,7 +80,6 @@ void command_buyTicket() {
 	if (reserved) {
 		char pass[PASSWORD_LEN];
 		inputLineBox("Enter reservation password: ", pass, PASSWORD_LEN);
-		std::cout << "Saved- " << pass << std::endl;
 		handleStatusCode(v->get_es().buyTicket(name, date, tic, pass), ticketManagementMenu);
 	}
 	else

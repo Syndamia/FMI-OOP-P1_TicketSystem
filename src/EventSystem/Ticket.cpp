@@ -27,8 +27,8 @@ void Ticket::write(std::ostream& ostr) const {
 
 int Ticket::compare(const Ticket& other) const {
 	if (row == other.row)
-		return (seat > other.seat) - (other.seat < seat);
-	return (row > other.row) - (other.row < row);
+		return seat - other.seat;
+	return row - other.row;
 }
 
 /* General */
