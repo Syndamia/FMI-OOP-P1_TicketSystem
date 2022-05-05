@@ -58,6 +58,11 @@ StatusCode Event::buyTicketFromReservation(const Reservation& reservation, const
 	return Success;
 }
 
+bool Event::ticketIsFree(unsigned row, unsigned seat) {
+	Ticket temp(row, seat);
+	unsigned ind = tickets.findIndex(temp);
+}
+
 int Event::compare(const Event& other) {
 	// TODO: improve
 	return name.compare(other.name);

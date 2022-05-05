@@ -63,7 +63,7 @@ List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& dt) {
 	if (ind == events.get_count())
 		return List<Ticket>();
 
-	List<Ticket> freeTickets = List<Ticket>();
+	List<Ticket> freeTickets;
 
 	unsigned nextIndT = 0, nextIndR = 0;
 	for (unsigned r = 1; r <= events[ind].get_hall().get_rowCount(); r++) {
