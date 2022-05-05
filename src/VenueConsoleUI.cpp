@@ -32,24 +32,41 @@ void command_newEvent() {
 	handleStatusCode(v->get_es().createEvent(&v.get_halls()[hallIndex], name, dt));
 }
 
+/* Ticket Management */
 
 void command_freeSeats() {
 
 }
 
-/* Submenu */
-
-void submenu_ticketManagement() {
+void command_reserveTicket() {
 
 }
+
+void command_cancelReservation() {
+
+}
+
+void command_buyTicket() {
+
+}
+
+void submenu_ticketManagement() {
+	
+}
+
+/* Event Management */
 
 void submenu_eventManagement() {
 
 }
 
+/* Report Management */
+
 void submenu_reportManagement() {
 
 }
+
+/* Main */
 
 Menu mainMenu, ticketManagementMenu, eventManagementMenu, reportsMenu;
 
