@@ -7,7 +7,7 @@ void resetOrderedList(int starter) {
 }
 
 void _printOrderedListBeginning() {
-	std::cout << orderedListIndex << ". ";
+	std::cout << orderedListIndex++ << ". ";
 }
 
 void inputBoxLabel(const char* label) {

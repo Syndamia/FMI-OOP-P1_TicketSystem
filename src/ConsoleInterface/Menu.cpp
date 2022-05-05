@@ -22,14 +22,15 @@ void Menu::navigate() const {
 	for (unsigned i = 0; i < menuOptions.get_count(); i++)
 		printOrderedListElem(menuOptions[i].get_nameInMenu());
 
-	int buffer = -1;
-	while (buffer < 0 || buffer >= menuOptions.get_count()) {
+	unsigned buffer = 0; // 0 is optionless continue, 1 is exit, others are options
+
+	while (buffer != 1) {
 		print("Execute No [0-");
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
 
-		if (buffer == 0) return;
-		menuOptions[buffer].run();
+		if (++buffer > 0)
+			menuOptions[buffer - 1].run();
 	}
 }
