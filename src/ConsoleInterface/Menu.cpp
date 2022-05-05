@@ -8,7 +8,7 @@ Menu::Menu(const Command* commands, unsigned commandCount) {
 }
 
 void Menu::addCommand(const Command* command) {
-	menuOptions.add(command);
+	menuOptions.add(*command);
 }
 
 void Menu::navigate() const {

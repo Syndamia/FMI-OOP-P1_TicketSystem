@@ -5,7 +5,7 @@
 #include "ConsoleInterface/Menu.h"
 #include "ConsoleInterface/Toolbox.hpp"
 
-Venue v;
+Venue* v;
 
 void handleStatusCode(StatusCode sc) {
 	switch (sc) {
@@ -19,7 +19,7 @@ void command_newEvent() {
 
 	unsigned hallIndex;
 	inputBox("Enter hall index: ", &hallIndex);
-	if (!v.hallExists(hallIndex)) {
+	if (!v->hallExists(hallIndex)) {
 		printError("Invalid hall index!");
 		return;
 	}
@@ -29,7 +29,7 @@ void command_newEvent() {
 	DateTime dt;
 	inputBox("Enter event date and time: ", &dt);
 	
-	handleStatusCode(v.get_es().createEvent(&v.get_halls()[hallIndex], name, dt));
+	handleStatusCode(v->get_es().createEvent(&v.get_halls()[hallIndex], name, dt));
 }
 
 void submenu_ticketManagement() {
@@ -43,8 +43,15 @@ void submenu_eventManagement() {
 void submenu_reportManagement() {
 
 }
-const Menu mainMenu({ submenu_ticketManagement, submenu_eventManagement, submenu_reportManagement }, 3);
+
+const Menu mainMenu, ticketManagementMenu, eventManagementMenu, reportsMenu;
+
+void init() {
+	mainMenu.add(Command("Ticket Management", submenu_ticketManagement));
+}
 
 void runUI(Venue& venue) {
-	v = venue;
+	v = &venue;
+	init();
+	mainMenu.navigate();
 }
