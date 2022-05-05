@@ -10,6 +10,7 @@ class Venue {
 	EventSystem es;
 
 public:
+	Venue();
 	Venue(const Hall* halls, unsigned hallCount, const EventSystem& es);
 
 	bool hallExists(const Hall& hall) const;
