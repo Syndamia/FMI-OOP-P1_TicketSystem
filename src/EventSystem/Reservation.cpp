@@ -11,8 +11,10 @@ Reservation::Reservation(const Ticket& ticket, const char* password, const char*
 	strcpy(this->password, password);
 	strcpy(this->note, note);
 }
-
+#include <iostream>
 bool Reservation::validPassword(const char* password) const {
+	std::cout << password << std::endl;
+	std::cout << this->password << std::endl;
 	return !strcmp(this->password, password);
 }
 

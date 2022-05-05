@@ -50,6 +50,7 @@ void Menu::navigate() const {
 	unsigned buffer = 1; // We immedeately read the value of buffer, so this is fine
 
 	while (buffer != 0) {
+		clear();
 		printTitle(title);
 		switch(msgType) {
 			case Error: printError(msg.get_cstr()); msgType = NoPrint; break;

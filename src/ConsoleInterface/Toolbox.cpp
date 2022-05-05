@@ -1,7 +1,9 @@
 #include "Toolbox.hpp"
 
 void clear() {
-	std::cout << u8"\033[2J\033[1;1H"; 
+	// Clears console on Linux
+	// Source: https://stackoverflow.com/a/52895729/12036073
+	// std::cout << u8"\033[2J\033[1;1H"; 
 }
 
 int orderedListIndex = 1;
