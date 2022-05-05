@@ -1,10 +1,18 @@
 #include "VenueConsoleUI.h"
 #include "String/String.h"
 #include "DateTime/DateTime.h"
+#include "EventSystem/StatusCodes.h"
 #include "ConsoleInterface/Menu.h"
 #include "ConsoleInterface/Toolbox.hpp"
 
 Venue v;
+
+void handleStatusCode(StatusCode sc) {
+	switch (sc) {
+		case Success: printSuccess("Success!"); break;
+		default: break;
+	}
+}
 
 void command_newEvent() {
 	printTitle("Creating new event");
@@ -21,7 +29,7 @@ void command_newEvent() {
 	DateTime dt;
 	inputBox("Enter event date and time: ", &dt);
 	
-	v.get_es().createEvent(v.get_halls()[hallIndex], name, dt);
+	handleStatusCode(v.get_es().createEvent(&v.get_halls()[hallIndex], name, dt));
 }
 
 void runUI(Venue& venue) {

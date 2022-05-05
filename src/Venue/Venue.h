@@ -17,7 +17,7 @@ public:
 	bool hallExists(const Hall& hall) const;
 
 	const List<Hall>& get_halls() const;
-	const EventSystem& get_es() const;
+	EventSystem& get_es();
 };
 
 #endif

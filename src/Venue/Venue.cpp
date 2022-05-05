@@ -19,6 +19,6 @@ const List<Hall>& Venue::get_halls() const {
 	return this->halls;
 }
 
-const EventSystem& Venue::get_es() const {
+EventSystem& Venue::get_es() {
 	return this->es;
 }
