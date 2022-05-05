@@ -12,6 +12,7 @@ class EventSystem {
 	unsigned indSoonestUpcoming;
 
 	void updateSoonestUpcoming();
+	unsigned indexOfEvent(const Date& dt);
 	unsigned indexOfEvent(const char* name, const Date& dt);
 
 public:
@@ -19,7 +20,7 @@ public:
 	EventSystem(const Event* events, unsigned eventCount);
 
 	StatusCode createEvent(const Hall* hall, String name, Date date);
-	StatusCode cancelEvent();
+	StatusCode cancelEvent(const char* name, Date date);
 
 	StatusCode reserveTicket(unsigned eventIndex, char* note, unsigned seatRow, unsigned seatColumn);
 	StatusCode cancelTicketReservation();
