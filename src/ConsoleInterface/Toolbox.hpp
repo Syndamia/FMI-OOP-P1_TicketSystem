@@ -1,6 +1,7 @@
 #ifndef HEADER_CONSOLEINTERFACE_TOOLBOX
 #define HEADER_CONSOLEINTERFACE_TOOLBOX
 
+#include "../String/String.h"
 #include <iostream>
 
 template <class T>
@@ -35,9 +36,10 @@ void printLine(const T& item) {
 
 int orderedListIndex = 1;
 
-void printOrderedListElem(const char* message) {
+template <typename T>
+void printOrderedListElem(const T& elem) {
 	std::cout << orderedListIndex << ". ";
-	printLine(message);
+	printLine(elem);
 }
 
 void resetOrderedList(int starter = 1) {
