@@ -2,6 +2,7 @@
 #include "String/String.h"
 #include "DateTime/DateTime.h"
 #include "EventSystem/StatusCodes.h"
+#include "EventSystem/EventSystem.h"
 #include "ConsoleInterface/Menu.h"
 #include "ConsoleInterface/Toolbox.hpp"
 

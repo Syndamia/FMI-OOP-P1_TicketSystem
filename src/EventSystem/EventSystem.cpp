@@ -18,3 +18,7 @@ EventSystem::EventSystem(const Event* events, unsigned eventCount) {
 	indSoonestUpcoming = 0;
 	updateSoonestUpcoming();
 }
+
+StatusCode EventSystem::createEvent(const Hall* hall, String name, DateTime time) {
+
+}

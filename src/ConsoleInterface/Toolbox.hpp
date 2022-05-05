@@ -44,11 +44,9 @@ void printOrderedListElem(const T& elem) {
 	printLine(elem);
 }
 
-void resetOrderedList(int starter);
+void resetOrderedList(int starter = 1);
 
-void inputBoxLabel(const char* label) {
-	std::cout << "+ " << label;
-}
+void inputBoxLabel(const char* label);
 
 template <typename T>
 void inputBox(const char* label, T* output) {
@@ -56,21 +54,10 @@ void inputBox(const char* label, T* output) {
 	std::cin >> *output;
 }
 
-void inputLineBox(const char* label, char* output, unsigned maxWidth) {
-	inputBoxLabel(label);
-	std::cin.getline(output, maxWidth);
-}
+void inputLineBox(const char* label, char* output, unsigned maxWidth);
 
-void printTitle(const char* title) {
-	std::cout << "## " << title << " ##" << std::endl;
-}
-
-void printSuccess(const char* message) {
-	std::cout << ") " << message << std::endl;
-}
-
-void printError(const char* message) {
-	std::cout << "! Err: " << message << std::endl;
-}
+void printTitle(const char* title);
+void printSuccess(const char* message);
+void printError(const char* message);
 
 #endif
