@@ -20,13 +20,12 @@ public:
 	EventSystem(const Event* events, unsigned eventCount);
 
 	StatusCode createEvent(const Hall* hall, String name, Date date);
-	StatusCode cancelEvent(const char* name, Date date);
+	StatusCode cancelEvent(const char* name, const Date& date);
 
-	StatusCode reserveTicket(unsigned eventIndex, char* note, unsigned seatRow, unsigned seatColumn);
+	StatusCode reserveTicket(const char* name, const Date& date, char* note, unsigned seatRow, unsigned seatColumn);
 	StatusCode cancelTicketReservation();
 	StatusCode buyTicket();
 
-	void queryUpcoming(unsigned hallIndex);
 	List<Ticket> queryFreeTickets(const char* name, const Date& dt);
 	void queryReservations(unsigned eventIndex);
 	void queryBoughtTickets(Date start, Date end, unsigned hall);

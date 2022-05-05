@@ -44,6 +44,19 @@ StatusCode EventSystem::createEvent(const Hall* hall, String name, Date date) {
 	return Success;
 }
 
+StatusCode EventSystem::cancelEvent(const char* name, const Date& date) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return E_EventDoesNotExist;
+
+	events.removeAt(ind);
+	return Success;
+}
+
+StatusCode EventSystem::reserveTicket(const char* name, const Date& date, char* note, unsigned seatRow, unsigned seatColumn) {
+	
+}
+
 List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& dt) {
 	unsigned ind = indexOfEvent(name, dt);
 
