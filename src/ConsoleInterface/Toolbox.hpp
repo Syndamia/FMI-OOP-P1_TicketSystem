@@ -44,4 +44,12 @@ void resetOrderedList(int starter = 1) {
 	orderedListIndex = starter;
 }
 
+template <typename T>
+T inputBox(const char* label) {
+	print(label);
+	T temp;
+	std::cin >> temp;
+	return temp;
+}
+
 #endif

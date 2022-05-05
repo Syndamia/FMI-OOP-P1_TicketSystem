@@ -17,7 +17,7 @@ public:
 	EventSystem();
 	EventSystem(const Event* events, unsigned eventCount);
 
-	StatusCode createEvent();
+	StatusCode createEvent(const Hall* hall, String name, DateTime time);
 	StatusCode cancelEvent();
 
 	StatusCode reserveTicket(unsigned eventIndex, char* note, unsigned seatRow, unsigned seatColumn);
