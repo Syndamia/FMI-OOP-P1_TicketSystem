@@ -53,7 +53,16 @@ void command_reserveTicket() {
 }
 
 void command_cancelReservation() {
+	char name[MAX_LINE_WIDTH];
+	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	Date date;
+	inputBox("Enter event date: ", &date);
+	unsigned row;
+	inputBox("Enter row: ", &row);
+	unsigned seat;
+	inputBox("Enter seat: ", &seat);
 
+	handleStatusCode(v->get_es().cancelTicketReservation(name, date, row, seat), ticketManagementMenu);
 }
 
 void command_buyTicket() {

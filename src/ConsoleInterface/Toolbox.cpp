@@ -25,10 +25,14 @@ void printTitle(const char* title) {
 }
 
 void printSuccess(const char* message) {
-	std::cout << "... " << message << std::endl;
+	std::cout << "<S> " << message << std::endl;
+}
+
+void printWarning(const char* message) {
+	std::cout << "<W>" << message << std::endl;
 }
 
 void printError(const char* message) {
-	std::cout << "!!! Err: " << message << std::endl;
+	std::cout << "<E> " << message << std::endl;
 }
 

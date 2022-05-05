@@ -58,6 +58,7 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth);
 
 void printTitle(const char* title);
 void printSuccess(const char* message);
+void printWarning(const char* message);
 void printError(const char* message);
 
 #endif
