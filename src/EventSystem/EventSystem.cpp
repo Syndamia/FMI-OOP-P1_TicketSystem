@@ -7,17 +7,17 @@ void EventSystem::updateSoonestUpcoming() {
 	
 }
 
-unsigned EventSystem::indexOfEvent(const Date& dt) {
+unsigned EventSystem::indexOfEvent(const Date& date) {
 	// TODO: make binary search
 	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
-		if (events[i].get_date().compare(dt) == 0)
+		if (events[i].get_date().compare(date) == 0)
 			return i;
 	}
 	return events.get_count();
 }
 
-unsigned EventSystem::indexOfEvent(const char* name, const Date& dt) {
-	unsigned ind = indexOfEvent(dt);
+unsigned EventSystem::indexOfEvent(const char* name, const Date& date) {
+	unsigned ind = indexOfEvent(date);
 	if (ind < events.get_count() && events[ind].get_name().compare(name) == 0)
 		return ind;
 	return events.get_count();
@@ -69,12 +69,25 @@ StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& da
 	return events[ind].cancelReservation(seatRow, seatColumn);
 }
 
-StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat) {
+StatusCode EventSystem::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return E_EventDoesNotExist;
 
+	return events[ind].buyTicket(Ticket(row, seat));
 }
 
-List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& dt) {
-	unsigned ind = indexOfEvent(name, dt);
+
+StatusCode EventSystem::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return E_EventDoesNotExist;
+
+	return events[ind].buyTicketFromReservation(Reservation(Ticket(row, seat)), password);
+}
+
+List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& date) {
+	unsigned ind = indexOfEvent(name, date);
 
 	if (ind == events.get_count())
 		return List<Ticket>();

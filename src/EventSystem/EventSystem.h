@@ -12,8 +12,8 @@ class EventSystem {
 	unsigned indSoonestUpcoming;
 
 	void updateSoonestUpcoming();
-	unsigned indexOfEvent(const Date& dt);
-	unsigned indexOfEvent(const char* name, const Date& dt);
+	unsigned indexOfEvent(const Date& date);
+	unsigned indexOfEvent(const char* name, const Date& date);
 
 public:
 	EventSystem();
@@ -27,7 +27,7 @@ public:
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat);
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password);
 
-	List<Ticket> queryFreeTickets(const char* name, const Date& dt);
+	List<Ticket> queryFreeTickets(const char* name, const Date& date);
 	void queryReservations(unsigned eventIndex);
 	void queryBoughtTickets(Date start, Date end, unsigned hall);
 	void queryMostVisited();

@@ -28,10 +28,10 @@ void command_newEvent() {
 	
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	Date dt;
-	inputBox("Enter event date and time: ", &dt);
+	Date date;
+	inputBox("Enter event date and time: ", &date);
 	
-	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, dt));
+	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date));
 }
 
 /* Ticket Management */
@@ -39,14 +39,17 @@ void command_newEvent() {
 void command_freeSeats() {
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	Date dt;
-	inputBox("Enter event date: ", &dt);
+	Date date;
+	inputBox("Enter event date: ", &date);
 	print("Number of free seats: ");
-	// printLine(v->get_es().queryFreeSeats(name, dt));
+	// printLine(v->get_es().queryFreeSeats(name, date));
 }
 
 void command_reserveTicket() {
-
+	char name[MAX_LINE_WIDTH];
+	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	Date date;
+	inputBox("Enter event date: ", &date);
 }
 
 void command_cancelReservation() {
