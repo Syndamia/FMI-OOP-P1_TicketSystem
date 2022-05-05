@@ -1,5 +1,9 @@
 #include "Toolbox.hpp"
 
+void clear() {
+	std::cout << u8"\033[2J\033[1;1H"; 
+}
+
 int orderedListIndex = 1;
 
 void resetOrderedList(int starter) {

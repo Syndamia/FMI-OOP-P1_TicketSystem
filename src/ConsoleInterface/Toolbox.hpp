@@ -6,6 +6,8 @@
 
 #define MAX_LINE_WIDTH 1024
 
+void clear();
+
 template <class T>
 void read(T* storage) {
 	std::cin >> storage;
