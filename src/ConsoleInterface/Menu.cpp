@@ -22,6 +22,7 @@ void Menu::navigate() const {
 	}
 
 	unsigned buffer = 1; // We immedeately read the value of buffer, so this is fine
+	bool error = false;
 
 	while (buffer != 0) {
 		printTitle(title);
@@ -31,13 +32,18 @@ void Menu::navigate() const {
 		for (unsigned i = 0; i < menuOptions.get_count(); i++)
 			printOrderedListElem(menuOptions[i].get_nameInMenu());
 
+		if (error) {
+			printError("Invalid menu option!");
+			error = false;
+		}
+
 		_printInputBoxLabel("Execute No [0-");
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
 
 		if (buffer > menuOptions.get_count())
-			printError("Invalid menu option!");
+			error = true;
 		else if (buffer > 0)
 			menuOptions[buffer - 1].run();
 	}
