@@ -47,6 +47,7 @@ void printOrderedListElem(const T& elem) {
 void resetOrderedList(int starter = 1);
 
 void _printInputBoxLabel(const char* label);
+void _printAltInputBoxLabel(const char* label);
 
 template <typename T>
 void inputBox(const char* label, T* output) {

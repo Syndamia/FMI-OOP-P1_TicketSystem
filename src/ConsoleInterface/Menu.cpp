@@ -51,25 +51,24 @@ void Menu::navigate() const {
 
 	while (buffer != 0) {
 		printTitle(title);
+		switch(msgType) {
+			case Error: printError(msg.get_cstr()); msgType = NoPrint; break;
+			case Warning: printWarning(msg.get_cstr()); msgType = NoPrint; break;
+			case Success: printSuccess(msg.get_cstr()); msgType = NoPrint; break;
+			case NoPrint: printLine(""); break;
+		}
+		printLine("");
 
 		resetOrderedList(0);
 		printOrderedListElem("Go Back");
 		for (unsigned i = 0; i < menuOptions.get_count(); i++)
 			printOrderedListElem(menuOptions[i].get_nameInMenu());
 
-		if (msgType != NoPrint) {
-			switch(msgType) {
-				case Error: printError(msg.get_cstr()); break;
-				case Warning: printWarning(msg.get_cstr()); break;
-				case Success: printSuccess(msg.get_cstr()); break;
-			}
-			msgType = NoPrint;
-		}
-
-		_printInputBoxLabel("Execute No [0-");
+		_printAltInputBoxLabel("Execute No [0-");
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
+		printLine("");
 
 		if (buffer > menuOptions.get_count())
 			registerError("Invalid menu option!");
