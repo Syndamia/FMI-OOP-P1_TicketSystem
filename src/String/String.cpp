@@ -55,7 +55,7 @@ String& String::operator=(String&& other) {
 	return *this;
 }
 
-int String::compare(const String& other) {
+int String::compare(const String& other) const {
 	return strcmp(str, other.str);
 }
 

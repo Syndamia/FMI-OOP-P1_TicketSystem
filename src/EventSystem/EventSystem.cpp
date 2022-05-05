@@ -27,10 +27,12 @@ StatusCode EventSystem::createEvent(const Hall* hall, String name, Date date) {
 unsigned EventSystem::queryFreeSeats(const char* name, const Date& dt) {
 	unsigned index = events.get_count();
 	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
-		if (events[i].get_date() == dt && events[i].get_name().compare(name) == 0) {
+		if (events[i].get_date().compare(dt) == 0 && events[i].get_name().compare(name) == 0) {
 			index = i;
 			break;
 		}
 	}
-
+	if (index == events.get_count())
+		return 0;
+	return events[index].queryFreeSeats();
 }
