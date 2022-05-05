@@ -10,6 +10,10 @@ Event::Event(const Hall* hall, String name, Date date) : tickets(), reservations
 	this->date = date;
 }
 
+const Hall& Event::get_hall() const {
+	return *hall;
+}
+
 const String& Event::get_name() const {
 	return name;
 }

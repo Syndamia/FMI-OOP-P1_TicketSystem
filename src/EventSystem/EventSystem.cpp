@@ -33,11 +33,19 @@ StatusCode EventSystem::createEvent(const Hall* hall, String name, Date date) {
 }
 
 List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& dt) {
-	List<Ticket> freeTickets();
 	unsigned ind = indexOfEvent(name, dt);
 
-	if (ind < events[ind].get_count()) {
-		
+	if (ind == events[ind].get_count())
+		return List<Ticket>();
+
+	List<Ticket> freeTickets = List<Ticket>();
+
+	unsigned nextInd = 0;
+	for (unsigned r = 1; r <= events[ind].get_hall().get_rowCount(); r++) {
+		for (unsigned s = 1; s <= events[ind].get_hall().get_seatsPerRow(); s++) {
+			
+		}
 	}
+
 	return freeTickets;
 }
