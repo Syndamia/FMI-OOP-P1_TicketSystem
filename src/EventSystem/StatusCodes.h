@@ -14,7 +14,6 @@ enum StatusCode {
 	E_EventWillOverlap,
 	E_EventDoesNotExist,
 
-	E_TicketIsNotFree,
 	E_TicketAlreadyBought,
 	E_TicketAlreadyReserved,
 	E_ReservationDoesNotExist,
