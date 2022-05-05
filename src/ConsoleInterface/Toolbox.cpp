@@ -11,11 +11,11 @@ void _printOrderedListBeginning() {
 }
 
 void _printInputBoxLabel(const char* label) {
-	std::cout << "(+) " << label;
+	std::cout << "    (+) " << label;
 }
 
 void _printAltInputBoxLabel(const char* label) {
-	std::cout << ":+: " << label;
+	std::cout << "(+) " << label;
 }
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth) {

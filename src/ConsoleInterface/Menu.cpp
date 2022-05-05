@@ -68,7 +68,6 @@ void Menu::navigate() const {
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
-		printLine("");
 
 		if (buffer > menuOptions.get_count())
 			registerError("Invalid menu option!");
