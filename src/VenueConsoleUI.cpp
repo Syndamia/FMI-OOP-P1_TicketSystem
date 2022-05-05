@@ -8,7 +8,7 @@
 #include "ConsoleInterface/Toolbox.hpp"
 
 Venue* v;
-Menu mainMenu("FMI Ticket System"), ticketManagementMenu("Ticket management"), eventManagementMenu("Event management"), reportsMenu("Report management");
+Menu mainMenu("FMI Ticket System", true, false), ticketManagementMenu("Ticket management", false, true), eventManagementMenu("Event management", false, true), reportsMenu("Report management", false, true);
 
 void handleStatusCode(StatusCode sc, Menu menu) {
 	switch (sc) {
