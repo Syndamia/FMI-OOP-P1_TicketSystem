@@ -41,8 +41,8 @@ void command_freeSeats() {
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	DateTime dt;
 	inputBox("Enter event date and time: ", &dt);
-	printSuccess("Number of free seats: ");
-	print()
+	print("Number of free seats: ");
+	printLine(v->get_es().queryFreeSeats(name, dt));
 }
 
 void command_reserveTicket() {
