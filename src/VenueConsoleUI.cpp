@@ -33,11 +33,11 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 /* Ticket Management */
 
 void command_freeSeats() {
-	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	Date date;
-	inputBox("Enter event date: ", &date);
-	print("Number of free seats: ");
+	// char name[MAX_LINE_WIDTH];
+	// inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	// Date date;
+	// inputBox("Enter event date: ", &date);
+	// print("Number of free seats: ");
 	// printLine(v->get_es().queryFreeSeats(name, date));
 }
 
