@@ -6,7 +6,7 @@
 Venue v;
 
 void command_newEvent() {
-	
+	String name;
 	v.es.createEvent();
 }
 

@@ -45,11 +45,14 @@ void resetOrderedList(int starter = 1) {
 }
 
 template <typename T>
-T inputBox(const char* label) {
-	print(label);
-	T temp;
-	std::cin >> temp;
-	return temp;
+void inputBox(T* output, const char* label) {
+	std::cout << "+ " << label;
+	std::cin >> output;
+}
+
+void inputStrBox(char* output, unsigned maxLength, const char* label) {
+	std::cout << "+ " << label;
+	std::cin.getline(output, maxLength);
 }
 
 #endif
