@@ -28,3 +28,8 @@ unsigned Hall::get_seatsPerRow() const {
 void Hall::set_seatsPerRow(unsigned seatsPerRow) {
 	this->seatsPerRow = seatsPerRow;
 }
+
+int Hall::compare(const Hall& other) {
+	// TODO: compare seats and rows
+	return (index > other.get_index()) - (index < other.get_index());
+}
