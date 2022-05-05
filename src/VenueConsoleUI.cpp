@@ -38,7 +38,6 @@ void command_freeSeats() {
 void command_reserveTicket() {
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	std::cin.ignore();
 	Date date;
 	inputBox("Enter event date: ", &date);
 	char password[PASSWORD_LEN];
@@ -77,7 +76,6 @@ void command_createEvent() {
 	
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	std::cin.ignore();
 	Date date;
 	inputBox("Enter event date and time: ", &date);
 	

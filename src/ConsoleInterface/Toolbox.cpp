@@ -16,6 +16,7 @@ void _printInputBoxLabel(const char* label) {
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth) {
 	_printInputBoxLabel(label);
+	std::cin.ignore();
 	std::cin.getline(output, maxWidth);
 }
 
