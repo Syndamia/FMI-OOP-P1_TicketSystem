@@ -17,6 +17,14 @@ void Menu::addCommand(const Command& command) {
 	menuOptions.add(command);
 }
 
+bool error = false;
+String errMessage;
+
+void Menu::registerError(const char* message) {
+	error = true;
+	errMessage = message;
+}
+
 void Menu::navigate() const {
 	if (menuOptions.get_count() == 0) {
 		printLine("Menu is empty!");
@@ -24,7 +32,6 @@ void Menu::navigate() const {
 	}
 
 	unsigned buffer = 1; // We immedeately read the value of buffer, so this is fine
-	bool error = false;
 
 	while (buffer != 0) {
 		printTitle(title);
@@ -35,7 +42,7 @@ void Menu::navigate() const {
 			printOrderedListElem(menuOptions[i].get_nameInMenu());
 
 		if (error) {
-			printError("Invalid menu option!");
+			printError(errMessage.get_cstr());
 			error = false;
 		}
 

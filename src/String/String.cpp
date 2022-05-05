@@ -21,6 +21,10 @@ String::String(const char* str) {
 	strcpy(this->str, str);
 }
 
+const char* String::get_cstr() const {
+	return str;
+}
+
 String::String() : String("") {}
 
 String::String(const String& other) {

@@ -10,6 +10,7 @@ class String {
 
 public:
 	String(const char* str);
+	const char* get_cstr() const;
 
 	String();
 	String(const String& other);
