@@ -4,6 +4,8 @@
 #include "../String/String.h"
 #include <iostream>
 
+#define MAX_LINE_WIDTH 1024
+
 template <class T>
 void read(T* storage) {
 	std::cin >> storage;
@@ -46,15 +48,19 @@ void resetOrderedList(int starter = 1) {
 	orderedListIndex = starter;
 }
 
-template <typename T>
-void inputBox(T* output, const char* label) {
+void inputBoxLabel(const char* label) {
 	std::cout << "+ " << label;
+}
+
+template <typename T>
+void inputBox(const char* label, T* output) {
+	inputBoxLabel(label);
 	std::cin >> output;
 }
 
-void inputStrBox(char* output, unsigned maxLength, const char* label) {
-	std::cout << "+ " << label;
-	std::cin.getline(output, maxLength);
+void inputLineBox(const char* label, char* output, unsigned maxWidth) {
+	inputBoxLabel(label);
+	std::cin.getline(output, maxWidth);
 }
 
 #endif

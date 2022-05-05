@@ -6,8 +6,9 @@
 Venue v;
 
 void command_newEvent() {
-	String name;
-	inputStrBox(name, 1024, "Enter event name: ");
+	char name[MAX_LINE_WIDTH];
+	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	
 	v.es.createEvent();
 }
 
