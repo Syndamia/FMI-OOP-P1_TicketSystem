@@ -26,8 +26,12 @@ public:
 	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, const Ticket& ticket);
 
 	StatusCode cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn);
+	StatusCode cancelTicketReservation(const char* name, const Date& date, const Ticket& ticket);
+
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat);
+	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket);
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password);
+	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password);
 
 	List<Ticket> queryFreeTickets(const char* name, const Date& date);
 	void queryReservations(unsigned eventIndex);

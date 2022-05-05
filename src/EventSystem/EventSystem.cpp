@@ -66,28 +66,39 @@ StatusCode EventSystem::reserveTicket(const char* name, const Date& date, const 
 }
 
 StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn) {
+	return cancelTicketReservation(name, date, Ticket(seatRow, seatColumn));
+}
+
+StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& date, const Ticket& ticket) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
 	
-	return events[ind].cancelReservation(seatRow, seatColumn);
+	return events[ind].cancelReservation(ticket);
 }
 
 StatusCode EventSystem::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat) {
-	unsigned ind = indexOfEvent(name, date);
-	if (ind == events.get_count())
-		return E_EventDoesNotExist;
-
-	return events[ind].buyTicket(Ticket(row, seat));
+	return buyTicket(name, date, Ticket(row, seat));
 }
 
-
-StatusCode EventSystem::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password) {
+StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Ticket& ticket) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
 
-	return events[ind].buyTicketFromReservation(Reservation(Ticket(row, seat)), password);
+	return events[ind].buyTicket(ticket);
+}
+
+StatusCode EventSystem::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password) {
+	return buyTicket(name, date, Ticket(row, seat), password);
+}
+
+StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return E_EventDoesNotExist;
+
+	return events[ind].buyTicketFromReservation(Reservation(ticket), password);
 }
 
 List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& date) {
