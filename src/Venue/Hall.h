@@ -18,6 +18,8 @@ public:
 
 	unsigned get_seatsPerRow() const;
 	void set_seatsPerRow(unsigned seatsPerRow);
+
+	int compare(const Hall& other);
 };
 
 #endif
