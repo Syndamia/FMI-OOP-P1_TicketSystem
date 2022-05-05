@@ -22,7 +22,7 @@ public:
 	StatusCode createEvent(const Hall* hall, String name, Date date);
 	StatusCode cancelEvent(const char* name, const Date& date);
 
-	StatusCode reserveTicket(const char* name, const Date& date, char* note, unsigned seatRow, unsigned seatColumn);
+	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn);
 	StatusCode cancelTicketReservation();
 	StatusCode buyTicket();
 
