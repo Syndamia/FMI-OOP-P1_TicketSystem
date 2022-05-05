@@ -63,4 +63,12 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth) {
 	std::cin.getline(output, maxWidth);
 }
 
+void printTitle(const char* title) {
+	std::cout << "## " << title << " ##";
+}
+
+void printError(const char* message) {
+	std::cout << "! Err: " << message;
+}
+
 #endif
