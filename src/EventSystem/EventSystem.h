@@ -23,6 +23,8 @@ public:
 	StatusCode cancelEvent(const char* name, const Date& date);
 
 	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn);
+	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, const Ticket& ticket);
+
 	StatusCode cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn);
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat);
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password);

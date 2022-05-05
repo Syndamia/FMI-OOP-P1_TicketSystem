@@ -46,12 +46,10 @@ void command_reserveTicket() {
 	inputBox("Enter password [Max 8 characters]: ", &password);
 	char note[NOTE_LEN];
 	inputBox("Enter note [Max 32 characters]: ", &note);
-	unsigned row;
-	inputBox("Enter row: ", &row);
-	unsigned seat;
-	inputBox("Enter seat: ", &seat);
+	Ticket tic;
+	inputBox("Enter row and seat: ", &tic);
 
-	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, row, seat), ticketManagementMenu);
+	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, tic), ticketManagementMenu);
 }
 
 void command_cancelReservation() {

@@ -30,3 +30,16 @@ int Ticket::compare(const Ticket& other) const {
 		return (seat > other.seat) - (other.seat < seat);
 	return (row > other.row) - (other.row < row);
 }
+
+/* General */
+
+std::istream& operator>>(std::istream& istr, Ticket& ticket) {
+	unsigned row, seat;
+	istr >> row >> seat;
+	ticket = Ticket(row, seat);
+	return istr;
+}
+
+std::ostream& operator<<(std::ostream& ostr, const Ticket& ticket) {
+	return ostr << ticket.get_row() << " " << ticket.get_seat();
+}

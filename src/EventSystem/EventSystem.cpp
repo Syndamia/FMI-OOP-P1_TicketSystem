@@ -54,11 +54,15 @@ StatusCode EventSystem::cancelEvent(const char* name, const Date& date) {
 }
 
 StatusCode EventSystem::reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn) {
+	return reserveTicket(name, date, password, note, Ticket(seatRow, seatColumn));
+}
+
+StatusCode EventSystem::reserveTicket(const char* name, const Date& date, const char* password, const char* note, const Ticket& ticket) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
 
-	return events[ind].reserveTicket(Ticket(seatRow, seatColumn), password, note);
+	return events[ind].reserveTicket(ticket, password, note);
 }
 
 StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn) {
