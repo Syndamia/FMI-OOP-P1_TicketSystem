@@ -29,8 +29,11 @@ void Menu::navigate() const {
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
+		buffer++;
 
-		if (++buffer > 0)
-			menuOptions[buffer - 1].run();
+		if (buffer - 2 > menuOptions.get_count())
+			printError("Invalid menu option!");
+		else
+			menuOptions[buffer - 2].run();
 	}
 }

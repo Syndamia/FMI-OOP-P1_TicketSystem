@@ -10,12 +10,12 @@ void _printOrderedListBeginning() {
 	std::cout << orderedListIndex++ << ". ";
 }
 
-void inputBoxLabel(const char* label) {
+void _printInputBoxLabel(const char* label) {
 	std::cout << "+ " << label;
 }
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth) {
-	inputBoxLabel(label);
+	_printInputBoxLabel(label);
 	std::cin.getline(output, maxWidth);
 }
 

@@ -46,11 +46,11 @@ void printOrderedListElem(const T& elem) {
 
 void resetOrderedList(int starter = 1);
 
-void inputBoxLabel(const char* label);
+void _printInputBoxLabel(const char* label);
 
 template <typename T>
 void inputBox(const char* label, T* output) {
-	inputBoxLabel(label);
+	_printInputBoxLabel(label);
 	std::cin >> *output;
 }
 
