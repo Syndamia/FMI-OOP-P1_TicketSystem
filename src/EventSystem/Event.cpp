@@ -55,7 +55,7 @@ StatusCode Event::buyTicketFromReservation(const Reservation& reservation, const
 	unsigned resInd = reservations.findIndex(reservation);
 	if (resInd == reservations.get_count()) return E_ReservationDoesNotExist;
 
-	if (!reservation.validPassword(password)) return E_WrongReservationPassword;
+	if (!reservations[resInd].validPassword(password)) return E_WrongReservationPassword;
 
 	reservations.removeAt(resInd);
 	tickets.insert(reservation.get_ticket());
