@@ -16,6 +16,7 @@ public:
 	void addCommand(const Command& command);
 
 	void registerError(const char* message) const;
+	void registerWarning(const char* message) const;
 	void registerSuccess(const char* message) const;
 	void navigate() const;
 };

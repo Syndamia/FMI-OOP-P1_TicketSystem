@@ -17,20 +17,28 @@ void Menu::addCommand(const Command& command) {
 	menuOptions.add(command);
 }
 
-bool error = false;
-String errMessage;
+enum MessageType {
+	NoPrint,
+	Success,
+	Warning,
+	Error,
+};
+String msg;
+MessageType msgType;
 
 void Menu::registerError(const char* message) const {
-	error = true;
-	errMessage = message;
+	msg = message;
+	msgType = Error;
 }
 
-bool success = false;
-String succMessage;
+void Menu::registerWarning(const char* message) const {
+	msg = message;
+	msgType = Warning;
+}
 
 void Menu::registerSuccess(const char* message) const {
-	success = true;
-	succMessage = message;
+	msg = message;
+	msgType = Success;
 }
 
 void Menu::navigate() const {
@@ -49,13 +57,13 @@ void Menu::navigate() const {
 		for (unsigned i = 0; i < menuOptions.get_count(); i++)
 			printOrderedListElem(menuOptions[i].get_nameInMenu());
 
-		if (error) {
-			printError(errMessage.get_cstr());
-			error = false;
-		}
-		if (success) {
-			printSuccess(succMessage.get_cstr());
-			success = false;
+		if (msgType != NoPrint) {
+			switch(msgType) {
+				case Error: printError(msg.get_cstr()); break;
+				case Warning: printWarning(msg.get_cstr()); break;
+				case Success: printSuccess(msg.get_cstr()); break;
+			}
+			msgType = NoPrint;
 		}
 
 		_printInputBoxLabel("Execute No [0-");

@@ -14,6 +14,8 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 	switch (sc) {
 		case Success:
 			menu.registerSuccess("Success!"); break;
+		case W_TicketHadNotBeenReserved:
+			menu.registerWarning("Ticket hadn't been reserved. Nothing changed."); break;
 		case E_EventDoesNotExist: 
 			menu.registerError("Event doesn't exist!"); break;
 		case E_TicketAlreadyBought:
