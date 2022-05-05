@@ -57,16 +57,28 @@ void command_cancelReservation() {
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputBox("Enter event date: ", &date);
-	unsigned row;
-	inputBox("Enter row: ", &row);
-	unsigned seat;
-	inputBox("Enter seat: ", &seat);
+	Ticket tic;
+	inputBox("Enter row and seat: ", &tic);
 
-	handleStatusCode(v->get_es().cancelTicketReservation(name, date, row, seat), ticketManagementMenu);
+	handleStatusCode(v->get_es().cancelTicketReservation(name, date, tic), ticketManagementMenu);
 }
 
 void command_buyTicket() {
-
+	bool reserved;
+	inputBox("Is ticket reserved? [0/1]: ", &reserved);
+	char name[MAX_LINE_WIDTH];
+	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	Date date;
+	inputBox("Enter event date: ", &date);
+	Ticket tic;
+	inputBox("Enter row and seat: ", &tic);
+	if (reserved) {
+		char pass[PASSWORD_LEN];
+		inputLineBox("Enter reservation password: ", pass, PASSWORD_LEN);
+		handleStatusCode(v->get_es().buyTicket(name, date, tic, pass), ticketManagementMenu);
+	}
+	else
+		handleStatusCode(v->get_es().buyTicket(name, date, tic), ticketManagementMenu);
 }
 
 void submenu_ticketManagement() {
