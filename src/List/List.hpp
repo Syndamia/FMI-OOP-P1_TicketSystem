@@ -70,9 +70,11 @@ void List<T>::copyFrom(const List& other) {
 
 template <class T>
 List<T>::List(const T* elements, unsigned elementsCount) {
-	count = length = 0;
-	for (unsigned i = 0; i < elementsCount; i++)
-		add(elements[i]);
+	length = 8;
+	count = elementsCount;
+	this->elements = new T[length];
+	for (unsigned i = 0; i < count; i++)
+		this->elements[i] = elements[i];
 }
 
 template <class T>

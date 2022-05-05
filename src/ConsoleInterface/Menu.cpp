@@ -17,7 +17,7 @@ void Menu::navigate() const {
 		return;
 	}
 
-	resetOrderedList();
+	resetOrderedList(0);
 	printOrderedListElem("Go Back");
 	for (unsigned i = 0; i < menuOptions.get_count(); i++)
 		printOrderedListElem(menuOptions[i].get_nameInMenu());
@@ -28,9 +28,8 @@ void Menu::navigate() const {
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
+
+		if (buffer == 0) return;
+		menuOptions[buffer].run();
 	}
-
-	if (buffer == 0) return;
-
-	menuOptions[buffer - 1].run();
 }
