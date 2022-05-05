@@ -2,6 +2,7 @@
 #include "String/String.h"
 #include "Date/Date.h"
 #include "EventSystem/StatusCodes.h"
+#include "EventSystem/Reservation.h"
 #include "EventSystem/EventSystem.h"
 #include "ConsoleInterface/Menu.h"
 #include "ConsoleInterface/Toolbox.hpp"
@@ -12,6 +13,7 @@ Menu mainMenu("FMI Ticket System"), ticketManagementMenu("Ticket management"), e
 void handleStatusCode(StatusCode sc) {
 	switch (sc) {
 		case Success: printSuccess("Success!"); break;
+		case E_EventDoesNotExist: printError("Event doesn't exist!");
 		default: break;
 	}
 }
@@ -50,6 +52,16 @@ void command_reserveTicket() {
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputBox("Enter event date: ", &date);
+	char password[PASSWORD_LEN];
+	inputBox("Enter password [Max 8 characters]: ", &password);
+	char note[NOTE_LEN];
+	inputBox("Enter note [Max 32 characters]: ", &note);
+	unsigned row;
+	inputBox("Enter row: ", &row);
+	unsigned seat;
+	inputBox("Enter seat: ", &seat);
+
+	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, row, seat));
 }
 
 void command_cancelReservation() {

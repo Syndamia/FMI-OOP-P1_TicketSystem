@@ -5,10 +5,13 @@
 #include <istream>
 #include <ostream>
 
+#define PASSWORD_LEN 8
+#define NOTE_LEN 32
+
 class Reservation {
 	Ticket ticket;
-	char password[8];
-	char note[32];
+	char password[PASSWORD_LEN];
+	char note[NOTE_LEN];
 
 public:
 	Reservation();
