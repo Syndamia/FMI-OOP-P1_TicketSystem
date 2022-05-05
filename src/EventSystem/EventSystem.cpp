@@ -54,7 +54,10 @@ StatusCode EventSystem::cancelEvent(const char* name, const Date& date) {
 }
 
 StatusCode EventSystem::reserveTicket(const char* name, const Date& date, char* note, unsigned seatRow, unsigned seatColumn) {
-	
+	unsigned ei = indexOfEvent(name, date);
+	if (ei == events.get_count())
+		return E_EventDoesNotExist;
+
 }
 
 List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& dt) {

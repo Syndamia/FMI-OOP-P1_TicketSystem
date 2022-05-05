@@ -35,6 +35,7 @@ public:
 	StatusCode buyTicketFromReservation(const Reservation& reservation, const char* password);
 
 	bool ticketIsFree(unsigned row, unsigned seat);
+	bool ticketIsFree(const Ticket& ticket);
 
 	int compare(const Event& other);
 };
