@@ -23,3 +23,10 @@ StatusCode EventSystem::createEvent(const Hall* hall, String name, DateTime time
 	events.insert(Event(hall, name, time));
 	return Success;
 }
+
+unsigned EventSystem::queryFreeSeats(const char* name, const DateTime& dt) {
+	unsigned index = events.get_count();
+	for (unsigned i = 0; i < events.get_count(); i++) {
+		if (events[i].)
+	}
+}
