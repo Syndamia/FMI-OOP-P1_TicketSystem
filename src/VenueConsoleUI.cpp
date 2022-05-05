@@ -133,6 +133,12 @@ void init() {
 	ticketManagementMenu.addCommand(Command("Buy Ticket", command_buyTicket));
 
 	eventManagementMenu.addCommand(Command("Create Event", command_createEvent));
+	eventManagementMenu.addCommand(Command("Cancel Event", command_cancelEvent));
+	eventManagementMenu.addCommand(Command("Query - Most Watched", command_mostWatched));
+	eventManagementMenu.addCommand(Command("Query - Below 10% watchers", command_belowWatchers));
+
+	reportsMenu.addCommand(Command("Reservations List"), command_reservationsList);
+	reportsMenu.addCommand(Command("Bought Tickets"), command_boughtTickets);
 }
 
 void runUI(Venue& venue) {
