@@ -29,7 +29,7 @@ void command_newEvent() {
 	DateTime dt;
 	inputBox("Enter event date and time: ", &dt);
 	
-	handleStatusCode(v->get_es().createEvent(&v.get_halls()[hallIndex], name, dt));
+	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, dt));
 }
 
 /* Ticket Management */

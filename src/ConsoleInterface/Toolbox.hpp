@@ -36,17 +36,15 @@ void printLine(const T& item) {
 	std::cout << item << std::endl;
 }
 
-int orderedListIndex = 1;
+void _printOrderedListBeginning();
 
 template <typename T>
 void printOrderedListElem(const T& elem) {
-	std::cout << orderedListIndex << ". ";
+	_printOrderedListBeginning();
 	printLine(elem);
 }
 
-void resetOrderedList(int starter = 1) {
-	orderedListIndex = starter;
-}
+void resetOrderedList(int starter);
 
 void inputBoxLabel(const char* label) {
 	std::cout << "+ " << label;
