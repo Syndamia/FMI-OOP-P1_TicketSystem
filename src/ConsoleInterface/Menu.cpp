@@ -12,16 +12,19 @@ void Menu::navigate() const {
 	}
 
 	resetOrderedList();
+	printOrderedListElem("Go Back");
 	for (unsigned i = 0; i < menuOptions.get_count(); i++)
 		printOrderedListElem(menuOptions[i].get_nameInMenu());
 
-	unsigned buffer = 0;
-	while (0 == buffer || buffer >= menuOptions.get_count()) {
-		print("Execute No [1-");
+	int buffer = -1;
+	while (buffer < 0 || buffer >= menuOptions.get_count()) {
+		print("Execute No [0-");
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
 	}
+
+	if (buffer == 0) return;
 
 	menuOptions[buffer - 1].run();
 }
