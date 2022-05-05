@@ -63,6 +63,14 @@ StatusCode EventSystem::reserveTicket(const char* name, const Date& date, const 
 	return events[ind].reserveTicket(Ticket(seatRow, seatColumn), password, note);
 }
 
+StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return E_EventDoesNotExist;
+	
+	return events[ind].cancelReservation(seatRow, seatColumn);
+}
+
 List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& dt) {
 	unsigned ind = indexOfEvent(name, dt);
 

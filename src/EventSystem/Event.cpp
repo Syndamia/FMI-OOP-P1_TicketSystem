@@ -30,10 +30,14 @@ StatusCode Event::reserveTicket(const Ticket& ticket, const char* password, cons
 	return Success;
 }
 
+StatusCode Event::cancelReservation(unsigned row, unsigned seat) {
+	return cancelReservation(Ticket(row, seat));
+}
+
 StatusCode Event::cancelReservation(const Ticket& ticket) {
 	unsigned ind = reservations.findIndex(ticket);
 	if (ind == reservations.get_count())
-		return W_TicketWasNotReserved;
+		return W_TicketHadNotBeenReserved;
 
 	reservations.removeAt(ind);
 	return Success;

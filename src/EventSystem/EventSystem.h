@@ -23,7 +23,7 @@ public:
 	StatusCode cancelEvent(const char* name, const Date& date);
 
 	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn);
-	StatusCode cancelTicketReservation();
+	StatusCode cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn);
 	StatusCode buyTicket();
 
 	List<Ticket> queryFreeTickets(const char* name, const Date& dt);

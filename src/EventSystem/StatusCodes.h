@@ -5,7 +5,7 @@ enum StatusCode {
 	Success,
 
 
-	W_TicketWasNotReserved,
+	W_TicketHadNotBeenReserved,
 
 
 	E_Generic,

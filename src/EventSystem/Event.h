@@ -28,6 +28,7 @@ public:
 
 	StatusCode reserveTicket(const Ticket& ticket, const char* password, const char* note);
 
+	StatusCode cancelReservation(unsigned row, unsigned seat);
 	StatusCode cancelReservation(const Ticket& ticket);
 
 	StatusCode buyTicket(const Ticket& ticket);
