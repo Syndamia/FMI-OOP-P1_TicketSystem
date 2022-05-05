@@ -2,11 +2,13 @@
 #include "Toolbox.hpp"
 #include <cstring>
 
-Menu::Menu() : menuOptions() {
-	strcpy(title, "Menu");
+Menu::Menu() : Menu("Menu") {}
+
+Menu::Menu(const char* title) : menuOptions() {
+	strcpy(this->title, title);
 }
 
-Menu::Menu(const Command* commands, unsigned commandCount, const char* title) {
+Menu::Menu(const char* title, const Command* commands, unsigned commandCount) {
 	menuOptions = List<Command>(commands, commandCount);
 	strcpy(this->title, title);
 }

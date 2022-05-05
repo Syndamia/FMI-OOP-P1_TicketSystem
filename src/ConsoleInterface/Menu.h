@@ -10,7 +10,8 @@ class Menu {
 
 public:
 	Menu();
-	Menu(const Command* commands, unsigned commandCount, const char* title);
+	Menu(const char* title);
+	Menu(const char* title, const Command* commands, unsigned commandCount);
 
 	void addCommand(const Command& command);
 	void navigate() const;
