@@ -16,6 +16,8 @@ class Event {
 	String name;
 	const Hall* hall;
 
+	unsigned freeSeats;
+
 public:
 	Event();
 	Event(const Hall* hall, String name, Date date);
