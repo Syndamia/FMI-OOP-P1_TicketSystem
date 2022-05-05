@@ -25,7 +25,7 @@ public:
 	StatusCode buyTicket();
 
 	void queryUpcoming(unsigned hallIndex);
-	unsigned queryFreeSeats(unsigned eventIndex);
+	unsigned queryFreeSeats(const char* name, const DateTime& dt);
 	void queryReservations(unsigned eventIndex);
 	void queryBoughtTickets(DateTime start, DateTime end, unsigned hall);
 	void queryMostVisited();

@@ -37,7 +37,12 @@ void command_newEvent() {
 /* Ticket Management */
 
 void command_freeSeats() {
-
+	char name[MAX_LINE_WIDTH];
+	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	DateTime dt;
+	inputBox("Enter event date and time: ", &dt);
+	printSuccess("Number of free seats: ");
+	print()
 }
 
 void command_reserveTicket() {
