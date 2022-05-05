@@ -5,7 +5,9 @@
 #include "../List/List.hpp"
 
 class Menu {
+	char title[256];
 	List<Command> menuOptions;
+
 
 public:
 	Menu();
