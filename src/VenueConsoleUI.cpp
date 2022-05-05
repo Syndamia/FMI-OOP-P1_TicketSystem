@@ -24,24 +24,6 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 	}
 }
 
-void command_newEvent() {
-	printTitle("Creating new event");
-
-	unsigned hallIndex;
-	inputBox("Enter hall index: ", &hallIndex);
-	if (!v->hallExists(hallIndex)) {
-		printError("Invalid hall index!");
-		return;
-	}
-	
-	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	Date date;
-	inputBox("Enter event date and time: ", &date);
-	
-	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date), eventManagementMenu);
-}
-
 /* Ticket Management */
 
 void command_freeSeats() {
@@ -85,8 +67,26 @@ void submenu_ticketManagement() {
 
 /* Event Management */
 
-void submenu_eventManagement() {
+void command_createEvent() {
+	unsigned hallIndex;
+	inputBox("Enter hall index: ", &hallIndex);
+	if (!v->hallExists(hallIndex)) {
+		eventManagementMenu.registerError("Invalid hall index!");
+		return;
+	}
+	
+	char name[MAX_LINE_WIDTH];
+	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	std::cin.ignore();
+	Date date;
+	inputBox("Enter event date and time: ", &date);
+	
+	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date), eventManagementMenu);
+}
 
+
+void submenu_eventManagement() {
+	eventManagementMenu.navigate();
 }
 
 /* Report Management */
@@ -107,6 +107,8 @@ void init() {
 	ticketManagementMenu.addCommand(Command("Reserve Ticket", command_reserveTicket));
 	ticketManagementMenu.addCommand(Command("Cancel Ticket Reservation", command_cancelReservation));
 	ticketManagementMenu.addCommand(Command("Buy Ticket", command_buyTicket));
+
+	eventManagementMenu.addCommand(Command("Create Event", command_createEvent));
 }
 
 void runUI(Venue& venue) {
