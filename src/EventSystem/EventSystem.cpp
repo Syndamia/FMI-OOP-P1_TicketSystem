@@ -20,5 +20,6 @@ EventSystem::EventSystem(const Event* events, unsigned eventCount) {
 }
 
 StatusCode EventSystem::createEvent(const Hall* hall, String name, DateTime time) {
-
+	events.insert(Event(hall, name, time));
+	return Success;
 }

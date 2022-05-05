@@ -2,6 +2,10 @@
 
 Venue::Venue() : halls(), es() {}
 
+Venue::Venue(const Hall* halls, unsigned hallCount) : es() {
+	this->halls = List<Hall>(halls, hallCount);
+}
+
 Venue::Venue(const Hall* halls, unsigned hallCount, const EventSystem& es) {
 	this->halls = List<Hall>(halls, hallCount);
 	this->es = es;

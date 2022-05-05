@@ -27,6 +27,8 @@ public:
 	StatusCode buyTicket(const Ticket& ticket);
 
 	StatusCode buyTicketFromReservation(const Reservation& reservation, const char* password);
+
+	int compare(const Event& other);
 };
 
 #endif

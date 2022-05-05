@@ -45,3 +45,8 @@ StatusCode Event::buyTicketFromReservation(const Reservation& reservation, const
 	tickets.insert(reservation.get_ticket());
 	return Success;
 }
+
+int Event::compare(const Event& other) {
+	// TODO: improve
+	return name.compare(other.name);
+}
