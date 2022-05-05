@@ -7,11 +7,11 @@ void resetOrderedList(int starter) {
 }
 
 void _printOrderedListBeginning() {
-	std::cout << orderedListIndex++ << ". ";
+	std::cout << "[" << orderedListIndex++ << "] ";
 }
 
 void _printInputBoxLabel(const char* label) {
-	std::cout << "+ " << label;
+	std::cout << "<+> " << label;
 }
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth) {
@@ -20,14 +20,14 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth) {
 }
 
 void printTitle(const char* title) {
-	std::cout << "## " << title << " ##" << std::endl;
+	std::cout << std::endl << "### " << title << " ###" << std::endl<< std::endl;
 }
 
 void printSuccess(const char* message) {
-	std::cout << ") " << message << std::endl;
+	std::cout << "... " << message << std::endl;
 }
 
 void printError(const char* message) {
-	std::cout << "! Err: " << message << std::endl;
+	std::cout << "!!! Err: " << message << std::endl;
 }
 

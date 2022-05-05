@@ -1,10 +1,14 @@
 #include "Menu.h"
 #include "Toolbox.hpp"
+#include <cstring>
 
-Menu::Menu() : menuOptions() {}
+Menu::Menu() : menuOptions() {
+	strcpy(title, "Menu");
+}
 
-Menu::Menu(const Command* commands, unsigned commandCount) {
+Menu::Menu(const Command* commands, unsigned commandCount, const char* title) {
 	menuOptions = List<Command>(commands, commandCount);
+	strcpy(this->title, title);
 }
 
 void Menu::addCommand(const Command& command) {
@@ -20,6 +24,8 @@ void Menu::navigate() const {
 	unsigned buffer = 1; // We immedeately read the value of buffer, so this is fine
 
 	while (buffer != 0) {
+		printTitle(title);
+
 		resetOrderedList(0);
 		printOrderedListElem("Go Back");
 		for (unsigned i = 0; i < menuOptions.get_count(); i++)
