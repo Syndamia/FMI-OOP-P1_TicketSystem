@@ -30,23 +30,23 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth) {
 	std::cin.getline(output, maxWidth);
 }
 
-void title(const char* title) {
+void titleBox(const char* title) {
 	std::cout << std::endl << "### " << title << " ###" << std::endl;
 }
 
-void printSubTitle(const char* title) {
+void subTitleBox(const char* title) {
 	std::cout << std::endl << "+#+ " << title << " +#+" << std::endl;
 }
 
-void success(const char* message) {
+void successBox(const char* message) {
 	std::cout << "<S> " << message << std::endl;
 }
 
-void warning(const char* message) {
+void warningBox(const char* message) {
 	std::cout << "<W> " << message << std::endl;
 }
 
-void error(const char* message) {
+void errorBox(const char* message) {
 	std::cout << "<E> " << message << std::endl;
 }
 

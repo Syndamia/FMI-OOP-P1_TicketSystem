@@ -2,13 +2,17 @@
 #include "Toolbox.hpp"
 #include <cstring>
 
-Menu::Menu() : Menu("Menu") {}
+Menu::Menu() : Menu("Menu", false, false) {}
 
-Menu::Menu(const char* title) : menuOptions() {
+Menu::Menu(const char* title, bool backExistsApp, bool isSubMenu) : menuOptions() {
+	this->backExistsApp = backExistsApp;
+	this->isSubMenu = isSubMenu;
 	strcpy(this->title, title);
 }
 
-Menu::Menu(const char* title, const Command* commands, unsigned commandCount) {
+Menu::Menu(const char* title, bool backExistsApp, bool isSubMenu, const Command* commands, unsigned commandCount) {
+	this->backExistsApp = backExistsApp;
+	this->isSubMenu = isSubMenu;
 	menuOptions = List<Command>(commands, commandCount);
 	strcpy(this->title, title);
 }
@@ -51,17 +55,25 @@ void Menu::navigate() const {
 
 	while (buffer != 0) {
 		clear();
-		title(title);
+		if (isSubMenu)
+			subTitleBox(title);
+		else
+			titleBox(title);
+
 		switch(msgType) {
-			case Error: error(msg.get_cstr()); msgType = NoPrint; break;
-			case Warning: warning(msg.get_cstr()); msgType = NoPrint; break;
-			case Success: success(msg.get_cstr()); msgType = NoPrint; break;
+			case Error: errorBox(msg.get_cstr()); msgType = NoPrint; break;
+			case Warning: warningBox(msg.get_cstr()); msgType = NoPrint; break;
+			case Success: successBox(msg.get_cstr()); msgType = NoPrint; break;
 			case NoPrint: printLine(""); break;
 		}
 		printLine("");
 
 		resetOrderedList(0);
-		printOrderedListElem("Go Back");
+		if (backExistsApp)
+			printOrderedListElem("Exit");
+		else
+			printOrderedListElem("Go Back");
+
 		for (unsigned i = 0; i < menuOptions.get_count(); i++)
 			printOrderedListElem(menuOptions[i].get_nameInMenu());
 

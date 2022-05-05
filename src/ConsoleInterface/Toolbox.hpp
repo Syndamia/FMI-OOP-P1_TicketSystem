@@ -7,11 +7,12 @@
 #define MAX_LINE_WIDTH 1024
 
 void clear();
-void title(const char* title);
-void printSubTitle(const char* title);
-void success(const char* message);
-void warning(const char* message);
-void error(const char* message);
+void titleBox(const char* title);
+void subTitleBox(const char* title);
+
+void successBox(const char* message);
+void warningBox(const char* message);
+void errorBox(const char* message);
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth);
 void resetOrderedList(int starter = 1);
