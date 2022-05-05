@@ -108,6 +108,17 @@ void command_createEvent() {
 	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date), eventManagementMenu);
 }
 
+void command_cancelEvent() {
+
+}
+
+void command_mostWatched() {
+
+}
+
+void command_belowWatchers() {
+
+}
 
 void submenu_eventManagement() {
 	eventManagementMenu.navigate();
@@ -115,8 +126,16 @@ void submenu_eventManagement() {
 
 /* Report Management */
 
-void submenu_reportManagement() {
+void command_reservationsList() {
 
+}
+
+void command_boughtTickets() {
+
+}
+
+void submenu_reportManagement() {
+	reportsMenu.navigate();
 }
 
 /* Main */
@@ -137,8 +156,8 @@ void init() {
 	eventManagementMenu.addCommand(Command("Query - Most Watched", command_mostWatched));
 	eventManagementMenu.addCommand(Command("Query - Below 10% watchers", command_belowWatchers));
 
-	reportsMenu.addCommand(Command("Reservations List"), command_reservationsList);
-	reportsMenu.addCommand(Command("Bought Tickets"), command_boughtTickets);
+	reportsMenu.addCommand(Command("Reservations List", command_reservationsList));
+	reportsMenu.addCommand(Command("Bought Tickets", command_boughtTickets));
 }
 
 void runUI(Venue& venue) {

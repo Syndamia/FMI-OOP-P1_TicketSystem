@@ -7,6 +7,18 @@
 #define MAX_LINE_WIDTH 1024
 
 void clear();
+void title(const char* title);
+void printSubTitle(const char* title);
+void success(const char* message);
+void warning(const char* message);
+void error(const char* message);
+
+void inputLineBox(const char* label, char* output, unsigned maxWidth);
+void resetOrderedList(int starter = 1);
+
+void _printInputBoxLabel(const char* label);
+void _printAltInputBoxLabel(const char* label);
+void _printOrderedListBeginning();
 
 template <class T>
 void read(T* storage) {
@@ -38,7 +50,6 @@ void printLine(const T& item) {
 	std::cout << item << std::endl;
 }
 
-void _printOrderedListBeginning();
 
 template <typename T>
 void printOrderedListElem(const T& elem) {
@@ -46,22 +57,10 @@ void printOrderedListElem(const T& elem) {
 	printLine(elem);
 }
 
-void resetOrderedList(int starter = 1);
-
-void _printInputBoxLabel(const char* label);
-void _printAltInputBoxLabel(const char* label);
-
 template <typename T>
 void inputBox(const char* label, T* output) {
 	_printInputBoxLabel(label);
 	std::cin >> *output;
 }
-
-void inputLineBox(const char* label, char* output, unsigned maxWidth);
-
-void printTitle(const char* title);
-void printSuccess(const char* message);
-void printWarning(const char* message);
-void printError(const char* message);
 
 #endif

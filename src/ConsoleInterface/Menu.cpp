@@ -51,11 +51,11 @@ void Menu::navigate() const {
 
 	while (buffer != 0) {
 		clear();
-		printTitle(title);
+		title(title);
 		switch(msgType) {
-			case Error: printError(msg.get_cstr()); msgType = NoPrint; break;
-			case Warning: printWarning(msg.get_cstr()); msgType = NoPrint; break;
-			case Success: printSuccess(msg.get_cstr()); msgType = NoPrint; break;
+			case Error: error(msg.get_cstr()); msgType = NoPrint; break;
+			case Warning: warning(msg.get_cstr()); msgType = NoPrint; break;
+			case Success: success(msg.get_cstr()); msgType = NoPrint; break;
 			case NoPrint: printLine(""); break;
 		}
 		printLine("");
