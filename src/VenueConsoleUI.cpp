@@ -69,7 +69,7 @@ void submenu_reportManagement() {
 
 /* Main */
 
-Menu mainMenu, ticketManagementMenu, eventManagementMenu, reportsMenu;
+Menu mainMenu("FMI Ticket System"), ticketManagementMenu("Ticket management"), eventManagementMenu("Event management"), reportsMenu("Report management");
 
 void init() {
 	mainMenu.addCommand(Command("Ticket Management", submenu_ticketManagement));
