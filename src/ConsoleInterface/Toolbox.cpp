@@ -11,7 +11,7 @@ void _printOrderedListBeginning() {
 }
 
 void _printInputBoxLabel(const char* label) {
-	std::cout << "<+> " << label;
+	std::cout << "(+) " << label;
 }
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth) {
@@ -29,7 +29,7 @@ void printSuccess(const char* message) {
 }
 
 void printWarning(const char* message) {
-	std::cout << "<W>" << message << std::endl;
+	std::cout << "<W> " << message << std::endl;
 }
 
 void printError(const char* message) {

@@ -20,4 +20,7 @@ public:
 	int compare(const Ticket& other) const;
 };
 
+std::istream& operator>>(std::istream& istr, Ticket& ticket);
+std::ostream& operator<<(std::ostream& ostr, const Ticket& ticket);
+
 #endif
