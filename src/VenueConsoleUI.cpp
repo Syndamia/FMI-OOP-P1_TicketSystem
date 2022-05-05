@@ -22,6 +22,10 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 			menu.registerError("Ticket was already bought!"); break;
 		case E_TicketAlreadyReserved:
 			menu.registerError("Ticket was already reserved!"); break;
+		case E_ReservationDoesNotExist:
+			menu.registerError("Reservation doesn't exist!"); break;
+		case E_WrongReservationPassword:
+			menu.registerError("Wrong reservation password!"); break;
 		default: break;
 	}
 }
@@ -72,6 +76,7 @@ void command_buyTicket() {
 	inputBox("Enter event date: ", &date);
 	Ticket tic;
 	inputBox("Enter row and seat: ", &tic);
+
 	if (reserved) {
 		char pass[PASSWORD_LEN];
 		inputLineBox("Enter reservation password: ", pass, PASSWORD_LEN);
