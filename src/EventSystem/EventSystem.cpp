@@ -6,6 +6,14 @@ void EventSystem::updateSoonestUpcoming() {
 	
 }
 
+unsigned EventSystem::indexOfEvent(const char* name, const Date& dt) {
+	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
+		if (events[i].get_date().compare(dt) == 0 && events[i].get_name().compare(name) == 0)
+			return i;
+	}
+	return events.get_count();
+}
+
 /* Public */
 
 EventSystem::EventSystem() {
@@ -24,15 +32,12 @@ StatusCode EventSystem::createEvent(const Hall* hall, String name, Date date) {
 	return Success;
 }
 
-unsigned EventSystem::queryFreeSeats(const char* name, const Date& dt) {
-	unsigned index = events.get_count();
-	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
-		if (events[i].get_date().compare(dt) == 0 && events[i].get_name().compare(name) == 0) {
-			index = i;
-			break;
-		}
+List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& dt) {
+	List<Ticket> freeTickets();
+	unsigned ind = indexOfEvent(name, dt);
+
+	if (ind < events[ind].get_count()) {
+		
 	}
-	if (index == events.get_count())
-		return 0;
-	return events[index].queryFreeSeats();
+	return freeTickets;
 }
