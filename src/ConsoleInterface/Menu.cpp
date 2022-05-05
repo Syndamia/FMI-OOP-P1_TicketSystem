@@ -20,9 +20,17 @@ void Menu::addCommand(const Command& command) {
 bool error = false;
 String errMessage;
 
-void Menu::registerError(const char* message) {
+void Menu::registerError(const char* message) const {
 	error = true;
 	errMessage = message;
+}
+
+bool success = false;
+String succMessage;
+
+void Menu::registerSuccess(const char* message) const {
+	success = true;
+	succMessage = message;
 }
 
 void Menu::navigate() const {
@@ -45,6 +53,10 @@ void Menu::navigate() const {
 			printError(errMessage.get_cstr());
 			error = false;
 		}
+		if (success) {
+			printSuccess(succMessage.get_cstr());
+			success = false;
+		}
 
 		_printInputBoxLabel("Execute No [0-");
 		print(menuOptions.get_count());
@@ -52,7 +64,7 @@ void Menu::navigate() const {
 		read(buffer);
 
 		if (buffer > menuOptions.get_count())
-			error = true;
+			registerError("Invalid menu option!");
 		else if (buffer > 0)
 			menuOptions[buffer - 1].run();
 	}

@@ -14,7 +14,9 @@ public:
 	Menu(const char* title, const Command* commands, unsigned commandCount);
 
 	void addCommand(const Command& command);
-	void registerError(const char* message);
+
+	void registerError(const char* message) const;
+	void registerSuccess(const char* message) const;
 	void navigate() const;
 };
 

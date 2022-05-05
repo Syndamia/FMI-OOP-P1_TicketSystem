@@ -10,10 +10,16 @@
 Venue* v;
 Menu mainMenu("FMI Ticket System"), ticketManagementMenu("Ticket management"), eventManagementMenu("Event management"), reportsMenu("Report management");
 
-void handleStatusCode(StatusCode sc) {
+void handleStatusCode(StatusCode sc, Menu menu) {
 	switch (sc) {
-		case Success: printSuccess("Success!"); break;
-		case E_EventDoesNotExist: printError("Event doesn't exist!");
+		case Success:
+			menu.registerSuccess("Success!"); break;
+		case E_EventDoesNotExist: 
+			menu.registerError("Event doesn't exist!"); break;
+		case E_TicketAlreadyBought:
+			menu.registerError("Ticket was already bought!"); break;
+		case E_TicketAlreadyReserved:
+			menu.registerError("Ticket was already reserved!"); break;
 		default: break;
 	}
 }
@@ -33,7 +39,7 @@ void command_newEvent() {
 	Date date;
 	inputBox("Enter event date and time: ", &date);
 	
-	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date));
+	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date), eventManagementMenu);
 }
 
 /* Ticket Management */
@@ -62,7 +68,7 @@ void command_reserveTicket() {
 	unsigned seat;
 	inputBox("Enter seat: ", &seat);
 
-	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, row, seat));
+	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, row, seat), ticketManagementMenu);
 }
 
 void command_cancelReservation() {
