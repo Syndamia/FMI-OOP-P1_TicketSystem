@@ -28,7 +28,7 @@ void command_newEvent() {
 	
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	DateTime dt;
+	Date dt;
 	inputBox("Enter event date and time: ", &dt);
 	
 	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, dt));
@@ -39,7 +39,7 @@ void command_newEvent() {
 void command_freeSeats() {
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	DateTime dt;
+	Date dt;
 	inputBox("Enter event date and time: ", &dt);
 	print("Number of free seats: ");
 	printLine(v->get_es().queryFreeSeats(name, dt));

@@ -2,9 +2,9 @@
 #include "Reservation.h"
 #include "StatusCodes.h"
 
-Event::Event() : Event(nullptr, "", DateTime()) {}
+Event::Event() : Event(nullptr, "", Date()) {}
 
-Event::Event(const Hall* hall, String name, DateTime time) : tickets(), reservations() {
+Event::Event(const Hall* hall, String name, Date time) : tickets(), reservations() {
 	this->hall = hall;
 	this->name = name;
 	this->time = time;

@@ -19,12 +19,12 @@ EventSystem::EventSystem(const Event* events, unsigned eventCount) {
 	updateSoonestUpcoming();
 }
 
-StatusCode EventSystem::createEvent(const Hall* hall, String name, DateTime time) {
+StatusCode EventSystem::createEvent(const Hall* hall, String name, Date time) {
 	events.insert(Event(hall, name, time));
 	return Success;
 }
 
-unsigned EventSystem::queryFreeSeats(const char* name, const DateTime& dt) {
+unsigned EventSystem::queryFreeSeats(const char* name, const Date& dt) {
 	unsigned index = events.get_count();
 	for (unsigned i = 0; i < events.get_count(); i++) {
 		if (events[i].)

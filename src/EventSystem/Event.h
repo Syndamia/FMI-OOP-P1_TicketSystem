@@ -12,13 +12,13 @@
 class Event {
 	OrderedList<Ticket> tickets;
 	OrderedList<Reservation> reservations;
-	DateTime time;
+	Date time;
 	String name;
 	const Hall* hall;
 
 public:
 	Event();
-	Event(const Hall* hall, String name, DateTime time);
+	Event(const Hall* hall, String name, Date time);
 
 	StatusCode reserveTicket(const Ticket& ticket, const char* password, const char* note);
 

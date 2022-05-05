@@ -17,7 +17,7 @@ public:
 	EventSystem();
 	EventSystem(const Event* events, unsigned eventCount);
 
-	StatusCode createEvent(const Hall* hall, String name, DateTime time);
+	StatusCode createEvent(const Hall* hall, String name, Date time);
 	StatusCode cancelEvent();
 
 	StatusCode reserveTicket(unsigned eventIndex, char* note, unsigned seatRow, unsigned seatColumn);
@@ -25,9 +25,9 @@ public:
 	StatusCode buyTicket();
 
 	void queryUpcoming(unsigned hallIndex);
-	unsigned queryFreeSeats(const char* name, const DateTime& dt);
+	unsigned queryFreeSeats(const char* name, const Date& dt);
 	void queryReservations(unsigned eventIndex);
-	void queryBoughtTickets(DateTime start, DateTime end, unsigned hall);
+	void queryBoughtTickets(Date start, Date end, unsigned hall);
 	void queryMostVisited();
 	void queryInsufficientlyVisited();
 	void reportReservations(unsigned eventIndex);
