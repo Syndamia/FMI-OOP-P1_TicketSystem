@@ -4,10 +4,18 @@
 
 Event::Event() : Event(nullptr, "", Date()) {}
 
-Event::Event(const Hall* hall, String name, Date time) : tickets(), reservations() {
+Event::Event(const Hall* hall, String name, Date date) : tickets(), reservations() {
 	this->hall = hall;
 	this->name = name;
-	this->time = time;
+	this->date = date;
+}
+
+const Stirng& Event::get_name() const {
+	return name;
+}
+
+const Date& Event::get_date() const {
+	return date;
 }
 
 StatusCode Event::reserveTicket(const Ticket& ticket, const char* password, const char* note) {

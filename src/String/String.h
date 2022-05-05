@@ -19,7 +19,7 @@ public:
 	String(String&& other);
 	String& operator=(String&& other);
 
-	int compare(const String& other);
+	int compare(const String& other) const;
 	char operator[](unsigned index);
 };
 
