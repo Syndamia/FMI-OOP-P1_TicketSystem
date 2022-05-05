@@ -14,6 +14,7 @@ class EventSystem {
 	void updateSoonestUpcoming();
 
 public:
+	EventSystem();
 	EventSystem(const Event* events, unsigned eventCount);
 
 	StatusCode createEvent();

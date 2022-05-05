@@ -1,9 +1,9 @@
 #ifndef HEADER_VENUE
 #define HEADER_VENUE
 
-#include "List/List.h"
+#include "../List/List.hpp"
 #include "Hall.h"
-#include "EventSystem/EventSystem.h"
+#include "../EventSystem/EventSystem.h"
 
 class Venue {
 	List<Hall> halls;
