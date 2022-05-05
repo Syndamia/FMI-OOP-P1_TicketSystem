@@ -11,7 +11,7 @@ public:
 	Menu();
 	Menu(const Command* commands, unsigned commandCount);
 
-	void addCommand(const Command* command);
+	void addCommand(const Command& command);
 	void navigate() const;
 };
 
