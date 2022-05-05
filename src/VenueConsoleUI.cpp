@@ -7,6 +7,7 @@
 #include "ConsoleInterface/Toolbox.hpp"
 
 Venue* v;
+Menu mainMenu("FMI Ticket System"), ticketManagementMenu("Ticket management"), eventManagementMenu("Event management"), reportsMenu("Report management");
 
 void handleStatusCode(StatusCode sc) {
 	switch (sc) {
@@ -52,7 +53,7 @@ void command_buyTicket() {
 }
 
 void submenu_ticketManagement() {
-	
+	ticketManagementMenu.navigate();
 }
 
 /* Event Management */
@@ -69,7 +70,6 @@ void submenu_reportManagement() {
 
 /* Main */
 
-Menu mainMenu("FMI Ticket System"), ticketManagementMenu("Ticket management"), eventManagementMenu("Event management"), reportsMenu("Report management");
 
 void init() {
 	mainMenu.addCommand(Command("Ticket Management", submenu_ticketManagement));
