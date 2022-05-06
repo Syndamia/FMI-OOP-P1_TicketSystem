@@ -32,6 +32,13 @@ void errorBox(const char* message) {
 	std::cout << "<E> " << message << std::endl;
 }
 
+void tableColumnHeader(unsigned start, unsigned end) {
+	if (end > start) return;
+
+	unsigned count = end - start;
+
+}
+
 void _printOrderedListBeginning() {
 	std::cout << "[" << orderedListIndex++ << "] ";
 }
