@@ -51,8 +51,8 @@ void command_freeSeats() {
 	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
 	char tableData[tableSize + 1];
 
-	for (unsigned ind = 0, row = 1; row < hall->get_rowCount(); row++) {
-		for (unsigned seat = 1; seat < hall->get_seatsPerRow(); seat++, ind++) {
+	for (unsigned ind = 0, row = 1; row <= hall->get_rowCount(); row++) {
+		for (unsigned seat = 1; seat <= hall->get_seatsPerRow(); seat++, ind++) {
 			if (tickets.contain(Ticket(row, seat)))
 				tableData[ind] = 'B';
 			else if (reservations.contain(Ticket(row, seat)))
@@ -71,12 +71,12 @@ void command_reserveTicket() {
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputBox("Enter event date: ", &date);
+	Ticket tic;
+	inputBox("Enter row and seat: ", &tic);
 	char password[PASSWORD_LEN];
 	inputBox("Enter password [Max 8 characters]: ", &password);
 	char note[NOTE_LEN];
 	inputBox("Enter note [Max 32 characters]: ", &note);
-	Ticket tic;
-	inputBox("Enter row and seat: ", &tic);
 
 	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, tic), ticketManagementMenu);
 }
