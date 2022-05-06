@@ -50,8 +50,13 @@ void command_freeSeats() {
 
 	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow(),
 			 nextTInd = 0, nextRInd = 0,
-			 nextT = (tickets[nextT].get_row() - 1) * hall->get_seatsPerRow() + tickets[nextT].get_seat() - 1,
+			 nextT = 0, nextR = 0;
+
+	if (tickets.get_count() > 0)
+		nextT = (tickets[nextT].get_row() - 1) * hall->get_seatsPerRow() + tickets[nextT].get_seat() - 1;
+	if (reservations.get_count() > 0)
 			 nextR = (reservations[nextR].get_ticket().get_row() - 1) * hall->get_seatsPerRow() + reservations[nextT].get_ticket().get_seat() - 1;
+
 	char tableData[tableSize + 1];
 	for (unsigned i = 0; i < tableSize; i++) {
 		if (nextTInd < tickets.get_count() && nextT == i) {
