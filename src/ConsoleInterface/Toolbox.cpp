@@ -37,6 +37,7 @@ void __printTableHeaderNumber(unsigned number) {
 }
 
 void __printTableColumnHeader(unsigned start, unsigned count) {
+	std::cout << ":   ";
 	for (unsigned i = 0; i < count; i++) {
 		std::cout << ":";
 		__printTableHeaderNumber(start++);
