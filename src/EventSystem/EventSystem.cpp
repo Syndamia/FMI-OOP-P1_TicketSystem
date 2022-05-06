@@ -118,3 +118,15 @@ StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Tick
 //
 // 	return freeTickets;
 // }
+
+List<Ticket> EventSystem::queryTickets(const char* name, const Date& date) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return E_EventDoesNotExist;
+
+	return events[ind].get_tickets();
+}
+
+List<Reservation> EventSystem::queryReservations(const char* name, const Date& date) {
+
+}

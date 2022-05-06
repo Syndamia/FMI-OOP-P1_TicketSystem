@@ -22,6 +22,8 @@ public:
 	Event();
 	Event(const Hall* hall, String name, Date date);
 
+	const OrderedList<Ticket>& get_tickets() const;
+	const OrderedList<Reservation>& get_reservations() const;
 	const Hall& get_hall() const;
 	const String& get_name() const;
 	const Date& get_date() const;
