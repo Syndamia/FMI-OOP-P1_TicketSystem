@@ -112,7 +112,9 @@ void command_cancelEvent() {
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date: ")
+	inputBox("Enter event date: ", &date);
+
+	handleStatusCode(v->get_es().cancelEvent(name, date), eventManagementMenu);
 }
 
 void command_mostWatched() {
