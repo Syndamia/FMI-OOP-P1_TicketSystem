@@ -1,4 +1,5 @@
 #include "VenueConsoleUI.h"
+#include "List/OrderedList.hpp"
 #include "String/String.h"
 #include "Date/Date.h"
 #include "EventSystem/StatusCodes.h"
@@ -33,13 +34,15 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 /* Ticket Management */
 
 void command_freeSeats() {
-	table(0, 11, " A B C D E F G ");
-	/*
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputBox("Enter event date: ", &date);
-	*/
+
+	OrderedList<Ticket> tickets = v->get_es().queryTickets(name, date);
+	OrderedList<Reservation> resevations = v->get_es().queryReservations(name, date);
+
+	table(0, 11, " A B C D E F G ");
 }
 
 void command_reserveTicket() {
