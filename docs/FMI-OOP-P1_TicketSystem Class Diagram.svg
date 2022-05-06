@@ -1,0 +1,538 @@
+<svg version="1.1" baseProfile="full" width="1278.0" height="886.0" viewbox="0 0 1278 886" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<title >FMI-OOP-P1_TicketSystem Class Diagram</title>
+	<desc >#title: FMI-OOP-P1_TicketSystem Class Diagram
+	#background: #fdf6e3
+	#bendSize: 0
+	#fillArrows: true
+	#lineWidth: 2
+	#leading: 1.3
+	#direction: right
+	
+	#.groupsfe: title=italic fill=#b2ee97 direction=down
+	#.groupv: title=italic fill=#97c8ee direction=down
+	#.groupsc: title=italic direction=down
+	
+	[&lt;groupsc&gt; Standard Classes
+		[List&lt;T&gt;|
+			- T* elements
+	    	- unsigned count
+	    	- unsigned length
+	        |
+	    	+ add(elem)
+	        + insertAt(elem, index)
+	        + removeAt(index)
+	        + findIndex(elem);
+			+ contain(elem);
+	    	+ operator\[\](index)
+		]
+	    
+	    [OrderedList&lt;T&gt;|
+	    	+ insert(elem)
+	        + remove(elem)
+	    ]
+	    [List&lt;T&gt;]&lt;--[OrderedList&lt;T&gt;]
+	
+		[DateTime|
+			- unsigned day
+	    	- unsigned month
+		    - int year
+	    	- unsigned hour
+	    	- unsigned minute
+		]
+	
+		[String|
+			- char* str
+		    - unsigned length
+	    	- unsigned count
+		]
+	
+		[Command|
+			- String name
+	    	- void (*exec)()
+		]
+	
+		[Menu|
+			- List&lt;Command&gt; _commands
+	        |
+	    	+ navigate()
+		]
+		[Command]&lt;--[Menu]
+	    
+	    [Toolbox.h|
+	    	read()
+	        print()
+	        printLine()
+	        printOrderedListElem()
+	        resetOrderedList()
+	    ]
+	    [Menu]-/-[Toolbox.h]
+	    
+	    [String]-/-[DateTime]
+	    [DateTime]-/-[List&lt;T&gt;]
+	]
+	
+	[&lt;groupv&gt; Venue
+		[Hall|
+			- int number
+		    - unsigned rowCount
+	    	- unsigned seatsPerRow
+		]
+	
+		[Venue|
+			- List&lt;Hall&gt; halls
+	    	- EventSystem es
+		]
+		[Hall]&lt;--[Venue]
+	]
+	[Standard Classes]-/-[Venue]
+	
+	[&lt;groupsfe&gt; System for events
+		[Ticket|
+	    	- unsigned row
+	    	- unsigned seat
+		]
+	
+		[Reservation|
+	    	- Ticket ticket
+			- char\[8\] password
+	    	- char\[32\] note
+		]
+	
+		[Event|
+	    	- OrderedList&lt;Ticket&gt; _tickets
+		    - OrderedList&lt;Reservation&gt; _reservations
+			+ Date date
+		    + String name
+	    	+ Hall* hall
+	        |
+		    + reserveTicket()
+	    	+ cancelReservation()
+	    	+ buyTicket()
+		]
+		[Ticket]&lt;--[Event]
+		[Reservation]&lt;--[Event]
+	
+		[EventSystem|
+	    	- OrderedList&lt;Event&gt; _events
+	        - unsigned _soonestUpcoming
+	        |
+			+ createEvent() ★
+	    	+ cancelEvent()
+		    + reserveTicket(eventIndex, note, row, seat) ★
+	    	+ cancelTicketReservation() ★
+	    	+ buyTicket() ★
+	        + queryUpcoming(hallIndex)
+	    	+ queryFreeSeats(eventIndex) ★
+	    	+ queryReservations(eventIndex)
+			+ reportReservations(eventIndex) ★
+	    	+ queryBoughtTickets(stDate, endDate, hall) ★
+	    	+ queryMostVisited() ☆
+	    	+ queryInsufficientlyVisited() ☆
+		]
+		[Event]&lt;--[EventSystem]
+	    
+	    [StatusCodes.h|
+	    	enum StatusCode
+	    ]
+	    [EventSystem]-/-[StatusCodes.h]
+	]
+	[Venue]--&gt;[System for events]</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="#fdf6e3">
+				<rect x="0.0" y="0.0" height="886.0" width="1278.0" stroke="none"></rect>
+			</g>
+			<g transform="translate(8, 8)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<g stroke-dasharray="4 4">
+						<path d="M777.0 415.0 L797 415 L810.3333333333334 415 L810.3 415.0 " fill="none"></path>
+					</g>
+					<path d="M803.7 420.3 L803.7 415.0 L803.7 409.7 L817.0 415.0 Z"></path>
+					<g data-name="Standard Classes">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Standard Classes">
+							<rect x="0.0" y="63.0" height="705.0" width="491.0" data-name="Standard Classes"></rect>
+						</g>
+						<g transform="translate(0, 63)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="italic" data-name="Standard Classes">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Standard Classes">
+								<text x="237.5" y="13.8" stroke="none" text-anchor="middle" data-name="Standard Classes">Standard Classes</text>
+								<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Standard Classes">
+									<g stroke-dasharray="4 4" data-name="Standard Classes">
+										<path d="M88.5 512.7 L88.5 526 L88.5 546 L88.5 546.0 " fill="none" data-name="Standard Classes"></path>
+									</g>
+									<path d="M93.8 519.3 L88.5 519.3 L83.2 519.3 L88.5 506.0 Z" data-name="Standard Classes"></path>
+									<g stroke-dasharray="4 4" data-name="Standard Classes">
+										<path d="M317.5 93.7 L317.5 115 L317.5 150 L317.5 150.0 " fill="none" data-name="Standard Classes"></path>
+									</g>
+									<path d="M322.8 100.3 L317.5 100.3 L312.2 100.3 L317.5 87.0 Z" data-name="Standard Classes"></path>
+									<g data-name="List&lt;T&gt;">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="List&lt;T&gt;">
+											<rect x="0.0" y="301.0" height="205.0" width="177.0" data-name="List&lt;T&gt;"></rect>
+											<path d="M0.0 333.0 L177.0 333.0" fill="none" data-name="List&lt;T&gt;"></path>
+											<path d="M0.0 396.0 L177.0 396.0" fill="none" data-name="List&lt;T&gt;"></path>
+										</g>
+										<g transform="translate(0, 301)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="List&lt;T&gt;">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="List&lt;T&gt;">
+												<text x="80.5" y="13.8" stroke="none" text-anchor="middle" data-name="List&lt;T&gt;">List&lt;T&gt;</text>
+												
+											</g>
+										</g>
+										<g transform="translate(0, 333)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="List&lt;T&gt;">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="List&lt;T&gt;">
+												<text x="0.0" y="13.8" stroke="none" data-name="List&lt;T&gt;">- T* elements</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="List&lt;T&gt;">- unsigned count</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="List&lt;T&gt;">- unsigned length</text>
+												
+											</g>
+										</g>
+										<g transform="translate(0, 396)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="List&lt;T&gt;">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="List&lt;T&gt;">
+												<text x="0.0" y="13.8" stroke="none" data-name="List&lt;T&gt;">+ add(elem)</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="List&lt;T&gt;">+ insertAt(elem, index)</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="List&lt;T&gt;">+ removeAt(index)</text>
+												<text x="0.0" y="60.6" stroke="none" data-name="List&lt;T&gt;">+ findIndex(elem)</text>
+												<text x="0.0" y="76.2" stroke="none" data-name="List&lt;T&gt;">+ contain(elem)</text>
+												<text x="0.0" y="91.8" stroke="none" data-name="List&lt;T&gt;">+ operator[](index)</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="Menu">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Menu">
+											<rect x="200.0" y="150.0" height="96.0" width="235.0" data-name="Menu"></rect>
+											<path d="M200.0 182.0 L435.0 182.0" fill="none" data-name="Menu"></path>
+											<path d="M200.0 214.0 L435.0 214.0" fill="none" data-name="Menu"></path>
+										</g>
+										<g transform="translate(200, 150)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Menu">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Menu">
+												<text x="109.5" y="13.8" stroke="none" text-anchor="middle" data-name="Menu">Menu</text>
+												
+											</g>
+										</g>
+										<g transform="translate(200, 182)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Menu">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Menu">
+												<text x="0.0" y="13.8" stroke="none" data-name="Menu">- List&lt;Command&gt; _commands</text>
+												
+											</g>
+										</g>
+										<g transform="translate(200, 214)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Menu">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Menu">
+												<text x="0.0" y="13.8" stroke="none" data-name="Menu">+ navigate()</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="OrderedList&lt;T&gt;">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="OrderedList&lt;T&gt;">
+											<rect x="21.0" y="546.0" height="79.0" width="135.0" data-name="OrderedList&lt;T&gt;"></rect>
+											<path d="M21.0 578.0 L156.0 578.0" fill="none" data-name="OrderedList&lt;T&gt;"></path>
+										</g>
+										<g transform="translate(21, 546)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderedList&lt;T&gt;">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderedList&lt;T&gt;">
+												<text x="59.5" y="13.8" stroke="none" text-anchor="middle" data-name="OrderedList&lt;T&gt;">OrderedList&lt;T&gt;</text>
+												
+											</g>
+										</g>
+										<g transform="translate(21, 578)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderedList&lt;T&gt;">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderedList&lt;T&gt;">
+												<text x="0.0" y="13.8" stroke="none" data-name="OrderedList&lt;T&gt;">+ insert(elem)</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="OrderedList&lt;T&gt;">+ remove(elem)</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="DateTime">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="DateTime">
+											<rect x="17.0" y="135.0" height="126.0" width="143.0" data-name="DateTime"></rect>
+											<path d="M17.0 167.0 L160.0 167.0" fill="none" data-name="DateTime"></path>
+										</g>
+										<g transform="translate(17, 135)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DateTime">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DateTime">
+												<text x="63.5" y="13.8" stroke="none" text-anchor="middle" data-name="DateTime">DateTime</text>
+												
+											</g>
+										</g>
+										<g transform="translate(17, 167)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DateTime">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="DateTime">
+												<text x="0.0" y="13.8" stroke="none" data-name="DateTime">- unsigned day</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="DateTime">- unsigned month</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="DateTime">- int year</text>
+												<text x="0.0" y="60.6" stroke="none" data-name="DateTime">- unsigned hour</text>
+												<text x="0.0" y="76.2" stroke="none" data-name="DateTime">- unsigned minute</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="String">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="String">
+											<rect x="19.0" y="0.0" height="95.0" width="139.0" data-name="String"></rect>
+											<path d="M19.0 32.0 L158.0 32.0" fill="none" data-name="String"></path>
+										</g>
+										<g transform="translate(19, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="String">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="String">
+												<text x="61.5" y="13.8" stroke="none" text-anchor="middle" data-name="String">String</text>
+												
+											</g>
+										</g>
+										<g transform="translate(19, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="String">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="String">
+												<text x="0.0" y="13.8" stroke="none" data-name="String">- char* str</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="String">- unsigned length</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="String">- unsigned count</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="Command">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Command">
+											<rect x="257.0" y="8.0" height="79.0" width="121.0" data-name="Command"></rect>
+											<path d="M257.0 40.0 L378.0 40.0" fill="none" data-name="Command"></path>
+										</g>
+										<g transform="translate(257, 8)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Command">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Command">
+												<text x="52.5" y="13.8" stroke="none" text-anchor="middle" data-name="Command">Command</text>
+												
+											</g>
+										</g>
+										<g transform="translate(257, 40)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Command">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Command">
+												<text x="0.0" y="13.8" stroke="none" data-name="Command">- String name</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Command">- void (*exec)()</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="Toolbox.h">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Toolbox.h">
+											<rect x="229.0" y="341.0" height="126.0" width="178.0" data-name="Toolbox.h"></rect>
+											<path d="M229.0 373.0 L407.0 373.0" fill="none" data-name="Toolbox.h"></path>
+										</g>
+										<g transform="translate(229, 341)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Toolbox.h">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Toolbox.h">
+												<text x="81.0" y="13.8" stroke="none" text-anchor="middle" data-name="Toolbox.h">Toolbox.h</text>
+												
+											</g>
+										</g>
+										<g transform="translate(229, 373)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Toolbox.h">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Toolbox.h">
+												<text x="0.0" y="13.8" stroke="none" data-name="Toolbox.h">read()</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Toolbox.h">print()</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="Toolbox.h">printLine()</text>
+												<text x="0.0" y="60.6" stroke="none" data-name="Toolbox.h">printOrderedListElem()</text>
+												<text x="0.0" y="76.2" stroke="none" data-name="Toolbox.h">resetOrderedList()</text>
+												
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g data-name="Venue">
+						<g fill="#97c8ee" stroke="#33322E" data-name="Venue">
+							<rect x="531.0" y="268.0" height="294.0" width="246.0" data-name="Venue"></rect>
+						</g>
+						<g transform="translate(531, 268)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="italic" data-name="Venue">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Venue">
+								<text x="115.0" y="13.8" stroke="none" text-anchor="middle" data-name="Venue">Venue</text>
+								<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Venue">
+									<g stroke-dasharray="4 4" data-name="Venue">
+										<path d="M95.0 101.7 L95 115 L95 135 L95.0 135.0 " fill="none" data-name="Venue"></path>
+									</g>
+									<path d="M100.3 108.3 L95.0 108.3 L89.7 108.3 L95.0 95.0 Z" data-name="Venue"></path>
+									<g data-name="Hall">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Hall">
+											<rect x="0.0" y="0.0" height="95.0" width="190.0" data-name="Hall"></rect>
+											<path d="M0.0 32.0 L190.0 32.0" fill="none" data-name="Hall"></path>
+										</g>
+										<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Hall">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Hall">
+												<text x="87.0" y="13.8" stroke="none" text-anchor="middle" data-name="Hall">Hall</text>
+												
+											</g>
+										</g>
+										<g transform="translate(0, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Hall">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Hall">
+												<text x="0.0" y="13.8" stroke="none" data-name="Hall">- int number</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Hall">- unsigned rowCount</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="Hall">- unsigned seatsPerRow</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="Venue">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Venue">
+											<rect x="25.0" y="135.0" height="79.0" width="141.0" data-name="Venue"></rect>
+											<path d="M25.0 167.0 L166.0 167.0" fill="none" data-name="Venue"></path>
+										</g>
+										<g transform="translate(25, 135)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Venue">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Venue">
+												<text x="62.5" y="13.8" stroke="none" text-anchor="middle" data-name="Venue">Venue</text>
+												
+											</g>
+										</g>
+										<g transform="translate(25, 167)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Venue">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Venue">
+												<text x="0.0" y="13.8" stroke="none" data-name="Venue">- List&lt;Hall&gt; halls</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Venue">- EventSystem es</text>
+												
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g data-name="System for events">
+						<g fill="#b2ee97" stroke="#33322E" data-name="System for events">
+							<rect x="817.0" y="0.0" height="830.0" width="405.0" data-name="System for events"></rect>
+						</g>
+						<g transform="translate(817, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="italic" data-name="System for events">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="System for events">
+								<text x="194.5" y="13.8" stroke="none" text-anchor="middle" data-name="System for events">System for events</text>
+								<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="System for events">
+									<g stroke-dasharray="4 4" data-name="System for events">
+										<path d="M86.3 93.7 L86.25 115 L101.66484716157206 135 L101.7 135.0 " fill="none" data-name="System for events"></path>
+									</g>
+									<path d="M91.6 100.3 L86.3 100.3 L80.9 100.3 L86.3 87.0 Z" data-name="System for events"></path>
+									<g stroke-dasharray="4 4" data-name="System for events">
+										<path d="M262.8 101.7 L262.75 115 L247.33515283842794 135 L247.3 135.0 " fill="none" data-name="System for events"></path>
+									</g>
+									<path d="M268.1 108.3 L262.8 108.3 L257.4 108.3 L262.8 95.0 Z" data-name="System for events"></path>
+									<g stroke-dasharray="4 4" data-name="System for events">
+										<path d="M174.5 330.7 L174.5 344 L174.5 364 L174.5 364.0 " fill="none" data-name="System for events"></path>
+									</g>
+									<path d="M179.8 337.3 L174.5 337.3 L169.2 337.3 L174.5 324.0 Z" data-name="System for events"></path>
+									<g data-name="Event">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Event">
+											<rect x="18.0" y="135.0" height="189.0" width="314.0" data-name="Event"></rect>
+											<path d="M18.0 167.0 L332.0 167.0" fill="none" data-name="Event"></path>
+											<path d="M18.0 261.0 L332.0 261.0" fill="none" data-name="Event"></path>
+										</g>
+										<g transform="translate(18, 135)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Event">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Event">
+												<text x="149.0" y="13.8" stroke="none" text-anchor="middle" data-name="Event">Event</text>
+												
+											</g>
+										</g>
+										<g transform="translate(18, 167)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Event">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Event">
+												<text x="0.0" y="13.8" stroke="none" data-name="Event">- OrderedList&lt;Ticket&gt; _tickets</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Event">- OrderedList&lt;Reservation&gt; _reservations</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="Event">+ Date date</text>
+												<text x="0.0" y="60.6" stroke="none" data-name="Event">+ String name</text>
+												<text x="0.0" y="76.2" stroke="none" data-name="Event">+ Hall* hall</text>
+												
+											</g>
+										</g>
+										<g transform="translate(18, 261)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Event">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Event">
+												<text x="0.0" y="13.8" stroke="none" data-name="Event">+ reserveTicket()</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Event">+ cancelReservation()</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="Event">+ buyTicket()</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="EventSystem">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="EventSystem">
+											<rect x="0.0" y="364.0" height="282.0" width="349.0" data-name="EventSystem"></rect>
+											<path d="M0.0 396.0 L349.0 396.0" fill="none" data-name="EventSystem"></path>
+											<path d="M0.0 443.0 L349.0 443.0" fill="none" data-name="EventSystem"></path>
+										</g>
+										<g transform="translate(0, 364)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="EventSystem">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="EventSystem">
+												<text x="166.5" y="13.8" stroke="none" text-anchor="middle" data-name="EventSystem">EventSystem</text>
+												
+											</g>
+										</g>
+										<g transform="translate(0, 396)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="EventSystem">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="EventSystem">
+												<text x="0.0" y="13.8" stroke="none" data-name="EventSystem">- OrderedList&lt;Event&gt; _events</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="EventSystem">- unsigned _soonestUpcoming</text>
+												
+											</g>
+										</g>
+										<g transform="translate(0, 443)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="EventSystem">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="EventSystem">
+												<text x="0.0" y="13.8" stroke="none" data-name="EventSystem">+ createEvent() ★</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="EventSystem">+ cancelEvent()</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="EventSystem">+ reserveTicket(eventIndex, note, row, seat) ★</text>
+												<text x="0.0" y="60.6" stroke="none" data-name="EventSystem">+ cancelTicketReservation() ★</text>
+												<text x="0.0" y="76.2" stroke="none" data-name="EventSystem">+ buyTicket() ★</text>
+												<text x="0.0" y="91.8" stroke="none" data-name="EventSystem">+ queryUpcoming(hallIndex)</text>
+												<text x="0.0" y="107.4" stroke="none" data-name="EventSystem">+ queryFreeSeats(eventIndex) ★</text>
+												<text x="0.0" y="123.0" stroke="none" data-name="EventSystem">+ queryReservations(eventIndex)</text>
+												<text x="0.0" y="138.6" stroke="none" data-name="EventSystem">+ reportReservations(eventIndex) ★</text>
+												<text x="0.0" y="154.2" stroke="none" data-name="EventSystem">+ queryBoughtTickets(stDate, endDate, hall) ★</text>
+												<text x="0.0" y="169.8" stroke="none" data-name="EventSystem">+ queryMostVisited() ☆</text>
+												<text x="0.0" y="185.4" stroke="none" data-name="EventSystem">+ queryInsufficientlyVisited() ☆</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="Ticket">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Ticket">
+											<rect x="24.0" y="8.0" height="79.0" width="125.0" data-name="Ticket"></rect>
+											<path d="M24.0 40.0 L149.0 40.0" fill="none" data-name="Ticket"></path>
+										</g>
+										<g transform="translate(24, 8)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Ticket">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Ticket">
+												<text x="54.5" y="13.8" stroke="none" text-anchor="middle" data-name="Ticket">Ticket</text>
+												
+											</g>
+										</g>
+										<g transform="translate(24, 40)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Ticket">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Ticket">
+												<text x="0.0" y="13.8" stroke="none" data-name="Ticket">- unsigned row</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Ticket">- unsigned seat</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="Reservation">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="Reservation">
+											<rect x="189.0" y="0.0" height="95.0" width="148.0" data-name="Reservation"></rect>
+											<path d="M189.0 32.0 L337.0 32.0" fill="none" data-name="Reservation"></path>
+										</g>
+										<g transform="translate(189, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Reservation">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Reservation">
+												<text x="66.0" y="13.8" stroke="none" text-anchor="middle" data-name="Reservation">Reservation</text>
+												
+											</g>
+										</g>
+										<g transform="translate(189, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Reservation">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Reservation">
+												<text x="0.0" y="13.8" stroke="none" data-name="Reservation">- Ticket ticket</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="Reservation">- char[8] password</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="Reservation">- char[32] note</text>
+												
+											</g>
+										</g>
+									</g>
+									<g data-name="StatusCodes.h">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="StatusCodes.h">
+											<rect x="103.0" y="686.0" height="64.0" width="144.0" data-name="StatusCodes.h"></rect>
+											<path d="M103.0 718.0 L247.0 718.0" fill="none" data-name="StatusCodes.h"></path>
+										</g>
+										<g transform="translate(103, 686)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="StatusCodes.h">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="StatusCodes.h">
+												<text x="64.0" y="13.8" stroke="none" text-anchor="middle" data-name="StatusCodes.h">StatusCodes.h</text>
+												
+											</g>
+										</g>
+										<g transform="translate(103, 718)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="StatusCodes.h">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="StatusCodes.h">
+												<text x="0.0" y="13.8" stroke="none" data-name="StatusCodes.h">enum StatusCode</text>
+												
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
