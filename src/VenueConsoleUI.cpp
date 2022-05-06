@@ -39,8 +39,11 @@ void command_freeSeats() {
 	Date date;
 	inputBox("Enter event date: ", &date);
 
+	const Hall* hall = v->get_es().queryEventHall(name, date);
 	OrderedList<Ticket> tickets = v->get_es().queryTickets(name, date);
 	OrderedList<Reservation> resevations = v->get_es().queryReservations(name, date);
+
+	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
 
 	table(0, 11, " A B C D E F G ");
 }
