@@ -41,9 +41,15 @@ void command_freeSeats() {
 
 	const Hall* hall = v->get_es().queryEventHall(name, date);
 	OrderedList<Ticket> tickets = v->get_es().queryTickets(name, date);
-	OrderedList<Reservation> resevations = v->get_es().queryReservations(name, date);
+	OrderedList<Reservation> reservations = v->get_es().queryReservations(name, date);
 
 	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
+	char table[tableSize];
+	for (unsigned i = 0, nextT = 0, nextR = 0; i < tableSize; i++) {
+		if (tickets[nextT].get_row() * hall->get_seatsPerRow() + tickets[nextT].get_seat() == i)
+			table[i] = "R";
+		else if (reservations[nextT].get_row() * hall->get_seatsPerRow() + tickets[nextT].get_seat() == i)
+	}
 
 	table(0, 11, " A B C D E F G ");
 }
