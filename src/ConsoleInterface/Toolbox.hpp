@@ -20,7 +20,7 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth);
 void resetOrderedList(int starter = 1);
 
 void _printInputBoxLabel(const char* label);
-void _printAltInputBoxLabel(const char* label);
+void _printInputBoxSubLabel(const char* label);
 void _printOrderedListBeginning();
 
 template <class T>
@@ -63,6 +63,12 @@ void printOrderedListElem(const T& elem) {
 template <typename T>
 void inputBox(const char* label, T* output) {
 	_printInputBoxLabel(label);
+	std::cin >> *output;
+}
+
+template <typename T>
+void inputSubBox(const char* label, T* output) {
+	_printInputSubBoxLabel(label);
 	std::cin >> *output;
 }
 

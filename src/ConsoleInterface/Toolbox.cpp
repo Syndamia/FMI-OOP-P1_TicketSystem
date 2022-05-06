@@ -74,11 +74,11 @@ void _printOrderedListBeginning() {
 	std::cout << "[" << orderedListIndex++ << "] ";
 }
 
-void _printInputBoxLabel(const char* label) {
+void _printInputBoxSubLabel(const char* label) {
 	std::cout << "    (+) " << label;
 }
 
-void _printAltInputBoxLabel(const char* label) {
+void _printInputBoxLabel(const char* label) {
 	std::cout << "(+) " << label;
 }
 
@@ -86,4 +86,8 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth) {
 	_printInputBoxLabel(label);
 	std::cin.ignore();
 	std::cin.getline(output, maxWidth);
+}
+
+void inputLineSubBox(const char* label, char* output, unsigned maxWidth) {
+
 }

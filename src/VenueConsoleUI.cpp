@@ -179,7 +179,7 @@ void init() {
 	mainMenu.addCommand(Command("Event Management", submenu_eventManagement));
 	mainMenu.addCommand(Command("Report Management", submenu_reportManagement));
 
-	ticketManagementMenu.addCommand(Command("Count of Free Seats", command_freeSeats));
+	ticketManagementMenu.addCommand(Command("Print Seats", command_freeSeats));
 	ticketManagementMenu.addCommand(Command("Reserve Ticket", command_reserveTicket));
 	ticketManagementMenu.addCommand(Command("Cancel Ticket Reservation", command_cancelReservation));
 	ticketManagementMenu.addCommand(Command("Buy Ticket", command_buyTicket));
