@@ -48,9 +48,9 @@ void __printTableColumnHeader(unsigned start, unsigned count) {
 }
 
 void __printTableLine(unsigned columns) {
-	std::cout << ":---";
+	std::cout << ":===";
 	for (unsigned i = 0; i < columns; i++)
-		std::cout << "----";
+		std::cout << "+---";
 	std::cout << ":" << std::endl;
 }
 
@@ -58,14 +58,14 @@ void table(unsigned startNumber, unsigned columns, const char* items) {
 	__printTableColumnHeader(startNumber, columns);
 
 	__printTableHeaderNumber(startNumber);
-	for (unsigned i = 0, colInd = 1, rowInd = 0; items[i] != '\0'; i++, (++colInd) %= columns) {
-		if (colInd == 0) {
+	for (unsigned i = 0, colInd = 0, rowInd = 0; items[i] != '\0'; i++, (++colInd) %= columns) {
+		if (colInd == 0 && i != 0) {
 			std::cout << ":" << std::endl;
 			__printTableLine(columns);
 			__printTableHeaderNumber((++rowInd) + startNumber);
 		}
 
-		std::cout << ((colInd == 0) ? ": " : "| ") << items[rowInd * columns + colInd] << " ";
+		std::cout << "| " << items[rowInd * columns + colInd] << " ";
 	}
 }
 
