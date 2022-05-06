@@ -14,6 +14,8 @@ void successBox(const char* message);
 void warningBox(const char* message);
 void errorBox(const char* message);
 
+void table(unsigned startNumber, unsigned columns, const char* items);
+
 void inputLineBox(const char* label, char* output, unsigned maxWidth);
 void resetOrderedList(int starter = 1);
 

@@ -33,10 +33,13 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 /* Ticket Management */
 
 void command_freeSeats() {
+	table(0, 10, "");
+	/*
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputBox("Enter event date: ", &date);
+	*/
 }
 
 void command_reserveTicket() {
