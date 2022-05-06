@@ -1,0 +1,133 @@
+#title: FMI-OOP-P1_TicketSystem Overview
+#background: #fdf6e3
+#bendSize: 0
+#fillArrows: true
+#lineWidth: 2
+#leading: 1.3
+
+#.groupui: title=italic fill=#b2ee97 direction=right
+#.groupes: title=italic fill=#97c8ee direction=right
+#.groupe: title=italic fill=#ee9797 direction=right
+#.groupv: title=italic fill=#eee997 direction=right
+#.groupsc: title=italic fill=#c0baac direction=right
+
+[<groupui> User Interface|
+
+	[Command|
+		String name
+    	void (*exec)()
+	]
+
+	[Menu|
+		List<Command> commands
+        navigate()
+	]
+	[Menu]-->[Command]
+]
+
+[<groupv> Venue Container|
+	[Hall|
+		int index
+	    unsigned rowCount
+    	unsigned seatsPerRow
+	]
+
+	[Venue|
+		List<Hall> halls
+    	EventSystem es
+	]
+	[Venue]-->[Hall]
+]
+
+[VenueConsoleUI.cpp|
+	Venue* venue
+	run()
+]
+[User Interface]--[VenueConsoleUI.cpp]
+[Venue Container]--[VenueConsoleUI.cpp]
+
+[<groupes> Events Manager|
+	[EventSystem|
+    	OrderedList<Event> events
+        |
+		+ createEvent()
+    	. cancelEvent()
+	    + reserveTicket()
+    	+ cancelTicketReservation()
+    	+ buyTicket()
+        . queryEventHall()
+        . queryTickets()
+        . queryReservations()
+    	~ queryMostVisited()
+    	~ queryInsufficientlyVisited()
+        + reportBoughtTickets()
+        + reportReservations()
+	]
+    
+    [StatusCodes.h|
+    	enum StatusCode
+    ]
+    [EventSystem]-/-[StatusCodes.h]
+]
+[VenueConsoleUI.cpp]Venue (instance) ->[Events Manager]
+
+[<groupe> Event Object|
+	[Ticket|
+    	unsigned row
+    	unsigned seat
+	]
+
+	[Reservation|
+    	Ticket ticket
+		char\[8\] password
+    	char\[32\] note
+	]
+
+	[Event|
+     	Hall* hall
+    	String name
+		Date date
+    	OrderedList<Ticket> _tickets
+	    OrderedList<Reservation> _reservations
+        |
+	    reserveTicket()
+    	cancelReservation()
+    	buyTicket()
+	]
+	[Event]-->[Ticket]
+	[Event]-->[Reservation]
+]
+[Events Manager]OrderedList<Event> ->[Event Object]
+
+[<groupsc> Standard Classes|
+	[List<T>|
+    	add(elem)
+        insertAt(elem, index)
+        removeAt(index)
+        findIndex(elem);
+		contain(elem);
+    	operator\[\](index)
+	]
+    
+    [OrderedList<T>|
+    	insert(elem)
+        remove(elem)
+    ]
+    [List<T>]<:-[OrderedList<T>]
+
+	[Date|
+		unsigned day
+    	unsigned month
+	    int year
+	]
+
+	[String|
+		char* str
+	    unsigned length
+    	unsigned count
+	]
+        
+    [String]-/-[Date]
+]
+[<hidden>H1]-/-[<hidden>H2]
+[H2]-/-[Standard Classes]
