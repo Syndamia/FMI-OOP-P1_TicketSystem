@@ -17,10 +17,11 @@ void errorBox(const char* message);
 void table(unsigned startNumber, unsigned columns, const char* items);
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth);
+void inputLineSubBox(const char* label, char* output, unsigned maxWidth);
 void resetOrderedList(int starter = 1);
 
 void _printInputBoxLabel(const char* label);
-void _printInputBoxSubLabel(const char* label);
+void _printInputSubBoxLabel(const char* label);
 void _printOrderedListBeginning();
 
 template <class T>

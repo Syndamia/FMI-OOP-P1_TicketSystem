@@ -35,9 +35,9 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 
 void command_freeSeats() {
 	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date: ", &date);
+	inputSubBox("Enter event date: ", &date);
 
 	const Hall* hall = v->get_es().queryEventHall(name, date);
 	if (hall == nullptr) {
@@ -71,43 +71,43 @@ void command_freeSeats() {
 
 void command_reserveTicket() {
 	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date: ", &date);
+	inputSubBox("Enter event date: ", &date);
 	Ticket tic;
-	inputBox("Enter row and seat: ", &tic);
+	inputSubBox("Enter row and seat: ", &tic);
 	char password[PASSWORD_LEN];
-	inputBox("Enter password [Max 8 characters]: ", &password);
+	inputSubBox("Enter password [Max 8 characters]: ", &password);
 	char note[NOTE_LEN];
-	inputBox("Enter note [Max 32 characters]: ", &note);
+	inputSubBox("Enter note [Max 32 characters]: ", &note);
 
 	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, tic), ticketManagementMenu);
 }
 
 void command_cancelReservation() {
 	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date: ", &date);
+	inputSubBox("Enter event date: ", &date);
 	Ticket tic;
-	inputBox("Enter row and seat: ", &tic);
+	inputSubBox("Enter row and seat: ", &tic);
 
 	handleStatusCode(v->get_es().cancelTicketReservation(name, date, tic), ticketManagementMenu);
 }
 
 void command_buyTicket() {
 	bool reserved;
-	inputBox("Is ticket reserved? [0/1]: ", &reserved);
+	inputSubBox("Is ticket reserved? [0/1]: ", &reserved);
 	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date: ", &date);
+	inputSubBox("Enter event date: ", &date);
 	Ticket tic;
-	inputBox("Enter row and seat: ", &tic);
+	inputSubBox("Enter row and seat: ", &tic);
 
 	if (reserved) {
 		char pass[PASSWORD_LEN];
-		inputLineBox("Enter reservation password: ", pass, PASSWORD_LEN);
+		inputLineSubBox("Enter reservation password: ", pass, PASSWORD_LEN);
 		handleStatusCode(v->get_es().buyTicket(name, date, tic, pass), ticketManagementMenu);
 	}
 	else
@@ -122,25 +122,25 @@ void submenu_ticketManagement() {
 
 void command_createEvent() {
 	unsigned hallIndex;
-	inputBox("Enter hall index: ", &hallIndex);
+	inputSubBox("Enter hall index: ", &hallIndex);
 	if (!v->hallExists(hallIndex)) {
 		eventManagementMenu.registerError("Invalid hall index!");
 		return;
 	}
 	
 	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date: ", &date);
+	inputSubBox("Enter event date: ", &date);
 	
 	handleStatusCode(v->get_es().createEvent(&v->getHall(hallIndex), name, date), eventManagementMenu);
 }
 
 void command_cancelEvent() {
 	char name[MAX_LINE_WIDTH];
-	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date: ", &date);
+	inputSubBox("Enter event date: ", &date);
 
 	handleStatusCode(v->get_es().cancelEvent(name, date), eventManagementMenu);
 }

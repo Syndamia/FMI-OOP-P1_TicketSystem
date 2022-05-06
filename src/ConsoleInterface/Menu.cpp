@@ -77,7 +77,7 @@ void Menu::navigate() const {
 		for (unsigned i = 0; i < menuOptions.get_count(); i++)
 			printOrderedListElem(menuOptions[i].get_nameInMenu());
 
-		_printAltInputBoxLabel("Execute No [0-");
+		_printInputBoxLabel("Execute No [0-");
 		print(menuOptions.get_count());
 		print("]: ");
 		read(buffer);
