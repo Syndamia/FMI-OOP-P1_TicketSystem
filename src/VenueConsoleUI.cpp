@@ -27,7 +27,8 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 			menu.registerError("Reservation doesn't exist!"); break;
 		case E_WrongReservationPassword:
 			menu.registerError("Wrong reservation password!"); break;
-		default: break;
+		default: 
+			menu.registerError("An unhandled status code was returned!"); break;
 	}
 }
 
