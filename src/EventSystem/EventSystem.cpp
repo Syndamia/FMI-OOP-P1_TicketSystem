@@ -101,32 +101,18 @@ StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Tick
 	return events[ind].buyTicketFromReservation(Reservation(ticket), password);
 }
 
-// List<Ticket> EventSystem::queryFreeTickets(const char* name, const Date& date) {
-// 	unsigned ind = indexOfEvent(name, date);
-//
-// 	if (ind == events.get_count())
-// 		return List<Ticket>();
-//
-// 	List<Ticket> freeTickets;
-//
-// 	unsigned nextIndT = 0, nextIndR = 0;
-// 	for (unsigned r = 1; r <= events[ind].get_hall().get_rowCount(); r++) {
-// 		for (unsigned s = 1; s <= events[ind].get_hall().get_seatsPerRow(); s++) {
-// 			// TODO: finish
-// 		}
-// 	}
-//
-// 	return freeTickets;
-// }
-
-List<Ticket> EventSystem::queryTickets(const char* name, const Date& date) {
+OrderedList<Ticket> EventSystem::queryTickets(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
-		return E_EventDoesNotExist;
+		return OrderedList<Ticket>();
 
 	return events[ind].get_tickets();
 }
 
-List<Reservation> EventSystem::queryReservations(const char* name, const Date& date) {
+OrderedList<Reservation> EventSystem::queryReservations(const char* name, const Date& date) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return OrderedList<Reservation>();
 
+	return events[ind].get_reservations();
 }

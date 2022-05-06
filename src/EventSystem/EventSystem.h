@@ -33,9 +33,9 @@ public:
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password);
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password);
 
-	// List<Ticket> queryFreeTickets(const char* name, const Date& date);
-	List<Ticket> queryTickets(const char* name, const Date& date);
-	List<Reservation> queryReservations(const char* name, const Date& date);
+	OrderedList<Ticket> queryTickets(const char* name, const Date& date);
+	OrderedList<Reservation> queryReservations(const char* name, const Date& date);
+
 	void queryBoughtTickets(Date start, Date end, unsigned hall);
 	void queryMostVisited();
 	void queryInsufficientlyVisited();
