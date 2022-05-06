@@ -130,7 +130,7 @@ void command_createEvent() {
 	Date date;
 	inputBox("Enter event date: ", &date);
 	
-	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date), eventManagementMenu);
+	handleStatusCode(v->get_es().createEvent(&v->getHall(hallIndex), name, date), eventManagementMenu);
 }
 
 void command_cancelEvent() {

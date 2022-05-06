@@ -12,7 +12,7 @@ Venue::Venue(const Hall* halls, unsigned hallCount, const EventSystem& es) {
 }
 
 bool Venue::hallExists(unsigned hallIndex) const {
-	return hallIndex < halls.get_count();
+	return halls.contain(Hall(hallIndex, 0, 0));
 }
 
 bool Venue::hallExists(const Hall& hall) const {
@@ -21,6 +21,10 @@ bool Venue::hallExists(const Hall& hall) const {
 
 const List<Hall>& Venue::get_halls() const {
 	return this->halls;
+}
+
+const Hall& Venue::getHall(unsigned hallIndex) const {
+	return this->halls[this->halls.findIndex(Hall(hallIndex, 0, 0))];
 }
 
 EventSystem& Venue::get_es() {

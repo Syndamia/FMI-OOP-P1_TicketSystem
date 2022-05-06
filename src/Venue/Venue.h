@@ -18,6 +18,7 @@ public:
 	bool hallExists(const Hall& hall) const;
 
 	const List<Hall>& get_halls() const;
+	const Hall& getHall(unsigned hallIndex) const;
 	EventSystem& get_es();
 };
 
