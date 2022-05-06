@@ -10,21 +10,21 @@
 #include "StatusCodes.h"
 
 class Event {
+	const Hall* hall;
+	String name;
+	Date date;
 	OrderedList<Ticket> tickets;
 	OrderedList<Reservation> reservations;
-	Date date;
-	String name;
-	const Hall* hall;
 
 public:
 	Event();
 	Event(const Hall* hall, String name, Date date);
 
-	const OrderedList<Ticket>& get_tickets() const;
-	const OrderedList<Reservation>& get_reservations() const;
 	const Hall& get_hall() const;
 	const String& get_name() const;
 	const Date& get_date() const;
+	const OrderedList<Ticket>& get_tickets() const;
+	const OrderedList<Reservation>& get_reservations() const;
 
 	StatusCode reserveTicket(const Ticket& ticket, const char* password, const char* note);
 
@@ -34,9 +34,6 @@ public:
 	StatusCode buyTicket(const Ticket& ticket);
 
 	StatusCode buyTicketFromReservation(const Reservation& reservation, const char* password);
-
-	bool ticketIsFree(unsigned row, unsigned seat);
-	bool ticketIsFree(const Ticket& ticket);
 
 	int compare(const Event& other);
 };

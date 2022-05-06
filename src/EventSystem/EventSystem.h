@@ -37,9 +37,9 @@ public:
 	OrderedList<Ticket> queryTickets(const char* name, const Date& date);
 	OrderedList<Reservation> queryReservations(const char* name, const Date& date);
 
-	void queryBoughtTickets(Date start, Date end, unsigned hall);
 	void queryMostVisited();
 	void queryInsufficientlyVisited();
+	void reportBoughtTickets(Date start, Date end, unsigned hall);
 	void reportReservations(unsigned eventIndex);
 };
 

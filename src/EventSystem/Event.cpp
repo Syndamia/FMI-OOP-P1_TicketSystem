@@ -70,14 +70,6 @@ StatusCode Event::buyTicketFromReservation(const Reservation& reservation, const
 	return Success;
 }
 
-bool Event::ticketIsFree(unsigned row, unsigned seat) {
-	return ticketIsFree(Ticket(row, seat));
-}
-
-bool Event::ticketIsFree(const Ticket& ticket) {
-	return tickets.findIndex(ticket) != tickets.get_count() || reservations.findIndex(Reservation(ticket)) != reservations.get_count();
-}
-
 int Event::compare(const Event& other) {
 	// TODO: improve
 	return name.compare(other.name);

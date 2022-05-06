@@ -78,7 +78,7 @@ void _printInputBoxLabel(const char* label) {
 	std::cout << "(+) " << label;
 }
 
-void _printInputBoxSubLabel(const char* label) {
+void _printInputSubBoxLabel(const char* label) {
 	std::cout << "    ";
 	_printInputBoxLabel(label);
 }
@@ -94,6 +94,6 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth) {
 }
 
 void inputLineSubBox(const char* label, char* output, unsigned maxWidth) {
-	_printInputBoxSubLabel(label);
+	_printInputSubBoxLabel(label);
 	__inputLineBoxGetInput(output, maxWidth);
 }
