@@ -33,21 +33,23 @@ void errorBox(const char* message) {
 }
 
 void __printTableHeaderNumber(unsigned number) {
-	std::cout << ((number < 100) ? " " : "") << number << ((number < 10) ? " " : "");
+	std::cout << ":" << ((number < 100) ? " " : "") << number << ((number < 10) ? " " : "");
 }
 
 void __printTableColumnHeader(unsigned start, unsigned count) {
 	std::cout << ":   ";
-	for (unsigned i = 0; i < count; i++) {
-		std::cout << ":";
+	for (unsigned i = 0; i < count; i++)
 		__printTableHeaderNumber(start++);
-	}
 	std::cout << ":" << std::endl;
+
+	for (unsigned i = 0; i < count; i++)
+		std::cout << "....";
+	std::cout << "." << std::endl;
 }
 
 void __printTableLine(unsigned columns) {
-	std::cout << "...+";
-	for (unsigned i = 1; i < columns; i++)
+	std::cout << ":...:";
+	for (unsigned i = 0; i < columns; i++)
 		std::cout << "----";
 	std::cout << "-" << std::endl;
 }
@@ -55,10 +57,8 @@ void __printTableLine(unsigned columns) {
 void table(unsigned startNumber, unsigned columns, const char* items) {
 	__printTableColumnHeader(startNumber, columns);
 
-
-	__printTableLine(columns);
 	__printTableHeaderNumber(startNumber);
-	for (unsigned i = 0, colInd = 1, rowInd = 0; items[i] != '\0'; i++, (++colInd) %= columns) {
+	for (unsigned i = 0, colInd = 1, rowInd = 0; items[i] != '\0'; i++, (++colInd) %= (columns + 1)) {
 		if (colInd == 0) {
 			std::cout << "|" << std::endl;
 			__printTableLine(columns);
