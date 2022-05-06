@@ -33,11 +33,11 @@ void errorBox(const char* message) {
 }
 
 void __printTableColumnHeader(unsigned start, unsigned count) {
-	for (unsigned i = 0; i < count - 1; i++, start++)
+	for (unsigned i = 0; i < count; i++, start++)
 		std::cout << ":" << ((start < 100) ? " " : "") << start << ((start < 10) ? " " : "");
 	std::cout << ":" << std::endl;
 
-	for (unsigned i = 0; i < count - 1; i++)
+	for (unsigned i = 0; i < count; i++)
 		std::cout << "....";
 	std::cout << "." << std::endl;
 }
