@@ -103,13 +103,16 @@ void command_createEvent() {
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputBox("Enter event date and time: ", &date);
+	inputBox("Enter event date: ", &date);
 	
 	handleStatusCode(v->get_es().createEvent(&v->get_halls()[hallIndex], name, date), eventManagementMenu);
 }
 
 void command_cancelEvent() {
-
+	char name[MAX_LINE_WIDTH];
+	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	Date date;
+	inputBox("Enter event date: ")
 }
 
 void command_mostWatched() {
