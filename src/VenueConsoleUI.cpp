@@ -48,28 +48,18 @@ void command_freeSeats() {
 	OrderedList<Ticket> tickets = v->get_es().queryTickets(name, date);
 	OrderedList<Reservation> reservations = v->get_es().queryReservations(name, date);
 
-	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow(),
-			 nextTInd = 0, nextRInd = 0,
-			 nextT = 0, nextR = 0;
-
-	if (tickets.get_count() > 0)
-		nextT = (tickets[nextT].get_row() - 1) * hall->get_seatsPerRow() + tickets[nextT].get_seat() - 1;
-	if (reservations.get_count() > 0)
-			 nextR = (reservations[nextR].get_ticket().get_row() - 1) * hall->get_seatsPerRow() + reservations[nextT].get_ticket().get_seat() - 1;
-
+	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
 	char tableData[tableSize + 1];
-	for (unsigned i = 0; i < tableSize; i++) {
-		if (nextTInd < tickets.get_count() && nextT == i) {
-			tableData[i] = 'B';
-			nextTInd++;
-			nextT = (tickets[nextT].get_row() - 1) * hall->get_seatsPerRow() + tickets[nextT].get_seat() - 1;
+
+	for (unsigned ind = 0, row = 1; row < hall->get_rowCount(); row++) {
+		for (unsigned seat = 1; seat < hall->get_seatsPerRow(); seat++, ind++) {
+			if (tickets.contain(Ticket(row, seat)))
+				tableData[ind] = 'B';
+			else if (reservations.contain(Ticket(row, seat)))
+				tableData[ind] = 'R';
+			else
+				tableData[ind] = ' ';
 		}
-		else if (nextRInd < reservations.get_count() && nextR == i) {
-			tableData[i] = 'R';
-			nextRInd++;
-			nextR = (reservations[nextR].get_ticket().get_row() - 1) * hall->get_seatsPerRow() + reservations[nextT].get_ticket().get_seat() - 1;
-		}
-		else tableData[i] = ' ';
 	}
 
 	tableData[tableSize] = '\0';
