@@ -65,7 +65,7 @@ void table(unsigned startNumber, unsigned columns, const char* items) {
 			__printTableHeaderNumber((++rowInd) + startNumber);
 		}
 
-		std::cout << "| " << items[rowInd * columns + colInd] << " ";
+		std::cout << ((colInd == 0) ? "║ " : "| ") << items[rowInd * columns + colInd] << " ";
 	}
 }
 
