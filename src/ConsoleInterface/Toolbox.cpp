@@ -32,18 +32,36 @@ void errorBox(const char* message) {
 	std::cout << "<E> " << message << std::endl;
 }
 
-void __printTableColumnHeader(unsigned start, unsigned count) {
-	for (unsigned i = 0; i < count; i++, start++)
-		std::cout << ":" << ((start < 100) ? " " : "") << start << ((start < 10) ? " " : "");
-	std::cout << ":" << std::endl;
+void __printTableHeaderNumber(unsigned number) {
+	std::cout << ((number < 100) ? " " : "") << number << ((number < 10) ? " " : "");
+}
 
-	for (unsigned i = 0; i < count; i++)
-		std::cout << "....";
-	std::cout << "." << std::endl;
+void __printTableColumnHeader(unsigned start, unsigned count) {
+	for (unsigned i = 0; i < count; i++) {
+		std::cout << ":";
+		__printTableHeaderNumber(start++);
+	}
+	std::cout << ":" << std::endl;
+}
+
+void __printTableLine(unsigned columns) {
+	for (unsigned i = 0; i < columns; i++)
+		std::cout << "----";
+	std::cout << "-" << std::endl;
 }
 
 void table(unsigned startNumber, unsigned columns, const char* items) {
 	__printTableColumnHeader(startNumber, columns);
+
+	for (unsigned i = 0, colInd = 0, rowCnt = startNumber; items[i] != '\0'; i++, (++colInd) %= columns) {
+		if (colInd == 0) {
+			__printTableLine(columns);
+			__printTableHeaderNumber(rowCnt++);
+			continue;
+		}
+
+		std::cout << items[rowCnt * columns + colInd] << std::endl;
+	}
 }
 
 void _printOrderedListBeginning() {

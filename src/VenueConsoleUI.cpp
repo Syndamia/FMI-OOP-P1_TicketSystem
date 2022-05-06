@@ -33,7 +33,7 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 /* Ticket Management */
 
 void command_freeSeats() {
-	table(0, 10, "");
+	table(0, 10, " A B C D E F G ");
 	/*
 	char name[MAX_LINE_WIDTH];
 	inputLineBox("Enter event name: ", name, MAX_LINE_WIDTH);
