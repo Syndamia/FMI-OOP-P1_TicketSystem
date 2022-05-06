@@ -44,14 +44,20 @@ void command_freeSeats() {
 	OrderedList<Reservation> reservations = v->get_es().queryReservations(name, date);
 
 	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
-	char table[tableSize];
+	char tableData[tableSize];
 	for (unsigned i = 0, nextT = 0, nextR = 0; i < tableSize; i++) {
-		if (tickets[nextT].get_row() * hall->get_seatsPerRow() + tickets[nextT].get_seat() == i)
-			table[i] = "R";
-		else if (reservations[nextT].get_row() * hall->get_seatsPerRow() + tickets[nextT].get_seat() == i)
+		if (tickets[nextT].get_row() * hall->get_seatsPerRow() + tickets[nextT].get_seat() == i) {
+			tableData[i] = 'B';
+			nextT++;
+		}
+		else if (reservations[nextT].get_ticket().get_row() * hall->get_seatsPerRow() + reservations[nextT].get_ticket().get_seat() == i) {
+			tableData[i] == 'R';
+			nextR++;
+		}
+		else tableData[i] = ' ';
 	}
 
-	table(0, 11, " A B C D E F G ");
+	table(1, hall->get_seatsPerRow(), tableData);
 }
 
 void command_reserveTicket() {

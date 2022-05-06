@@ -101,6 +101,15 @@ StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Tick
 	return events[ind].buyTicketFromReservation(Reservation(ticket), password);
 }
 
+
+const Hall* EventSystem::queryEventHall(const char* name, const Date& date) {
+	unsigned ind = indexOfEvent(name, date);
+	if (ind == events.get_count())
+		return nullptr;
+
+	return &events[ind].get_hall();
+}
+
 OrderedList<Ticket> EventSystem::queryTickets(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
