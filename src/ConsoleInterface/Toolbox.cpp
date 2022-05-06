@@ -3,7 +3,7 @@
 void clear() {
 	// Clears console on Linux
 	// Source: https://stackoverflow.com/a/52895729/12036073
-	// std::cout << u8"\033[2J\033[1;1H"; 
+	std::cout << u8"\033[2J\033[1;1H"; 
 }
 
 int orderedListIndex = 1;
@@ -67,6 +67,7 @@ void table(unsigned startNumber, unsigned columns, const char* items) {
 
 		std::cout << ((colInd == 0) ? "║ " : "| ") << items[rowInd * columns + colInd] << " ";
 	}
+	std::cout << ":" << std::endl;
 }
 
 void _printOrderedListBeginning() {

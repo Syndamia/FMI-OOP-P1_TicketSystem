@@ -64,6 +64,9 @@ void command_freeSeats() {
 
 	tableData[tableSize] = '\0';
 	table(1, hall->get_seatsPerRow(), tableData);
+
+	char tmp;
+	inputLineBox("[Press enter to continue]", &tmp, 1);
 }
 
 void command_reserveTicket() {
