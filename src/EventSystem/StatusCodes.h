@@ -11,6 +11,8 @@ enum StatusCode {
 	E_Generic,
 	E_DoesntExist,
 
+	E_HallDoesntExist,
+
 	E_EventWillOverlap,
 	E_EventDoesNotExist,
 

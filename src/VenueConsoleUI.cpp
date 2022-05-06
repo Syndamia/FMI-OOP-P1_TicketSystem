@@ -40,21 +40,29 @@ void command_freeSeats() {
 	inputBox("Enter event date: ", &date);
 
 	const Hall* hall = v->get_es().queryEventHall(name, date);
+	if (hall == nullptr) {
+		handleStatusCode(E_HallDoesntExist, ticketManagementMenu);
+		return;
+	}
+
 	OrderedList<Ticket> tickets = v->get_es().queryTickets(name, date);
 	OrderedList<Reservation> reservations = v->get_es().queryReservations(name, date);
 
 	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow(),
 			 nextTInd = 0, nextRInd = 0,
-			 nextT = (tickets[nextT].get_row() - 1) * hall->get_seatsPerRow() + tickets[nextT].get_seat() - 1;
+			 nextT = (tickets[nextT].get_row() - 1) * hall->get_seatsPerRow() + tickets[nextT].get_seat() - 1,
+			 nextR = (reservations[nextR].get_ticket().get_row() - 1) * hall->get_seatsPerRow() + reservations[nextT].get_ticket().get_seat() - 1;
 	char tableData[tableSize + 1];
-	for (unsigned i = 0, nextT = 0, nextR = 0; i < tableSize; i++) {
-		if (tickets[nextT].get_row() * hall->get_seatsPerRow() + tickets[nextT].get_seat() == i) {
+	for (unsigned i = 0; i < tableSize; i++) {
+		if (nextTInd < tickets.get_count() && nextT == i) {
 			tableData[i] = 'B';
-			nextT++;
+			nextTInd++;
+			nextT = (tickets[nextT].get_row() - 1) * hall->get_seatsPerRow() + tickets[nextT].get_seat() - 1;
 		}
-		else if (reservations[nextT].get_ticket().get_row() * hall->get_seatsPerRow() + reservations[nextT].get_ticket().get_seat() == i) {
-			tableData[i] == 'R';
-			nextR++;
+		else if (nextRInd < reservations.get_count() && nextR == i) {
+			tableData[i] = 'R';
+			nextRInd++;
+			nextR = (reservations[nextR].get_ticket().get_row() - 1) * hall->get_seatsPerRow() + reservations[nextT].get_ticket().get_seat() - 1;
 		}
 		else tableData[i] = ' ';
 	}
