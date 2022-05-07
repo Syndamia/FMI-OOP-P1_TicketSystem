@@ -75,3 +75,10 @@ int String::compare(const String& other) const {
 char& String::operator[](unsigned index) {
 	return str[index];
 }
+
+std::istream& operator>>(std::istream& istr, String& event) {
+	istr >> event.str;
+
+	return istr;
+}
+friend std::ostream& operator<<(std::ostream& ostr, const String& event);
