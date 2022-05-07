@@ -7,47 +7,26 @@
 
 #.groupui: title=italic fill=#b2ee97 direction=right
 #.groupes: title=italic fill=#97c8ee direction=right
-#.groupe: title=italic fill=#ee9797 direction=right
+#.groupm: title=italic fill=#ee9797 direction=down
 #.groupv: title=italic fill=#eee997 direction=right
-#.groupsc: title=italic fill=#c0baac direction=right
+#.groupgc: title=italic fill=#c0baac direction=right
+
+[main.cpp|
+	EventService es
+    HallService hs
+]
 
 [<groupui> User Interface|
-
-	[Command|
-		String name
-    	void (*exec)()
+	[VenueConsoleUI.cpp|
+		EventService* es
+    	HallService* hs
+		run()
 	]
-
-	[Menu|
-		List<Command> commands
-        navigate()
-	]
-	[Menu]-->[Command]
 ]
+[main.cpp]->[User Interface]
 
-[<groupv> Venue Container|
-	[Hall|
-		int index
-	    unsigned rowCount
-    	unsigned seatsPerRow
-	]
-
-	[Venue|
-		List<Hall> halls
-    	EventSystem es
-	]
-	[Venue]-->[Hall]
-]
-
-[VenueConsoleUI.cpp|
-	Venue* venue
-	run()
-]
-[User Interface]--[VenueConsoleUI.cpp]
-[Venue Container]--[VenueConsoleUI.cpp]
-
-[<groupes> Events Manager|
-	[EventSystem|
+[<groupes> Services|
+	[EventService|
     	OrderedList<Event> events
         |
 		+ createEvent()
@@ -64,14 +43,20 @@
         + reportReservations()
 	]
     
+    [HallService|
+    	OrderedList<Hall> halls 
+        |
+        hallExists()
+    ]
+    [EventService]-->[HallService]
+    
     [StatusCodes.h|
     	enum StatusCode
     ]
-    [EventSystem]-/-[StatusCodes.h]
 ]
-[VenueConsoleUI.cpp]Venue (instance) ->[Events Manager]
+[User Interface]->[Services]
 
-[<groupe> Event Object|
+[<groupm> Models|
 	[Ticket|
     	unsigned row
     	unsigned seat
@@ -87,19 +72,22 @@
      	Hall* hall
     	String name
 		Date date
-    	OrderedList<Ticket> _tickets
-	    OrderedList<Reservation> _reservations
-        |
-	    reserveTicket()
-    	cancelReservation()
-    	buyTicket()
+    	OrderedList<Ticket> tickets
+	    OrderedList<Reservation> reservations
 	]
-	[Event]-->[Ticket]
-	[Event]-->[Reservation]
+	[Ticket]-->[Event]
+	[Reservation]-->[Event]
+    
+    [Hall|
+		int number
+	    unsigned rowCount
+    	unsigned seatsPerRow
+	]
+    [<hidden>H]-/-[Hall]
 ]
-[Events Manager]OrderedList<Event> ->[Event Object]
+[Services]<--[Models]
 
-[<groupsc> Standard Classes|
+[<groupgc> Generic Classes|
 	[List<T>|
     	add(elem)
         insertAt(elem, index)
@@ -126,8 +114,18 @@
 	    unsigned length
     	unsigned count
 	]
-        
     [String]-/-[Date]
+    
+    [Command|
+		String name
+    	void (*exec)()
+	]
+
+	[Menu|
+		List<Command> commands
+        navigate()
+	]
+	[Menu]-->[Command]
 ]
 [<hidden>H1]-/-[<hidden>H2]
-[H2]-/-[Standard Classes]
+[H2]-/-[Generic Classes]
