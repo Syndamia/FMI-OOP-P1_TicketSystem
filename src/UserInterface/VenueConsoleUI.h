@@ -1,8 +1,9 @@
 #ifndef HEADER_VENUECONSOLEUI
 #define HEADER_VENUECONSOLEUI
 
-#include "Venue/Venue.h"
+#include "../Services/EventService.h"
+#include "../Services/HallService.h"
 
-void runUI(Venue& venue);
+void runUI(EventService* es, HallService* hs);
 
 #endif

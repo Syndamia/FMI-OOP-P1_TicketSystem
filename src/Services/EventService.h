@@ -5,7 +5,7 @@
 #include "../Generic/Date/Date.h"
 
 #include "../Models/Event.h"
-#include "StatusCodes.h"
+#include "StatusCode.h"
 
 class EventService {
 	OrderedList<Event> events;

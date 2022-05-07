@@ -1,12 +1,11 @@
 #include "VenueConsoleUI.h"
-#include "List/OrderedList.hpp"
-#include "String/String.h"
-#include "Date/Date.h"
-#include "EventSystem/StatusCodes.h"
-#include "EventSystem/Reservation.h"
-#include "EventSystem/EventSystem.h"
-#include "ConsoleInterface/Menu.h"
-#include "ConsoleInterface/Toolbox.hpp"
+#include "../Generic/List/OrderedList.hpp"
+#include "../Generic/String/String.h"
+#include "../Generic/Date/Date.h"
+#include "../Services/StatusCode.h"
+#include "../Models/Reservation.h"
+#include "../Generic/ConsoleInterface/Menu.h"
+#include "../Generic/ConsoleInterface/Toolbox.hpp"
 
 Venue* v;
 Menu mainMenu("FMI Ticket System", true, false), ticketManagementMenu("Ticket management", false, true), eventManagementMenu("Event management", false, true), reportsMenu("Report management", false, true);
