@@ -1,6 +1,7 @@
 #include "EventService.h"
 #include "StatusCode.h"
 #include <cstring>
+#include <fstream>
 
 /* Private */
 
@@ -180,9 +181,9 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 	if (date.compare(Date(0, 0, 0)) == 0) cond_date = cond_event_all;
 
 	for (unsigned i = 0; i < events.get_count(); i++) {
-		for (unsigned j = 0; i < events[i].get_reservations().get_count(); j++) {
-			if (cond_name(events[i].get_reservations()[j], name) && cond_date(events[i].get_reservations()[j], date))
-				result.add(events[i].get_reservations()[j]);
-		}
+		if (cond_name(events[i], name) && cond_date(events[i], date))
+			result += events[i].get_reservations();
 	}
+
+
 }

@@ -25,6 +25,8 @@ public:
 	T& operator[](unsigned index);
 	const T& operator[](unsigned index) const;
 
+	List<T>& operator+=(const List<T> other);
+
 	std::istream& read(std::istream& istr);
 	std::ostream& write(std::ostream& ostr) const;
 
@@ -130,6 +132,13 @@ T& List<T>::operator[](unsigned index) {
 template <class T>
 const T& List<T>::operator[](unsigned index) const {
 	return elements[index];
+}
+
+template <typename T>
+List<T>& List<T>::operator+=(const List<T> other) {
+	for (unsigned i = 0; i < other.length; i++)
+		add(other[i]);
+	return *this;
 }
 
 template <class T>
