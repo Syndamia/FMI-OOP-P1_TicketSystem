@@ -40,9 +40,6 @@ public:
 
 	List(List&& other);
 	List& operator=(List&& other);
-
-	friend std::istream& operator>>(std::istream& istr, List<T>& obj);
-	friend std::ostream& operator<<(std::ostream& ostr, const List<T>& obj);
 };
 
 template <typename T>
@@ -234,19 +231,22 @@ List<T>& List<T>::operator=(List&& other) {
 
 template <typename T>
 std::istream& operator>>(std::istream& istr, List<T>& obj) {
-	istr >> obj.length >> obj.count;
+	List<T> newObj;
+	unsigned count;
+	istr >> count;
 
-	delete[] obj.elements;
-	obj.elements = new T[obj.length];
-
-	for (int i = 0; i < obj.count; i++)
-		istr >> obj.elements[i];
+	T temp;
+	for (int i = 0; i < count; i++) {
+		istr >> temp;
+		obj.add(temp);
+	}
 
 	return istr;
 }
 
 template <typename T>
 std::ostream& operator<<(std::ostream& ostr, const List<T>& obj) {
+	ostr << obj.get_count() << " ";
 	for (int i = 0; i < obj.count; i++)
 		ostr << obj.elements[i];
 
