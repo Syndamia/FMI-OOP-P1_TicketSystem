@@ -70,12 +70,12 @@ String& String::operator=(String&& other) {
 
 void String::read(std::istream& istr) {
 	istr.read((char*)&length, sizeof(length));
-	istr.read(str, sizeof(char) * length);
+	istr.read(str, sizeof(char) * (length + 1));
 }
 
 void String::write(std::ostream& ostr) const {
 	ostr.write((char*)&length, sizeof(length));
-	ostr.write(str, sizeof(char) * length);
+	ostr.write(str, sizeof(char) * (length + 1));
 }
 
 int String::compare(const String& other) const {
