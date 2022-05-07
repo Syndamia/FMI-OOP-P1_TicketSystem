@@ -87,8 +87,6 @@ void command_cancelReservation() {
 }
 
 void command_buyTicket() {
-	bool reserved;
-	inputSubBox("Is ticket reserved? [0/1]: ", &reserved);
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;

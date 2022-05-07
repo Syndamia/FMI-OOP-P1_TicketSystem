@@ -29,6 +29,8 @@ public:
 	StatusCode cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn);
 	StatusCode cancelTicketReservation(const char* name, const Date& date, const Ticket& ticket);
 
+	bool ticketIsReserved(const char* name, const Date& date, const Ticket& ticket);
+
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password);
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password);
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat);
