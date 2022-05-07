@@ -1,10 +1,2 @@
-5 | Hall: 1 | Name: T | Date: 1.2.3
-Reserved tickets: 
-| Hall: 1 | Name: R | Date: 2.2.3
-Reserved tickets: 
-| Hall: 2 | Name: R | Date: 4.5.6
-Reserved tickets: 
-| Hall: 2 | Name: C | Date: 9.9.9
-Reserved tickets: 
-| Hall: 3 | Name: 7 8 2 | Date: 1.1.1
-Reserved tickets: 
+1 | Hall: 1 | Name: T | Date: 1.2.3
+Reserved tickets: [6 1] [8 3] 

@@ -195,3 +195,7 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 
 	return Success;
 }
+
+StatusCode EventService::reportBoughtTickets(unsigned hallNumber, Date start, Date end) {
+
+}

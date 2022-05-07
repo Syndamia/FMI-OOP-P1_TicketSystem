@@ -38,7 +38,7 @@ public:
 	void queryInsufficientlyVisited();
 
 	StatusCode reportReservations(const char* name, const Date& date);
-	StatusCode reportBoughtTickets(Date start, Date end, unsigned hall);
+	StatusCode reportBoughtTickets(unsigned hallNumber, Date start, Date end);
 };
 
 #endif
