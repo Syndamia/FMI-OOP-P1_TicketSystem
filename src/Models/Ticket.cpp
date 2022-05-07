@@ -17,7 +17,7 @@ unsigned Ticket::get_seat() const {
 
 void Ticket::read(std::istream& istr) {
 	istr.read((char*)&row, sizeof(row));
-	istr.read((char*)&row, sizeof(seat));
+	istr.read((char*)&seat, sizeof(seat));
 }
 
 void Ticket::write(std::ostream& ostr) const {
