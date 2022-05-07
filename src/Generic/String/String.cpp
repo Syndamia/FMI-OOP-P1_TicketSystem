@@ -3,62 +3,30 @@
 
 /* Private */
 
-void String::resize() {
-	length *= 2;
-	char* newStr = new char[length];
-	strncpy(newStr, str, count);
-	delete[] str;
-	str = newStr;
-}
-
 void String::free() {
 	delete[] str;
 }
 
 void String::copyFrom(const String& other) {
 	str = new char[other.length];
-	strncpy(str, other.str, other.count);
+	strncpy(str, other.str, other.length);
 	length = other.length;
-	count = other.count;
 }
 
 /* Public */
 
 String::String(const char* str) {
-	count = length = strlen(str);
+	length = strlen(str);
 	this->str = new char[length + 1]; // capture terminating zero
-	strncpy(this->str, str, count + 1);
+	strncpy(this->str, str, length + 1);
 }
 
 const char* String::get_cstr() const {
 	return str;
 }
 
-unsigned String::get_count() const {
-	return count;
-}
-
 unsigned String::get_length() const {
 	return length;
-}
-
-String& String::operator+=(const String& other) {
-	char* newStr = new char[length + other.length + 1];
-	strncpy(newStr, str, length);
-	strncat(newStr, other.str, other.length + 1);
-
-	delete[] str;
-	str = newStr;
-	length += other.length;
-
-	return *this;
-}
-
-String& String::operator+=(char other) {
-	if (count == length) resize();
-
-	str[count++] = other;
-	return *this;
 }
 
 String::String() : String("") {}

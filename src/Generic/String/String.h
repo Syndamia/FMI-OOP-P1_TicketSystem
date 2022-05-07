@@ -3,21 +3,15 @@
 
 class String {
 	char* str;
-	unsigned count;
 	unsigned length;
 
-	void resize();
 	void free();
 	void copyFrom(const String& other);
 
 public:
 	String(const char* str);
 	const char* get_cstr() const;
-	unsigned get_count() const;
 	unsigned get_length() const;
-
-	String& operator+=(const String& other);
-	String& operator+=(char character);
 
 	String();
 	String(const String& other);
