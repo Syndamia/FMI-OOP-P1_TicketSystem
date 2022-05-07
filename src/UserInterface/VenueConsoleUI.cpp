@@ -167,7 +167,14 @@ void command_reservationsList() {
 }
 
 void command_boughtTickets() {
+	unsigned hallNumber;
+	inputSubBox("Enter hall number: ", &hallNumber);
+	Date start, end;
+	inputSubBox("Enter start date: ", &start);
+	inputSubBox("Enter end date: ", &end);
 
+	StatusCode s = es->reportBoughtTickets(hallNumber, start, end, hallNumber == 0);
+	handleStatusCode(s, reportsMenu);
 }
 
 void submenu_reportManagement() {

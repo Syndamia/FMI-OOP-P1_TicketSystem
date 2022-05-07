@@ -218,7 +218,7 @@ StatusCode EventService::reportBoughtTickets(int hallNumber, const Date& start, 
 	if (!outFile.is_open())
 		return E_FileCouldNotBeOpened;
 
-	configureEventInsertionOp(0b01100);
+	configureEventInsertionOp(0b01001);
 	outFile << result;
 	outFile.close();
 
