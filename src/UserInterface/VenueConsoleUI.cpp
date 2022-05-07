@@ -94,14 +94,16 @@ void command_buyTicket() {
 	Ticket tic;
 	inputSubBox("Enter row and seat: ", &tic);
 
-	StatusCode s;
-	if (reserved) {
+	StatusCode s = es->ticketIsReserved(name, date, tic);
+	if (s == Success) {
 		char pass[PASSWORD_LEN];
 		inputLineSubBox("Enter reservation password: ", pass, PASSWORD_LEN);
+
 		s = es->buyTicket(name, date, tic, pass);
 	}
-	else
+	else if (s == W_TicketHadNotBeenReserved) {
 		s = es->buyTicket(name, date, tic);
+	}
 
 	handleStatusCode(s, ticketManagementMenu);
 }
