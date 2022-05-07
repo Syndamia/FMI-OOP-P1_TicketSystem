@@ -29,11 +29,21 @@ const Date& Event::get_date() const {
 	return date;
 }
 
-void Event::print(std::ostream& ostr) {
-	ostr.write(hall, sizeof(hall));
+void Event::read(std::istream& istr) {
+	hall.read(istr);
+	name.read(istr);
+	date.read(istr);
+	tickets.read(istr);
+	reservations.read(istr);
 }
 
-void Event::write(std::istream& istr);
+void Event::write(std::ostream& ostr) {
+	hall.write(ostr);
+	name.write(ostr);
+	date.write(ostr);
+	tickets.write(ostr);
+	reservations.write(ostr);
+}
 
 int Event::compare(const Event& other) {
 	if (hall == other.hall)

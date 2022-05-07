@@ -1,6 +1,9 @@
 #ifndef HEADER_HALL
 #define HEADER_HALL
 
+#include <istream>
+#include <ostream>
+
 class Hall {
 	int number;
 	unsigned rows;
@@ -12,14 +15,11 @@ public:
 	Hall(int number, unsigned rows, unsigned seatsPerRow);
 
 	int get_number() const;
-	void set_number(int number);
-
 	unsigned get_rows() const;
-	void set_rows(unsigned rows);
-
 	unsigned get_seatsPerRow() const;
-	void set_seatsPerRow(unsigned seatsPerRow);
 
+	void read(std::istream& istr);
+	void write(std::ostream& ostr);
 	int compare(const Hall& other) const;
 };
 

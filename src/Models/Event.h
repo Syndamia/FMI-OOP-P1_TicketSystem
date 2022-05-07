@@ -27,8 +27,8 @@ public:
 	OrderedList<Ticket>& get_tickets();
 	OrderedList<Reservation>& get_reservations();
 
-	void print(std::ostream& ostr);
-	void write(std::istream& istr);
+	void write(std::ostream& ostr);
+	void read(std::istream& istr);
 
 	int compare(const Event& other);
 
