@@ -26,8 +26,8 @@ public:
 	void write(std::ostream& ostr) const;
 	int compare(const Reservation& other) const;
 
-	friend std::istream& operator>>(std::istream& istr, Reservation& event);
-	friend std::ostream& operator<<(std::ostream& ostr, const Reservation& event);
+	friend std::istream& operator>>(std::istream& istr, Reservation& reservation);
+	friend std::ostream& operator<<(std::ostream& ostr, const Reservation& reservation);
 };
 
 #endif
