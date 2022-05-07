@@ -135,18 +135,11 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 	return Success;
 }
 
-OrderedList<Ticket> EventService::getTickets(const char* name, const Date& date) {
-	unsigned ind = indexOfEvent(name, date);
-	if (ind == events.get_count())
-		return OrderedList<Ticket>();
+String EventService::createSeatingString(const char*name, const Date& date) {
+	unsigned eInd = indexOfEvent(name, date);
+	if (eInd == events.get_count())
+		return E_EventDoesNotExist;
 
-	return events[ind].get_tickets();
-}
-
-OrderedList<Reservation> EventService::getReservations(const char* name, const Date& date) {
-	unsigned ind = indexOfEvent(name, date);
-	if (ind == events.get_count())
-		return OrderedList<Reservation>();
-
-	return events[ind].get_reservations();
+	unsigned strSize = events[eInd].get_hall().get_rows() * events[eInd].get_hall().get_seatsPerRow();
+	String out;
 }

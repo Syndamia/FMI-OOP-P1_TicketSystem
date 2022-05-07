@@ -12,6 +12,8 @@ public:
 	String(const char* str);
 	const char* get_cstr() const;
 
+	String& operator+=(const String& other);
+
 	String();
 	String(const String& other);
 	String& operator=(const String& other);

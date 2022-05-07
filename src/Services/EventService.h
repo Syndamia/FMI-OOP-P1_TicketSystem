@@ -34,8 +34,7 @@ public:
 	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat);
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket);
 
-	OrderedList<Ticket> getTickets(const char* name, const Date& date);
-	OrderedList<Reservation> getReservations(const char* name, const Date& date);
+	String createSeatingString(const char* name, const Date& date);
 
 	void queryMostVisited();
 	void queryInsufficientlyVisited();
