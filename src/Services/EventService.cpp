@@ -107,7 +107,7 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 	return buyTicket(name, date, ticket, nullptr);
 }
 
-StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password) {
+StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password, char** reservationNoteOutput) {
 	unsigned eInd = indexOfEvent(name, date);
 	if (eInd == events.get_count())
 		return E_EventDoesNotExist;

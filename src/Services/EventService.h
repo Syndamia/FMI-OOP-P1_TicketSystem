@@ -29,8 +29,6 @@ public:
 
 	StatusCode ticketIsReserved(const char* name, const Date& date, const Ticket& ticket);
 
-	String ticketNote(const char* name, const Date& date, const Ticket& ticket);
-
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password);
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket);
 
