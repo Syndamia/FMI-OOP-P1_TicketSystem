@@ -64,11 +64,18 @@ StatusCode EventService::reserveTicket(const char* name, const Date& date, const
 	if (eInd == events.get_count())
 		return E_EventDoesNotExist;
 
+	unsigned tInd = events[eInd].get_tickets().findIndex(ticket);
+	if (tInd < events[eInd].get_tickets().get_count())
+		return E_TicketAlreadyBought;
+
 	Reservation res(ticket, password, note);
 
-	unsigned 
+	unsigned rInd = events[eInd].get_reservations().findIndex(res);
+	if (rInd < events[eInd].get_reservations().get_count())
+		return E_TicketAlreadyReserved;
 
-	return events[ind].reserveTicket(ticket, password, note);
+	events[eInd].get_reservations().insert(res);
+	return Success;
 }
 
 StatusCode EventService::cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn) {
@@ -76,11 +83,15 @@ StatusCode EventService::cancelTicketReservation(const char* name, const Date& d
 }
 
 StatusCode EventService::cancelTicketReservation(const char* name, const Date& date, const Ticket& ticket) {
-	unsigned ind = indexOfEvent(name, date);
-	if (ind == events.get_count())
+	unsigned eInd = indexOfEvent(name, date);
+	if (eInd == events.get_count())
 		return E_EventDoesNotExist;
-	
-	return events[ind].cancelReservation(ticket);
+
+	unsigned rInd = events[eInd].get_reservations().findIndex(ticket);
+	if (rInd < events[eInd].get_reservations().get_count())
+		return E_TicketAlreadyReserved;
+
+	return events[eInd].cancelReservation(ticket);
 }
 
 StatusCode EventService::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat) {

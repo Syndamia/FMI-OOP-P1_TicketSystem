@@ -9,11 +9,11 @@ Event::Event(const Hall& hall, String name, Date date) : tickets(), reservations
 	this->date = date;
 }
 
-const OrderedList<Ticket>& Event::get_tickets() const {
+OrderedList<Ticket>& Event::get_tickets() {
 	return tickets;
 }
 
-const OrderedList<Reservation>& Event::get_reservations() const {
+OrderedList<Reservation>& Event::get_reservations() {
 	return reservations;
 }
 
