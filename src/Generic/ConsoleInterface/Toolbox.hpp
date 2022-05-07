@@ -18,13 +18,14 @@ void errorSubBox(const char* message);
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth);
 void inputLineSubBox(const char* label, char* output, unsigned maxWidth);
+void pressEnterToContinue();
 
 void resetOrderedList(int starter = 1);
 
 void table(unsigned startNumber, unsigned columns, const char* items);
 
+void _printSubBoxSpacing();
 void _printInputBoxLabel(const char* label);
-void _printInputSubBoxLabel(const char* label);
 void _printOrderedListBeginning();
 
 template <class T>
@@ -72,7 +73,8 @@ void inputBox(const char* label, T* output) {
 
 template <typename T>
 void inputSubBox(const char* label, T* output) {
-	_printInputSubBoxLabel(label);
+	_printSubBoxSpacing();
+	_printInputBoxLabel(label);
 	std::cin >> *output;
 }
 

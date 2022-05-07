@@ -6,6 +6,12 @@ void clear() {
 	std::cout << u8"\033[2J\033[1;1H"; 
 }
 
+void _printSubBoxSpacing() {
+	std::cout << "    ";
+}
+
+/* Title boxes */
+
 void titleBox(const char* title) {
 	std::cout << std::endl << "=== " << title << " ===" << std::endl;
 }
@@ -16,16 +22,12 @@ void subTitleBox(const char* title) {
 
 /* Status boxes */
 
-void __printSubBoxSpacing() {
-	std::cout << "    ";
-}
-
 void successBox(const char* message) {
 	std::cout << "<S> " << message << std::endl;
 }
 
 void successSubBox(const char* message) {
-	__printSubBoxSpacing();
+	_printSubBoxSpacing();
 	successBox(message);
 }
 
@@ -34,7 +36,7 @@ void warningBox(const char* message) {
 }
 
 void warningSubBox(const char* message) {
-	__printSubBoxSpacing();
+	_printSubBoxSpacing();
 	warningBox(message);
 }
 
@@ -43,24 +45,14 @@ void errorBox(const char* message) {
 }
 
 void errorSubBox(const char* message) {
-	__printSubBoxSpacing();
+	_printSubBoxSpacing();
 	errorBox(message);
-}
-
-
-void _printOrderedListBeginning() {
-	std::cout << "[" << orderedListIndex++ << "] ";
 }
 
 /* Input line boxes */
 
 void _printInputBoxLabel(const char* label) {
 	std::cout << "(+) " << label;
-}
-
-void _printInputSubBoxLabel(const char* label) {
-	std::cout << "    ";
-	_printInputBoxLabel(label);
 }
 
 void __inputLineBoxGetInput(char* output, unsigned maxWidth) {
@@ -74,8 +66,21 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth) {
 }
 
 void inputLineSubBox(const char* label, char* output, unsigned maxWidth) {
-	_printInputSubBoxLabel(label);
+	_printSubBoxSpacing();
+	_printInputBoxLabel(label);
 	__inputLineBoxGetInput(output, maxWidth);
+}
+
+/* Ordered list */
+
+int orderedListIndex = 1;
+
+void _printOrderedListBeginning() {
+	std::cout << "[" << orderedListIndex++ << "] ";
+}
+
+void resetOrderedList(int starter) {
+	orderedListIndex = starter;
 }
 
 /* Table */
