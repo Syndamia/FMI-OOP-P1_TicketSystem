@@ -41,7 +41,7 @@ StatusCode EventService::createEvent(int hallNumber, const String& name, const D
 	if (hInd == hs->get_halls().get_count())
 		return E_HallDoesntExist;
 
-	Event newEv(hallNumber, name, date);
+	Event newEv(hs->get_halls()[hInd], name, date);
 
 	unsigned eInd = events.findIndex(newEv);
 	if (eInd < events.get_count())
