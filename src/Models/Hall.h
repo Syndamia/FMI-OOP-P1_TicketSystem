@@ -26,4 +26,7 @@ public:
 	friend std::ostream& operator<<(std::ostream& ostr, const Hall& hall);
 };
 
+std::istream& operator>>(std::istream& istr, Hall& hall);
+std::ostream& operator<<(std::ostream& ostr, const Hall& hall);
+
 #endif

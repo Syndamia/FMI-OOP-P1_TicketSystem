@@ -4,7 +4,7 @@
 #include <istream>
 #include <ostream>
 
-template <class T>
+template <typename T>
 class List {
 protected:
 	T* elements;
@@ -45,9 +45,14 @@ public:
 	friend std::ostream& operator<<(std::ostream& ostr, const List<T>& obj);
 };
 
+template <typename T>
+std::istream& operator>>(std::istream& istr, List<T>& obj);
+template <typename T>
+std::ostream& operator<<(std::ostream& ostr, const List<T>& obj);
+
 /* Private */
 
-template <class T>
+template <typename T>
 void List<T>::resize() {
 	length = (length == 0) ? 8 : length << 1;
 	T* temp = new T[length];
@@ -57,12 +62,12 @@ void List<T>::resize() {
 	elements = temp;
 }
 
-template <class T>
+template <typename T>
 void List<T>::free() {
 	delete[] elements;
 }
 
-template <class T>
+template <typename T>
 void List<T>::copyFrom(const List& other) {
 	elements = new T[other.length];
 	for (int i = 0; i < other.count; i++)
@@ -73,7 +78,7 @@ void List<T>::copyFrom(const List& other) {
 
 /* Public */
 
-template <class T>
+template <typename T>
 List<T>::List(const T* elements, unsigned elementsCount) {
 	length = 8;
 	count = elementsCount;
@@ -82,14 +87,14 @@ List<T>::List(const T* elements, unsigned elementsCount) {
 		this->elements[i] = elements[i];
 }
 
-template <class T>
+template <typename T>
 void List<T>::add(T element) {
 	if (length == count) resize();
 
 	elements[count++] = element;
 }
 
-template <class T>
+template <typename T>
 void List<T>::insertAt(T element, unsigned index) {
 	if (index >= count) {
 		add(element);
@@ -104,7 +109,7 @@ void List<T>::insertAt(T element, unsigned index) {
 	count++;
 }
 
-template <class T>
+template <typename T>
 bool List<T>::removeAt(unsigned index) {
 	if (index >= count) return false;
 
@@ -114,7 +119,7 @@ bool List<T>::removeAt(unsigned index) {
 	return true;
 }
 
-template <class T>
+template <typename T>
 unsigned List<T>::findIndex(const T& element) const {
 	unsigned ind = 0;
 	while (ind < count && elements[ind].compare(element) != 0)
@@ -122,17 +127,17 @@ unsigned List<T>::findIndex(const T& element) const {
 	return ind;
 }
 
-template <class T>
+template <typename T>
 bool List<T>::contain(const T& element) const {
 	return findIndex(element) < count;
 }
 
-template <class T>
+template <typename T>
 T& List<T>::operator[](unsigned index) {
 	return elements[index];
 }
 
-template <class T>
+template <typename T>
 const T& List<T>::operator[](unsigned index) const {
 	return elements[index];
 }
@@ -144,7 +149,7 @@ List<T>& List<T>::operator+=(const List<T> other) {
 	return *this;
 }
 
-template <class T>
+template <typename T>
 std::istream& List<T>::read(std::istream& istr) {
 	istr.read((char*)&length, sizeof(length));
 	istr.read((char*)&count, sizeof(count));
@@ -158,7 +163,7 @@ std::istream& List<T>::read(std::istream& istr) {
 	return istr;
 }
 
-template <class T>
+template <typename T>
 std::ostream& List<T>::write(std::ostream& ostr) const {
 	ostr.write((const char*)&length, sizeof(length));
 	ostr.write((const char*)&count, sizeof(count));
@@ -169,22 +174,22 @@ std::ostream& List<T>::write(std::ostream& ostr) const {
 	return ostr;
 }
 
-template <class T>
+template <typename T>
 unsigned List<T>::get_length() const {
 	return length;
 }
 
-template <class T>
+template <typename T>
 unsigned List<T>::get_count() const {
 	return count;
 }
 
 // Rule of 4
 
-template <class T>
+template <typename T>
 List<T>::List() : List(nullptr, 0) {}
 
-template <class T>
+template <typename T>
 List<T>& List<T>::operator=(const List& other) {
 	if (this != &other) {
 		free();
@@ -193,19 +198,19 @@ List<T>& List<T>::operator=(const List& other) {
 	return *this;
 }
 
-template <class T>
+template <typename T>
 List<T>::List(const List& other) {
 	copyFrom(other);
 }
 
-template <class T>
+template <typename T>
 List<T>::~List() {
 	free();
 }
 
 // Move semantics
 
-template <class T>
+template <typename T>
 List<T>::List(List&& other) {
 	length = other.length;
 	count = other.count;
@@ -213,7 +218,7 @@ List<T>::List(List&& other) {
 	other.elements = nullptr;
 }
 
-template <class T>
+template <typename T>
 List<T>& List<T>::operator=(List&& other) {
 	if (this != &other) {
 		free();
