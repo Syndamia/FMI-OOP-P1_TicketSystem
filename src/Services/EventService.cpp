@@ -36,11 +36,11 @@ EventService::EventService(const Event* events, unsigned eventCount) {
 	updateSoonestUpcoming();
 }
 
-StatusCode EventService::createEvent(const Hall* hall, String name, Date date) {
+StatusCode EventService::createEvent(int hallNumber, const String& name, const Date& date) {
 	if (indexOfEvent(date) < events.get_count())
 		return E_EventWillOverlap;
 
-	events.insert(Event(hall, name, date));
+	events.insert(Event(*hall, name, date));
 	return Success;
 }
 

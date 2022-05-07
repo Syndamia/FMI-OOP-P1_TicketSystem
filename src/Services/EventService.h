@@ -19,7 +19,7 @@ public:
 	EventService();
 	EventService(const Event* events, unsigned eventCount);
 
-	StatusCode createEvent(const Hall* hall, String name, Date date);
+	StatusCode createEvent(int hallNumber, const String& name, const Date& date);
 	StatusCode cancelEvent(const char* name, const Date& date);
 
 	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn);
