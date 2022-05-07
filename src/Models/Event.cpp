@@ -13,7 +13,15 @@ OrderedList<Ticket>& Event::get_tickets() {
 	return tickets;
 }
 
+const OrderedList<Ticket>& Event::get_tickets() const {
+	return tickets;
+}
+
 OrderedList<Reservation>& Event::get_reservations() {
+	return reservations;
+}
+
+const OrderedList<Reservation>& Event::get_reservations() const {
 	return reservations;
 }
 

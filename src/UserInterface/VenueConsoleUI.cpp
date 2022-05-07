@@ -157,7 +157,13 @@ void submenu_eventManagement() {
 /* Report Management */
 
 void command_reservationsList() {
+	char name[MAX_LINE_WIDTH];
+	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
+	Date date;
+	inputSubBox("Enter event date: ", &date);
 
+	StatusCode s = es->reportReservations(name, date);
+	handleStatusCode(s, reportsMenu);
 }
 
 void command_boughtTickets() {
