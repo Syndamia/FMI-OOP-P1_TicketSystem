@@ -24,6 +24,8 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 			menu.registerWarning("Ticket hadn't been reserved. Nothing changed."); break;
 		case E_EventDoesNotExist: 
 			menu.registerError("Event doesn't exist!"); break;
+		case E_EventWillOverlap:
+			menu.registerError("There is already an event at same time!"); break;
 		case E_TicketAlreadyBought:
 			menu.registerError("Ticket was already bought!"); break;
 		case E_TicketAlreadyReserved:
