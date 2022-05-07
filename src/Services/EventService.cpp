@@ -7,15 +7,6 @@ void EventService::updateSoonestUpcoming() {
 	
 }
 
-unsigned EventService::indexOfEvent(const Date& date) {
-	// TODO: make binary search
-	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
-		if (events[i].get_date().compare(date) == 0)
-			return i;
-	}
-	return events.get_count();
-}
-
 unsigned EventService::indexOfEvent(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(date);
 	if (ind < events.get_count() && events[ind].get_name().compare(name) == 0)
@@ -43,11 +34,13 @@ StatusCode EventService::createEvent(int hallNumber, const String& name, const D
 	if (hInd == hs->get_halls().get_count())
 		return E_HallDoesntExist;
 
-	unsigned eInd = events.findIndex(Event(hallNumber, "", date));
+	Event newEv(hallNumber, name, date);
+
+	unsigned eInd = events.findIndex(newEv);
 	if (eInd < events.get_count())
 		return E_EventWillOverlap;
 
-	events.insert(Event(*hall, name, date));
+	events.insert(newEv);
 	return Success;
 }
 
