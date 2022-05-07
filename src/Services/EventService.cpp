@@ -135,15 +135,7 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 	return Success;
 }
 
-const Hall* EventService::queryEventHall(const char* name, const Date& date) {
-	unsigned ind = indexOfEvent(name, date);
-	if (ind == events.get_count())
-		return nullptr;
-
-	return &events[ind].get_hall();
-}
-
-OrderedList<Ticket> EventService::queryTickets(const char* name, const Date& date) {
+OrderedList<Ticket> EventService::getTickets(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return OrderedList<Ticket>();
@@ -151,7 +143,7 @@ OrderedList<Ticket> EventService::queryTickets(const char* name, const Date& dat
 	return events[ind].get_tickets();
 }
 
-OrderedList<Reservation> EventService::queryReservations(const char* name, const Date& date) {
+OrderedList<Reservation> EventService::getReservations(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return OrderedList<Reservation>();

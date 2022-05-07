@@ -39,19 +39,13 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 /* Ticket Management */
 
 void command_freeSeats() {
-	/*
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputSubBox("Enter event date: ", &date);
 
-	if (!hs->hallExists()) {
-		handleStatusCode(E_HallDoesntExist, ticketManagementMenu);
-		return;
-	}
-
-	OrderedList<Ticket> tickets = es->queryTickets(name, date);
-	OrderedList<Reservation> reservations = es->queryReservations(name, date);
+	OrderedList<Ticket> tickets = es->getTickets(name, date);
+	OrderedList<Reservation> reservations = es->getReservations(name, date);
 
 	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
 	char tableData[tableSize + 1];
@@ -72,7 +66,6 @@ void command_freeSeats() {
 
 	char tmp;
 	inputLineBox("[Press enter to continue]", &tmp, 1);
-	*/
 }
 
 void command_reserveTicket() {
@@ -132,19 +125,14 @@ void submenu_ticketManagement() {
 /* Event Management */
 
 void command_createEvent() {
-	unsigned hallIndex;
-	inputSubBox("Enter hall index: ", &hallIndex);
-	// if (!v->hallExists(hallIndex)) {
-	// 	eventManagementMenu.registerError("Invalid hall index!");
-	// 	return;
-	// }
-	
+	unsigned hallNumber;
+	inputSubBox("Enter hall number: ", &hallNumber);
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputSubBox("Enter event date: ", &date);
 	
-	StatusCode s = es->createEvent(nullptr, name, date); // TODO
+	StatusCode s = es->createEvent(hallNumber, name, date);
 	handleStatusCode(s, eventManagementMenu);
 }
 
