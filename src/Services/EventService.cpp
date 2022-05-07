@@ -226,10 +226,22 @@ StatusCode EventService::reportBoughtTickets(int hallNumber, const Date& start, 
 
 }
 
-void EventService::load() {
+StatusCode EventService::load() {
+	std::ifstream inFile("eventsDatabase.fmits");
+	if (!inFile.is_open())
+		return E_FileCouldNotBeOpened;
 
+	events.read(inFile);
+	inFile.close();
+	return Success;
 }
 
-void EventService::save() {
+StatusCode EventService::save() {
+	std::ofstream outFile("eventsDatabase.fmits");
+	if (!outFile.is_open())
+		return E_FileCouldNotBeOpened;
 
+	events.write(outFile);
+	outFile.close();
+	return Success;
 }
