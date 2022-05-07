@@ -37,8 +37,8 @@ public:
 	void queryMostVisited();
 	void queryInsufficientlyVisited();
 
-	void reportBoughtTickets(Date start, Date end, unsigned hall);
-	void reportReservations(unsigned eventIndex);
+	StatusCode reportReservations(const char* name, const Date& date);
+	StatusCode reportBoughtTickets(Date start, Date end, unsigned hall);
 };
 
 #endif
