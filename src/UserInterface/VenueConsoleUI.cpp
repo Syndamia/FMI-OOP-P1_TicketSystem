@@ -48,7 +48,7 @@ void command_freeSeats() {
 	unsigned seatsPerRow = 0;
 	char* seating = nullptr;
 	es->createSeatingString(name, date, &seatsPerRow, seating);
-	if (strlen(seating) == 0) {
+	if (seating == nullptr) {
 		handleStatusCode(E_EventDoesNotExist, ticketManagementMenu);
 		return;
 	}
