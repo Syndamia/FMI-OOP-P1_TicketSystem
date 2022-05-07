@@ -104,7 +104,7 @@ void command_buyTicket() {
 		if (note.get_length() > 0) {
 			successSubBox("The reservation had a note attached. It reads:");
 			successSubBox(note.get_cstr());
-			pressEnterToContinue();
+			pressEnterToContinue(false);
 		}
 	}
 	else if (s == W_TicketHadNotBeenReserved) {
