@@ -27,8 +27,10 @@ void Hall::read(std::istream& istr) {
 	istr.read((char*)&seatsPerRow, sizeof(seatsPerRow));
 }
 
-void write(std::ostream& ostr) {
-
+void Hall::write(std::ostream& ostr) {
+	istr.write((char*)&number, sizeof(number));
+	istr.write((char*)&rows, sizeof(rows));
+	istr.write((char*)&seatsPerRow, sizeof(seatsPerRow));
 }
 
 int Hall::compare(const Hall& other) const {
