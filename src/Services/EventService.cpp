@@ -25,12 +25,14 @@ unsigned EventService::indexOfEvent(const char* name, const Date& date) {
 
 /* Public */
 
-EventService::EventService() {
+EventService::EventService(const HallService* hs) {
+	this->hs = hs;
 	events = OrderedList<Event>();
 	indSoonestUpcoming = 0;
 }
 
-EventService::EventService(const Event* events, unsigned eventCount) {
+EventService::EventService(const HallService* hs, const Event* events, unsigned eventCount) {
+	this->hs = hs;
 	this->events = OrderedList<Event>(events, eventCount);
 	indSoonestUpcoming = 0;
 	updateSoonestUpcoming();

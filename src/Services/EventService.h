@@ -3,21 +3,23 @@
 
 #include "../Generic/List/OrderedList.hpp"
 #include "../Generic/Date/Date.h"
-
 #include "../Models/Event.h"
+#include "HallService.h"
 #include "StatusCode.h"
 
 class EventService {
 	OrderedList<Event> events;
 	unsigned indSoonestUpcoming;
 
+	const HallService* hs;
+
 	void updateSoonestUpcoming();
 	unsigned indexOfEvent(const Date& date);
 	unsigned indexOfEvent(const char* name, const Date& date);
 
 public:
-	EventService();
-	EventService(const Event* events, unsigned eventCount);
+	EventService(const HallService* hs);
+	EventService(const HallService* hs, const Event* events, unsigned eventCount);
 
 	StatusCode createEvent(int hallNumber, const String& name, const Date& date);
 	StatusCode cancelEvent(const char* name, const Date& date);
