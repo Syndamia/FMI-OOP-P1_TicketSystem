@@ -140,6 +140,17 @@ String EventService::createSeatingString(const char*name, const Date& date) {
 	if (eInd == events.get_count())
 		return "";
 
-	unsigned strSize = events[eInd].get_hall().get_rows() * events[eInd].get_hall().get_seatsPerRow();
+	unsigned rowCount = events[eInd].get_hall().get_rows(), seatsCount = events[eInd].get_hall().get_seatsPerRow();
 	String out;
+	for (unsigned row = 1; row <= rowCount; row++) {
+		for (unsigned seat = 1; seat <= seatsCount; seat++) {
+			if (events[eInd].get_tickets().contain(Ticket(row, seat)))
+				out += 'B';
+			else if (events[eInd].get_reservations().contain(Ticket(row, seat)))
+				out += 'R';
+			else
+				out += ' ';
+		}
+	}
+	return out;
 }
