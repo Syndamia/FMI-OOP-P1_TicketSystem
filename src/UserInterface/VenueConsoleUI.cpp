@@ -10,7 +10,10 @@
 EventService* es;
 HallService* hs;
 
-Menu mainMenu("FMI Ticket System", true, false), ticketManagementMenu("Ticket management", false, true), eventManagementMenu("Event management", false, true), reportsMenu("Report management", false, true);
+Menu mainMenu("FMI Ticket System", true, false),
+	 ticketManagementMenu("Ticket management", false, true),
+	 eventManagementMenu("Event management", false, true),
+	 reportsMenu("Report management", false, true);
 
 void handleStatusCode(StatusCode sc, Menu menu) {
 	switch (sc) {
@@ -36,6 +39,7 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 /* Ticket Management */
 
 void command_freeSeats() {
+	/*
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
@@ -68,6 +72,7 @@ void command_freeSeats() {
 
 	char tmp;
 	inputLineBox("[Press enter to continue]", &tmp, 1);
+	*/
 }
 
 void command_reserveTicket() {
@@ -82,7 +87,8 @@ void command_reserveTicket() {
 	char note[NOTE_LEN];
 	inputSubBox("Enter note [Max 32 characters]: ", &note);
 
-	handleStatusCode(v->get_es().reserveTicket(name, date, password, note, tic), ticketManagementMenu);
+	StatusCode s = es->reserveTicket(name, date, password, note, tic);
+	handleStatusCode(s, ticketManagementMenu);
 }
 
 void command_cancelReservation() {
@@ -93,7 +99,8 @@ void command_cancelReservation() {
 	Ticket tic;
 	inputSubBox("Enter row and seat: ", &tic);
 
-	handleStatusCode(v->get_es().cancelTicketReservation(name, date, tic), ticketManagementMenu);
+	StatusCode s = es->cancelTicketReservation(name, date, tic);
+	handleStatusCode(s, ticketManagementMenu);
 }
 
 void command_buyTicket() {
@@ -106,13 +113,16 @@ void command_buyTicket() {
 	Ticket tic;
 	inputSubBox("Enter row and seat: ", &tic);
 
+	StatusCode s;
 	if (reserved) {
 		char pass[PASSWORD_LEN];
 		inputLineSubBox("Enter reservation password: ", pass, PASSWORD_LEN);
-		handleStatusCode(v->get_es().buyTicket(name, date, tic, pass), ticketManagementMenu);
+		s = es->buyTicket(name, date, tic, pass);
 	}
 	else
-		handleStatusCode(v->get_es().buyTicket(name, date, tic), ticketManagementMenu);
+		s = es->buyTicket(name, date, tic);
+
+	handleStatusCode(s, ticketManagementMenu);
 }
 
 void submenu_ticketManagement() {
@@ -124,17 +134,18 @@ void submenu_ticketManagement() {
 void command_createEvent() {
 	unsigned hallIndex;
 	inputSubBox("Enter hall index: ", &hallIndex);
-	if (!v->hallExists(hallIndex)) {
-		eventManagementMenu.registerError("Invalid hall index!");
-		return;
-	}
+	// if (!v->hallExists(hallIndex)) {
+	// 	eventManagementMenu.registerError("Invalid hall index!");
+	// 	return;
+	// }
 	
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
 	inputSubBox("Enter event date: ", &date);
 	
-	handleStatusCode(v->get_es().createEvent(&v->getHall(hallIndex), name, date), eventManagementMenu);
+	StatusCode s = es->createEvent(nullptr, name, date); // TODO
+	handleStatusCode(s, eventManagementMenu);
 }
 
 void command_cancelEvent() {
@@ -143,7 +154,8 @@ void command_cancelEvent() {
 	Date date;
 	inputSubBox("Enter event date: ", &date);
 
-	handleStatusCode(v->get_es().cancelEvent(name, date), eventManagementMenu);
+	StatusCode s = es->cancelEvent(name, date);
+	handleStatusCode(s, eventManagementMenu);
 }
 
 void command_mostWatched() {
