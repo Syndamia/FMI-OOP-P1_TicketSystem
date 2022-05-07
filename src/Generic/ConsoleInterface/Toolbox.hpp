@@ -10,14 +10,18 @@ void titleBox(const char* title);
 void subTitleBox(const char* title);
 
 void successBox(const char* message);
+void successSubBox(const char* message);
 void warningBox(const char* message);
+void warningSubBox(const char* message);
 void errorBox(const char* message);
-
-void table(unsigned startNumber, unsigned columns, const char* items);
+void errorSubBox(const char* message);
 
 void inputLineBox(const char* label, char* output, unsigned maxWidth);
 void inputLineSubBox(const char* label, char* output, unsigned maxWidth);
+
 void resetOrderedList(int starter = 1);
+
+void table(unsigned startNumber, unsigned columns, const char* items);
 
 void _printInputBoxLabel(const char* label);
 void _printInputSubBoxLabel(const char* label);

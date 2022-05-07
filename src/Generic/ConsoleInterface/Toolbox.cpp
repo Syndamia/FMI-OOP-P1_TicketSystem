@@ -6,12 +6,6 @@ void clear() {
 	std::cout << u8"\033[2J\033[1;1H"; 
 }
 
-int orderedListIndex = 1;
-
-void resetOrderedList(int starter) {
-	orderedListIndex = starter;
-}
-
 void titleBox(const char* title) {
 	std::cout << std::endl << "=== " << title << " ===" << std::endl;
 }
@@ -20,17 +14,71 @@ void subTitleBox(const char* title) {
 	std::cout << std::endl << "--- " << title << " ---" << std::endl;
 }
 
+/* Status boxes */
+
+void __printSubBoxSpacing() {
+	std::cout << "    ";
+}
+
 void successBox(const char* message) {
 	std::cout << "<S> " << message << std::endl;
+}
+
+void successSubBox(const char* message) {
+	__printSubBoxSpacing();
+	successBox(message);
 }
 
 void warningBox(const char* message) {
 	std::cout << "<W> " << message << std::endl;
 }
 
+void warningSubBox(const char* message) {
+	__printSubBoxSpacing();
+	warningBox(message);
+}
+
 void errorBox(const char* message) {
 	std::cout << "<E> " << message << std::endl;
 }
+
+void errorSubBox(const char* message) {
+	__printSubBoxSpacing();
+	errorBox(message);
+}
+
+
+void _printOrderedListBeginning() {
+	std::cout << "[" << orderedListIndex++ << "] ";
+}
+
+/* Input line boxes */
+
+void _printInputBoxLabel(const char* label) {
+	std::cout << "(+) " << label;
+}
+
+void _printInputSubBoxLabel(const char* label) {
+	std::cout << "    ";
+	_printInputBoxLabel(label);
+}
+
+void __inputLineBoxGetInput(char* output, unsigned maxWidth) {
+	std::cin.ignore();
+	std::cin.getline(output, maxWidth);
+}
+
+void inputLineBox(const char* label, char* output, unsigned maxWidth) {
+	_printInputBoxLabel(label);
+	__inputLineBoxGetInput(output, maxWidth);
+}
+
+void inputLineSubBox(const char* label, char* output, unsigned maxWidth) {
+	_printInputSubBoxLabel(label);
+	__inputLineBoxGetInput(output, maxWidth);
+}
+
+/* Table */
 
 void __printTableHeaderNumber(unsigned number) {
 	std::cout << ":" << ((number < 100) ? " " : "") << number << ((number < 10) ? " " : "");
@@ -70,30 +118,3 @@ void table(unsigned startNumber, unsigned columns, const char* items) {
 	std::cout << ":" << std::endl;
 }
 
-void _printOrderedListBeginning() {
-	std::cout << "[" << orderedListIndex++ << "] ";
-}
-
-void _printInputBoxLabel(const char* label) {
-	std::cout << "(+) " << label;
-}
-
-void _printInputSubBoxLabel(const char* label) {
-	std::cout << "    ";
-	_printInputBoxLabel(label);
-}
-
-void __inputLineBoxGetInput(char* output, unsigned maxWidth) {
-	std::cin.ignore();
-	std::cin.getline(output, maxWidth);
-}
-
-void inputLineBox(const char* label, char* output, unsigned maxWidth) {
-	_printInputBoxLabel(label);
-	__inputLineBoxGetInput(output, maxWidth);
-}
-
-void inputLineSubBox(const char* label, char* output, unsigned maxWidth) {
-	_printInputSubBoxLabel(label);
-	__inputLineBoxGetInput(output, maxWidth);
-}
