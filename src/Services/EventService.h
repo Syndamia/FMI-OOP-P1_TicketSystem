@@ -14,7 +14,6 @@ class EventService {
 	const HallService* hs;
 
 	void updateSoonestUpcoming();
-	unsigned indexOfEvent(const Date& date);
 	unsigned indexOfEvent(const char* name, const Date& date);
 
 public:

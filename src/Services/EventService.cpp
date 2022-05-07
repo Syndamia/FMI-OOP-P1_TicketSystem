@@ -8,9 +8,11 @@ void EventService::updateSoonestUpcoming() {
 }
 
 unsigned EventService::indexOfEvent(const char* name, const Date& date) {
-	unsigned ind = indexOfEvent(date);
-	if (ind < events.get_count() && events[ind].get_name().compare(name) == 0)
-		return ind;
+	// TODO: binary search
+	for (unsigned i = 0; i < events.get_count(); i++) {
+		if (events[i].get_date().compare(date) == 0 && events[i].get_name().compare(name) == 0)
+			return i;
+	}
 	return events.get_count();
 }
 
@@ -58,9 +60,13 @@ StatusCode EventService::reserveTicket(const char* name, const Date& date, const
 }
 
 StatusCode EventService::reserveTicket(const char* name, const Date& date, const char* password, const char* note, const Ticket& ticket) {
-	unsigned ind = indexOfEvent(name, date);
-	if (ind == events.get_count())
+	unsigned eInd = indexOfEvent(name, date);
+	if (eInd == events.get_count())
 		return E_EventDoesNotExist;
+
+	Reservation res(ticket, password, note);
+
+	unsigned 
 
 	return events[ind].reserveTicket(ticket, password, note);
 }
