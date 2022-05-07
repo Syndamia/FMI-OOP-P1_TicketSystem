@@ -26,7 +26,7 @@ public:
 	String& operator=(String&& other);
 
 	void read(std::istream& istr);
-	void write(std::ostream& ostr);
+	void write(std::ostream& ostr) const;
 	int compare(const String& other) const;
 	char& operator[](unsigned index);
 

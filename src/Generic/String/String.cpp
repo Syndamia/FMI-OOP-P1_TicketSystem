@@ -68,6 +68,16 @@ String& String::operator=(String&& other) {
 	return *this;
 }
 
+void String::read(std::istream& istr) {
+	istr.read((char*)&length, sizeof(length));
+	istr.read(str, sizeof(char) * length);
+}
+
+void String::write(std::ostream& ostr) const {
+	ostr.write((char*)&length, sizeof(length));
+	ostr.write(str, sizeof(char) * length);
+}
+
 int String::compare(const String& other) const {
 	return strcmp(str, other.str);
 }
@@ -77,8 +87,12 @@ char& String::operator[](unsigned index) {
 }
 
 std::istream& operator>>(std::istream& istr, String& event) {
-	istr >> event.str;
+	istr.getline(event.str, 1024);
+	event.length = strlen(event.str);
 
 	return istr;
 }
-friend std::ostream& operator<<(std::ostream& ostr, const String& event);
+
+std::ostream& operator<<(std::ostream& ostr, const String& event) {
+	return ostr << event.str;
+}

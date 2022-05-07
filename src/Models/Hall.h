@@ -19,7 +19,7 @@ public:
 	unsigned get_seatsPerRow() const;
 
 	void read(std::istream& istr);
-	void write(std::ostream& ostr);
+	void write(std::ostream& ostr) const;
 	int compare(const Hall& other) const;
 
 	friend std::istream& operator>>(std::istream& istr, Hall& hall);

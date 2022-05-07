@@ -30,7 +30,7 @@ const Date& Event::get_date() const {
 }
 
 void Event::read(std::istream& istr) {
-	hall.read(istr);
+	istr.read(istr.hall, sizeof(hall));
 	name.read(istr);
 	date.read(istr);
 	tickets.read(istr);
