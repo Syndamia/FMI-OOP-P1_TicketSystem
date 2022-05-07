@@ -206,8 +206,11 @@ bool cond_event_dates(const Event& event, const Date& start, const Date& end) {
 
 StatusCode EventService::reportBoughtTickets(int hallNumber, const Date& start, const Date& end, bool all) {
 	List<Event> result;
+	bool (*cond_hall)(const Event&, int) = cond_event_hallNumber;
+	if (all) cond_hall = cond_event_all;
+
 	for (unsigned i = 0; i < events.get_count(); i++) {
-		if (events[i].get_hall().get_number() == hallNumber)
+		if (cond_hall(events[i], hallNumber) && cond_event_dates(events[i], start, end))
 			result.add(events[i]);
 	}
 }
