@@ -22,8 +22,6 @@ public:
 	void write(std::ostream& ostr) const;
 	int compare(const Hall& other) const;
 
-	friend std::istream& operator>>(std::istream& istr, Hall& hall);
-	friend std::ostream& operator<<(std::ostream& ostr, const Hall& hall);
 };
 
 std::istream& operator>>(std::istream& istr, Hall& hall);
