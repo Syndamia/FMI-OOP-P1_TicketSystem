@@ -10,7 +10,7 @@ class HallService {
 public:
 	HallService(const Hall* halls, unsigned hallCount);
 
-	bool hallExists();
+	const OrderedList<Hall>& get_halls() const;
 };
 
 #endif

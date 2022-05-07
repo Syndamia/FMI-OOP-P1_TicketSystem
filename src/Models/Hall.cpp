@@ -2,6 +2,8 @@
 
 Hall::Hall() : Hall(0, 0, 0) {}
 
+Hall::Hall(int number) : Hall(number, 0, 0) {}
+
 Hall::Hall(int number, unsigned rows, unsigned seatsPerRow) {
 	this->number = number;
 	this->rows = rows;

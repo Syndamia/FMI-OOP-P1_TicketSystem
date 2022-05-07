@@ -8,6 +8,7 @@ class Hall {
 
 public:
 	Hall();
+	Hall(int number);
 	Hall(int number, unsigned rows, unsigned seatsPerRow);
 
 	int get_number() const;
