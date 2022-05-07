@@ -246,7 +246,7 @@ std::istream& operator>>(std::istream& istr, List<T>& obj) {
 
 template <typename T>
 std::ostream& operator<<(std::ostream& ostr, const List<T>& obj) {
-	ostr << obj.get_count() << " ";
+	ostr << obj.get_count() << std::endl;
 	for (int i = 0; i < obj.get_count(); i++)
 		ostr << obj[i];
 

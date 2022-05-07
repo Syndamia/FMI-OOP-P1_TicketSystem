@@ -189,6 +189,7 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 	if (!outFile.is_open())
 		return E_FileCouldNotBeOpened;
 
+	configureInsertionOperator(0b101);
 	outFile << result;
 	outFile.close();
 

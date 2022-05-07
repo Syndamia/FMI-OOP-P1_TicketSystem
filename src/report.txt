@@ -1,9 +1,10 @@
-3 Hall: 1 20 30 Name: T Date: 1.2.3
-Bought tickets: 
-Reserved tickets: 5 9 9 1 
-Hall: 1 20 30 Name: R Date: 4.5.6
-Bought tickets: 
-Reserved tickets: 6 2 
-Hall: 3 10 20 Name: Y Date: 4.5.6
-Bought tickets: 
+5 | Hall: 1 | Name: T | Date: 1.2.3
+Reserved tickets: 
+| Hall: 1 | Name: R | Date: 2.2.3
+Reserved tickets: 
+| Hall: 2 | Name: R | Date: 4.5.6
+Reserved tickets: 
+| Hall: 2 | Name: C | Date: 9.9.9
+Reserved tickets: 
+| Hall: 3 | Name: 7 8 2 | Date: 1.1.1
 Reserved tickets: 

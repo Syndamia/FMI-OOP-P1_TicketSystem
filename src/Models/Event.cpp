@@ -82,16 +82,16 @@ void configureInsertionOperator(unsigned char setting) {
 }
 
 std::ostream& operator<<(std::ostream& ostr, const Event& event) {
-	if (insertionOpSet) {
+	if (insertionOpSet & 1) {
 		ostr << "| Hall: " << event.get_hall().get_number() << " | Name: " << event.get_name() << " | Date: " << event.get_date() << std::endl;
 	}
-	if (insertionOpSet) {
+	if (insertionOpSet & 2) {
 		ostr << "Bought tickets: ";
 		for (unsigned i = 0; i < event.get_tickets().get_count(); i++)
 			ostr << "[" << event.get_tickets()[i] << "] ";
 		ostr << std::endl;
 	}
-	if(insertionOpSet % 2 == 0) {
+	if(insertionOpSet & 4) {
 		ostr << "Reserved tickets: ";
 		for (unsigned i = 0; i < event.get_reservations().get_count(); i++)
 			ostr << "[" << event.get_reservations()[i] << "] ";
