@@ -42,6 +42,8 @@ StatusCode EventService::createEvent(int hallNumber, const String& name, const D
 	unsigned hInd = hs->get_halls().findIndex(Hall(hallNumber));
 	if (hInd == hs->get_halls().get_count())
 		return E_HallDoesntExist;
+
+	unsigned eInd = indexOfEvent(date)
 	if (true)
 		return E_EventWillOverlap;
 

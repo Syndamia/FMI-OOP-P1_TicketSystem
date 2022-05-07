@@ -31,6 +31,6 @@ void Hall::set_seatsPerRow(unsigned seatsPerRow) {
 	this->seatsPerRow = seatsPerRow;
 }
 
-int Hall::compare(const Hall& other) {
+int Hall::compare(const Hall& other) const {
 	return (number > other.get_number()) - (number < other.get_number());
 }

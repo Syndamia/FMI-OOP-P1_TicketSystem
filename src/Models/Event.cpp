@@ -30,5 +30,7 @@ const Date& Event::get_date() const {
 }
 
 int Event::compare(const Event& other) {
-	return name.compare(other.name);
+	if (hall == other.hall)
+		return date.compare(other.date);
+	return hall->compare(*other.hall);
 }
