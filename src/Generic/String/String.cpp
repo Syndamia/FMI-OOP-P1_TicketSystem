@@ -18,7 +18,8 @@ void String::copyFrom(const String& other) {
 String::String(const char* str) {
 	length = strlen(str);
 	this->str = new char[length + 1]; // capture terminating zero
-	strncpy(this->str, str, length + 1);
+	strncpy(this->str, str, length);
+	this->str[length] = '\0';
 }
 
 const char* String::get_cstr() const {
