@@ -27,9 +27,6 @@ public:
 
 	List<T>& operator+=(const List<T> other);
 
-	std::istream& read(std::istream& istr);
-	std::ostream& write(std::ostream& ostr) const;
-
 	unsigned get_length() const;
 	unsigned get_count() const;
 
@@ -41,6 +38,11 @@ public:
 	List(List&& other);
 	List& operator=(List&& other);
 };
+
+template <typename T>
+std::istream& operator>>(std::istream& istr, List<T>& obj);
+template <typename T>
+std::ostream& operator<<(std::ostream& ostr, const List<T>& obj);
 
 /* Private */
 
@@ -142,31 +144,6 @@ List<T>& List<T>::operator+=(const List<T> other) {
 }
 
 template <class T>
-std::istream& List<T>::read(std::istream& istr) {
-	istr.read((char*)&length, sizeof(length));
-	istr.read((char*)&count, sizeof(count));
-
-	delete[] elements;
-	elements = new T[length];
-
-	for (int i = 0; i < count; i++)
-		elements[i].read(istr); // disgusting
-
-	return istr;
-}
-
-template <class T>
-std::ostream& List<T>::write(std::ostream& ostr) const {
-	ostr.write((const char*)&length, sizeof(length));
-	ostr.write((const char*)&count, sizeof(count));
-
-	for (int i = 0; i < count; i++)
-		elements[i].write(ostr); // disgusting
-
-	return ostr;
-}
-
-template <class T>
 unsigned List<T>::get_length() const {
 	return length;
 }
@@ -220,6 +197,33 @@ List<T>& List<T>::operator=(List&& other) {
 		other.elements = nullptr;
 	}
 	return *this;
+}
+
+/* Other */
+
+template <typename T>
+std::istream& operator>>(std::istream& istr, List<T>& obj) {
+	istr.read((char*)&length, sizeof(length));
+	istr.read((char*)&count, sizeof(count));
+
+	delete[] elements;
+	elements = new T[length];
+
+	for (int i = 0; i < count; i++)
+		elements[i].read(istr); // disgusting
+
+	return istr;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& ostr, const List<T>& obj) {
+	ostr.write((const char*)&length, sizeof(length));
+	ostr.write((const char*)&count, sizeof(count));
+
+	for (int i = 0; i < count; i++)
+		elements[i].write(ostr); // disgusting
+
+	return ostr;
 }
 
 #endif

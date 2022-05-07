@@ -10,6 +10,7 @@ enum StatusCode {
 
 	E_Generic,
 	E_DoesntExist,
+	E_FileCouldNotBeOpened,
 
 	E_HallDoesntExist,
 

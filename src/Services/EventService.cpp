@@ -173,7 +173,7 @@ bool cond_event_date(const Event& e, const Date& date) {
 }
 
 StatusCode EventService::reportReservations(const char* name, const Date& date) {
-	List<Reservation> result;
+	List<Event> result;
 	bool (*cond_name)(const Event&, const char*) = cond_event_name;
 	bool (*cond_date)(const Event&, const Date&) = cond_event_date;
 	
@@ -182,8 +182,15 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 
 	for (unsigned i = 0; i < events.get_count(); i++) {
 		if (cond_name(events[i], name) && cond_date(events[i], date))
-			result += events[i].get_reservations();
+			result.add(events[i]);
 	}
 
+	std::ofstream outFile("report.txt");
+	if (!outFile.is_open())
+		return E_FileCouldNotBeOpened;
 
+	outFile << result;
+	outFile.close();
+
+	return Success;
 }
