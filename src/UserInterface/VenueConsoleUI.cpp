@@ -46,15 +46,13 @@ void command_freeSeats() {
 	inputSubBox("Enter event date: ", &date);
 
 	unsigned seatsPerRow = 0;
-	char* seating = nullptr;
-	es->createSeatingString(name, date, &seatsPerRow, &seating);
-	if (seating == nullptr) {
+	String seating = es->createSeatingString(name, date, &seatsPerRow);
+	if (seating.get_length() == 0) {
 		handleStatusCode(E_EventDoesNotExist, ticketManagementMenu);
 		return;
 	}
 
-	table(1, seatsPerRow, seating);
-	delete[] seating;
+	table(1, seatsPerRow, seating.get_cstr());
 
 	char tmp;
 	inputLineBox("[Press enter to continue]", &tmp, 1);

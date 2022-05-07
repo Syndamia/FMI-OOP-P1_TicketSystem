@@ -15,6 +15,11 @@ void String::copyFrom(const String& other) {
 
 /* Public */
 
+String::String(unsigned length) {
+	this->length = length;
+	str = new char[length];
+}
+
 String::String(const char* str) {
 	length = strlen(str);
 	this->str = new char[length + 1]; // capture terminating zero
@@ -27,6 +32,10 @@ const char* String::get_cstr() const {
 
 unsigned String::get_length() const {
 	return length;
+}
+
+char& String::operator[](unsigned index) {
+	return str[index];
 }
 
 String::String() : String("") {}
