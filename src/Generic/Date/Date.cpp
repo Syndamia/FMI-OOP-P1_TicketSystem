@@ -25,12 +25,6 @@ Date::Date(unsigned short day, unsigned short month, unsigned short year) {
 	this->year = year;
 }
 
-int Date::compare(const Date& other) const {
-	if (year < other.year || month < other.month || day < other.day)
-		return -1;
-	return year > other.year || month > other.month || day > other.day;
-}
-
 unsigned short Date::get_day() const {
 	return day;
 }
@@ -59,6 +53,25 @@ bool Date::set_year(unsigned short newYear) {
 	year = newYear;
 	return true;
 }
+
+void Date::read(std::istream& istr) {
+	istr.read((char*)&day, sizeof(day));
+	istr.read((char*)&month, sizeof(month));
+	istr.read((char*)&year, sizeof(year));
+}
+
+void Date::write(std::ostream& ostr) {
+	ostr.write((char*)&day, sizeof(day));
+	ostr.write((char*)&month, sizeof(month));
+	ostr.write((char*)&year, sizeof(year));
+}
+
+int Date::compare(const Date& other) const {
+	if (year < other.year || month < other.month || day < other.day)
+		return -1;
+	return year > other.year || month > other.month || day > other.day;
+}
+
 
 /* Outside of class */
 
