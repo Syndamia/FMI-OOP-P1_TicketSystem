@@ -71,6 +71,11 @@ void inputLineSubBox(const char* label, char* output, unsigned maxWidth) {
 	__inputLineBoxGetInput(output, maxWidth);
 }
 
+void pressEnterToContinue() {
+	char tmp;
+	inputLineBox("[Press enter to continue]", &tmp, 1);
+}
+
 /* Ordered list */
 
 int orderedListIndex = 1;

@@ -53,9 +53,7 @@ void command_freeSeats() {
 	}
 
 	table(1, seatsPerRow, seating.get_cstr());
-
-	char tmp;
-	inputLineBox("[Press enter to continue]", &tmp, 1);
+	pressEnterToContinue();
 }
 
 void command_reserveTicket() {
@@ -106,6 +104,7 @@ void command_buyTicket() {
 		if (note.get_length() > 0) {
 			successSubBox("The reservation had a note attached. It reads:");
 			successSubBox(note.get_cstr());
+			pressEnterToContinue();
 		}
 	}
 	else if (s == W_TicketHadNotBeenReserved) {
