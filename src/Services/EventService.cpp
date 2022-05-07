@@ -196,7 +196,15 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 	return Success;
 }
 
-StatusCode EventService::reportBoughtTickets(bool all = false, int hallNumber, Date start, Date end) {
+bool cond_event_hallNumber(const Event& event, int hallNumber) {
+	return event.get_hall().get_number() == hallNumber;
+}
+
+bool cond_event_dates(const Event& event, const Date& start, const Date& end) {
+	return event.get_date().compare(start) >= 0 && event.get_date().compare(end) <= 0;
+}
+
+StatusCode EventService::reportBoughtTickets(int hallNumber, const Date& start, const Date& end, bool all) {
 	List<Event> result;
 	for (unsigned i = 0; i < events.get_count(); i++) {
 		if (events[i].get_hall().get_number() == hallNumber)
