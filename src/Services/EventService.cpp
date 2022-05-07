@@ -157,3 +157,24 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 	out[seatsCount * rowCount] = '\0';
 	return out;
 }
+
+bool cond_event_all(const Event& e1, const Event& e2) {
+	return true;
+}
+
+bool cond_event_name(const Event& e1, const Event& e2) {
+	return e1.get_name().compare(e2.get_name()) == 0;
+}
+
+bool cond_event_date(const Event& e1, const Event& e2) {
+	return e1.get_date().compare(e2.get_date()) == 0;
+}
+
+StatusCode EventService::reportReservations(const char* name, const Date& date) {
+	List<Reservation> result;
+	bool (*cond_name)(const Event&, const Event&) = cond_event_name;
+	bool (*cond_date)(const Event&, const Event&) = cond_event_date;
+	
+	if (strcmp(name, "ALL") == 0) cond_name = cond_event_all;
+	if (date.compare(Date(0, 0, 0)) == 0) cond_date = cond_event_all;
+}
