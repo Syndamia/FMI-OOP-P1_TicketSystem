@@ -37,7 +37,7 @@ public:
 };
 
 std::istream& operator>>(std::istream& istr, Event& event);
-void configureInsertionOperator(unsigned char setting);
+void configureEventInsertionOp(unsigned setting);
 std::ostream& operator<<(std::ostream& ostr, const Event& event);
 
 #endif

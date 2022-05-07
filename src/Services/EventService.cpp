@@ -189,7 +189,7 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 	if (!outFile.is_open())
 		return E_FileCouldNotBeOpened;
 
-	configureInsertionOperator(0b101);
+	configureEventInsertionOp(0b101);
 	outFile << result;
 	outFile.close();
 
@@ -213,4 +213,15 @@ StatusCode EventService::reportBoughtTickets(int hallNumber, const Date& start, 
 		if (cond_hall(events[i], hallNumber) && cond_event_dates(events[i], start, end))
 			result.add(events[i]);
 	}
+
+	std::ofstream outFile("boughtTickets.txt"); // TODO: filename
+	if (!outFile.is_open())
+		return E_FileCouldNotBeOpened;
+
+	configureEventInsertionOp(0b01100);
+	outFile << result;
+	outFile.close();
+
+	return Success;
+
 }

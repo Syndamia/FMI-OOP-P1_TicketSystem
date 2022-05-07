@@ -74,16 +74,21 @@ std::istream& operator>>(std::istream& istr, Event& event) {
 	return istr;
 }
 
-unsigned char insertionOpSet = 0;
+unsigned insertionOpSet = 0;
 
-void configureInsertionOperator(unsigned char setting) {
-	if (setting > 7) setting = 7;
+void configureEventInsertionOp(unsigned setting) {
 	insertionOpSet = setting;
 }
 
 std::ostream& operator<<(std::ostream& ostr, const Event& event) {
 	if (insertionOpSet & 1) {
-		ostr << "| Hall: " << event.get_hall().get_number() << " | Name: " << event.get_name() << " | Date: " << event.get_date() << std::endl;
+		ostr << "| Hall: " << event.get_hall().get_number() << " | Name: " << event.get_name() << " | Date: " << event.get_date();
+
+		if (insertionOpSet & 8)
+			ostr << " || Tickets Count: " << event.get_tickets().get_count();
+		if (insertionOpSet & 16)
+			ostr << " || Reservations Count: " << event.get_reservations().get_count();
+		ostr << std::endl;
 	}
 	if (insertionOpSet & 2) {
 		ostr << "Bought tickets: ";
