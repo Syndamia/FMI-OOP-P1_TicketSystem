@@ -38,3 +38,13 @@ void Reservation::write(std::ostream& ostr) const {
 int Reservation::compare(const Reservation& other) const {
 	return ticket.compare(other.ticket);
 }
+
+std::istream& operator>>(std::istream& istr, Reservation& reservation) {
+	istr >> reservation.ticket;
+	strncpy(reservation.password, "", PASSWORD_LEN);
+	strncpy(reservation.note, "", NOTE_LEN);
+}
+
+std::ostream& operator<<(std::ostream& ostr, const Reservation& reservation) {
+
+}
