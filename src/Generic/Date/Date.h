@@ -15,16 +15,14 @@ class Date {
 public:
 	Date();
 	Date(unsigned short day, unsigned short month, unsigned short year);
-	int compare(const Date& other) const;
 
 	unsigned short get_day() const;
-	bool set_day(unsigned short newDay);
-
 	unsigned short get_month() const;
-	bool set_month(unsigned short newMonth);
-
 	unsigned short get_year() const;
-	bool set_year(unsigned short newYear);
+
+	void read(std::istream& istr);
+	void write(std::ostream& ostr);
+	int compare(const Date& other) const;
 };
 
 std::istream& operator>>(std::istream& istr, Date& dt);

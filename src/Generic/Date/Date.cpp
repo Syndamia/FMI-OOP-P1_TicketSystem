@@ -34,6 +34,7 @@ int Date::compare(const Date& other) const {
 unsigned short Date::get_day() const {
 	return day;
 }
+
 bool Date::set_day(unsigned short newDay) {
 	if (newDay == 0 || newDay > daysInMonth())
 		return false;
