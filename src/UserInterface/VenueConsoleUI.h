@@ -4,6 +4,6 @@
 #include "../Services/EventService.h"
 #include "../Services/HallService.h"
 
-void runUI(EventService* es, HallService* hs);
+void runUI(EventService* eventService, HallService* hallService);
 
 #endif

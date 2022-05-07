@@ -2,12 +2,14 @@
 #include "../Generic/List/OrderedList.hpp"
 #include "../Generic/String/String.h"
 #include "../Generic/Date/Date.h"
-#include "../Services/StatusCode.h"
-#include "../Models/Reservation.h"
 #include "../Generic/ConsoleInterface/Menu.h"
 #include "../Generic/ConsoleInterface/Toolbox.hpp"
+#include "../Services/StatusCode.h"
+#include "../Models/Reservation.h"
 
-Venue* v;
+EventService* es;
+HallService* hs;
+
 Menu mainMenu("FMI Ticket System", true, false), ticketManagementMenu("Ticket management", false, true), eventManagementMenu("Event management", false, true), reportsMenu("Report management", false, true);
 
 void handleStatusCode(StatusCode sc, Menu menu) {
@@ -39,14 +41,13 @@ void command_freeSeats() {
 	Date date;
 	inputSubBox("Enter event date: ", &date);
 
-	const Hall* hall = v->get_es().queryEventHall(name, date);
-	if (hall == nullptr) {
+	if (!hs->hallExists()) {
 		handleStatusCode(E_HallDoesntExist, ticketManagementMenu);
 		return;
 	}
 
-	OrderedList<Ticket> tickets = v->get_es().queryTickets(name, date);
-	OrderedList<Reservation> reservations = v->get_es().queryReservations(name, date);
+	OrderedList<Ticket> tickets = es->queryTickets(name, date);
+	OrderedList<Reservation> reservations = es->queryReservations(name, date);
 
 	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
 	char tableData[tableSize + 1];
@@ -193,8 +194,9 @@ void init() {
 	reportsMenu.addCommand(Command("Bought Tickets", command_boughtTickets));
 }
 
-void runUI(Venue& venue) {
-	v = &venue;
+void runUI(EventService* eventService, HallService* hallService) {
+	es = eventService;
+	hs = hallService;
 	init();
 	mainMenu.navigate();
 }

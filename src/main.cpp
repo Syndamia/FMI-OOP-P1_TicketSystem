@@ -9,6 +9,5 @@ int main() {
 	EventService es;
 	HallService hs(myVenueHalls, 3);
 	
-	Venue myVenue(myVenueHalls, 3);
-	runUI(myVenue);
+	runUI(&es, &hs);
 }
