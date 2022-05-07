@@ -72,9 +72,9 @@ void inputLineSubBox(const char* label, char* output, unsigned maxWidth, bool ig
 	__inputLineBoxGetInput(output, maxWidth, ignore);
 }
 
-void pressEnterToContinue() {
+void pressEnterToContinue(bool ignore) {
 	char tmp;
-	inputLineBox("[Press enter to continue]", &tmp, 1);
+	inputLineBox("[Press enter to continue]", &tmp, 1, ignore);
 }
 
 /* Ordered list */

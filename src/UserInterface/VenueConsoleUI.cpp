@@ -66,7 +66,7 @@ void command_reserveTicket() {
 	char password[PASSWORD_LEN];
 	inputLineSubBox("Enter password [Max 8 characters]: ", password, PASSWORD_LEN);
 	char note[NOTE_LEN];
-	inputLineSubBox("Enter note [Max 32 characters]: ", note, NOTE_LEN);
+	inputLineSubBox("Enter note [Max 32 characters]: ", note, NOTE_LEN, false);
 
 	StatusCode s = es->reserveTicket(name, date, password, note, tic);
 	handleStatusCode(s, ticketManagementMenu);

@@ -16,9 +16,9 @@ void warningSubBox(const char* message);
 void errorBox(const char* message);
 void errorSubBox(const char* message);
 
-void inputLineBox(const char* label, char* output, unsigned maxWidth);
-void inputLineSubBox(const char* label, char* output, unsigned maxWidth);
-void pressEnterToContinue();
+void inputLineBox(const char* label, char* output, unsigned maxWidth, bool ignore = true);
+void inputLineSubBox(const char* label, char* output, unsigned maxWidth, bool ignore = true);
+void pressEnterToContinue(bool ignore = true);
 
 void resetOrderedList(int starter = 1);
 
