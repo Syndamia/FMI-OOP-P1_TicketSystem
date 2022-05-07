@@ -13,22 +13,22 @@ Hall::Hall(int number, unsigned rows, unsigned seatsPerRow) {
 int Hall::get_number() const {
 	return number;
 }
-void Hall::set_number(int number) {
-	this->number = number;
-}
-
 unsigned Hall::get_rows() const {
 	return rows;
-}
-void Hall::set_rows(unsigned rows) {
-	this->rows = rows;
 }
 
 unsigned Hall::get_seatsPerRow() const {
 	return seatsPerRow;
 }
-void Hall::set_seatsPerRow(unsigned seatsPerRow) {
-	this->seatsPerRow = seatsPerRow;
+
+void Hall::read(std::istream& istr) {
+	istr.read((char*)&number, sizeof(number));
+	istr.read((char*)&rows, sizeof(rows));
+	istr.read((char*)&seatsPerRow, sizeof(seatsPerRow));
+}
+
+void write(std::ostream& ostr) {
+
 }
 
 int Hall::compare(const Hall& other) const {
