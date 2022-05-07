@@ -7,6 +7,8 @@
 #include "Hall.h"
 #include "Ticket.h"
 #include "Reservation.h"
+#include <istream>
+#include <ostream>
 
 class Event {
 	const Hall* hall;
@@ -25,7 +27,13 @@ public:
 	OrderedList<Ticket>& get_tickets();
 	OrderedList<Reservation>& get_reservations();
 
+	void print(std::ostream& ostr);
+	void write(std::istream& istr);
+
 	int compare(const Event& other);
+
+	friend std::istream& operator>>(std::istream& istr, Event& event);
+	friend std::ostream& operator<<(std::ostream& ostr, Event& event);
 };
 
 #endif

@@ -34,3 +34,8 @@ int Event::compare(const Event& other) {
 		return date.compare(other.date);
 	return hall->compare(*other.hall);
 }
+
+std::istream& operator>>(std::istream& istr, Event& event) {
+	return istr >> event.hall >> event.name >> event.date >> event.tickets >> event.reservations;
+}
+std::ostream& operator<<(std::ostream& ostr, Event& event);
