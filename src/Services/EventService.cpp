@@ -1,5 +1,6 @@
 #include "EventService.h"
 #include "StatusCode.h"
+#include <cstring>
 
 /* Private */
 
@@ -14,6 +15,10 @@ unsigned EventService::indexOfEvent(const char* name, const Date& date) {
 			return i;
 	}
 	return events.get_count();
+}
+
+bool correctReservationPassword(const Reservation& res, const char* password) {
+	return strcmp(res.get_password(), password) == 0;
 }
 
 /* Public */
@@ -120,16 +125,15 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 	if (rInd < events[eInd].get_reservations().get_count()) {
 		if (password == nullptr)
 			return E_TicketAlreadyReserved;
+		if (!correctReservationPassword(events[eInd].get_reservations()[rInd], password))
+			return E_WrongReservationPassword;
 
+		events[eInd].get_reservations().removeAt(rInd);
 	}
 
 	events[eInd].get_tickets().insert(ticket);
 	return Success;
 }
-
-return events[ind].buyTicketFromReservation(Reservation(ticket), password);
-}
-
 
 const Hall* EventService::queryEventHall(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);

@@ -15,6 +15,14 @@ const Ticket& Reservation::get_ticket() const {
 	return ticket;
 }
 
+const char* Reservation::get_password() const {
+	return password;
+}
+
+const char* Reservation::get_note() const {
+	return note;
+}
+
 void Reservation::read(std::istream& istr) {
 	ticket.read(istr);
 	istr.read(password, sizeof(password));
