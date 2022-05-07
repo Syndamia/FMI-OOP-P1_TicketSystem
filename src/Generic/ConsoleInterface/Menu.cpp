@@ -27,7 +27,7 @@ enum MessageType {
 	Warning,
 	Error,
 };
-String msg;
+const char* msg;
 MessageType msgType;
 
 void Menu::registerError(const char* message) const {
@@ -61,9 +61,9 @@ void Menu::navigate() const {
 			titleBox(title);
 
 		switch(msgType) {
-			case Error: errorBox(msg.get_cstr()); msgType = NoPrint; break;
-			case Warning: warningBox(msg.get_cstr()); msgType = NoPrint; break;
-			case Success: successBox(msg.get_cstr()); msgType = NoPrint; break;
+			case Error: errorBox(msg); msgType = NoPrint; break;
+			case Warning: warningBox(msg); msgType = NoPrint; break;
+			case Success: successBox(msg); msgType = NoPrint; break;
 			case NoPrint: printLine(""); break;
 		}
 		printLine("");
