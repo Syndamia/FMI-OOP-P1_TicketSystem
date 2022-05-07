@@ -6,6 +6,7 @@
 #include "../Generic/ConsoleInterface/Toolbox.hpp"
 #include "../Services/StatusCode.h"
 #include "../Models/Reservation.h"
+#include <cstring>
 
 EventService* es;
 HallService* hs;
@@ -45,13 +46,14 @@ void command_freeSeats() {
 	inputSubBox("Enter event date: ", &date);
 
 	unsigned seatsPerRow = 0;
-	String seating = es->createSeatingString(name, date, &seatsPerRow);
-	if (seating.get_count() == 0) {
+	char* seating = nullptr;
+	es->createSeatingString(name, date, &seatsPerRow, seating);
+	if (strlen(seating) == 0) {
 		handleStatusCode(E_EventDoesNotExist, ticketManagementMenu);
 		return;
 	}
 
-	table(1, seatsPerRow, seating.get_cstr());
+	table(1, seatsPerRow, seating);
 
 	char tmp;
 	inputLineBox("[Press enter to continue]", &tmp, 1);

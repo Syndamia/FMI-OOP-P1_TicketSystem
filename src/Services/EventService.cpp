@@ -135,7 +135,7 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 	return Success;
 }
 
-String EventService::createSeatingString(const char* name, const Date& date, unsigned* seatsPerRow) {
+String EventService::createSeatingString(const char* name, const Date& date, unsigned* seatsPerRow, char* out) {
 	unsigned eInd = indexOfEvent(name, date);
 	if (eInd == events.get_count())
 		return "";
@@ -143,15 +143,16 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 	unsigned rowCount = events[eInd].get_hall().get_rows(), seatsCount = events[eInd].get_hall().get_seatsPerRow();
 	*seatsPerRow = seatsCount;
 
-	String out;
-	for (unsigned row = 1; row <= rowCount; row++) {
-		for (unsigned seat = 1; seat <= seatsCount; seat++) {
+	delete[] out;
+	out = new char[rowCount * seatsCount];
+	for (unsigned acc = 0, row = 1; row <= rowCount; row++) {
+		for (unsigned seat = 1; seat <= seatsCount; seat++, acc++) {
 			if (events[eInd].get_tickets().contain(Ticket(row, seat)))
-				out += 'B';
+				out[acc] = 'B';
 			else if (events[eInd].get_reservations().contain(Ticket(row, seat)))
-				out += 'R';
+				out[acc] = 'R';
 			else
-				out += ' ';
+				out[acc] = ' ';
 		}
 	}
 	return out;
