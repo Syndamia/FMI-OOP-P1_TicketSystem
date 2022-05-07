@@ -36,6 +36,7 @@ public:
 
 	void queryMostVisited();
 	void queryInsufficientlyVisited();
+
 	void reportBoughtTickets(Date start, Date end, unsigned hall);
 	void reportReservations(unsigned eventIndex);
 };
