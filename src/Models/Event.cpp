@@ -1,10 +1,10 @@
 #include "Event.h"
 #include "Reservation.h"
 
-Event::Event() : Event(nullptr, "", Date()) {}
+Event::Event() : hall(), name(), date() {}
 
-Event::Event(const Hall* hall, String name, Date date) : tickets(), reservations() {
-	this->hall = hall;
+Event::Event(const Hall& hall, String name, Date date) : tickets(), reservations() {
+	this->hall = &hall;
 	this->name = name;
 	this->date = date;
 }

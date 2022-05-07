@@ -17,7 +17,7 @@ class Event {
 
 public:
 	Event();
-	Event(const Hall* hall, String name, Date date);
+	Event(const Hall& hall, String name, Date date);
 
 	const Hall& get_hall() const;
 	const String& get_name() const;
