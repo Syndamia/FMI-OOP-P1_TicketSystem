@@ -17,8 +17,8 @@ protected:
 
 public:
 	List(const T* elements, unsigned elementsCount);
-	void add(const T& element);
-	void insertAt(const T& element, unsigned index);
+	void add(T element);
+	void insertAt(T element, unsigned index);
 	bool removeAt(unsigned index);
 	unsigned findIndex(const T& element) const;
 	bool contain(const T& element) const;
@@ -78,14 +78,14 @@ List<T>::List(const T* elements, unsigned elementsCount) {
 }
 
 template <class T>
-void List<T>::add(const T& element) {
+void List<T>::add(T element) {
 	if (length == count) resize();
 
 	elements[count++] = element;
 }
 
 template <class T>
-void List<T>::insertAt(const T& element, unsigned index) {
+void List<T>::insertAt(T element, unsigned index) {
 	if (index >= count) add(element);
 	if (length == count) resize();
 
