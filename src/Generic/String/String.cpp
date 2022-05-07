@@ -34,6 +34,14 @@ const char* String::get_cstr() const {
 	return str;
 }
 
+unsigned String::get_count() const {
+	return count;
+}
+
+unsigned String::get_length() const {
+	return length;
+}
+
 String& String::operator+=(const String& other) {
 	char* newStr = new char[length + other.length + 1];
 	strncpy(newStr, str, length);

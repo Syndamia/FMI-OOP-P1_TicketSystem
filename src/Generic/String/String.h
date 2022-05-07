@@ -13,6 +13,8 @@ class String {
 public:
 	String(const char* str);
 	const char* get_cstr() const;
+	unsigned get_count() const;
+	unsigned get_length() const;
 
 	String& operator+=(const String& other);
 	String& operator+=(char character);

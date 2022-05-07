@@ -44,10 +44,14 @@ void command_freeSeats() {
 	Date date;
 	inputSubBox("Enter event date: ", &date);
 
-	String seating = es->createSeatingString(name, date);
+	unsigned seatsPerRow = 0;
+	String seating = es->createSeatingString(name, date, &seatsPerRow);
+	if (seating.get_count() == 0) {
+		handleStatusCode(E_EventDoesNotExist, ticketManagementMenu);
+		return;
+	}
 
-	tableData[tableSize] = '\0';
-	table(1, hall->get_seatsPerRow(), tableData);
+	table(1, seatsPerRow, seating.get_cstr());
 
 	char tmp;
 	inputLineBox("[Press enter to continue]", &tmp, 1);
@@ -63,7 +67,7 @@ void command_reserveTicket() {
 	char password[PASSWORD_LEN];
 	inputSubBox("Enter password [Max 8 characters]: ", &password);
 	char note[NOTE_LEN];
-	inputSubBox("Enter note [Max 32 characters]: ", &note);
+	inputLineSubBox("Enter note [Max 32 characters]: ", &note, NOTE_LEN);
 
 	StatusCode s = es->reserveTicket(name, date, password, note, tic);
 	handleStatusCode(s, ticketManagementMenu);
