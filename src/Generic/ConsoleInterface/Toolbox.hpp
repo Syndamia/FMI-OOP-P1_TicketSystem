@@ -1,7 +1,6 @@
 #ifndef HEADER_CONSOLEINTERFACE_TOOLBOX
 #define HEADER_CONSOLEINTERFACE_TOOLBOX
 
-#include "../String/String.h"
 #include <iostream>
 
 #define MAX_LINE_WIDTH 1024
