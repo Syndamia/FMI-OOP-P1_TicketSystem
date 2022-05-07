@@ -9,9 +9,12 @@ class String {
 	void copyFrom(const String& other);
 
 public:
+	String(unsigned length);
 	String(const char* str);
 	const char* get_cstr() const;
 	unsigned get_length() const;
+
+	char& operator[](unsigned index);
 
 	String();
 	String(const String& other);

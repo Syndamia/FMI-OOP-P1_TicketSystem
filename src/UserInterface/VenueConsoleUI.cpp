@@ -47,13 +47,14 @@ void command_freeSeats() {
 
 	unsigned seatsPerRow = 0;
 	char* seating = nullptr;
-	es->createSeatingString(name, date, &seatsPerRow, seating);
+	es->createSeatingString(name, date, &seatsPerRow, &seating);
 	if (seating == nullptr) {
 		handleStatusCode(E_EventDoesNotExist, ticketManagementMenu);
 		return;
 	}
 
 	table(1, seatsPerRow, seating);
+	delete[] seating;
 
 	char tmp;
 	inputLineBox("[Press enter to continue]", &tmp, 1);
