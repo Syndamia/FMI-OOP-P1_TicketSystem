@@ -19,6 +19,8 @@ public:
 	Reservation(const Ticket& ticket, const char* password, const char* note);
 
 	const Ticket& get_ticket() const;
+	const char* get_password() const;
+	const char* get_note() const;
 
 	void read(std::istream& istr);
 	void write(std::ostream& ostr) const;

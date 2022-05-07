@@ -95,8 +95,16 @@ StatusCode EventService::cancelTicketReservation(const char* name, const Date& d
 	return Success;
 }
 
+StatusCode EventService::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat) {
+	return buyTicket(name, date, Ticket(row, seat), nullptr);
+}
+
+StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket) {
+	return buyTicket(name, date, ticket, nullptr);
+}
+
 StatusCode EventService::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password) {
-	return buyTicket(name, date, Ticket(row, seat));
+	return buyTicket(name, date, Ticket(row, seat), password);
 }
 
 StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password) {
@@ -109,23 +117,17 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 		return E_TicketAlreadyBought;
 
 	unsigned rInd = events[eInd].get_reservations().findIndex(ticket);
-	if (rInd < events[eInd].get_reservations().get_count())
-		return E_TicketAlreadyReserved;
+	if (rInd < events[eInd].get_reservations().get_count()) {
+		if (password == nullptr)
+			return E_TicketAlreadyReserved;
+
+	}
 
 	events[eInd].get_tickets().insert(ticket);
 	return Success;
 }
 
-StatusCode EventService::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password) {
-	return buyTicket(name, date, Ticket(row, seat), password);
-}
-
-StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password) {
-	unsigned ind = indexOfEvent(name, date);
-	if (ind == events.get_count())
-		return E_EventDoesNotExist;
-
-	return events[ind].buyTicketFromReservation(Reservation(ticket), password);
+return events[ind].buyTicketFromReservation(Reservation(ticket), password);
 }
 
 
