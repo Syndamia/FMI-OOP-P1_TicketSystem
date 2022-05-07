@@ -18,11 +18,23 @@ void String::copyFrom(const String& other) {
 String::String(const char* str) {
 	length = strlen(str) + 1; // capture terminating zero
 	this->str = new char[length];
-	strcpy(this->str, str);
+	strncpy(this->str, str, length);
 }
 
 const char* String::get_cstr() const {
 	return str;
+}
+
+String& String::operator+=(const String& other) {
+	char* newStr = new char[length + other.length + 1];
+	strncpy(newStr, str, length);
+	strncat(newStr, other.str, other.length + 1);
+
+	delete[] str;
+	str = newStr;
+	length += other.length;
+
+	return *this;
 }
 
 String::String() : String("") {}

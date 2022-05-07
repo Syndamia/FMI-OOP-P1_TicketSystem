@@ -138,7 +138,7 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 String EventService::createSeatingString(const char*name, const Date& date) {
 	unsigned eInd = indexOfEvent(name, date);
 	if (eInd == events.get_count())
-		return E_EventDoesNotExist;
+		return "";
 
 	unsigned strSize = events[eInd].get_hall().get_rows() * events[eInd].get_hall().get_seatsPerRow();
 	String out;
