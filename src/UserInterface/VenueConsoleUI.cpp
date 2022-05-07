@@ -44,22 +44,7 @@ void command_freeSeats() {
 	Date date;
 	inputSubBox("Enter event date: ", &date);
 
-	OrderedList<Ticket> tickets = es->getTickets(name, date);
-	OrderedList<Reservation> reservations = es->getReservations(name, date);
-
-	unsigned tableSize = hall->get_rowCount() * hall->get_seatsPerRow();
-	char tableData[tableSize + 1];
-
-	for (unsigned ind = 0, row = 1; row <= hall->get_rowCount(); row++) {
-		for (unsigned seat = 1; seat <= hall->get_seatsPerRow(); seat++, ind++) {
-			if (tickets.contain(Ticket(row, seat)))
-				tableData[ind] = 'B';
-			else if (reservations.contain(Ticket(row, seat)))
-				tableData[ind] = 'R';
-			else
-				tableData[ind] = ' ';
-		}
-	}
+	String seating = es->createSeatingString(name, date);
 
 	tableData[tableSize] = '\0';
 	table(1, hall->get_seatsPerRow(), tableData);

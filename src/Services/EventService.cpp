@@ -135,7 +135,7 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 	return Success;
 }
 
-String EventService::createSeatingString(const char*name, const Date& date) {
+String EventService::createSeatingString(const char* name, const Date& date) {
 	unsigned eInd = indexOfEvent(name, date);
 	if (eInd == events.get_count())
 		return "";
