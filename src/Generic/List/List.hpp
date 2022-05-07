@@ -37,12 +37,10 @@ public:
 
 	List(List&& other);
 	List& operator=(List&& other);
-};
 
-template <typename T>
-std::istream& operator>>(std::istream& istr, List<T>& obj);
-template <typename T>
-std::ostream& operator<<(std::ostream& ostr, const List<T>& obj);
+	friend std::istream& operator>>(std::istream& istr, List<T>& obj);
+	friend std::ostream& operator<<(std::ostream& ostr, const List<T>& obj);
+};
 
 /* Private */
 
@@ -199,29 +197,29 @@ List<T>& List<T>::operator=(List&& other) {
 	return *this;
 }
 
-/* Other */
+/* Friend functions */
 
 template <typename T>
 std::istream& operator>>(std::istream& istr, List<T>& obj) {
-	istr.read((char*)&length, sizeof(length));
-	istr.read((char*)&count, sizeof(count));
+	istr.read((char*)&obj.length, sizeof(obj.length));
+	istr.read((char*)&obj.count, sizeof(obj.count));
 
-	delete[] elements;
-	elements = new T[length];
+	delete[] obj.elements;
+	obj.elements = new T[obj.length];
 
-	for (int i = 0; i < count; i++)
-		elements[i].read(istr); // disgusting
+	for (int i = 0; i < obj.count; i++)
+		istr >> obj.elements[i];
 
 	return istr;
 }
 
 template <typename T>
 std::ostream& operator<<(std::ostream& ostr, const List<T>& obj) {
-	ostr.write((const char*)&length, sizeof(length));
-	ostr.write((const char*)&count, sizeof(count));
+	ostr.write((const char*)&obj.length, sizeof(obj.length));
+	ostr.write((const char*)&obj.count, sizeof(obj.count));
 
-	for (int i = 0; i < count; i++)
-		elements[i].write(ostr); // disgusting
+	for (int i = 0; i < obj.count; i++)
+		ostr << obj.elements[i];
 
 	return ostr;
 }
