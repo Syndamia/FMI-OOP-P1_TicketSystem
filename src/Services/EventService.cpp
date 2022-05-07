@@ -1,13 +1,13 @@
-#include "EventSystem.h"
+#include "EventService.h"
 #include "StatusCodes.h"
 
 /* Private */
 
-void EventSystem::updateSoonestUpcoming() {
+void EventService::updateSoonestUpcoming() {
 	
 }
 
-unsigned EventSystem::indexOfEvent(const Date& date) {
+unsigned EventService::indexOfEvent(const Date& date) {
 	// TODO: make binary search
 	for (unsigned i = indSoonestUpcoming; i < events.get_count(); i++) {
 		if (events[i].get_date().compare(date) == 0)
@@ -16,7 +16,7 @@ unsigned EventSystem::indexOfEvent(const Date& date) {
 	return events.get_count();
 }
 
-unsigned EventSystem::indexOfEvent(const char* name, const Date& date) {
+unsigned EventService::indexOfEvent(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(date);
 	if (ind < events.get_count() && events[ind].get_name().compare(name) == 0)
 		return ind;
@@ -25,18 +25,18 @@ unsigned EventSystem::indexOfEvent(const char* name, const Date& date) {
 
 /* Public */
 
-EventSystem::EventSystem() {
+EventService::EventService() {
 	events = OrderedList<Event>();
 	indSoonestUpcoming = 0;
 }
 
-EventSystem::EventSystem(const Event* events, unsigned eventCount) {
+EventService::EventService(const Event* events, unsigned eventCount) {
 	this->events = OrderedList<Event>(events, eventCount);
 	indSoonestUpcoming = 0;
 	updateSoonestUpcoming();
 }
 
-StatusCode EventSystem::createEvent(const Hall* hall, String name, Date date) {
+StatusCode EventService::createEvent(const Hall* hall, String name, Date date) {
 	if (indexOfEvent(date) < events.get_count())
 		return E_EventWillOverlap;
 
@@ -44,7 +44,7 @@ StatusCode EventSystem::createEvent(const Hall* hall, String name, Date date) {
 	return Success;
 }
 
-StatusCode EventSystem::cancelEvent(const char* name, const Date& date) {
+StatusCode EventService::cancelEvent(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
@@ -53,11 +53,11 @@ StatusCode EventSystem::cancelEvent(const char* name, const Date& date) {
 	return Success;
 }
 
-StatusCode EventSystem::reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn) {
+StatusCode EventService::reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn) {
 	return reserveTicket(name, date, password, note, Ticket(seatRow, seatColumn));
 }
 
-StatusCode EventSystem::reserveTicket(const char* name, const Date& date, const char* password, const char* note, const Ticket& ticket) {
+StatusCode EventService::reserveTicket(const char* name, const Date& date, const char* password, const char* note, const Ticket& ticket) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
@@ -65,11 +65,11 @@ StatusCode EventSystem::reserveTicket(const char* name, const Date& date, const 
 	return events[ind].reserveTicket(ticket, password, note);
 }
 
-StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn) {
+StatusCode EventService::cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn) {
 	return cancelTicketReservation(name, date, Ticket(seatRow, seatColumn));
 }
 
-StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& date, const Ticket& ticket) {
+StatusCode EventService::cancelTicketReservation(const char* name, const Date& date, const Ticket& ticket) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
@@ -77,11 +77,11 @@ StatusCode EventSystem::cancelTicketReservation(const char* name, const Date& da
 	return events[ind].cancelReservation(ticket);
 }
 
-StatusCode EventSystem::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat) {
+StatusCode EventService::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat) {
 	return buyTicket(name, date, Ticket(row, seat));
 }
 
-StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Ticket& ticket) {
+StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
@@ -89,11 +89,11 @@ StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Tick
 	return events[ind].buyTicket(ticket);
 }
 
-StatusCode EventSystem::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password) {
+StatusCode EventService::buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password) {
 	return buyTicket(name, date, Ticket(row, seat), password);
 }
 
-StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password) {
+StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return E_EventDoesNotExist;
@@ -102,7 +102,7 @@ StatusCode EventSystem::buyTicket(const char* name, const Date& date, const Tick
 }
 
 
-const Hall* EventSystem::queryEventHall(const char* name, const Date& date) {
+const Hall* EventService::queryEventHall(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return nullptr;
@@ -110,7 +110,7 @@ const Hall* EventSystem::queryEventHall(const char* name, const Date& date) {
 	return &events[ind].get_hall();
 }
 
-OrderedList<Ticket> EventSystem::queryTickets(const char* name, const Date& date) {
+OrderedList<Ticket> EventService::queryTickets(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return OrderedList<Ticket>();
@@ -118,7 +118,7 @@ OrderedList<Ticket> EventSystem::queryTickets(const char* name, const Date& date
 	return events[ind].get_tickets();
 }
 
-OrderedList<Reservation> EventSystem::queryReservations(const char* name, const Date& date) {
+OrderedList<Reservation> EventService::queryReservations(const char* name, const Date& date) {
 	unsigned ind = indexOfEvent(name, date);
 	if (ind == events.get_count())
 		return OrderedList<Reservation>();

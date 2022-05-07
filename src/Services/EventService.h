@@ -1,13 +1,13 @@
-#ifndef HEADER_EVENTSYSTEM
-#define HEADER_EVENTSYSTEM
+#ifndef HEADER_SERVICE_EVENTSERVICE
+#define HEADER_SERVICE_EVENTSERVICE
 
-#include "../List/OrderedList.hpp"
-#include "../Date/Date.h"
+#include "../Generic/List/OrderedList.hpp"
+#include "../Generic/Date/Date.h"
 
-#include "Event.h"
+#include "../Models/Event.h"
 #include "StatusCodes.h"
 
-class EventSystem {
+class EventService {
 	OrderedList<Event> events;
 	unsigned indSoonestUpcoming;
 
@@ -16,8 +16,8 @@ class EventSystem {
 	unsigned indexOfEvent(const char* name, const Date& date);
 
 public:
-	EventSystem();
-	EventSystem(const Event* events, unsigned eventCount);
+	EventService();
+	EventService(const Event* events, unsigned eventCount);
 
 	StatusCode createEvent(const Hall* hall, String name, Date date);
 	StatusCode cancelEvent(const char* name, const Date& date);
