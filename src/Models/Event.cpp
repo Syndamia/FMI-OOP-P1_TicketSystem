@@ -52,16 +52,17 @@ int Event::compare(const Event& other) {
 }
 
 std::istream& operator>>(std::istream& istr, Event& event) {
-	return istr >> event.hall >> event.name >> event.date >> event.tickets >> event.reservations;
+	return istr >> event.get_hall() >> event.get_name() >> event.get_date() >> event.get_tickets() >> event.get_reservations();
 }
+
 std::ostream& operator<<(std::ostream& ostr, const Event& event) {
-	ostr << "Hall: " << event.hall << " Name: " << event.name << " Date: " << event.date << std::endl;
+	ostr << "Hall: " << event.get_hall() << " Name: " << event.get_name() << " Date: " << event.get_date() << std::endl;
 
 	ostr << "Bought tickets: ";
-	for (unsigned i = 0; i < event.tickets.get_count(); i++)
-		ostr << event.tickets[i] << " ";
+	for (unsigned i = 0; i < event.get_tickets().get_count(); i++)
+		ostr << event.get_tickets()[i] << " ";
 	ostr << std::endl << "Reserved tickets: ";
-	for (unsigned i = 0; i < event.reservations.get_count(); i++)
-		ostr << event.reservations[i] << " ";
+	for (unsigned i = 0; i < event.get_reservations().get_count(); i++)
+		ostr << event.get_reservations()[i] << " ";
 	return ostr << std::endl;
 }

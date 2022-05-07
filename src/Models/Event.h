@@ -25,15 +25,17 @@ public:
 	const String& get_name() const;
 	const Date& get_date() const;
 	OrderedList<Ticket>& get_tickets();
+	const OrderedList<Ticket>& get_tickets() const;
 	OrderedList<Reservation>& get_reservations();
+	const OrderedList<Reservation>& get_reservations() const;
 
 	void write(std::ostream& ostr);
 	void read(std::istream& istr);
 
 	int compare(const Event& other);
-
-	friend std::istream& operator>>(std::istream& istr, Event& event);
-	friend std::ostream& operator<<(std::ostream& ostr, const Event& event);
 };
+
+std::istream& operator>>(std::istream& istr, Event& event);
+std::ostream& operator<<(std::ostream& ostr, const Event& event);
 
 #endif
