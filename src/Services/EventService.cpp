@@ -225,3 +225,11 @@ StatusCode EventService::reportBoughtTickets(int hallNumber, const Date& start, 
 	return Success;
 
 }
+
+void EventService::load() {
+
+}
+
+void EventService::save() {
+
+}

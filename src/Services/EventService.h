@@ -39,6 +39,9 @@ public:
 
 	StatusCode reportReservations(const char* name, const Date& date);
 	StatusCode reportBoughtTickets(int hallNumber, const Date& start, const Date& end, bool all = false);
+
+	void load();
+	void save();
 };
 
 #endif
