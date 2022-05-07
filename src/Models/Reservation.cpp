@@ -40,11 +40,11 @@ int Reservation::compare(const Reservation& other) const {
 }
 
 std::istream& operator>>(std::istream& istr, Reservation& reservation) {
-	istr >> reservation.ticket;
 	strncpy(reservation.password, "", PASSWORD_LEN);
 	strncpy(reservation.note, "", NOTE_LEN);
+	return istr >> reservation.ticket;
 }
 
 std::ostream& operator<<(std::ostream& ostr, const Reservation& reservation) {
-
+	return ostr << reservation.ticket;
 }
