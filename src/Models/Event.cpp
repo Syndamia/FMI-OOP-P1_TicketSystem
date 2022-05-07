@@ -4,7 +4,7 @@
 Event::Event() : hall(), name(), date() {}
 
 Event::Event(const Hall& hall, String name, Date date) : tickets(), reservations() {
-	this->hall = &hall;
+	this->hall = hall;
 	this->name = name;
 	this->date = date;
 }
@@ -18,7 +18,7 @@ OrderedList<Reservation>& Event::get_reservations() {
 }
 
 const Hall& Event::get_hall() const {
-	return *hall;
+	return hall;
 }
 
 const String& Event::get_name() const {
@@ -30,7 +30,7 @@ const Date& Event::get_date() const {
 }
 
 void Event::read(std::istream& istr) {
-	istr.read(istr.hall, sizeof(hall));
+	hall.read(istr);
 	name.read(istr);
 	date.read(istr);
 	tickets.read(istr);
@@ -46,9 +46,9 @@ void Event::write(std::ostream& ostr) {
 }
 
 int Event::compare(const Event& other) {
-	if (hall == other.hall)
+	if (hall.compare(other.hall) == 0)
 		return date.compare(other.date);
-	return hall->compare(*other.hall);
+	return hall.compare(other.hall);
 }
 
 std::istream& operator>>(std::istream& istr, Event& event) {

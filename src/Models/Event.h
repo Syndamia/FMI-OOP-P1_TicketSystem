@@ -11,7 +11,7 @@
 #include <ostream>
 
 class Event {
-	const Hall* hall;
+	Hall hall;
 	String name;
 	Date date;
 	OrderedList<Ticket> tickets;
