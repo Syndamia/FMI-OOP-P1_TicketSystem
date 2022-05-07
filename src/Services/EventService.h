@@ -29,7 +29,7 @@ public:
 
 	StatusCode ticketIsReserved(const char* name, const Date& date, const Ticket& ticket);
 
-	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password);
+	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password, String* reservationNoteOutput);
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket);
 
 	String createSeatingString(const char* name, const Date& date, unsigned* seatsPerRow);

@@ -96,10 +96,17 @@ void command_buyTicket() {
 
 	StatusCode s = es->ticketIsReserved(name, date, tic);
 	if (s == Success) {
+		warningBox("Ticket is reserved!");
+
 		char pass[PASSWORD_LEN];
 		inputLineSubBox("Enter reservation password: ", pass, PASSWORD_LEN);
 
-		s = es->buyTicket(name, date, tic, pass);
+		String note;
+		s = es->buyTicket(name, date, tic, pass, &note);
+		if (note.get_length() > 0) {
+			successBox("The reservation had a note attached. It reads:");
+			successBox(note.get_cstr());
+		}
 	}
 	else if (s == W_TicketHadNotBeenReserved) {
 		s = es->buyTicket(name, date, tic);

@@ -104,10 +104,10 @@ StatusCode EventService::ticketIsReserved(const char* name, const Date& date, co
 }
 
 StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket) {
-	return buyTicket(name, date, ticket, nullptr);
+	return buyTicket(name, date, ticket, nullptr, nullptr);
 }
 
-StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password, char** reservationNoteOutput) {
+StatusCode EventService::buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password, String* reservationNoteOutput) {
 	unsigned eInd = indexOfEvent(name, date);
 	if (eInd == events.get_count())
 		return E_EventDoesNotExist;
@@ -123,6 +123,8 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 		if (!correctReservationPassword(events[eInd].get_reservations()[rInd], password))
 			return E_WrongReservationPassword;
 
+		if (reservationNoteOutput != nullptr)
+			*reservationNoteOutput = events[eInd].get_reservations()[rInd].get_note();
 		events[eInd].get_reservations().removeAt(rInd);
 	}
 
