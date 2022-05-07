@@ -52,7 +52,18 @@ int Event::compare(const Event& other) {
 }
 
 std::istream& operator>>(std::istream& istr, Event& event) {
-	return istr >> event.get_hall() >> event.get_name() >> event.get_date() >> event.get_tickets() >> event.get_reservations();
+	Hall newHall;
+	String newString;
+	Date newDate;
+	OrderedList<Ticket> newTickets;
+	OrderedList<Reservation> newReservation;
+
+	istr >> newHall >> newString >> newDate >> newTickets >> newReservation;
+	event = Event(newHall, newString, newDate);
+	event.get_tickets() = newTickets;
+	event.get_reservations() = newReservation;
+
+	return istr;
 }
 
 std::ostream& operator<<(std::ostream& ostr, const Event& event) {

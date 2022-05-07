@@ -24,6 +24,7 @@ public:
 	const Hall& get_hall() const;
 	const String& get_name() const;
 	const Date& get_date() const;
+
 	OrderedList<Ticket>& get_tickets();
 	const OrderedList<Ticket>& get_tickets() const;
 	OrderedList<Reservation>& get_reservations();

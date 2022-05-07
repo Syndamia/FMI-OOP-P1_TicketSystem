@@ -36,3 +36,15 @@ void Hall::write(std::ostream& ostr) const {
 int Hall::compare(const Hall& other) const {
 	return (number > other.get_number()) - (number < other.get_number());
 }
+
+std::istream& operator>>(std::istream& istr, Hall& hall) {
+	int number;
+	unsigned rows, seatsPerRow;
+	istr >> number >> rows >> seatsPerRow;
+	hall = Hall(number, rows, seatsPerRow);
+	return istr;
+}
+
+std::ostream& operator<<(std::ostream& ostr, const Hall& hall) {
+	return ostr << hall.get_number() << " " << hall.get_rows() << " "<< hall.get_seatsPerRow();
+}
