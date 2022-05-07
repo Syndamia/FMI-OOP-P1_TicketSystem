@@ -1,3 +1,0 @@
-1
-| Hall: 1 | Name: T | Date: 1.2.3
-Reserved tickets: [5 8] [9 1] 

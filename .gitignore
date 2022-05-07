@@ -1,3 +1,7 @@
+# Custom project files
+*.txt
+*.fmits
+
 # Prerequisites
 *.d
 
