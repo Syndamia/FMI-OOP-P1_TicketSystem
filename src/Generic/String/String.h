@@ -14,8 +14,6 @@ public:
 	const char* get_cstr() const;
 	unsigned get_length() const;
 
-	char& operator[](unsigned index);
-
 	String();
 	String(const String& other);
 	String& operator=(const String& other);
@@ -25,7 +23,7 @@ public:
 	String& operator=(String&& other);
 
 	int compare(const String& other) const;
-	char operator[](unsigned index);
+	char& operator[](unsigned index);
 };
 
 #endif

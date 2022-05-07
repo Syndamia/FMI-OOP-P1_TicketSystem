@@ -34,10 +34,6 @@ unsigned String::get_length() const {
 	return length;
 }
 
-char& String::operator[](unsigned index) {
-	return str[index];
-}
-
 String::String() : String("") {}
 
 String::String(const String& other) {
@@ -76,6 +72,6 @@ int String::compare(const String& other) const {
 	return strcmp(str, other.str);
 }
 
-char String::operator[](unsigned index) {
+char& String::operator[](unsigned index) {
 	return str[index];
 }
