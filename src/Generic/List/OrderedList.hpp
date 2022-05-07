@@ -27,7 +27,7 @@ void OrderedList<T>::insert(T element) {
 	if (List<T>::length == List<T>::count) List<T>::resize();
 
 	unsigned insertionInd = 0;
-	while (List<T>::elements[insertionInd].compare(element) < 0 && insertionInd < List<T>::count)
+	while (insertionInd < List<T>::count && List<T>::elements[insertionInd].compare(element) < 0)
 		insertionInd++;
 
 	List<T>::insertAt(element, insertionInd);
