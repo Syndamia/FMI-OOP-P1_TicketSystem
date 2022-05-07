@@ -185,7 +185,7 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 			result.add(events[i]);
 	}
 
-	std::ofstream outFile("report.txt");
+	std::ofstream outFile("report.txt"); // TODO: filename
 	if (!outFile.is_open())
 		return E_FileCouldNotBeOpened;
 
@@ -196,6 +196,10 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 	return Success;
 }
 
-StatusCode EventService::reportBoughtTickets(unsigned hallNumber, Date start, Date end) {
-
+StatusCode EventService::reportBoughtTickets(bool all = false, int hallNumber, Date start, Date end) {
+	List<Event> result;
+	for (unsigned i = 0; i < events.get_count(); i++) {
+		if (events[i].get_hall().get_number() == hallNumber)
+			result.add(events[i]);
+	}
 }
