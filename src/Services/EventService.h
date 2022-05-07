@@ -23,17 +23,13 @@ public:
 	StatusCode createEvent(int hallNumber, const String& name, const Date& date);
 	StatusCode cancelEvent(const char* name, const Date& date);
 
-	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, unsigned seatRow, unsigned seatColumn);
 	StatusCode reserveTicket(const char* name, const Date& date, const char* password, const char* note, const Ticket& ticket);
 
-	StatusCode cancelTicketReservation(const char* name, const Date& date, unsigned seatRow, unsigned seatColumn);
 	StatusCode cancelTicketReservation(const char* name, const Date& date, const Ticket& ticket);
 
-	bool ticketIsReserved(const char* name, const Date& date, const Ticket& ticket);
+	StatusCode ticketIsReserved(const char* name, const Date& date, const Ticket& ticket);
 
-	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat, const char* password);
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket, const char* password);
-	StatusCode buyTicket(const char* name, const Date& date, unsigned row, unsigned seat);
 	StatusCode buyTicket(const char* name, const Date& date, const Ticket& ticket);
 
 	String createSeatingString(const char* name, const Date& date, unsigned* seatsPerRow);
