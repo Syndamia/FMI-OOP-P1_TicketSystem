@@ -158,23 +158,31 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 	return out;
 }
 
-bool cond_event_all(const Event& e1, const Event& e2) {
+template <typename T>
+bool cond_event_all(const Event& e1, T scrap) {
 	return true;
 }
 
-bool cond_event_name(const Event& e1, const Event& e2) {
-	return e1.get_name().compare(e2.get_name()) == 0;
+bool cond_event_name(const Event& e, const char* name) {
+	return e.get_name().compare(name) == 0;
 }
 
-bool cond_event_date(const Event& e1, const Event& e2) {
-	return e1.get_date().compare(e2.get_date()) == 0;
+bool cond_event_date(const Event& e, const Date& date) {
+	return e.get_date().compare(date) == 0;
 }
 
 StatusCode EventService::reportReservations(const char* name, const Date& date) {
 	List<Reservation> result;
-	bool (*cond_name)(const Event&, const Event&) = cond_event_name;
-	bool (*cond_date)(const Event&, const Event&) = cond_event_date;
+	bool (*cond_name)(const Event&, const char*) = cond_event_name;
+	bool (*cond_date)(const Event&, const Date&) = cond_event_date;
 	
 	if (strcmp(name, "ALL") == 0) cond_name = cond_event_all;
 	if (date.compare(Date(0, 0, 0)) == 0) cond_date = cond_event_all;
+
+	for (unsigned i = 0; i < events.get_count(); i++) {
+		for (unsigned j = 0; i < events[i].get_reservations().get_count(); j++) {
+			if (cond_name(events[i].get_reservations()[j], name) && cond_date(events[i].get_reservations()[j], date))
+				result.add(events[i].get_reservations()[j]);
+		}
+	}
 }
