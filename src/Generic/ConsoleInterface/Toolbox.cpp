@@ -55,20 +55,21 @@ void _printInputBoxLabel(const char* label) {
 	std::cout << "(+) " << label;
 }
 
-void __inputLineBoxGetInput(char* output, unsigned maxWidth) {
-	std::cin.ignore();
+void __inputLineBoxGetInput(char* output, unsigned maxWidth, bool ignore) {
+	if (ignore)
+		std::cin.ignore();
 	std::cin.getline(output, maxWidth);
 }
 
-void inputLineBox(const char* label, char* output, unsigned maxWidth) {
+void inputLineBox(const char* label, char* output, unsigned maxWidth, bool ignore) {
 	_printInputBoxLabel(label);
-	__inputLineBoxGetInput(output, maxWidth);
+	__inputLineBoxGetInput(output, maxWidth, ignore);
 }
 
-void inputLineSubBox(const char* label, char* output, unsigned maxWidth) {
+void inputLineSubBox(const char* label, char* output, unsigned maxWidth, bool ignore) {
 	_printSubBoxSpacing();
 	_printInputBoxLabel(label);
-	__inputLineBoxGetInput(output, maxWidth);
+	__inputLineBoxGetInput(output, maxWidth, ignore);
 }
 
 void pressEnterToContinue() {
