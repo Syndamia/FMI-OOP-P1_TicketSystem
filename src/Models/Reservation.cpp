@@ -1,6 +1,5 @@
 #include "Reservation.h"
 #include <cstring>
-#include <ostream>
 
 Reservation::Reservation() : Reservation(Ticket(), "", "") {}
 
@@ -8,12 +7,8 @@ Reservation::Reservation(const Ticket& ticket) : Reservation(ticket, "", "") {}
 
 Reservation::Reservation(const Ticket& ticket, const char* password, const char* note) {
 	this->ticket = ticket;
-	strcpy(this->password, password);
-	strcpy(this->note, note);
-}
-
-bool Reservation::validPassword(const char* password) const {
-	return !strcmp(this->password, password);
+	strncpy(this->password, password, PASSWORD_LEN);
+	strncpy(this->note, note, NOTE_LEN);
 }
 
 const Ticket& Reservation::get_ticket() const {
