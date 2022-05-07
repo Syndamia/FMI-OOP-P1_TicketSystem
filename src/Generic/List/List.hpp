@@ -86,7 +86,10 @@ void List<T>::add(T element) {
 
 template <class T>
 void List<T>::insertAt(T element, unsigned index) {
-	if (index >= count) add(element);
+	if (index >= count) {
+		add(element);
+		return;
+	}
 	if (length == count) resize();
 
 	for (unsigned i = count; i > index; i--)
