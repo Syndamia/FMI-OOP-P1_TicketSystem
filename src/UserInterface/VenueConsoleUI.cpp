@@ -185,6 +185,31 @@ void submenu_reportManagement() {
 
 /* Main */
 
+void load() {
+	StatusCode s = es->load();
+	if (s == E_FileCouldNotBeOpened) {
+		errorBox("Could not load events from file!");
+		pressEnterToContinue();
+	}
+	s = hs->load();
+	if (s == E_FileCouldNotBeOpened) {
+		errorBox("Could not load halls from file!");
+		pressEnterToContinue();
+	}
+}
+
+void save() {
+	StatusCode s = es->save();
+	if (s == E_FileCouldNotBeOpened) {
+		errorBox("Could not save events to file!");
+		pressEnterToContinue();
+	}
+	s = hs->save();
+	if (s == E_FileCouldNotBeOpened) {
+		errorBox("Could not save halls to file!");
+		pressEnterToContinue();
+	}
+}
 
 void init() {
 	mainMenu.addCommand(Command("Ticket Management", submenu_ticketManagement));
@@ -208,6 +233,8 @@ void init() {
 void runUI(EventService* eventService, HallService* hallService) {
 	es = eventService;
 	hs = hallService;
+	load();
 	init();
 	mainMenu.navigate();
+	save();
 }

@@ -14,7 +14,7 @@ StatusCode HallService::load() {
 	if (!inFile.is_open())
 		return E_FileCouldNotBeOpened;
 
-	events.read(inFile);
+	halls.read(inFile);
 	inFile.close();
 	return Success;
 }
@@ -24,7 +24,7 @@ StatusCode HallService::save() {
 	if (!outFile.is_open())
 		return E_FileCouldNotBeOpened;
 
-	events.write(outFile);
+	halls.write(outFile);
 	outFile.close();
 	return Success;
 }
