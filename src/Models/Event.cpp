@@ -75,13 +75,13 @@ std::istream& operator>>(std::istream& istr, Event& event) {
 }
 
 std::ostream& operator<<(std::ostream& ostr, const Event& event) {
-	ostr << "Hall: " << event.get_hall() << " Name: " << event.get_name() << " Date: " << event.get_date() << std::endl;
+	ostr << "| Hall: " << event.get_hall().get_number() << " | Name: " << event.get_name() << " | Date: " << event.get_date() << std::endl;
 
 	ostr << "Bought tickets: ";
 	for (unsigned i = 0; i < event.get_tickets().get_count(); i++)
-		ostr << event.get_tickets()[i] << " ";
+		ostr << "[" << event.get_tickets()[i] << "] ";
 	ostr << std::endl << "Reserved tickets: ";
 	for (unsigned i = 0; i < event.get_reservations().get_count(); i++)
-		ostr << event.get_reservations()[i] << " ";
+		ostr << "[" << event.get_reservations()[i] << "] ";
 	return ostr << std::endl;
 }

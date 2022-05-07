@@ -37,6 +37,7 @@ public:
 };
 
 std::istream& operator>>(std::istream& istr, Event& event);
+void configure<<();
 std::ostream& operator<<(std::ostream& ostr, const Event& event);
 
 #endif
