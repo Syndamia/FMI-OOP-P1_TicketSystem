@@ -189,12 +189,12 @@ void load() {
 	StatusCode s = es->load();
 	if (s == E_FileCouldNotBeOpened) {
 		errorBox("Could not load events from file!");
-		pressEnterToContinue();
+		pressEnterToContinue(false);
 	}
 	s = hs->load();
 	if (s == E_FileCouldNotBeOpened) {
 		errorBox("Could not load halls from file!");
-		pressEnterToContinue();
+		pressEnterToContinue(false);
 	}
 }
 
@@ -207,7 +207,7 @@ void save() {
 	s = hs->save();
 	if (s == E_FileCouldNotBeOpened) {
 		errorBox("Could not save halls to file!");
-		pressEnterToContinue();
+		pressEnterToContinue(false);
 	}
 }
 
