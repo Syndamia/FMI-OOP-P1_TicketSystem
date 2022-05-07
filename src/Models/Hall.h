@@ -2,19 +2,19 @@
 #define HEADER_HALL
 
 class Hall {
-	int index;
-	unsigned rowCount;
+	int number;
+	unsigned rows;
 	unsigned seatsPerRow;
 
 public:
 	Hall();
-	Hall(int index, unsigned rowCount, unsigned seatsPerRow);
+	Hall(int number, unsigned rows, unsigned seatsPerRow);
 
-	int get_index() const;
-	void set_index(int index);
+	int get_number() const;
+	void set_number(int number);
 
-	unsigned get_rowCount() const;
-	void set_rowCount(unsigned rowCount);
+	unsigned get_rows() const;
+	void set_rows(unsigned rows);
 
 	unsigned get_seatsPerRow() const;
 	void set_seatsPerRow(unsigned seatsPerRow);

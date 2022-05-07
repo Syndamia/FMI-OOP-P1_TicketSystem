@@ -2,24 +2,24 @@
 
 Hall::Hall() : Hall(0, 0, 0) {}
 
-Hall::Hall(int index, unsigned rowCount, unsigned seatsPerRow) {
-	this->index = index;
-	this->rowCount = rowCount;
+Hall::Hall(int number, unsigned rows, unsigned seatsPerRow) {
+	this->number = number;
+	this->rows = rows;
 	this->seatsPerRow = seatsPerRow;
 }
 
-int Hall::get_index() const {
-	return index;
+int Hall::get_number() const {
+	return number;
 }
-void Hall::set_index(int index) {
-	this->index = index;
+void Hall::set_number(int number) {
+	this->number = number;
 }
 
-unsigned Hall::get_rowCount() const {
-	return rowCount;
+unsigned Hall::get_rows() const {
+	return rows;
 }
-void Hall::set_rowCount(unsigned rowCount) {
-	this->rowCount = rowCount;
+void Hall::set_rows(unsigned rows) {
+	this->rows = rows;
 }
 
 unsigned Hall::get_seatsPerRow() const {
@@ -30,5 +30,5 @@ void Hall::set_seatsPerRow(unsigned seatsPerRow) {
 }
 
 int Hall::compare(const Hall& other) {
-	return (index > other.get_index()) - (index < other.get_index());
+	return (number > other.get_number()) - (number < other.get_number());
 }
