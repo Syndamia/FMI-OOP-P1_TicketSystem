@@ -9,16 +9,17 @@ void String::free() {
 
 void String::copyFrom(const String& other) {
 	str = new char[other.length];
-	strcpy(str, other.str);
+	strncpy(str, other.str, other.count);
 	length = other.length;
+	count = other.count;
 }
 
 /* Public */
 
 String::String(const char* str) {
-	length = strlen(str) + 1; // capture terminating zero
+	count = length = strlen(str) + 1; // capture terminating zero
 	this->str = new char[length];
-	strncpy(this->str, str, length);
+	strncpy(this->str, str, count);
 }
 
 const char* String::get_cstr() const {
@@ -35,6 +36,10 @@ String& String::operator+=(const String& other) {
 	length += other.length;
 
 	return *this;
+}
+
+String& String::operator+=(char other) {
+	if ()
 }
 
 String::String() : String("") {}

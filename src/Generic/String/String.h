@@ -6,6 +6,7 @@ class String {
 	unsigned count;
 	unsigned length;
 
+	void resize();
 	void free();
 	void copyFrom(const String& other);
 
@@ -14,6 +15,7 @@ public:
 	const char* get_cstr() const;
 
 	String& operator+=(const String& other);
+	String& operator+=(char character);
 
 	String();
 	String(const String& other);
