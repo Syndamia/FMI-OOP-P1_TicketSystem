@@ -33,7 +33,7 @@ public:
 	int compare(const Event& other);
 
 	friend std::istream& operator>>(std::istream& istr, Event& event);
-	friend std::ostream& operator<<(std::ostream& ostr, Event& event);
+	friend std::ostream& operator<<(std::ostream& ostr, const Event& event);
 };
 
 #endif

@@ -29,6 +29,12 @@ const Date& Event::get_date() const {
 	return date;
 }
 
+void Event::print(std::ostream& ostr) {
+	ostr.write(hall, sizeof(hall));
+}
+
+void Event::write(std::istream& istr);
+
 int Event::compare(const Event& other) {
 	if (hall == other.hall)
 		return date.compare(other.date);
@@ -38,4 +44,14 @@ int Event::compare(const Event& other) {
 std::istream& operator>>(std::istream& istr, Event& event) {
 	return istr >> event.hall >> event.name >> event.date >> event.tickets >> event.reservations;
 }
-std::ostream& operator<<(std::ostream& ostr, Event& event);
+std::ostream& operator<<(std::ostream& ostr, const Event& event) {
+	ostr << "Hall: " << event.hall << " Name: " << event.name << " Date: " << event.date << std::endl;
+
+	ostr << "Bought tickets: ";
+	for (unsigned i = 0; i < event.tickets.get_count(); i++)
+		ostr << event.tickets[i] << " ";
+	ostr << std::endl << "Reserved tickets: ";
+	for (unsigned i = 0; i < event.reservations.get_count(); i++)
+		ostr << event.reservations[i] << " ";
+	return ostr << std::endl;
+}
