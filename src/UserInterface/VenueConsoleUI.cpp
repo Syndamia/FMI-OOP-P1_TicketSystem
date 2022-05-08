@@ -148,8 +148,14 @@ void command_mostWatched() {
 	List<Event> top = es->queryMostWatched(10);
 
 	resetOrderedList(1);
-	for (unsigned i = 0; i < top.get_count(); i++)
-		printOrderedListElem(top[i].get_name());
+	for (unsigned i = 0; i < top.get_count(); i++) {
+		_printOrderedListBeginning();
+		print(top[i].get_name());
+		print(" || Hall ");
+		print(top[i].get_hall().get_number());
+		print(" @ ");
+		printLine(top[i].get_date());
+	}
 
 	pressEnterToContinue();
 }
