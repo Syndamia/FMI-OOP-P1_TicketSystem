@@ -18,6 +18,7 @@ public:
 	unsigned get_length() const;
 
 	String& operator+=(const char* str);
+	String& operator+=(unsigned number);
 
 	String();
 	String(const String& other);

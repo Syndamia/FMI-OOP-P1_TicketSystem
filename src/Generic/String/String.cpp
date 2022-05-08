@@ -48,6 +48,18 @@ String& String::operator+=(const char* str) {
 	return *this;
 }
 
+String& String::operator+=(unsigned number) {
+	unsigned tempLen = number / 10 + 1;
+	char* tmp = new char[tempLen + 1];
+	tmp[tempLen] = '\0';
+	for (unsigned i = tempLen - 1; i >= 0; i--, number /= 10)
+		tmp[i] = number % 10 + '0';
+
+	*this += tmp;
+	delete[] tmp;
+	return *this;
+}
+
 String::String() : String("") {}
 
 String::String(const String& other) {

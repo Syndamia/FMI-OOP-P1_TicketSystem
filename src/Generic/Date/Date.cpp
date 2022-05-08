@@ -71,12 +71,8 @@ int digitToChar(unsigned digit) {
 }
 
 String Date::createCStr() {
-	unsigned d = day, m = month, y = year;
 	String out;
-	if (d > 10) {
-		d 
-	}
-	(out += itoa(day));// << "." << dt.get_month() << "." << dt.get_year();
+	return ((((out += day) += ".") += month) += ".") += year;
 }
 
 void Date::read(std::istream& istr) {
