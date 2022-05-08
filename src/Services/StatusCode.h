@@ -8,7 +8,6 @@ enum StatusCode {
 	W_TicketHadNotBeenReserved,
 
 
-	E_Generic,
 	E_DoesntExist,
 	E_FileCouldNotBeOpened,
 
