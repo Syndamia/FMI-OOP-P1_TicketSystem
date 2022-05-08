@@ -37,6 +37,14 @@ const Date& Event::get_date() const {
 	return date;
 }
 
+/*! \param istr An input stream
+ *
+ * Directly reads bytes from stream (calls read() function).
+ * Stored types must have defined a read() function.
+ * 
+ * \remark Doesn't alter the stream in any other way.
+ * \note Best used with binary ifstream
+ */
 void Event::read(std::istream& istr) {
 	hall.read(istr);
 	name.read(istr);
@@ -45,6 +53,14 @@ void Event::read(std::istream& istr) {
 	reservations.read(istr);
 }
 
+/*! \param ostr An output stream
+ *
+ * Directly writes bytes to stream (calls write() function).
+ * Stored types must have defined a read() function.
+ * 
+ * \remark Doesn't alter the stream in any other way.
+ * \note Best used with binary ofstream
+ */
 void Event::write(std::ostream& ostr) {
 	hall.write(ostr);
 	name.write(ostr);
@@ -53,12 +69,20 @@ void Event::write(std::ostream& ostr) {
 	reservations.write(ostr);
 }
 
+/*! \return compare of halls, or if they are equal, compare of dates
+ */
 int Event::compare(const Event& other) {
 	if (hall.compare(other.hall) == 0)
 		return date.compare(other.date);
 	return hall.compare(other.hall);
 }
 
+/*!
+ * Uses the stream's >> operator to read and parse all internal values.
+ * Stored types must have defined operator >>.
+ *
+ * \note Best used with std::cin or text std::ifstream
+ */
 std::istream& operator>>(std::istream& istr, Event& event) {
 	Hall newHall;
 	String newString;
@@ -76,10 +100,33 @@ std::istream& operator>>(std::istream& istr, Event& event) {
 
 unsigned insertionOpSet = 0;
 
+/*! \param setting A number, defining the different options. It's best if it is passed as binary number.
+ *
+ * Sets a configuration setting for how operator<< should behave. Setting is stored as a global variable in the cpp file, so it's independent of Event instance.
+ *
+ * Each bit in the number is a certain setting. Each bit from left to right represents one of these options, from top to bottom:
+ * 1. Write count of bought tickets (available only if 5. is set)
+ * 2. Write count of reserved tickets (available only if 5. is set)
+ * 3. Write reservations
+ * 4. Write bought tickets
+ * 5. Write Hall information
+ *
+ * \par Example
+ * To configure printing the Hall information, bought tickets count and the bought tickets themselves, you would do:
+ * \code{.cpp}
+ * configureEventInsertionOp(0b10011);
+ * \endcode
+ */
 void configureEventInsertionOp(unsigned setting) {
 	insertionOpSet = setting;
 }
 
+/*!
+ * Uses the stream's << operator to write all internal data, following setting from configureEventInsertionOp()
+ * Stored types must have defined operator <<.
+ *   
+ * \note Best used with std::cout or text std::ofstream
+ */
 std::ostream& operator<<(std::ostream& ostr, const Event& event) {
 	if (insertionOpSet & 1) {
 		ostr << "| Hall: " << event.get_hall().get_number() << " | Name: " << event.get_name() << " | Date: " << event.get_date();
