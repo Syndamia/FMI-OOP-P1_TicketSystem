@@ -199,8 +199,8 @@ void submenu_eventManagement() {
 void command_reservationsList() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	Date date;
-	inputSubBox("Enter event date: ", &date);
+	char date[MAX_LINE_WIDTH];
+	inputLineSubBox("Enter event date: ", date, MAX_LINE_WIDTH);
 
 	StatusCode s = es->reportReservations(name, date);
 	handleStatusCode(s, reportsMenu);
@@ -208,12 +208,17 @@ void command_reservationsList() {
 
 void command_boughtTickets() {
 	char hallNumber[MAX_LINE_WIDTH];
-	inputSubBox("Enter hall number: ", hallNumber);
+	inputLineSubBox("Enter hall number: ", hallNumber, MAX_LINE_WIDTH);
 	Date start, end;
 	inputSubBox("Enter start date: ", &start);
 	inputSubBox("Enter end date: ", &end);
 
-	StatusCode s = es->reportBoughtTickets(hallNumber, start, end, hallNumber == 0);
+	StatusCode s;
+	if (strcmp(hallNumber, "ALL") == 0)
+		s = es->reportBoughtTickets(0, start, end, true);
+	else
+		s = es->reportBoughtTickets(atoi(hallNumber), start, end);
+
 	handleStatusCode(s, reportsMenu);
 }
 
