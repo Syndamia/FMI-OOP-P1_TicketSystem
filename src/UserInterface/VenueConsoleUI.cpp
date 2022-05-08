@@ -146,6 +146,12 @@ void command_cancelEvent() {
 
 void command_mostWatched() {
 	List<Event> top = es->queryMostWatched(10);
+
+	resetOrderedList(1);
+	for (unsigned i = 0; i < top.get_count(); i++)
+		printOrderedListElem(top[i].get_name());
+
+	pressEnterToContinue();
 }
 
 void command_belowWatchers() {

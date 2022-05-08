@@ -171,7 +171,7 @@ List<Event> EventService::queryMostWatched(unsigned topN) {
 	List<Event> result;
 	for (unsigned i = 0; i < events.get_count(); i++) {
 		unsigned ind = indexToInsertWhenTicketSort(result, topN, events[i].get_tickets().get_count());
-		if (ind < topN)
+		if (ind < topN || events.get_count() < topN)
 			result.insertAt(events[i], ind);
 		if (result.get_count() == topN)
 			result.removeAt(topN);
