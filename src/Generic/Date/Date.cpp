@@ -23,8 +23,10 @@ Date::Date() : Date(01, 05, 2022) {}
 Date::Date(const char* str) {
 	while (*str == ' ' && *str != '\0') str++;
 	day = atoi(str);
+	str += 2;
 	while (*str == ' ' && *str != '\0') str++;
 	month = atoi(str);
+	str += 2;
 	while (*str == ' ' && *str != '\0') str++;
 	year = atoi(str);
 }
