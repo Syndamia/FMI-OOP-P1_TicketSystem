@@ -180,7 +180,7 @@ void command_belowWatchers() {
 		customPrintEvent(least[i]);
 	}
 
-	unsigned toDelete;
+	bool toDelete;
 	inputBox("Do you want to cancel them? [0/1]: ", &toDelete);
 	if (toDelete) {
 		StatusCode s = Success;
@@ -207,8 +207,8 @@ void command_reservationsList() {
 }
 
 void command_boughtTickets() {
-	unsigned hallNumber;
-	inputSubBox("Enter hall number: ", &hallNumber);
+	char hallNumber[MAX_LINE_WIDTH];
+	inputSubBox("Enter hall number: ", hallNumber);
 	Date start, end;
 	inputSubBox("Enter start date: ", &start);
 	inputSubBox("Enter end date: ", &end);
