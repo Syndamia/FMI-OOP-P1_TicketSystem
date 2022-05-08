@@ -14,6 +14,7 @@ class Date {
 
 public:
 	Date();
+	Date(const char* str);
 	Date(unsigned short day, unsigned short month, unsigned short year);
 
 	unsigned short get_day() const;

@@ -19,6 +19,17 @@ unsigned short Date::daysInMonth() {
 
 Date::Date() : Date(01, 05, 2022) {}
 
+Date::Date(const char* str) : Date(0, 0, 0) {
+	for (unsigned i = 0; i < MAX_LINE_WIDTH && y == 0; i++) {
+			if (dateStr[i] != ' ') {
+				if (d == 0) d = atoi(dateStr + i);
+				else if (m == 0) m = atoi(dateStr + i);
+				else y = atoi(dateStr + i);
+				i++;
+			}
+		}
+}
+
 Date::Date(unsigned short day, unsigned short month, unsigned short year) {
 	this->day = day;
 	this->month = month;
