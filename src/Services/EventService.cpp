@@ -164,7 +164,7 @@ unsigned indexToInsertWhenTicketSort(const List<Event>& elem, unsigned topN, uns
 		if (elem[i].get_tickets().get_count() <= ticketCount)
 			return i;
 	}
-	return topN;
+	return (topN >= elem.get_count()) ? topN : elem.get_count();
 }
 
 List<Event> EventService::queryMostWatched(unsigned topN) {

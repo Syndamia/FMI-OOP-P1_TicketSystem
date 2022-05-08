@@ -145,7 +145,15 @@ void command_cancelEvent() {
 }
 
 void command_mostWatched() {
-	List<Event> top = es->queryMostWatched(10);
+	unsigned topN;
+	inputSubBox("How many to take?: ", &topN);
+
+	List<Event> top = es->queryMostWatched(topN);
+
+	printLine("");
+	print("The top ");
+	print(topN);
+	printLine(" most watched events are:");
 
 	resetOrderedList(1);
 	for (unsigned i = 0; i < top.get_count(); i++) {
