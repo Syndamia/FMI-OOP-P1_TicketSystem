@@ -47,8 +47,8 @@ void successBox(const char* message) {
 }
 
 /*!
- * Like successBox but also prints the sub box spacing
- * \sa successBox()
+ * \copydetails successBox()
+ * \sa _printSubBoxSpacing()
  */
 void successSubBox(const char* message) {
 	_printSubBoxSpacing();
@@ -66,8 +66,8 @@ void warningBox(const char* message) {
 }
 
 /*!
- * Like warningBox but also prints the sub box spacing
- * \sa warningBox()
+ * \copydetails warningBox()
+ * \sa _printSubBoxSpacing()
  */
 void warningSubBox(const char* message) {
 	_printSubBoxSpacing();
@@ -85,8 +85,8 @@ void errorBox(const char* message) {
 }
 
 /*!
- * Like errorBox but also prints the sub box spacing
- * \sa errorBox()
+ * \copydetails errorBox()
+ * \sa _printSubBoxSpacing()
  */
 void errorSubBox(const char* message) {
 	_printSubBoxSpacing();
@@ -126,8 +126,8 @@ void inputLineBox(const char* label, char* output, unsigned maxWidth, bool ignor
 }
 
 /*!
- * Like inputLineBox but also prints the sub box spacing
- * \sa inputLineBox()
+ * \copydetails inputLineBox()
+ * \sa _printSubBoxSpacing()
  */
 void inputLineSubBox(const char* label, char* output, unsigned maxWidth, bool ignore) {
 	_printSubBoxSpacing();

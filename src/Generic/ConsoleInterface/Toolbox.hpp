@@ -104,6 +104,7 @@ void inputBox(const char* label, T* output) {
 }
 
 //! Prints a label with sub box spacing and then reads user input and stores it
+//! \sa _printSubBoxSpacing()
 template <typename T>
 void inputSubBox(const char* label, T* output) {
 	_printSubBoxSpacing();
