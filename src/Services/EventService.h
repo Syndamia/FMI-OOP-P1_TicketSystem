@@ -34,7 +34,7 @@ public:
 
 	String createSeatingString(const char* name, const Date& date, unsigned* seatsPerRow);
 
-	StatusCode queryMostWatched();
+	List<Event> queryMostWatched(unsigned topN);
 	void queryInsufficientlyVisited();
 
 	StatusCode reportReservations(const char* name, const Date& date);

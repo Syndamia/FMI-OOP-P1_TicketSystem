@@ -161,20 +161,22 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 
 unsigned indexToInsertWhenTicketSort(const List<Event>& elem, unsigned topN, unsigned ticketCount) {
 	for (unsigned i = 0; i < elem.get_count() && i < topN; i++) {
-		if (elem[i].get_tickets().get_count() < ticketCount)
+		if (elem[i].get_tickets().get_count() <= ticketCount)
 			return i;
 	}
 	return topN;
 }
 
-StatusCode EventService::queryMostWatched(unsigned topN) {
+List<Event> EventService::queryMostWatched(unsigned topN) {
 	List<Event> result;
 	for (unsigned i = 0; i < events.get_count(); i++) {
-		if (result.get_count() > 10 && result[10].get_tickets().get_count() > events[i].get_tickets().get_count())
-			continue;
-
-		
+		unsigned ind = indexToInsertWhenTicketSort(result, topN, events[i].get_tickets().get_count());
+		if (ind < topN)
+			result.insertAt(events[i], ind);
+		if (result.get_count() == topN)
+			result.removeAt(topN);
 	}
+	return result;
 }
 
 template <typename T>

@@ -145,7 +145,7 @@ void command_cancelEvent() {
 }
 
 void command_mostWatched() {
-
+	List<Event> top = es->queryMostWatched(10);
 }
 
 void command_belowWatchers() {
