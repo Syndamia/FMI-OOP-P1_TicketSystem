@@ -64,8 +64,18 @@ bool Date::set_year(unsigned short newYear) {
 	return true;
 }
 
+int digitToChar(unsigned digit) {
+	if (digit <= 9)
+		return '0' + digit;
+	return ' ';
+}
+
 String Date::createCStr() {
+	unsigned d = day, m = month, y = year;
 	String out;
+	if (d > 10) {
+		d 
+	}
 	(out += itoa(day));// << "." << dt.get_month() << "." << dt.get_year();
 }
 
