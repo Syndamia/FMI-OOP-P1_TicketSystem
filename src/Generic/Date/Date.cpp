@@ -1,4 +1,5 @@
 #include "Date.h"
+#include <cstring>
 
 /* Private */
 
@@ -61,6 +62,11 @@ unsigned short Date::get_year() const {
 bool Date::set_year(unsigned short newYear) {
 	year = newYear;
 	return true;
+}
+
+String Date::createCStr() {
+	String out;
+	(out += itoa(day));// << "." << dt.get_month() << "." << dt.get_year();
 }
 
 void Date::read(std::istream& istr) {
