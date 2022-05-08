@@ -22,19 +22,20 @@ Date::Date() : Date(01, 05, 2022) {}
 
 Date::Date(const char* str) {
 	while (*str == ' ' && *str != '\0') str++;
-	day = atoi(str);
+	set_day(atoi(str));
 	str += 2;
 	while (*str == ' ' && *str != '\0') str++;
-	month = atoi(str);
+	set_month(atoi(str));
 	str += 2;
 	while (*str == ' ' && *str != '\0') str++;
-	year = atoi(str);
+	set_year(atoi(str));
 }
 
 Date::Date(unsigned short day, unsigned short month, unsigned short year) {
-	this->day = day;
-	this->month = month;
-	this->year = year;
+	this->day = this->month = this->year = 0;
+	set_day(day);
+	set_month(month);
+	set_year(year);
 }
 
 unsigned short Date::get_day() const {
