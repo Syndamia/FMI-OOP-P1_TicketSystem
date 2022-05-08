@@ -164,16 +164,16 @@ unsigned indexToInsertWhenTicketSort(const List<Event>& elem, unsigned topN, uns
 		if (elem[i].get_tickets().get_count() <= ticketCount)
 			return i;
 	}
-	return (topN >= elem.get_count()) ? topN : elem.get_count();
+	return (topN < elem.get_count()) ? topN : elem.get_count();
 }
 
 List<Event> EventService::queryMostWatched(unsigned topN) {
 	List<Event> result;
 	for (unsigned i = 0; i < events.get_count(); i++) {
 		unsigned ind = indexToInsertWhenTicketSort(result, topN, events[i].get_tickets().get_count());
-		if (ind < topN || events.get_count() < topN)
+		if (ind < topN)
 			result.insertAt(events[i], ind);
-		if (result.get_count() == topN)
+		if (result.get_count() > topN)
 			result.removeAt(topN);
 	}
 	return result;
