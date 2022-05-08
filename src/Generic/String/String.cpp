@@ -17,7 +17,8 @@ void String::copyFrom(const String& other) {
 
 String::String(unsigned length) {
 	this->length = length;
-	str = new char[length];
+	str = new char[length + 1];
+	str[length] = '\0';
 }
 
 String::String(const char* str) {

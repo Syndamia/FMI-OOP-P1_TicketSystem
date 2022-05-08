@@ -142,7 +142,7 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 	unsigned rowCount = events[eInd].get_hall().get_rows(), seatsCount = events[eInd].get_hall().get_seatsPerRow();
 	*seatsPerRow = seatsCount;
 
-	String out = new char[rowCount * seatsCount + 1];
+	String out(rowCount * seatsCount);
 
 	for (unsigned acc = 0, row = 1; row <= rowCount; row++) {
 		for (unsigned seat = 1; seat <= seatsCount; seat++, acc++) {
@@ -155,7 +155,6 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 		}
 	}
 
-	out[seatsCount * rowCount] = '\0';
 	return out;
 }
 
