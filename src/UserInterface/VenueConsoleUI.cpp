@@ -202,7 +202,7 @@ void command_reservationsList() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	char dateStr[MAX_LINE_WIDTH];
-	inputLineSubBox("Enter event date: ", dateStr, MAX_LINE_WIDTH);
+	inputLineSubBox("Enter event date: ", dateStr, MAX_LINE_WIDTH, false);
 
 	Date date(dateStr);
 

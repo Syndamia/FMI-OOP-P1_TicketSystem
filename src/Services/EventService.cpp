@@ -213,7 +213,7 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 			result.add(events[i]);
 	}
 
-	String outFileName("report.txt-");
+	String outFileName("report-");
 	(outFileName += name) += "-";
 	if (date.compare(Date(0, 0, 0)) == 0)
 		outFileName += "ALL";
