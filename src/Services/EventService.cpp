@@ -159,8 +159,8 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 	return out;
 }
 
-StatusCode EventService::queryMostWathched() {
-
+StatusCode EventService::queryMostWatched() {
+	List<Event> result;
 }
 
 template <typename T>
