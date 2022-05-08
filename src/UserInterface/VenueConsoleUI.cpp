@@ -277,6 +277,12 @@ void init() {
 	reportsMenu.addCommand(Command("Bought Tickets", command_boughtTickets));
 }
 
+/*!
+ * Stores EventService and HallService pointers in internal global variables,
+ * calls EventService and HallService load() functions,
+ * initializes all menus, navigates the main menu and
+ * finally calls EventService and HallService save() functions
+ */
 void runUI(EventService* eventService, HallService* hallService) {
 	es = eventService;
 	hs = hallService;
