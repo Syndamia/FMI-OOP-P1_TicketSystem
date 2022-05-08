@@ -1,0 +1,6 @@
+INPUT = ../../src/
+FILE_PATTERNS = *.h *.hpp *.cpp
+RECURSIVE = YES
+
+PROJECT_NAME = "FMI Ticket System"
+PROJECT_BRIEF = "| Author: Kamen Mladenov | FMI, Computer Science, Year 1, Group 6 | Project: 1 | Project Topic: 4 |"
