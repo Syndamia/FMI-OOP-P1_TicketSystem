@@ -70,7 +70,7 @@ int digitToChar(unsigned digit) {
 	return ' ';
 }
 
-String Date::createCStr() {
+String Date::createString() const {
 	String out;
 	return ((((out += day) += ".") += month) += ".") += year;
 }

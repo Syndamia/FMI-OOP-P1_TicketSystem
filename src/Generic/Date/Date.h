@@ -25,7 +25,7 @@ public:
 	unsigned short get_year() const;
 	bool set_year(unsigned short year);
 
-	String createCStr();
+	String createString() const;
 
 	void read(std::istream& istr);
 	void write(std::ostream& ostr);
