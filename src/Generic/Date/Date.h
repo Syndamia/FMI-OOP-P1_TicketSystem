@@ -3,6 +3,7 @@
 
 #include <istream>
 #include <ostream>
+#include "../String/String.h"
 
 class Date {
 	unsigned short day;
@@ -23,6 +24,8 @@ public:
 	bool set_month(unsigned short month);
 	unsigned short get_year() const;
 	bool set_year(unsigned short year);
+
+	String createCStr();
 
 	void read(std::istream& istr);
 	void write(std::ostream& ostr);

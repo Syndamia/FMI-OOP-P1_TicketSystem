@@ -213,6 +213,8 @@ StatusCode EventService::reportReservations(const char* name, const Date& date) 
 			result.add(events[i]);
 	}
 
+	String outFileName("report.txt-");
+	((outFileName += name) += "-") += date.toCStr();
 	std::ofstream outFile("report.txt"); // TODO: filename
 	if (!outFile.is_open())
 		return E_FileCouldNotBeOpened;

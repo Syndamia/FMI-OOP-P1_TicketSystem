@@ -36,6 +36,15 @@ unsigned String::get_length() const {
 }
 
 String& String::operator+=(const char* str) {
+	unsigned strLen = strlen(str);
+	char* newStr = new char[length + strLen + 1];
+	strncpy(newStr, this->str, length + 1);
+	strncat(newStr, str, strLen + 1);
+
+	delete[] this->str;
+	this->str = newStr;
+	length += strLen;
+
 	return *this;
 }
 
