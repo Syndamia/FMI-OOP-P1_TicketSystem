@@ -19,18 +19,13 @@ unsigned short Date::daysInMonth() {
 
 Date::Date() : Date(01, 05, 2022) {}
 
-Date::Date(const char* str) : Date(0, 0, 0) {
-	for (unsigned i = 0; str[i] != '\0' && year == 0; i++) {
-		if (str[i] != ' ') {
-			unsigned temp = atoi(str + i);
-			if (temp == 0) return; // can only happen with incorrect input
-
-			if (day == 0) day = temp;
-			else if (month == 0) month = temp;
-			else year = temp;
-			i++;
-		}
-	}
+Date::Date(const char* str) {
+	while (*str == ' ' && *str != '\0') str++;
+	day = atoi(str);
+	while (*str == ' ' && *str != '\0') str++;
+	month = atoi(str);
+	while (*str == ' ' && *str != '\0') str++;
+	year = atoi(str);
 }
 
 Date::Date(unsigned short day, unsigned short month, unsigned short year) {
