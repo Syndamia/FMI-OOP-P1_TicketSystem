@@ -159,10 +159,21 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 	return out;
 }
 
-StatusCode EventService::queryMostWatched() {
+unsigned indexToInsertWhenTicketSort(const List<Event>& elem, unsigned topN, unsigned ticketCount) {
+	for (unsigned i = 0; i < elem.get_count() && i < topN; i++) {
+		if (elem[i].get_tickets().get_count() < ticketCount)
+			return i;
+	}
+	return topN;
+}
+
+StatusCode EventService::queryMostWatched(unsigned topN) {
 	List<Event> result;
 	for (unsigned i = 0; i < events.get_count(); i++) {
-		if (result.get_count() > 10 && result[10])
+		if (result.get_count() > 10 && result[10].get_tickets().get_count() > events[i].get_tickets().get_count())
+			continue;
+
+		
 	}
 }
 
