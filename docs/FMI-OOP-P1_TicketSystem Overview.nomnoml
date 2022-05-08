@@ -17,10 +17,10 @@
 ]
 
 [<groupui> User Interface|
-	[VenueConsoleUI.cpp|
+	[FMITicketSystemConsoleUI.cpp|
 		EventService* es
     	HallService* hs
-		run()
+		runUI()
 	]
 ]
 [main.cpp]->[User Interface]

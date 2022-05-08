@@ -1,7 +1,7 @@
-#ifndef HEADER_VENUECONSOLEUI
-#define HEADER_VENUECONSOLEUI
+#ifndef HEADER_FMITICKETSYSTEMCONSOLEUI
+#define HEADER_FMITICKETSYSTEMCONSOLEUI
 
-/*! \file VenueConsoleUI.h
+/*! \file FMITicketSystemConsoleUI.h
  *  \brief Stores declaration of runUI function
  */
 

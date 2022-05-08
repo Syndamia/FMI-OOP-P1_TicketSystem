@@ -19,10 +19,10 @@
 	]
 	
 	[&lt;groupui&gt; User Interface|
-		[VenueConsoleUI.cpp|
+		[FMITicketSystemConsoleUI.cpp|
 			EventService* es
 	    	HallService* hs
-			run()
+			runUI()
 		]
 	]
 	[main.cpp]-&gt;[User Interface]
@@ -167,34 +167,34 @@
 					</g>
 					<g data-name="User Interface">
 						<g fill="#b2ee97" stroke="#33322E" data-name="User Interface">
-							<rect x="171.0" y="119.0" height="183.0" width="231.0" data-name="User Interface"></rect>
-							<path d="M171.0 151.0 L402.0 151.0" fill="none" data-name="User Interface"></path>
+							<rect x="129.0" y="119.0" height="183.0" width="314.0" data-name="User Interface"></rect>
+							<path d="M129.0 151.0 L443.0 151.0" fill="none" data-name="User Interface"></path>
 						</g>
-						<g transform="translate(171, 119)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="italic" data-name="User Interface">
+						<g transform="translate(129, 119)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="italic" data-name="User Interface">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="User Interface">
-								<text x="107.5" y="13.8" stroke="none" text-anchor="middle" data-name="User Interface">User Interface</text>
+								<text x="149.0" y="13.8" stroke="none" text-anchor="middle" data-name="User Interface">User Interface</text>
 								
 							</g>
 						</g>
-						<g transform="translate(171, 151)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User Interface">
+						<g transform="translate(129, 151)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User Interface">
 							<g transform="translate(8, 8)" fill="#33322E" data-name="User Interface">
 								<g transform="translate(20, 20)" data-name="User Interface">
-									<g data-name="VenueConsoleUI.cpp">
-										<g fill="#fdf6e3" stroke="#33322E" data-name="VenueConsoleUI.cpp">
-											<rect x="0.0" y="0.0" height="95.0" width="175.0" data-name="VenueConsoleUI.cpp"></rect>
-											<path d="M0.0 32.0 L175.0 32.0" fill="none" data-name="VenueConsoleUI.cpp"></path>
+									<g data-name="FMITicketSystemConsoleUI.cpp">
+										<g fill="#fdf6e3" stroke="#33322E" data-name="FMITicketSystemConsoleUI.cpp">
+											<rect x="0.0" y="0.0" height="95.0" width="258.0" data-name="FMITicketSystemConsoleUI.cpp"></rect>
+											<path d="M0.0 32.0 L258.0 32.0" fill="none" data-name="FMITicketSystemConsoleUI.cpp"></path>
 										</g>
-										<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="VenueConsoleUI.cpp">
-											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="VenueConsoleUI.cpp">
-												<text x="79.5" y="13.8" stroke="none" text-anchor="middle" data-name="VenueConsoleUI.cpp">VenueConsoleUI.cpp</text>
+										<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="FMITicketSystemConsoleUI.cpp">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="FMITicketSystemConsoleUI.cpp">
+												<text x="121.0" y="13.8" stroke="none" text-anchor="middle" data-name="FMITicketSystemConsoleUI.cpp">FMITicketSystemConsoleUI.cpp</text>
 												
 											</g>
 										</g>
-										<g transform="translate(0, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="VenueConsoleUI.cpp">
-											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="VenueConsoleUI.cpp">
-												<text x="0.0" y="13.8" stroke="none" data-name="VenueConsoleUI.cpp">EventService* es</text>
-												<text x="0.0" y="29.4" stroke="none" data-name="VenueConsoleUI.cpp">HallService* hs</text>
-												<text x="0.0" y="45.0" stroke="none" data-name="VenueConsoleUI.cpp">run()</text>
+										<g transform="translate(0, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FMITicketSystemConsoleUI.cpp">
+											<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="FMITicketSystemConsoleUI.cpp">
+												<text x="0.0" y="13.8" stroke="none" data-name="FMITicketSystemConsoleUI.cpp">EventService* es</text>
+												<text x="0.0" y="29.4" stroke="none" data-name="FMITicketSystemConsoleUI.cpp">HallService* hs</text>
+												<text x="0.0" y="45.0" stroke="none" data-name="FMITicketSystemConsoleUI.cpp">runUI()</text>
 												
 											</g>
 										</g>

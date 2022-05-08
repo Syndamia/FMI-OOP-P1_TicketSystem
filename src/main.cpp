@@ -12,7 +12,7 @@
 #include "Services/EventService.h"
 #include "Services/HallService.h"
 #include "Models/Hall.h"
-#include "UserInterface/VenueConsoleUI.h"
+#include "UserInterface/FMITicketSystemConsoleUI.h"
 
 /*!  
  * Creates instances of HallService and EventService and
