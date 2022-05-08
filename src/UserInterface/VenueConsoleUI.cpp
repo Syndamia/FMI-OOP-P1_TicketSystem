@@ -199,8 +199,14 @@ void submenu_eventManagement() {
 void command_reservationsList() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
-	char date[MAX_LINE_WIDTH];
-	inputLineSubBox("Enter event date: ", date, MAX_LINE_WIDTH);
+	char dateStr[MAX_LINE_WIDTH];
+	inputLineSubBox("Enter event date: ", dateStr, MAX_LINE_WIDTH);
+
+	Date date;
+	if (strcmp(dateStr, "ALL") == 0)
+		date = Date(0, 0, 0);
+	else
+		date = Date(atoi(dateStr), atoi(dateStr + 2), atoi(dateStr + 4));
 
 	StatusCode s = es->reportReservations(name, date);
 	handleStatusCode(s, reportsMenu);
