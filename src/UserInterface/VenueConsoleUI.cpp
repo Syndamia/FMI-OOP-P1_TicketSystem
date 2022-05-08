@@ -180,10 +180,10 @@ void command_belowWatchers() {
 		customPrintEvent(least[i]);
 	}
 
-	bool toDelete;
+	unsigned toDelete;
 	inputBox("Do you want to cancel them? [0/1]: ", &toDelete);
 	if (toDelete) {
-		StatusCode s;
+		StatusCode s = Success;
 		for (unsigned i = 0; i < least.get_count(); i++)
 			s = es->cancelEvent(least[i].get_name().get_cstr(), least[i].get_date());
 		handleStatusCode(s, eventManagementMenu);
