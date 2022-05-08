@@ -179,6 +179,15 @@ List<Event> EventService::queryMostWatched(unsigned topN) {
 	return result;
 }
 
+List<Event> EventService::queryInsufficientlyVisited() {
+	List<Event> result;
+	for (unsigned i = 0; i < events.get_count(); i++) {
+		if (events[i].get_tickets().get_count() < events[i].get_hall().get_rows() * events[i].get_hall().get_seatsPerRow() / 10)
+			result.add(events[i]);
+	}
+	return result;
+}
+
 template <typename T>
 bool cond_event_all(const Event& e1, T scrap) {
 	return true;
