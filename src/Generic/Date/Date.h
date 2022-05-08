@@ -1,5 +1,5 @@
-#ifndef HEADER_DATETIME
-#define HEADER_DATETIME
+#ifndef HEADER_DATE
+#define HEADER_DATE
 
 #include <istream>
 #include <ostream>

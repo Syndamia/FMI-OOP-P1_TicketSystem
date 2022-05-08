@@ -1,5 +1,5 @@
-#ifndef HEADER_HALL
-#define HEADER_HALL
+#ifndef HEADER_MODEL_HALL
+#define HEADER_MODEL_HALL
 
 #include <istream>
 #include <ostream>

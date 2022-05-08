@@ -1,5 +1,5 @@
-#ifndef HEADER_SERVICE_STATUSCODE
-#define HEADER_SERVICE_STATUSCODE
+#ifndef HEADER_SERVICES_STATUSCODE
+#define HEADER_SERVICES_STATUSCODE
 
 enum StatusCode {
 	Success,
@@ -8,7 +8,6 @@ enum StatusCode {
 	W_TicketHadNotBeenReserved,
 
 
-	E_DoesntExist,
 	E_FileCouldNotBeOpened,
 
 	E_HallDoesntExist,

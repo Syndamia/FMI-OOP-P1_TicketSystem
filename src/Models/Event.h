@@ -1,5 +1,5 @@
-#ifndef HEADER_EVENTSYSTEM_EVENT
-#define HEADER_EVENTSYSTEM_EVENT
+#ifndef HEADER_MODEL_EVENT
+#define HEADER_MODEL_EVENT
 
 #include "../Generic/List/OrderedList.hpp"
 #include "../Generic/Date/Date.h"

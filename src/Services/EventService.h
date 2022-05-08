@@ -1,5 +1,5 @@
-#ifndef HEADER_SERVICE_EVENTSERVICE
-#define HEADER_SERVICE_EVENTSERVICE
+#ifndef HEADER_SERVICES_EVENTSERVICE
+#define HEADER_SERVICES_EVENTSERVICE
 
 #include "../Generic/List/OrderedList.hpp"
 #include "../Generic/Date/Date.h"

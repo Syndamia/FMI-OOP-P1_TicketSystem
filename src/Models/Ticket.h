@@ -1,5 +1,5 @@
-#ifndef HEADER_EVENTSYSTEM_TICKET
-#define HEADER_EVENTSYSTEM_TICKET
+#ifndef HEADER_HEADER_TICKET
+#define HEADER_HEADER_TICKET
 
 #include <istream>
 #include <ostream>

@@ -1,5 +1,5 @@
-#ifndef HEADER_SERVICE_HALLSERVICE
-#define HEADER_SERVICE_HALLSERVICE
+#ifndef HEADER_SERVICES_HALLSERVICE
+#define HEADER_SERVICES_HALLSERVICE
 
 #include "../Generic/List/OrderedList.hpp"
 #include "../Models/Hall.h"
