@@ -161,6 +161,9 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 
 StatusCode EventService::queryMostWatched() {
 	List<Event> result;
+	for (unsigned i = 0; i < events.get_count(); i++) {
+		if (result.get_count() > 10 && result[10])
+	}
 }
 
 template <typename T>
