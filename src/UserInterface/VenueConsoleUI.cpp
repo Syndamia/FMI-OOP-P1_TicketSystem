@@ -144,6 +144,14 @@ void command_cancelEvent() {
 	handleStatusCode(s, eventManagementMenu);
 }
 
+void customPrintEvent(const Event& ev) {
+	print(ev.get_name());
+	print(" || Hall ");
+	print(ev.get_hall().get_number());
+	print(" @ ");
+	printLine(ev.get_date());
+}
+
 void command_mostWatched() {
 	unsigned topN;
 	inputSubBox("How many to take?: ", &topN);
@@ -158,18 +166,28 @@ void command_mostWatched() {
 	resetOrderedList(1);
 	for (unsigned i = 0; i < top.get_count(); i++) {
 		_printOrderedListBeginning();
-		print(top[i].get_name());
-		print(" || Hall ");
-		print(top[i].get_hall().get_number());
-		print(" @ ");
-		printLine(top[i].get_date());
+		customPrintEvent(top[i]);
 	}
 
 	pressEnterToContinue();
 }
 
 void command_belowWatchers() {
+	printLine("Events with less than 10% bought tickets in hall:");
 
+	List<Event> least = es->queryInsufficientlyVisited();
+	for (unsigned i = 0; i < least.get_count(); i++) {
+		customPrintEvent(least[i]);
+	}
+
+	bool toDelete;
+	inputBox("Do you want to cancel them? [0/1]: ", &toDelete);
+	if (toDelete) {
+		StatusCode s;
+		for (unsigned i = 0; i < least.get_count(); i++)
+			s = es->cancelEvent(least[i].get_name().get_cstr(), least[i].get_date());
+		handleStatusCode(s, eventManagementMenu);
+	}
 }
 
 void submenu_eventManagement() {
