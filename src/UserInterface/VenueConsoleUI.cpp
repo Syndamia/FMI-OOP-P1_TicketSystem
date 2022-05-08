@@ -202,18 +202,7 @@ void command_reservationsList() {
 	char dateStr[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event date: ", dateStr, MAX_LINE_WIDTH);
 
-	unsigned d = 0, m = 0, y = 0;
-	if (strcmp(dateStr, "ALL") != 0) {
-		for (unsigned i = 0; i < MAX_LINE_WIDTH && y == 0; i++) {
-			if (dateStr[i] != ' ') {
-				if (d == 0) d = atoi(dateStr + i);
-				else if (m == 0) m = atoi(dateStr + i);
-				else y = atoi(dateStr + i);
-				i++;
-			}
-		}
-	}
-	Date date(d, m, y);
+	Date date(dateStr);
 
 	StatusCode s = es->reportReservations(name, date);
 	handleStatusCode(s, reportsMenu);
