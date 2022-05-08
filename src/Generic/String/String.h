@@ -17,6 +17,8 @@ public:
 	const char* get_cstr() const;
 	unsigned get_length() const;
 
+	String& operator+=(const char* str);
+
 	String();
 	String(const String& other);
 	String& operator=(const String& other);

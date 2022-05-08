@@ -35,6 +35,10 @@ unsigned String::get_length() const {
 	return length;
 }
 
+String& String::operator+=(const char* str) {
+	return *this;
+}
+
 String::String() : String("") {}
 
 String::String(const String& other) {
