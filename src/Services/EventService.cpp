@@ -159,6 +159,10 @@ String EventService::createSeatingString(const char* name, const Date& date, uns
 	return out;
 }
 
+StatusCode EventService::queryMostWathched() {
+
+}
+
 template <typename T>
 bool cond_event_all(const Event& e1, T scrap) {
 	return true;
