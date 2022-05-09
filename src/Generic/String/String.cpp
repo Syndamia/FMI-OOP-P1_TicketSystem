@@ -63,7 +63,10 @@ String& String::operator+=(const char* str) {
  * Converts the number to a C-style string and then uses += to append it.
  */
 String& String::operator+=(unsigned number) {
-	unsigned tempLen = number / 10 + 1;
+	unsigned tempLen = 0;
+	for (unsigned tmp = number; tmp > 0 || tempLen == 0; tmp /= 10)
+		tempLen++;
+
 	char* tmp = new char[tempLen + 1];
 	tmp[tempLen] = '\0';
 	for (unsigned i = tempLen - 1; i < tempLen; i--, number /= 10)
