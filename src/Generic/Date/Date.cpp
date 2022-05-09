@@ -90,9 +90,11 @@ unsigned short Date::get_year() const {
 
 /*! \return Whether year was saved or not
  *
- * Year is always saved.
+ * Year isn't set when newYear is zero
  */
 bool Date::set_year(unsigned short newYear) {
+	if (newYear == 0)
+		return false;
 	year = newYear;
 	return true;
 }
