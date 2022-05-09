@@ -194,8 +194,8 @@ void __printTableLine(unsigned columns) {
 }
 
 /*! \param startNumber The number by which column and row enumeration begins
- *  \params columns How many columns the table should have
- *  \params items C-style string, each cell is a single character from the string
+ *  \param columns How many columns the table should have
+ *  \param items C-style string, each cell is a single character from the string
  *
  * Prints a string as a grid/table of characters from top to bottom, left to right.
  * The first character is on the top left, the last one is on the bottom right.
