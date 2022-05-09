@@ -1,6 +1,8 @@
 # Custom project files
 *.txt
 *.fmits
+docs/doxygen/html
+docs/doxygen/latex
 
 # Prerequisites
 *.d
