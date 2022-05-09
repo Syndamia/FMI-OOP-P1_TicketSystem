@@ -1,8 +1,3 @@
-/*! \mainpage FMI Tickets System
- *
- * GitHub source code repository: <a href="https://github.com/Syndamia/FMI-OOP-P1_TicketSystem">Syndamia/FMI-OOP-P1_TicketSystem</a> 
- */
-
 /*! \file main.cpp
  *  \brief Entry point for application
  *
