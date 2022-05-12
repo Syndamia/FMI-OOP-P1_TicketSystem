@@ -1,0 +1,34 @@
+\hypertarget{Menu_8h_source}{}\doxysection{Menu.\+h}
+\label{Menu_8h_source}\index{src/Generic/ConsoleInterface/Menu.h@{src/Generic/ConsoleInterface/Menu.h}}
+\mbox{\hyperlink{Menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_CONSOLEINTERFACE\_MENU}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_CONSOLEINTERFACE\_MENU}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../List/List.hpp"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classMenu}{Menu}} \{}
+\DoxyCodeLine{18     \textcolor{keywordtype}{char} title[256];}
+\DoxyCodeLine{19     \mbox{\hyperlink{classList}{List<Command>}} menuOptions;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordtype}{bool} backExistsApp;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{bool} isSubMenu;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{classMenu_ad466dd83355124a6ed958430450bfe94}{Menu}}();}
+\DoxyCodeLine{28     \mbox{\hyperlink{classMenu_ad466dd83355124a6ed958430450bfe94}{Menu}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* title, \textcolor{keywordtype}{bool} backExistsApp, \textcolor{keywordtype}{bool} isSubMenu);}
+\DoxyCodeLine{30     \mbox{\hyperlink{classMenu_ad466dd83355124a6ed958430450bfe94}{Menu}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* title, \textcolor{keywordtype}{bool} backExistsApp, \textcolor{keywordtype}{bool} isSubMenu, \textcolor{keyword}{const} \mbox{\hyperlink{classCommand}{Command}}* commands, \textcolor{keywordtype}{unsigned} commandCount);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMenu_a1f022cc8b705369073f8fd7b90b30c8d}{addCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCommand}{Command}}\& command);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMenu_aad506cb9a7f35dea98c60484bb2d095c}{registerError}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \textcolor{keyword}{const};}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMenu_a5350b1addf9bf365351486cd161696ad}{registerWarning}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \textcolor{keyword}{const};}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMenu_a3504e28b5d05e1ad70dada190bbc3a9c}{registerSuccess}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \textcolor{keyword}{const};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMenu_a0400751da7f8583029b7a12d3003c36d}{navigate}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

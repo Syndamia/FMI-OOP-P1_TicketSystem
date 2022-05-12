@@ -1,0 +1,33 @@
+\hypertarget{FMITicketSystemConsoleUI_8h}{}\doxysection{src/\+User\+Interface/\+FMITicket\+System\+Console\+UI.h File Reference}
+\label{FMITicketSystemConsoleUI_8h}\index{src/UserInterface/FMITicketSystemConsoleUI.h@{src/UserInterface/FMITicketSystemConsoleUI.h}}
+
+
+Stores declaration of run\+UI function.  
+
+
+{\ttfamily \#include \char`\"{}../\+Services/\+Event\+Service.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Services/\+Hall\+Service.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{FMITicketSystemConsoleUI_8h_a79d6833c27b5a32b6d9917f5cd6e32a3}{run\+UI}} (\mbox{\hyperlink{classEventService}{Event\+Service}} $\ast$event\+Service, \mbox{\hyperlink{classHallService}{Hall\+Service}} $\ast$hall\+Service)
+\begin{DoxyCompactList}\small\item\em Runs the console interface for the ticket system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores declaration of run\+UI function. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{FMITicketSystemConsoleUI_8h_a79d6833c27b5a32b6d9917f5cd6e32a3}\label{FMITicketSystemConsoleUI_8h_a79d6833c27b5a32b6d9917f5cd6e32a3}} 
+\index{FMITicketSystemConsoleUI.h@{FMITicketSystemConsoleUI.h}!runUI@{runUI}}
+\index{runUI@{runUI}!FMITicketSystemConsoleUI.h@{FMITicketSystemConsoleUI.h}}
+\doxysubsubsection{\texorpdfstring{runUI()}{runUI()}}
+{\footnotesize\ttfamily void run\+UI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEventService}{Event\+Service}} $\ast$}]{event\+Service,  }\item[{\mbox{\hyperlink{classHallService}{Hall\+Service}} $\ast$}]{hall\+Service }\end{DoxyParamCaption})}
+
+
+
+Runs the console interface for the ticket system. 
+
+Stores \mbox{\hyperlink{classEventService}{Event\+Service}} and \mbox{\hyperlink{classHallService}{Hall\+Service}} pointers in internal global variables, calls \mbox{\hyperlink{classEventService}{Event\+Service}} and \mbox{\hyperlink{classHallService}{Hall\+Service}} load() functions, initializes all menus, navigates the main menu and finally calls \mbox{\hyperlink{classEventService}{Event\+Service}} and \mbox{\hyperlink{classHallService}{Hall\+Service}} save() functions 

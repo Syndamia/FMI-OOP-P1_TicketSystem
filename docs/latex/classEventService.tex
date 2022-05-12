@@ -1,0 +1,314 @@
+\hypertarget{classEventService}{}\doxysection{Event\+Service Class Reference}
+\label{classEventService}\index{EventService@{EventService}}
+
+
+Each \mbox{\hyperlink{classEventService}{Event\+Service}} stores all events and a pointer to \mbox{\hyperlink{classHallService}{Hall\+Service}}.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Service.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventService_a9b30bb95890abac259ba27b53cabe545}\label{classEventService_a9b30bb95890abac259ba27b53cabe545}} 
+{\bfseries Event\+Service} (const \mbox{\hyperlink{classHallService}{Hall\+Service}} $\ast$hs)
+\begin{DoxyCompactList}\small\item\em Sets \mbox{\hyperlink{classHallService}{Hall\+Service}} pointer and initializes events \mbox{\hyperlink{classList}{List}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEventService_af35cde4a05edfec88496772b6d0b1e37}\label{classEventService_af35cde4a05edfec88496772b6d0b1e37}} 
+{\bfseries Event\+Service} (const \mbox{\hyperlink{classHallService}{Hall\+Service}} $\ast$hs, const \mbox{\hyperlink{classEvent}{Event}} $\ast$events, unsigned event\+Count)
+\begin{DoxyCompactList}\small\item\em Sets \mbox{\hyperlink{classHallService}{Hall\+Service}} pointer and copies values from events into events \mbox{\hyperlink{classList}{List}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_a7a21a5909116215e402254510d6d81d6}{create\+Event}} (int hall\+Number, const \mbox{\hyperlink{classString}{String}} \&name, const \mbox{\hyperlink{classDate}{Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Creates an \mbox{\hyperlink{classEvent}{Event}}, with the given hall\+Number, name and date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_ac7ea565af5ad78e84749558477ceaf26}{cancel\+Event}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Cancels an \mbox{\hyperlink{classEvent}{Event}} with the given name and date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_a3c0d2a05e2a3026044b9e13e6802fbdb}{reserve\+Ticket}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date, const char $\ast$password, const char $\ast$note, const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classReservation}{Reservation}} for an \mbox{\hyperlink{classEvent}{Event}} by name and date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_aa6fd620de878f225f7c51bb0df6ea749}{cancel\+Ticket\+Reservation}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date, const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\begin{DoxyCompactList}\small\item\em Cancels a \mbox{\hyperlink{classReservation}{Reservation}} for a ticket. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_ad1efbed6111da8e755d86b5bc9ada806}{ticket\+Is\+Reserved}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date, const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\begin{DoxyCompactList}\small\item\em Whether a ticket is a reserved or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_ac447cac3e4974b9cc676d9bb90152979}{buy\+Ticket}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date, const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket, const char $\ast$password, \mbox{\hyperlink{classString}{String}} $\ast$reservation\+Note\+Output)
+\begin{DoxyCompactList}\small\item\em Buys ticket, assuming it is reserved and stores the reservation note. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_ad0a204aca9cc8287f562f42916248e9e}{buy\+Ticket}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date, const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\begin{DoxyCompactList}\small\item\em Buys ticket, assuming it isn\textquotesingle{}t reserved. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classString}{String}} \mbox{\hyperlink{classEventService_a7f4632e3beae5d24087047ab0223f85e}{create\+Seating\+String}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date, unsigned $\ast$seats\+Per\+Row)
+\begin{DoxyCompactList}\small\item\em Creates a special \mbox{\hyperlink{classString}{String}} for status of all seats in given \mbox{\hyperlink{classEvent}{Event}} (by name and date) and returns seats\+Per\+Row in given pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classList}{List}}$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classEventService_a6700bd4f9da6d12a47812b9c8549556e}{query\+Most\+Watched}} (unsigned topN)
+\item 
+\mbox{\hyperlink{classList}{List}}$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classEventService_a814de3510f72150f2e54d44f8c8948bb}{query\+Insufficiently\+Visited}} ()
+\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_a277194aea79a2c9bf955b7706a20c54c}{report\+Reservations}} (const char $\ast$name, const \mbox{\hyperlink{classDate}{Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Creates a report that lists all Events (with given name and date) and their reserved tickets. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_afc74fc6d44fca054bce8e54997c0cd3e}{report\+Bought\+Tickets}} (int hall\+Number, const \mbox{\hyperlink{classDate}{Date}} \&start, const \mbox{\hyperlink{classDate}{Date}} \&end, bool all=false)
+\begin{DoxyCompactList}\small\item\em Creates a report that Lists all Events (with given name and date) and number of bought tickets. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_a1225c23dae83fa928da47113cd1c5617}{load}} ()
+\begin{DoxyCompactList}\small\item\em Loads Events from a database file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classEventService_a5aac3df17ef30f84c1c28277c256ec32}{save}} ()
+\begin{DoxyCompactList}\small\item\em Saves Events to a database file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Each \mbox{\hyperlink{classEventService}{Event\+Service}} stores all events and a pointer to \mbox{\hyperlink{classHallService}{Hall\+Service}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEventService_ad0a204aca9cc8287f562f42916248e9e}\label{classEventService_ad0a204aca9cc8287f562f42916248e9e}} 
+\index{EventService@{EventService}!buyTicket@{buyTicket}}
+\index{buyTicket@{buyTicket}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{buyTicket()}{buyTicket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::buy\+Ticket (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date,  }\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})}
+
+
+
+Buys ticket, assuming it isn\textquotesingle{}t reserved. 
+
+Calls buy\+Ticket with \mbox{\hyperlink{classReservation}{Reservation}}, but sets password and note\+Output to nullptr. \begin{DoxyReturn}{Returns}
+E\+\_\+\+Event\+Does\+Not\+Exist {\bfseries{if}} No \mbox{\hyperlink{classEvent}{Event}} with the given name and date exists 
+
+E\+\_\+\+Ticket\+Already\+Bought {\bfseries{if}} A ticket for the given row and seat has already been bought 
+
+E\+\_\+\+Ticket\+Already\+Reserved {\bfseries{if}} The seat and row are reserved, but given password is nullptr 
+
+E\+\_\+\+Wrong\+Reservation\+Password {\bfseries{if}} The seat and row are reserved, but given password is incorrect 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_ac447cac3e4974b9cc676d9bb90152979}\label{classEventService_ac447cac3e4974b9cc676d9bb90152979}} 
+\index{EventService@{EventService}!buyTicket@{buyTicket}}
+\index{buyTicket@{buyTicket}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{buyTicket()}{buyTicket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::buy\+Ticket (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date,  }\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket,  }\item[{const char $\ast$}]{password,  }\item[{\mbox{\hyperlink{classString}{String}} $\ast$}]{reservation\+Note\+Output }\end{DoxyParamCaption})}
+
+
+
+Buys ticket, assuming it is reserved and stores the reservation note. 
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+Event\+Does\+Not\+Exist {\bfseries{if}} No \mbox{\hyperlink{classEvent}{Event}} with the given name and date exists 
+
+E\+\_\+\+Ticket\+Already\+Bought {\bfseries{if}} A ticket for the given row and seat has already been bought 
+
+E\+\_\+\+Ticket\+Already\+Reserved {\bfseries{if}} The seat and row are reserved, but given password is nullptr 
+
+E\+\_\+\+Wrong\+Reservation\+Password {\bfseries{if}} The seat and row are reserved, but given password is incorrect 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_ac7ea565af5ad78e84749558477ceaf26}\label{classEventService_ac7ea565af5ad78e84749558477ceaf26}} 
+\index{EventService@{EventService}!cancelEvent@{cancelEvent}}
+\index{cancelEvent@{cancelEvent}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{cancelEvent()}{cancelEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::cancel\+Event (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Cancels an \mbox{\hyperlink{classEvent}{Event}} with the given name and date. 
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+Event\+Does\+Not\+Exist {\bfseries{if}} No \mbox{\hyperlink{classEvent}{Event}} with the given name and date exists 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_aa6fd620de878f225f7c51bb0df6ea749}\label{classEventService_aa6fd620de878f225f7c51bb0df6ea749}} 
+\index{EventService@{EventService}!cancelTicketReservation@{cancelTicketReservation}}
+\index{cancelTicketReservation@{cancelTicketReservation}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{cancelTicketReservation()}{cancelTicketReservation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::cancel\+Ticket\+Reservation (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date,  }\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})}
+
+
+
+Cancels a \mbox{\hyperlink{classReservation}{Reservation}} for a ticket. 
+
+Canceling a reservation doesn\textquotesingle{}t require password and doesn\textquotesingle{}t return the \mbox{\hyperlink{classReservation}{Reservation}}\textquotesingle{}s note
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+Event\+Does\+Not\+Exist {\bfseries{if}} No \mbox{\hyperlink{classEvent}{Event}} with the given name and date exists 
+
+W\+\_\+\+Ticket\+Had\+Not\+Been\+Reserved {\bfseries{\mbox{\hyperlink{classTicket}{Ticket}}}} hadn\textquotesingle{}t been reserved in the first place 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a7a21a5909116215e402254510d6d81d6}\label{classEventService_a7a21a5909116215e402254510d6d81d6}} 
+\index{EventService@{EventService}!createEvent@{createEvent}}
+\index{createEvent@{createEvent}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{createEvent()}{createEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::create\+Event (\begin{DoxyParamCaption}\item[{int}]{hall\+Number,  }\item[{const \mbox{\hyperlink{classString}{String}} \&}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Creates an \mbox{\hyperlink{classEvent}{Event}}, with the given hall\+Number, name and date. 
+
+Uses \mbox{\hyperlink{classHallService}{Hall\+Service}} pointer to get \mbox{\hyperlink{classHall}{Hall}} from hall\+Number \begin{DoxyReturn}{Returns}
+E\+\_\+\+Hall\+Doesnt\+Exist {\bfseries{if}} hall\+Number doesn\textquotesingle{}t correspond to any \mbox{\hyperlink{classHall}{Hall}}, saved in \mbox{\hyperlink{classHallService}{Hall\+Service}} 
+
+E\+\_\+\+Event\+Will\+Overlap {\bfseries{if}} \mbox{\hyperlink{classEvent}{Event}}\textquotesingle{}s date overlaps with another event in the same \mbox{\hyperlink{classHall}{Hall}} 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a7f4632e3beae5d24087047ab0223f85e}\label{classEventService_a7f4632e3beae5d24087047ab0223f85e}} 
+\index{EventService@{EventService}!createSeatingString@{createSeatingString}}
+\index{createSeatingString@{createSeatingString}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{createSeatingString()}{createSeatingString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classString}{String}} Event\+Service\+::create\+Seating\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date,  }\item[{unsigned $\ast$}]{seats\+Per\+Row }\end{DoxyParamCaption})}
+
+
+
+Creates a special \mbox{\hyperlink{classString}{String}} for status of all seats in given \mbox{\hyperlink{classEvent}{Event}} (by name and date) and returns seats\+Per\+Row in given pointer. 
+
+Each seat in the \mbox{\hyperlink{classHall}{Hall}} of the \mbox{\hyperlink{classEvent}{Event}} is represented by a single character, where \textquotesingle{}R\textquotesingle{} means the seat is reserved, \textquotesingle{}B\textquotesingle{} means the seat is bought and \textquotesingle{} \textquotesingle{} if it\textquotesingle{}s neither.
+
+\begin{DoxyReturn}{Returns}
+Empty \mbox{\hyperlink{classString}{String}} {\bfseries{if}} No \mbox{\hyperlink{classEvent}{Event}} with the given name and date exists 
+
+Proper \mbox{\hyperlink{classString}{String}} {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a1225c23dae83fa928da47113cd1c5617}\label{classEventService_a1225c23dae83fa928da47113cd1c5617}} 
+\index{EventService@{EventService}!load@{load}}
+\index{load@{load}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads Events from a database file. 
+
+Looks for file named \char`\"{}events\+Databse.\+fmits\char`\"{}, which is just a binary file, and then reads it with the \char`\"{}read\char`\"{} function in events \mbox{\hyperlink{classList}{List}}.
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+File\+Could\+Not\+Be\+Opened {\bfseries{if}} The files couldn\textquotesingle{}t be opened/\+Doesn\textquotesingle{}t exist 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a814de3510f72150f2e54d44f8c8948bb}\label{classEventService_a814de3510f72150f2e54d44f8c8948bb}} 
+\index{EventService@{EventService}!queryInsufficientlyVisited@{queryInsufficientlyVisited}}
+\index{queryInsufficientlyVisited@{queryInsufficientlyVisited}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{queryInsufficientlyVisited()}{queryInsufficientlyVisited()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classList}{List}}$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ Event\+Service\+::query\+Insufficiently\+Visited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classList}{List}} of events which have attracted sales of less than 10\% of the \mbox{\hyperlink{classHall}{Hall}}\textquotesingle{}s seat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a6700bd4f9da6d12a47812b9c8549556e}\label{classEventService_a6700bd4f9da6d12a47812b9c8549556e}} 
+\index{EventService@{EventService}!queryMostWatched@{queryMostWatched}}
+\index{queryMostWatched@{queryMostWatched}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{queryMostWatched()}{queryMostWatched()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classList}{List}}$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ Event\+Service\+::query\+Most\+Watched (\begin{DoxyParamCaption}\item[{unsigned}]{topN }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classList}{List}} of topN most watched Events
+\end{DoxyReturn}
+Events are sorted from index 0 to last index decreasingly by number of watchers. Watchers count for an \mbox{\hyperlink{classEvent}{Event}} is the amount of bought tickets.
+
+If there are less events than topN, all events are returned. \mbox{\Hypertarget{classEventService_afc74fc6d44fca054bce8e54997c0cd3e}\label{classEventService_afc74fc6d44fca054bce8e54997c0cd3e}} 
+\index{EventService@{EventService}!reportBoughtTickets@{reportBoughtTickets}}
+\index{reportBoughtTickets@{reportBoughtTickets}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{reportBoughtTickets()}{reportBoughtTickets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::report\+Bought\+Tickets (\begin{DoxyParamCaption}\item[{int}]{hall\+Number,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{start,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{end,  }\item[{bool}]{all = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Creates a report that Lists all Events (with given name and date) and number of bought tickets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hall\+Number} & Number of the \mbox{\hyperlink{classEvent}{Event}}\textquotesingle{}s \mbox{\hyperlink{classHall}{Hall}} \\
+\hline
+{\em start} & Starting \mbox{\hyperlink{classDate}{Date}} from which to take Events \\
+\hline
+{\em end} & Ending \mbox{\hyperlink{classDate}{Date}} until which to take Evnets (including)\\
+\hline
+\end{DoxyParams}
+Report is saved in a file named \char`\"{}bought\+Tickets.\+txt\char`\"{} in the current directory.
+
+All Events are inserted into the file with the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator and a setting of 0b01001.
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+File\+Could\+Not\+Be\+Opened {\bfseries{if}} Report file couldn\textquotesingle{}t be created 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a277194aea79a2c9bf955b7706a20c54c}\label{classEventService_a277194aea79a2c9bf955b7706a20c54c}} 
+\index{EventService@{EventService}!reportReservations@{reportReservations}}
+\index{reportReservations@{reportReservations}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{reportReservations()}{reportReservations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::report\+Reservations (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Creates a report that lists all Events (with given name and date) and their reserved tickets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & C-\/style string, if it is equal to \char`\"{}\+ALL\char`\"{}, reservations from all Events on the given date will be reported \\
+\hline
+{\em date} & If day, month and year are equal to 0, reservations from all dates will be reported\\
+\hline
+\end{DoxyParams}
+Report is saved in a file in the current directory, named \char`\"{}report-\/\+NAME-\/\+DATE.\+txt\char`\"{}, where NAME is the given name, and DATE is the given date or \char`\"{}\+ALL\char`\"{} if the date is 0/0/0
+
+All Events are inserted into the file with the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator and a setting of 0b00101.
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+File\+Could\+Not\+Be\+Opened {\bfseries{if}} Report file couldn\textquotesingle{}t be created 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a3c0d2a05e2a3026044b9e13e6802fbdb}\label{classEventService_a3c0d2a05e2a3026044b9e13e6802fbdb}} 
+\index{EventService@{EventService}!reserveTicket@{reserveTicket}}
+\index{reserveTicket@{reserveTicket}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{reserveTicket()}{reserveTicket()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::reserve\+Ticket (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date,  }\item[{const char $\ast$}]{password,  }\item[{const char $\ast$}]{note,  }\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classReservation}{Reservation}} for an \mbox{\hyperlink{classEvent}{Event}} by name and date. 
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+Event\+Does\+Not\+Exist {\bfseries{if}} No \mbox{\hyperlink{classEvent}{Event}} with the given name and date exists 
+
+E\+\_\+\+Ticket\+Already\+Bought {\bfseries{if}} A ticket for the given row and seat has already been bought 
+
+E\+\_\+\+Ticket\+Already\+Reserved {\bfseries{if}} A reservation has already been placed on the given row and seat 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_a5aac3df17ef30f84c1c28277c256ec32}\label{classEventService_a5aac3df17ef30f84c1c28277c256ec32}} 
+\index{EventService@{EventService}!save@{save}}
+\index{save@{save}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Saves Events to a database file. 
+
+Looks for file named \char`\"{}events\+Databse.\+fmits\char`\"{}, which is just a binary file, and then writes to it with the \char`\"{}write\char`\"{} function in events \mbox{\hyperlink{classList}{List}}.
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+File\+Could\+Not\+Be\+Opened {\bfseries{if}} The files couldn\textquotesingle{}t be opened 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventService_ad1efbed6111da8e755d86b5bc9ada806}\label{classEventService_ad1efbed6111da8e755d86b5bc9ada806}} 
+\index{EventService@{EventService}!ticketIsReserved@{ticketIsReserved}}
+\index{ticketIsReserved@{ticketIsReserved}!EventService@{EventService}}
+\doxysubsubsection{\texorpdfstring{ticketIsReserved()}{ticketIsReserved()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Event\+Service\+::ticket\+Is\+Reserved (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{date,  }\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})}
+
+
+
+Whether a ticket is a reserved or not. 
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+Event\+Does\+Not\+Exist {\bfseries{if}} No \mbox{\hyperlink{classEvent}{Event}} with the given name and date exists 
+
+W\+\_\+\+Ticket\+Had\+Not\+Been\+Reserved {\bfseries{\mbox{\hyperlink{classTicket}{Ticket}}}} hadn\textquotesingle{}t been reserved in the first place 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Services/\mbox{\hyperlink{EventService_8h}{Event\+Service.\+h}}\item 
+src/\+Services/Event\+Service.\+cpp\end{DoxyCompactItemize}

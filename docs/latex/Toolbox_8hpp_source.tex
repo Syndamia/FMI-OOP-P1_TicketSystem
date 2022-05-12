@@ -1,0 +1,86 @@
+\hypertarget{Toolbox_8hpp_source}{}\doxysection{Toolbox.\+hpp}
+\label{Toolbox_8hpp_source}\index{src/Generic/ConsoleInterface/Toolbox.hpp@{src/Generic/ConsoleInterface/Toolbox.hpp}}
+\mbox{\hyperlink{Toolbox_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_CONSOLEINTERFACE\_TOOLBOX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_CONSOLEINTERFACE\_TOOLBOX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define MAX\_LINE\_WIDTH 1024}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ac8bb3912a3ce86b15842e79d0b421204}{clear}}();}
+\DoxyCodeLine{19 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a24a3fa9050ea032396c213ea85a1de0b}{titleBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* title);}
+\DoxyCodeLine{21 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ad557e4a1167be4e0c57fe530ce74a120}{subTitleBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* title);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{24 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a6c82ac6987703376c17c74a81fb0a91a}{successBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{26 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_aa78e2e87fff9b64ca032a5b1c7054081}{successSubBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{28 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a52222c9ff8739ef87c89df899deb5052}{warningBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{30 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a22f8b3135115d1b9fca09eea98dc6d92}{warningSubBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a9d709a3db7de05368cc38671c896bb2d}{errorBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ade748c3f15151748c9f978097715d2e7}{errorSubBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_aa49b4d5a7b00249bc1fb08eec5e3aeaf}{inputLineBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* label, \textcolor{keywordtype}{char}* output, \textcolor{keywordtype}{unsigned} maxWidth, \textcolor{keywordtype}{bool} ignore = \textcolor{keyword}{true});}
+\DoxyCodeLine{39 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ad2c61ce27ec52d14e427d6f6e93d38f2}{inputLineSubBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* label, \textcolor{keywordtype}{char}* output, \textcolor{keywordtype}{unsigned} maxWidth, \textcolor{keywordtype}{bool} ignore = \textcolor{keyword}{true});}
+\DoxyCodeLine{41 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ac7f54319bf4e70a46e3155ae1b39e832}{pressEnterToContinue}}(\textcolor{keywordtype}{bool} ignore = \textcolor{keyword}{true});}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a4456d10f7e141c4fc1a29aff4ad29108}{resetOrderedList}}(\textcolor{keywordtype}{int} starter = 1);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a6c90056ede686f0319d0fb0a408d02e5}{table}}(\textcolor{keywordtype}{unsigned} startNumber, \textcolor{keywordtype}{unsigned} columns, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* items);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\_printSubBoxSpacing}}();}
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ab3ce613add75d2385c8e1424527d2c3d}{\_printInputBoxLabel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* label);}
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a27b565355e018d36b6ce47169cc26fad}{\_printOrderedListBeginning}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{58 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a3c9098dc2b305107367c56ded5dec787}{read}}(T* storage) \{}
+\DoxyCodeLine{59     std::cin >> storage;}
+\DoxyCodeLine{60 \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a3c9098dc2b305107367c56ded5dec787}{read}}(T\& storage) \{}
+\DoxyCodeLine{65     std::cin >> storage;}
+\DoxyCodeLine{66 \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a5ca1093462d3266fceb8522e144c1e73}{print}}(\textcolor{keyword}{const} T* item) \{}
+\DoxyCodeLine{71     std::cout << item;}
+\DoxyCodeLine{72 \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{75 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{76 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a5ca1093462d3266fceb8522e144c1e73}{print}}(\textcolor{keyword}{const} T\& item) \{}
+\DoxyCodeLine{77     std::cout << item;}
+\DoxyCodeLine{78 \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{82 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a148d9d6b8b15bbfc2b1f4cdb16c2ee81}{printLine}}(\textcolor{keyword}{const} T* item) \{}
+\DoxyCodeLine{83     std::cout << item << std::endl;}
+\DoxyCodeLine{84 \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{88 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a148d9d6b8b15bbfc2b1f4cdb16c2ee81}{printLine}}(\textcolor{keyword}{const} T\& item) \{}
+\DoxyCodeLine{89     std::cout << item << std::endl;}
+\DoxyCodeLine{90 \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{94 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_abe3a449632ee6d40eb59101dd2d2f114}{printOrderedListElem}}(\textcolor{keyword}{const} T\& elem) \{}
+\DoxyCodeLine{95     \mbox{\hyperlink{Toolbox_8hpp_a27b565355e018d36b6ce47169cc26fad}{\_printOrderedListBeginning}}();}
+\DoxyCodeLine{96     \mbox{\hyperlink{Toolbox_8hpp_a148d9d6b8b15bbfc2b1f4cdb16c2ee81}{printLine}}(elem);}
+\DoxyCodeLine{97 \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_ab7651f0a92f8d0d0be3d63c1045eee1e}{inputBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* label, T* output) \{}
+\DoxyCodeLine{102     \mbox{\hyperlink{Toolbox_8hpp_ab3ce613add75d2385c8e1424527d2c3d}{\_printInputBoxLabel}}(label);}
+\DoxyCodeLine{103     std::cin >> *output;}
+\DoxyCodeLine{104 \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{108 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} \mbox{\hyperlink{Toolbox_8hpp_a92da1c5f0023cd5c4809d9c1f682e92f}{inputSubBox}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* label, T* output) \{}
+\DoxyCodeLine{110     \mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\_printSubBoxSpacing}}();}
+\DoxyCodeLine{111     \mbox{\hyperlink{Toolbox_8hpp_ab3ce613add75d2385c8e1424527d2c3d}{\_printInputBoxLabel}}(label);}
+\DoxyCodeLine{112     std::cin >> *output;}
+\DoxyCodeLine{113 \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

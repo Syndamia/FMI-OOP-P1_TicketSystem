@@ -1,0 +1,103 @@
+\hypertarget{classTicket}{}\doxysection{Ticket Class Reference}
+\label{classTicket}\index{Ticket@{Ticket}}
+
+
+Each \mbox{\hyperlink{classTicket}{Ticket}} contains a row and a seat number.  
+
+
+
+
+{\ttfamily \#include $<$Ticket.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTicket_aba3a46c9223efb6ab0bde93a09403537}\label{classTicket_aba3a46c9223efb6ab0bde93a09403537}} 
+{\bfseries Ticket} ()
+\begin{DoxyCompactList}\small\item\em Sets row and seat to zeroes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTicket_a6fa09371f1b70520b96dbb9ac9a71768}\label{classTicket_a6fa09371f1b70520b96dbb9ac9a71768}} 
+{\bfseries Ticket} (unsigned row, unsigned seat)
+\begin{DoxyCompactList}\small\item\em Sets row and seat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTicket_a94476de3cd6711185527d0fe4df9a278}\label{classTicket_a94476de3cd6711185527d0fe4df9a278}} 
+unsigned {\bfseries get\+\_\+row} () const
+\begin{DoxyCompactList}\small\item\em Returns row. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTicket_af7b64cb77a676d0f7bdb32255283f005}\label{classTicket_af7b64cb77a676d0f7bdb32255283f005}} 
+unsigned {\bfseries get\+\_\+seat} () const
+\begin{DoxyCompactList}\small\item\em Returns seat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTicket_aad2d0b7b92b54ec861db92c31f50f4ad}{read}} (std\+::istream \&istr)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classTicket}{Ticket}} from stram. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTicket_a584a11f6236fc96f3bdbd0592d3f60f4}{write}} (std\+::ostream \&ostr) const
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classTicket}{Ticket}} to stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTicket_a82a063f71be89f44dd969970855187c4}{compare}} (const \mbox{\hyperlink{classTicket}{Ticket}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two Tickets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Each \mbox{\hyperlink{classTicket}{Ticket}} contains a row and a seat number. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTicket_a82a063f71be89f44dd969970855187c4}\label{classTicket_a82a063f71be89f44dd969970855187c4}} 
+\index{Ticket@{Ticket}!compare@{compare}}
+\index{compare@{compare}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int Ticket\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two Tickets. 
+
+\begin{DoxyReturn}{Returns}
+If rows are equal, -\/1 if seat \texorpdfstring{$<$}{<} other.\+seat, 1 if seat \texorpdfstring{$>$}{>} other.\+seat, 0 if seat == other.\+seat, else the same, but for rows 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTicket_aad2d0b7b92b54ec861db92c31f50f4ad}\label{classTicket_aad2d0b7b92b54ec861db92c31f50f4ad}} 
+\index{Ticket@{Ticket}!read@{read}}
+\index{read@{read}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Ticket\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classTicket}{Ticket}} from stram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istr} & An input stream\\
+\hline
+\end{DoxyParams}
+Directly reads bytes from stream (calls \mbox{\hyperlink{classTicket_aad2d0b7b92b54ec861db92c31f50f4ad}{read()}} function).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ifstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classTicket_a584a11f6236fc96f3bdbd0592d3f60f4}\label{classTicket_a584a11f6236fc96f3bdbd0592d3f60f4}} 
+\index{Ticket@{Ticket}!write@{write}}
+\index{write@{write}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Ticket\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr }\end{DoxyParamCaption}) const}
+
+
+
+Writes \mbox{\hyperlink{classTicket}{Ticket}} to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostr} & An output stream\\
+\hline
+\end{DoxyParams}
+Directly writes bytes to stream (calls \mbox{\hyperlink{classTicket_a584a11f6236fc96f3bdbd0592d3f60f4}{write()}} function).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ofstream 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Models/\mbox{\hyperlink{Ticket_8h}{Ticket.\+h}}\item 
+src/\+Models/Ticket.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,26 @@
+\hypertarget{HallService_8h_source}{}\doxysection{Hall\+Service.\+h}
+\label{HallService_8h_source}\index{src/Services/HallService.h@{src/Services/HallService.h}}
+\mbox{\hyperlink{HallService_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_SERVICES\_HALLSERVICE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_SERVICES\_HALLSERVICE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Generic/List/OrderedList.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../Models/Hall.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{StatusCode_8h}{StatusCode.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classHallService}{HallService}} \{}
+\DoxyCodeLine{15     \mbox{\hyperlink{classOrderedList}{OrderedList<Hall>}} halls;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{classHallService_a57a8117d8d510afb5351a3f7efc18dff}{HallService}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHall}{Hall}}* halls, \textcolor{keywordtype}{unsigned} hallCount);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22     \textcolor{keyword}{const} \mbox{\hyperlink{classOrderedList}{OrderedList<Hall>}}\& \mbox{\hyperlink{classHallService_a641fdcc475e094687713e94094e2a623}{get\_halls}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classHallService_ab63c1ccff811ed3268f2fe5e996eb6ae}{load}}();}
+\DoxyCodeLine{27     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classHallService_a083e3d10ec89ee8c78a117c3754c66d2}{save}}();}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

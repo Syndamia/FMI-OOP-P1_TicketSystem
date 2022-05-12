@@ -1,0 +1,22 @@
+\hypertarget{Command_8h_source}{}\doxysection{Command.\+h}
+\label{Command_8h_source}\index{src/Generic/ConsoleInterface/Command.h@{src/Generic/ConsoleInterface/Command.h}}
+\mbox{\hyperlink{Command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_CONSOLEINTERFACE\_COMMAND}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_CONSOLEINTERFACE\_COMMAND}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classCommand}{Command}} \{}
+\DoxyCodeLine{13     \textcolor{keywordtype}{char} nameInMenu[256];}
+\DoxyCodeLine{14     void (*exec)();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{classCommand_a18df2d81039392daeb0b78c346a70537}{Command}}();}
+\DoxyCodeLine{20     \mbox{\hyperlink{classCommand_a18df2d81039392daeb0b78c346a70537}{Command}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* nameInMenu, \textcolor{keywordtype}{void} (*exec)());}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a44689093b812bfc97b2787c2ba0303ce}{run}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* get\_nameInMenu() \textcolor{keyword}{const};}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

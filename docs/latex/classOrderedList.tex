@@ -1,0 +1,94 @@
+\hypertarget{classOrderedList}{}\doxysection{Ordered\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classOrderedList}\index{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}}
+
+
+Inherits \mbox{\hyperlink{classList}{List}}, but contains it\textquotesingle{}s elements in a sorted manner.  
+
+
+
+
+{\ttfamily \#include $<$Ordered\+List.\+hpp$>$}
+
+Inheritance diagram for Ordered\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOrderedList}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOrderedList_a736559aa9cd4d085e4bc76ae2c751097}\label{classOrderedList_a736559aa9cd4d085e4bc76ae2c751097}} 
+{\bfseries Ordered\+List} (const T $\ast$elements, unsigned elements\+Count)
+\item 
+void \mbox{\hyperlink{classOrderedList_a8b2748c3cdefe4869e0d7a2fc9b4b2cd}{add}} (T element)=delete
+\item 
+void \mbox{\hyperlink{classOrderedList_a45af729846bacc77fc8292e5d0690f99}{insert\+At}} (T element, unsigned index)=delete
+\item 
+void \mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert}} (T element)
+\begin{DoxyCompactList}\small\item\em Inserts an element at a sorted position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Ordered\+List$<$ T $>$}
+Inherits \mbox{\hyperlink{classList}{List}}, but contains it\textquotesingle{}s elements in a sorted manner. 
+
+\begin{DoxyWarning}{Warning}
+Outside those defined in \mbox{\hyperlink{classList}{List}}, \mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert()}} requires the type to have defined a \char`\"{}compare\char`\"{} of functions. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOrderedList_a8b2748c3cdefe4869e0d7a2fc9b4b2cd}\label{classOrderedList_a8b2748c3cdefe4869e0d7a2fc9b4b2cd}} 
+\index{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}!add@{add}}
+\index{add@{add}!OrderedList$<$ T $>$@{OrderedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\begin{DoxyWarning}{Warning}
+Function is deleted, use \mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert()}} instead 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}\label{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}} 
+\index{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!OrderedList$<$ T $>$@{OrderedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})}
+
+
+
+Inserts an element at a sorted position. 
+
+\begin{DoxyWarning}{Warning}
+The function depends on the type having a function \char`\"{}compare\char`\"{} defined, which takes two elements and returns a number \texorpdfstring{$<$}{<}0 if elem1 \texorpdfstring{$<$}{<} elem2, \texorpdfstring{$>$}{>}0 if elem1 \texorpdfstring{$>$}{>} elem2, 0 if elem1 == elem2 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Insertion is done linearly 
+\end{DoxyNote}
+\mbox{\Hypertarget{classOrderedList_a45af729846bacc77fc8292e5d0690f99}\label{classOrderedList_a45af729846bacc77fc8292e5d0690f99}} 
+\index{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}!insertAt@{insertAt}}
+\index{insertAt@{insertAt}!OrderedList$<$ T $>$@{OrderedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertAt()}{insertAt()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ T $>$\+::insert\+At (\begin{DoxyParamCaption}\item[{T}]{element,  }\item[{unsigned}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\begin{DoxyWarning}{Warning}
+Function is deleted, use \mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert()}} instead 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Generic/\+List/\mbox{\hyperlink{OrderedList_8hpp}{Ordered\+List.\+hpp}}\end{DoxyCompactItemize}

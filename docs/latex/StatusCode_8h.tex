@@ -1,0 +1,46 @@
+\hypertarget{StatusCode_8h}{}\doxysection{src/\+Services/\+Status\+Code.h File Reference}
+\label{StatusCode_8h}\index{src/Services/StatusCode.h@{src/Services/StatusCode.h}}
+
+
+Stores declaration of enum Status\+Code.  
+
+
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \{ \newline
+{\bfseries Success}
+, {\bfseries W\+\_\+\+Ticket\+Had\+Not\+Been\+Reserved}
+, {\bfseries E\+\_\+\+File\+Could\+Not\+Be\+Opened}
+, {\bfseries E\+\_\+\+Hall\+Doesnt\+Exist}
+, \newline
+{\bfseries E\+\_\+\+Event\+Will\+Overlap}
+, {\bfseries E\+\_\+\+Event\+Does\+Not\+Exist}
+, {\bfseries E\+\_\+\+Ticket\+Already\+Bought}
+, {\bfseries E\+\_\+\+Ticket\+Already\+Reserved}
+, \newline
+{\bfseries E\+\_\+\+Reservation\+Does\+Not\+Exist}
+, {\bfseries E\+\_\+\+Wrong\+Reservation\+Password}
+ \}
+\begin{DoxyCompactList}\small\item\em Used for communication between Services and what uses them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores declaration of enum Status\+Code. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}\label{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}} 
+\index{StatusCode.h@{StatusCode.h}!StatusCode@{StatusCode}}
+\index{StatusCode@{StatusCode}!StatusCode.h@{StatusCode.h}}
+\doxysubsubsection{\texorpdfstring{StatusCode}{StatusCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}}}
+
+
+
+Used for communication between Services and what uses them. 
+
+Most functions in Services return a Status\+Code.
+
+Those starting with W should be considered Warning, and those starting with E should be considered Errors. 

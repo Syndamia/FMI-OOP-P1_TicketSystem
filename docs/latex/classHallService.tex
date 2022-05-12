@@ -1,0 +1,70 @@
+\hypertarget{classHallService}{}\doxysection{Hall\+Service Class Reference}
+\label{classHallService}\index{HallService@{HallService}}
+
+
+Each \mbox{\hyperlink{classHallService}{Hall\+Service}} stores all halls.  
+
+
+
+
+{\ttfamily \#include $<$Hall\+Service.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHallService_a57a8117d8d510afb5351a3f7efc18dff}\label{classHallService_a57a8117d8d510afb5351a3f7efc18dff}} 
+{\bfseries Hall\+Service} (const \mbox{\hyperlink{classHall}{Hall}} $\ast$halls, unsigned hall\+Count)
+\begin{DoxyCompactList}\small\item\em Copies halls from parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHallService_a641fdcc475e094687713e94094e2a623}\label{classHallService_a641fdcc475e094687713e94094e2a623}} 
+const \mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ \mbox{\hyperlink{classHall}{Hall}} $>$ \& {\bfseries get\+\_\+halls} () const
+\begin{DoxyCompactList}\small\item\em Returns a constant reference to halls. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classHallService_ab63c1ccff811ed3268f2fe5e996eb6ae}{load}} ()
+\begin{DoxyCompactList}\small\item\em Loads Halls to a database file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} \mbox{\hyperlink{classHallService_a083e3d10ec89ee8c78a117c3754c66d2}{save}} ()
+\begin{DoxyCompactList}\small\item\em Saves Halls to a database file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Each \mbox{\hyperlink{classHallService}{Hall\+Service}} stores all halls. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHallService_ab63c1ccff811ed3268f2fe5e996eb6ae}\label{classHallService_ab63c1ccff811ed3268f2fe5e996eb6ae}} 
+\index{HallService@{HallService}!load@{load}}
+\index{load@{load}!HallService@{HallService}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Hall\+Service\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads Halls to a database file. 
+
+Looks for file named \char`\"{}halls\+Databse.\+fmits\char`\"{}, which is just a binary file, and then reads it with the \char`\"{}read\char`\"{} function in events \mbox{\hyperlink{classList}{List}}.
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+File\+Could\+Not\+Be\+Opened {\bfseries{if}} The files couldn\textquotesingle{}t be opened/\+Doesn\textquotesingle{}t exist 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHallService_a083e3d10ec89ee8c78a117c3754c66d2}\label{classHallService_a083e3d10ec89ee8c78a117c3754c66d2}} 
+\index{HallService@{HallService}!save@{save}}
+\index{save@{save}!HallService@{HallService}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{Status\+Code}} Hall\+Service\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Saves Halls to a database file. 
+
+Looks for file named \char`\"{}halls\+Databse.\+fmits\char`\"{}, which is just a binary file, and then writes to it with the \char`\"{}write\char`\"{} function in events \mbox{\hyperlink{classList}{List}}.
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+File\+Could\+Not\+Be\+Opened {\bfseries{if}} The files couldn\textquotesingle{}t be opened 
+
+Success {\bfseries{otherwise}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Services/\mbox{\hyperlink{HallService_8h}{Hall\+Service.\+h}}\item 
+src/\+Services/Hall\+Service.\+cpp\end{DoxyCompactItemize}

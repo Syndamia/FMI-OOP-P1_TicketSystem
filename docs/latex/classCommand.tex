@@ -1,0 +1,68 @@
+\hypertarget{classCommand}{}\doxysection{Command Class Reference}
+\label{classCommand}\index{Command@{Command}}
+
+
+Stores a 256 character name and a function pointer to be executed when calling \mbox{\hyperlink{classCommand_a44689093b812bfc97b2787c2ba0303ce}{run()}}  
+
+
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommand_a18df2d81039392daeb0b78c346a70537}\label{classCommand_a18df2d81039392daeb0b78c346a70537}} 
+{\bfseries Command} ()
+\begin{DoxyCompactList}\small\item\em Leaves name empty and exec function pointer to nullptr. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommand_a4e22ce5bdf74f9c975494dddd280884a}{Command}} (const char $\ast$name\+In\+Menu, void($\ast$exec)())
+\begin{DoxyCompactList}\small\item\em Copies contents of name\+In\+Menu and stores exec. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommand_a44689093b812bfc97b2787c2ba0303ce}{run}} () const
+\begin{DoxyCompactList}\small\item\em Executes the stored function pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCommand_a06adf2e6710dd57506449f0997f467c0}\label{classCommand_a06adf2e6710dd57506449f0997f467c0}} 
+const char $\ast$ {\bfseries get\+\_\+name\+In\+Menu} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores a 256 character name and a function pointer to be executed when calling \mbox{\hyperlink{classCommand_a44689093b812bfc97b2787c2ba0303ce}{run()}} 
+
+\mbox{\hyperlink{classMenu}{Menu}} uses this class for a more generic implementation of it\textquotesingle{}s navigate function. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommand_a4e22ce5bdf74f9c975494dddd280884a}\label{classCommand_a4e22ce5bdf74f9c975494dddd280884a}} 
+\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{Command()}{Command()}}
+{\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name\+In\+Menu,  }\item[{void($\ast$)()}]{exec }\end{DoxyParamCaption})}
+
+
+
+Copies contents of name\+In\+Menu and stores exec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+In\+Menu} & C-\/style string, class stores at most 255 characters (last character is always terminating zero) \\
+\hline
+{\em exec} & Function pointer that will be executed when \mbox{\hyperlink{classCommand_a44689093b812bfc97b2787c2ba0303ce}{run()}} is called. Can be nullptr. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommand_a44689093b812bfc97b2787c2ba0303ce}\label{classCommand_a44689093b812bfc97b2787c2ba0303ce}} 
+\index{Command@{Command}!run@{run}}
+\index{run@{run}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Command\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Executes the stored function pointer. 
+
+Executes the stored function pointer, when it\textquotesingle{}s not nullptr. Otherwise does nothing. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Generic/\+Console\+Interface/\mbox{\hyperlink{Command_8h}{Command.\+h}}\item 
+src/\+Generic/\+Console\+Interface/Command.\+cpp\end{DoxyCompactItemize}

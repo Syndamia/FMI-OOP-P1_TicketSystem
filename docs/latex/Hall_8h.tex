@@ -1,0 +1,59 @@
+\hypertarget{Hall_8h}{}\doxysection{src/\+Models/\+Hall.h File Reference}
+\label{Hall_8h}\index{src/Models/Hall.h@{src/Models/Hall.h}}
+
+
+Stores the declaration of class \mbox{\hyperlink{classHall}{Hall}}.  
+
+
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHall}{Hall}}
+\begin{DoxyCompactList}\small\item\em Each hall contains a number, rows and seats per row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{Hall_8h_ac55d9db507637effdb1896e33c86d439}{operator$>$$>$}} (std\+::istream \&istr, \mbox{\hyperlink{classHall}{Hall}} \&hall)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classHall}{Hall}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{Hall_8h_a9671d0935caa6dd24b5f1b9be101c477}{operator$<$$<$}} (std\+::ostream \&ostr, const \mbox{\hyperlink{classHall}{Hall}} \&hall)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classHall}{Hall}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores the declaration of class \mbox{\hyperlink{classHall}{Hall}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Hall_8h_a9671d0935caa6dd24b5f1b9be101c477}\label{Hall_8h_a9671d0935caa6dd24b5f1b9be101c477}} 
+\index{Hall.h@{Hall.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Hall.h@{Hall.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{const \mbox{\hyperlink{classHall}{Hall}} \&}]{hall }\end{DoxyParamCaption})}
+
+
+
+Writes \mbox{\hyperlink{classHall}{Hall}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to write all internal data.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cout or text std\+::ofstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{Hall_8h_ac55d9db507637effdb1896e33c86d439}\label{Hall_8h_ac55d9db507637effdb1896e33c86d439}} 
+\index{Hall.h@{Hall.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Hall.h@{Hall.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr,  }\item[{\mbox{\hyperlink{classHall}{Hall}} \&}]{hall }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classHall}{Hall}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator to read and parse all internal values.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cin or text std\+::ifstream 
+\end{DoxyNote}

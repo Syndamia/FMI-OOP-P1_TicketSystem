@@ -1,0 +1,67 @@
+\hypertarget{List_8hpp}{}\doxysection{src/\+Generic/\+List/\+List.hpp File Reference}
+\label{List_8hpp}\index{src/Generic/List/List.hpp@{src/Generic/List/List.hpp}}
+
+
+Stores declaration and definition of templated class \mbox{\hyperlink{classList}{List}}.  
+
+
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classList}{List$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Templated class that stores an array of elements in dynamic memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::istream \& \mbox{\hyperlink{List_8hpp_a7469c3479753bfbada761697c539aa07}{operator$>$$>$}} (std\+::istream \&istr, \mbox{\hyperlink{classList}{List}}$<$ T $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classList}{List}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{List_8hpp_ac8590f4d4ba6c820c34afe14df54f2c2}{operator$<$$<$}} (std\+::ostream \&ostr, const \mbox{\hyperlink{classList}{List}}$<$ T $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classList}{List}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores declaration and definition of templated class \mbox{\hyperlink{classList}{List}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{List_8hpp_ac8590f4d4ba6c820c34afe14df54f2c2}\label{List_8hpp_ac8590f4d4ba6c820c34afe14df54f2c2}} 
+\index{List.hpp@{List.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!List.hpp@{List.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{const \mbox{\hyperlink{classList}{List}}$<$ T $>$ \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Writes \mbox{\hyperlink{classList}{List}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to write the count and then all objects.
+
+\begin{DoxyWarning}{Warning}
+The function depends on the type having the operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} defined, which takes an std\+::ostream\& and writes it\textquotesingle{}s data to it. Return type doesn\textquotesingle{}t matter. 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Best used with std\+::cout or text std\+::ofstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{List_8hpp_a7469c3479753bfbada761697c539aa07}\label{List_8hpp_a7469c3479753bfbada761697c539aa07}} 
+\index{List.hpp@{List.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!List.hpp@{List.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr,  }\item[{\mbox{\hyperlink{classList}{List}}$<$ T $>$ \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classList}{List}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator to read and parse the elements. The first item in the stream should be the count.
+
+\begin{DoxyWarning}{Warning}
+The function depends on the type having the operator \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} defined, which takes an std\+::istream\& and writes it\textquotesingle{}s data to it. Return type doesn\textquotesingle{}t matter. 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Best used with std\+::cin or text std\+::ifstream 
+\end{DoxyNote}

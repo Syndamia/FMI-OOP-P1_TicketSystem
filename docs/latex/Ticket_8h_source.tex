@@ -1,0 +1,32 @@
+\hypertarget{Ticket_8h_source}{}\doxysection{Ticket.\+h}
+\label{Ticket_8h_source}\index{src/Models/Ticket.h@{src/Models/Ticket.h}}
+\mbox{\hyperlink{Ticket_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_HEADER\_TICKET}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_HEADER\_TICKET}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <istream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classTicket}{Ticket}} \{}
+\DoxyCodeLine{14     \textcolor{keywordtype}{unsigned} row;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{unsigned} seat;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{classTicket_aba3a46c9223efb6ab0bde93a09403537}{Ticket}}();}
+\DoxyCodeLine{21     \mbox{\hyperlink{classTicket_aba3a46c9223efb6ab0bde93a09403537}{Ticket}}(\textcolor{keywordtype}{unsigned} row, \textcolor{keywordtype}{unsigned} seat);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classTicket_a94476de3cd6711185527d0fe4df9a278}{get\_row}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classTicket_af7b64cb77a676d0f7bdb32255283f005}{get\_seat}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_aad2d0b7b92b54ec861db92c31f50f4ad}{read}}(std::istream\& istr);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_a584a11f6236fc96f3bdbd0592d3f60f4}{write}}(std::ostream\& ostr) \textcolor{keyword}{const};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{classTicket_a82a063f71be89f44dd969970855187c4}{compare}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37 std::istream\& \mbox{\hyperlink{Ticket_8h_ac5c53ae039e173faa4cce85c2e32c920}{operator>>}}(std::istream\& istr, \mbox{\hyperlink{classTicket}{Ticket}}\& ticket);}
+\DoxyCodeLine{39 std::ostream\& \mbox{\hyperlink{Ticket_8h_ae1686d3505df5e86e64e6e1b263e92ce}{operator<<}}(std::ostream\& ostr, \textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

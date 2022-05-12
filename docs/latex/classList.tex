@@ -1,0 +1,267 @@
+\hypertarget{classList}{}\doxysection{List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classList}\index{List$<$ T $>$@{List$<$ T $>$}}
+
+
+Templated class that stores an array of elements in dynamic memory.  
+
+
+
+
+{\ttfamily \#include $<$List.\+hpp$>$}
+
+Inheritance diagram for List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classList}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classList_a93cd36efc12aa5ef5fc28866edce7e61}\label{classList_a93cd36efc12aa5ef5fc28866edce7e61}} 
+{\bfseries List} (const T $\ast$elements, unsigned elements\+Count)
+\begin{DoxyCompactList}\small\item\em Copies all elements in given array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classList_abfec4f2e7990d06c143852ecfdf907bb}{add}} (const T \&element)
+\begin{DoxyCompactList}\small\item\em Adds an element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classList_ae4586debf72af33bccb3c2fbfce420e8}{insert\+At}} (const T \&element, unsigned index)
+\begin{DoxyCompactList}\small\item\em Inserts element at given index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classList_ad9c0a5b5bca6286f458d6fab280de65a}{remove\+At}} (unsigned index)
+\begin{DoxyCompactList}\small\item\em Removes element at index. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classList_a3804f03273ef5e339b504e439c5b6534}{find\+Index}} (const T \&element) const
+\begin{DoxyCompactList}\small\item\em Finds the index of element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classList_a163a070c7d5dc77ca3c1726b8f2d4bc1}{contain}} (const T \&element) const
+\item 
+\mbox{\Hypertarget{classList_a321bb581943398344aad07198d1f02ac}\label{classList_a321bb581943398344aad07198d1f02ac}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (unsigned index)
+\begin{DoxyCompactList}\small\item\em Returns reference to element at index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classList_a5fa582de3aec5094a871852b658cf853}\label{classList_a5fa582de3aec5094a871852b658cf853}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (unsigned index) const
+\begin{DoxyCompactList}\small\item\em Returns constant reference to element at index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classList_aa4332ce5a589da28528f035ded6d41e5}\label{classList_aa4332ce5a589da28528f035ded6d41e5}} 
+\mbox{\hyperlink{classList}{List}}$<$ T $>$ \& {\bfseries operator+=} (const \mbox{\hyperlink{classList}{List}}$<$ T $>$ other)
+\begin{DoxyCompactList}\small\item\em Appends elements from other list. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{classList_a5e3581ee07649f462aa8bb3221a5466e}{read}} (std\+::istream \&istr)
+\begin{DoxyCompactList}\small\item\em Reads from stream. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classList_a8d2babffd2fb4a5e0a40dbd306e19956}{write}} (std\+::ostream \&ostr) const
+\begin{DoxyCompactList}\small\item\em Writes to stream. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classList_aa32109b77dccd8241b125ebabdda876c}{get\+\_\+length}} () const
+\begin{DoxyCompactList}\small\item\em Returns the length. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classList_a3c1e3a3fc085f5b7ae68514c4758687b}{get\+\_\+count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the count. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classList_a248952759645a68a4a1ea5aa31bc089f}\label{classList_a248952759645a68a4a1ea5aa31bc089f}} 
+\mbox{\hyperlink{classList}{List}} \& {\bfseries operator=} (const \mbox{\hyperlink{classList}{List}} \&other)
+\item 
+\mbox{\Hypertarget{classList_a43ce719b9dcc8aa532bad580c44e99f6}\label{classList_a43ce719b9dcc8aa532bad580c44e99f6}} 
+{\bfseries List} (const \mbox{\hyperlink{classList}{List}} \&other)
+\item 
+\mbox{\Hypertarget{classList_a25feb644d97345e4f36bf54c7aab4ade}\label{classList_a25feb644d97345e4f36bf54c7aab4ade}} 
+{\bfseries List} (\mbox{\hyperlink{classList}{List}} \&\&other)
+\item 
+\mbox{\Hypertarget{classList_a3be35847f78c9fdb37c957eff55c1608}\label{classList_a3be35847f78c9fdb37c957eff55c1608}} 
+\mbox{\hyperlink{classList}{List}} \& {\bfseries operator=} (\mbox{\hyperlink{classList}{List}} \&\&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classList_a302d78384a6516a4d4dede84d4f0968e}\label{classList_a302d78384a6516a4d4dede84d4f0968e}} 
+void {\bfseries resize} ()
+\item 
+\mbox{\Hypertarget{classList_a29cb6681b3f5514f747d04661b08cfd6}\label{classList_a29cb6681b3f5514f747d04661b08cfd6}} 
+void {\bfseries free} ()
+\item 
+\mbox{\Hypertarget{classList_aef2dcec4a271f7ba2f71ef164535e273}\label{classList_aef2dcec4a271f7ba2f71ef164535e273}} 
+void {\bfseries copy\+From} (const \mbox{\hyperlink{classList}{List}} \&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classList_ab28a0d67da45b5d3bb755c72105a516c}\label{classList_ab28a0d67da45b5d3bb755c72105a516c}} 
+T $\ast$ {\bfseries elements}
+\item 
+\mbox{\Hypertarget{classList_af44323f3a486341510ad97b6bceda1be}\label{classList_af44323f3a486341510ad97b6bceda1be}} 
+unsigned {\bfseries length}
+\item 
+\mbox{\Hypertarget{classList_a66db5f1795dd0530911f32552ddd9815}\label{classList_a66db5f1795dd0530911f32552ddd9815}} 
+unsigned {\bfseries count}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class List$<$ T $>$}
+Templated class that stores an array of elements in dynamic memory. 
+
+\begin{DoxyWarning}{Warning}
+\mbox{\hyperlink{classList_a3804f03273ef5e339b504e439c5b6534}{find\+Index()}}, \mbox{\hyperlink{classList_a163a070c7d5dc77ca3c1726b8f2d4bc1}{contain()}}, \mbox{\hyperlink{classList_a5e3581ee07649f462aa8bb3221a5466e}{read()}}, \mbox{\hyperlink{classList_a8d2babffd2fb4a5e0a40dbd306e19956}{write()}}, operator$<$$<$() and operator$>$$>$() require the type to have defined a couple of functions. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classList_a3804f03273ef5e339b504e439c5b6534}{find\+Index()}} 
+
+\mbox{\hyperlink{classList_a163a070c7d5dc77ca3c1726b8f2d4bc1}{contain()}} 
+
+\mbox{\hyperlink{classList_a5e3581ee07649f462aa8bb3221a5466e}{read()}} 
+
+\mbox{\hyperlink{classList_a8d2babffd2fb4a5e0a40dbd306e19956}{write()}} 
+
+\mbox{\hyperlink{Date_8h_ad12d4bbc4f7919efdec583d1478a6a76}{operator$<$$<$()}} 
+
+\mbox{\hyperlink{Date_8h_ae020cf1772268f1a43d172d3adfc9797}{operator$>$$>$()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classList_abfec4f2e7990d06c143852ecfdf907bb}\label{classList_abfec4f2e7990d06c143852ecfdf907bb}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!add@{add}}
+\index{add@{add}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Adds an element. 
+
+Resizes internal array if there is no space for additional elements. \mbox{\Hypertarget{classList_a163a070c7d5dc77ca3c1726b8f2d4bc1}\label{classList_a163a070c7d5dc77ca3c1726b8f2d4bc1}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!contain@{contain}}
+\index{contain@{contain}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{contain()}{contain()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::contain (\begin{DoxyParamCaption}\item[{const T \&}]{element }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Whether the element is contained in the current \mbox{\hyperlink{classList}{List}}
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Function depends on \mbox{\hyperlink{classList_a3804f03273ef5e339b504e439c5b6534}{find\+Index()}}, which means the same \char`\"{}compare\char`\"{} function must be defined in the type 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classList_a3804f03273ef5e339b504e439c5b6534}{find\+Index()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classList_a3804f03273ef5e339b504e439c5b6534}\label{classList_a3804f03273ef5e339b504e439c5b6534}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!findIndex@{findIndex}}
+\index{findIndex@{findIndex}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{findIndex()}{findIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::find\+Index (\begin{DoxyParamCaption}\item[{const T \&}]{element }\end{DoxyParamCaption}) const}
+
+
+
+Finds the index of element. 
+
+\begin{DoxyReturn}{Returns}
+Index of element. If element isn\textquotesingle{}t found, returns the count of element.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The function depends on the type having a function \char`\"{}compare\char`\"{} defined, which takes two elements and returns a number \texorpdfstring{$<$}{<}0 if elem1 \texorpdfstring{$<$}{<} elem2, \texorpdfstring{$>$}{>}0 if elem1 \texorpdfstring{$>$}{>} elem2, 0 if elem1 == elem2 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Searching is done linearly 
+\end{DoxyNote}
+\mbox{\Hypertarget{classList_a3c1e3a3fc085f5b7ae68514c4758687b}\label{classList_a3c1e3a3fc085f5b7ae68514c4758687b}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!get\_count@{get\_count}}
+\index{get\_count@{get\_count}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_count()}{get\_count()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::get\+\_\+count}
+
+
+
+Returns the count. 
+
+Count is the amount of elements that are stored. \mbox{\Hypertarget{classList_aa32109b77dccd8241b125ebabdda876c}\label{classList_aa32109b77dccd8241b125ebabdda876c}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!get\_length@{get\_length}}
+\index{get\_length@{get\_length}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_length()}{get\_length()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::get\+\_\+length}
+
+
+
+Returns the length. 
+
+Length is the size of the underlying array (allocated memory). \mbox{\Hypertarget{classList_ae4586debf72af33bccb3c2fbfce420e8}\label{classList_ae4586debf72af33bccb3c2fbfce420e8}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!insertAt@{insertAt}}
+\index{insertAt@{insertAt}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertAt()}{insertAt()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::insert\+At (\begin{DoxyParamCaption}\item[{const T \&}]{element,  }\item[{unsigned}]{index }\end{DoxyParamCaption})}
+
+
+
+Inserts element at given index. 
+
+If index is after the last element, the element is just added. Otherwise all elements after the index are shifted right and element is put in place.
+
+Resizes internal array if there is no space for additional elements. \mbox{\Hypertarget{classList_a5e3581ee07649f462aa8bb3221a5466e}\label{classList_a5e3581ee07649f462aa8bb3221a5466e}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!read@{read}}
+\index{read@{read}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::istream \& \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+Reads from stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istr} & An input stream\\
+\hline
+\end{DoxyParams}
+Directly reads bytes from stream (calls \mbox{\hyperlink{classList_a5e3581ee07649f462aa8bb3221a5466e}{read()}} function). Any stored values are deleted and replaced with those from the stream.
+
+\begin{DoxyWarning}{Warning}
+The function depends on the type having a function \char`\"{}read\char`\"{} defined, which takes an std\+::istream\& and writes it\textquotesingle{}s data to it. Return type doesn\textquotesingle{}t matter. 
+\end{DoxyWarning}
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ifstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classList_ad9c0a5b5bca6286f458d6fab280de65a}\label{classList_ad9c0a5b5bca6286f458d6fab280de65a}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!removeAt@{removeAt}}
+\index{removeAt@{removeAt}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removeAt()}{removeAt()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::remove\+At (\begin{DoxyParamCaption}\item[{unsigned}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes element at index. 
+
+\begin{DoxyReturn}{Returns}
+Wether element could be removed
+\end{DoxyReturn}
+If index is after that of the last element, nothing is done and false is returned. Otherwise elements after index are shifted right and count is reduced. \mbox{\Hypertarget{classList_a8d2babffd2fb4a5e0a40dbd306e19956}\label{classList_a8d2babffd2fb4a5e0a40dbd306e19956}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!write@{write}}
+\index{write@{write}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream \& \mbox{\hyperlink{classList}{List}}$<$ T $>$\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr }\end{DoxyParamCaption}) const}
+
+
+
+Writes to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostr} & An output stream\\
+\hline
+\end{DoxyParams}
+Directly writes bytes to stream (calls \mbox{\hyperlink{classList_a8d2babffd2fb4a5e0a40dbd306e19956}{write()}} function).
+
+\begin{DoxyWarning}{Warning}
+The function depends on the type having a function \char`\"{}write\char`\"{} defined, which takes an std\+::ostream\& and writes it\textquotesingle{}s data to it. Return type doesn\textquotesingle{}t matter. 
+\end{DoxyWarning}
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ofstream 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Generic/\+List/\mbox{\hyperlink{List_8hpp}{List.\+hpp}}\end{DoxyCompactItemize}

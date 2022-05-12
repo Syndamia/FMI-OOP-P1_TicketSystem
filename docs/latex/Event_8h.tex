@@ -1,0 +1,101 @@
+\hypertarget{Event_8h}{}\doxysection{src/\+Models/\+Event.h File Reference}
+\label{Event_8h}\index{src/Models/Event.h@{src/Models/Event.h}}
+
+
+Stores the declaration of class \mbox{\hyperlink{classEvent}{Event}}.  
+
+
+{\ttfamily \#include \char`\"{}../\+Generic/\+List/\+Ordered\+List.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Generic/\+Date/\+Date.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Generic/\+String/\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hall.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Ticket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Reservation.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEvent}{Event}}
+\begin{DoxyCompactList}\small\item\em Stores an event\textquotesingle{}s hall, name, date, bought tickets and reservations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{Event_8h_a31d9c76919809491b346728ec6659b19}{operator$>$$>$}} (std\+::istream \&istr, \mbox{\hyperlink{classEvent}{Event}} \&event)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classEvent}{Event}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Event_8h_ad423797aa9adadabb5651f8955c001bb}{configure\+Event\+Insertion\+Op}} (unsigned setting)
+\begin{DoxyCompactList}\small\item\em Configures how \mbox{\hyperlink{classEvent}{Event}} should be shown, when written to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{Event_8h_a08eaf45abee385d26c4934afeb9be163}{operator$<$$<$}} (std\+::ostream \&ostr, const \mbox{\hyperlink{classEvent}{Event}} \&event)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classEvent}{Event}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores the declaration of class \mbox{\hyperlink{classEvent}{Event}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Event_8h_ad423797aa9adadabb5651f8955c001bb}\label{Event_8h_ad423797aa9adadabb5651f8955c001bb}} 
+\index{Event.h@{Event.h}!configureEventInsertionOp@{configureEventInsertionOp}}
+\index{configureEventInsertionOp@{configureEventInsertionOp}!Event.h@{Event.h}}
+\doxysubsubsection{\texorpdfstring{configureEventInsertionOp()}{configureEventInsertionOp()}}
+{\footnotesize\ttfamily void configure\+Event\+Insertion\+Op (\begin{DoxyParamCaption}\item[{unsigned}]{setting }\end{DoxyParamCaption})}
+
+
+
+Configures how \mbox{\hyperlink{classEvent}{Event}} should be shown, when written to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & A number, defining the different options. It\textquotesingle{}s best if it is passed as binary number.\\
+\hline
+\end{DoxyParams}
+Sets a configuration setting for how operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} should behave. Setting is stored as a global variable in the cpp file, so it\textquotesingle{}s independent of \mbox{\hyperlink{classEvent}{Event}} instance.
+
+Each bit in the number is a certain setting. Each bit from left to right represents one of these options, from top to bottom\+:
+\begin{DoxyEnumerate}
+\item Write count of bought tickets (available only if 5. is set)
+\item Write count of reserved tickets (available only if 5. is set)
+\item Write reservations
+\item Write bought tickets
+\item Write \mbox{\hyperlink{classHall}{Hall}} information
+\end{DoxyEnumerate}
+
+\begin{DoxyParagraph}{Example}
+To configure printing the \mbox{\hyperlink{classHall}{Hall}} information, bought tickets count and the bought tickets themselves, you would do\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{Event_8h_ad423797aa9adadabb5651f8955c001bb}{configureEventInsertionOp}}(0b10011);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{Event_8h_a08eaf45abee385d26c4934afeb9be163}\label{Event_8h_a08eaf45abee385d26c4934afeb9be163}} 
+\index{Event.h@{Event.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Event.h@{Event.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Writes \mbox{\hyperlink{classEvent}{Event}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to write all internal data, following setting from \mbox{\hyperlink{Event_8h_ad423797aa9adadabb5651f8955c001bb}{configure\+Event\+Insertion\+Op()}} Stored types must have defined operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cout or text std\+::ofstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{Event_8h_a31d9c76919809491b346728ec6659b19}\label{Event_8h_a31d9c76919809491b346728ec6659b19}} 
+\index{Event.h@{Event.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Event.h@{Event.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr,  }\item[{\mbox{\hyperlink{classEvent}{Event}} \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classEvent}{Event}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator to read and parse all internal values. Stored types must have defined operator \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cin or text std\+::ifstream 
+\end{DoxyNote}

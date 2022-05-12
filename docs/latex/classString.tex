@@ -1,0 +1,194 @@
+\hypertarget{classString}{}\doxysection{String Class Reference}
+\label{classString}\index{String@{String}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classString_ad3d65397e27bb3c4db1295208cfb1559}{String}} (unsigned length)
+\begin{DoxyCompactList}\small\item\em The underlying array is allocated with length (+ 1) size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classString_a3fba40cf6cb11735ffddc355a5ff68f4}{String}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Copies str. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classString_a3d7f953737f3d4dca72d1cc4836f7dcc}\label{classString_a3d7f953737f3d4dca72d1cc4836f7dcc}} 
+const char $\ast$ {\bfseries get\+\_\+cstr} () const
+\begin{DoxyCompactList}\small\item\em Returns internal C-\/style string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classString_a7793a7e9a7601d4c724dcc85566259bf}\label{classString_a7793a7e9a7601d4c724dcc85566259bf}} 
+unsigned {\bfseries get\+\_\+length} () const
+\begin{DoxyCompactList}\small\item\em Returns number of characters in string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classString_a5d3b77a51619a8580a373d2cd1092a54}\label{classString_a5d3b77a51619a8580a373d2cd1092a54}} 
+char \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (unsigned index)
+\begin{DoxyCompactList}\small\item\em Returns a character reference (from the underlying C-\/style string) at the given index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classString}{String}} \& \mbox{\hyperlink{classString_a64de9ab1af5df9397f8fbd8c79d5f4b6}{operator+=}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Appends a C-\/style string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classString}{String}} \& \mbox{\hyperlink{classString_aed8480111703abc1f281148c778b0445}{operator+=}} (unsigned number)
+\begin{DoxyCompactList}\small\item\em Appends a number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classString_afc158dffcdf56e601bd640cbacdfcd3c}\label{classString_afc158dffcdf56e601bd640cbacdfcd3c}} 
+{\bfseries String} (const \mbox{\hyperlink{classString}{String}} \&other)
+\item 
+\mbox{\Hypertarget{classString_a734f34a0b7a42bcad30c368d6e8c5469}\label{classString_a734f34a0b7a42bcad30c368d6e8c5469}} 
+\mbox{\hyperlink{classString}{String}} \& {\bfseries operator=} (const \mbox{\hyperlink{classString}{String}} \&other)
+\item 
+\mbox{\Hypertarget{classString_a553fcc11563b3d0f5c020309e8b68843}\label{classString_a553fcc11563b3d0f5c020309e8b68843}} 
+{\bfseries String} (\mbox{\hyperlink{classString}{String}} \&\&other)
+\item 
+\mbox{\Hypertarget{classString_a3c0ede83ee25c89959a0c4369166d98a}\label{classString_a3c0ede83ee25c89959a0c4369166d98a}} 
+\mbox{\hyperlink{classString}{String}} \& {\bfseries operator=} (\mbox{\hyperlink{classString}{String}} \&\&other)
+\item 
+void \mbox{\hyperlink{classString_ad76bb9eca15651c67332808cdaad6344}{read}} (std\+::istream \&istr)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classString}{String}} from stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classString_a7b0ea809587c21bc1d2b87bfee53e628}{write}} (std\+::ostream \&ostr) const
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classString}{String}} to stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classString_a3f420d69fbe3de91711dc69148d23cc7}{compare}} (const \mbox{\hyperlink{classString}{String}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{classString_a1918adea635f3f340dbecd6fb05341f8}{operator$>$$>$}} (std\+::istream \&istr, \mbox{\hyperlink{classString}{String}} \&event)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classString}{String}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classString_aa00d824f40064ff356aa7c15d6a9da12}{operator$<$$<$}} (std\+::ostream \&ostr, const \mbox{\hyperlink{classString}{String}} \&event)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classString}{String}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classString_ad3d65397e27bb3c4db1295208cfb1559}\label{classString_ad3d65397e27bb3c4db1295208cfb1559}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{unsigned}]{length }\end{DoxyParamCaption})}
+
+
+
+The underlying array is allocated with length (+ 1) size. 
+
+Allocated with length + 1 size, so there is a terminating zero at the end. \mbox{\Hypertarget{classString_a3fba40cf6cb11735ffddc355a5ff68f4}\label{classString_a3fba40cf6cb11735ffddc355a5ff68f4}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Copies str. 
+
+\textbackslash{}params str C-\/style string 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classString_a3f420d69fbe3de91711dc69148d23cc7}\label{classString_a3f420d69fbe3de91711dc69148d23cc7}} 
+\index{String@{String}!compare@{compare}}
+\index{compare@{compare}!String@{String}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int String\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classString}{String}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two strings. 
+
+\textbackslash{}params other C-\/style string \begin{DoxyReturn}{Returns}
+strcmp between underlying C-\/style string and \char`\"{}other\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a64de9ab1af5df9397f8fbd8c79d5f4b6}\label{classString_a64de9ab1af5df9397f8fbd8c79d5f4b6}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classString}{String}} \& String\+::operator+= (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Appends a C-\/style string. 
+
+\textbackslash{}params str C-\/style string \mbox{\Hypertarget{classString_aed8480111703abc1f281148c778b0445}\label{classString_aed8480111703abc1f281148c778b0445}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classString}{String}} \& String\+::operator+= (\begin{DoxyParamCaption}\item[{unsigned}]{number }\end{DoxyParamCaption})}
+
+
+
+Appends a number. 
+
+Converts the number to a C-\/style string and then uses += to append it. \mbox{\Hypertarget{classString_ad76bb9eca15651c67332808cdaad6344}\label{classString_ad76bb9eca15651c67332808cdaad6344}} 
+\index{String@{String}!read@{read}}
+\index{read@{read}!String@{String}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void String\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classString}{String}} from stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istr} & An input stream\\
+\hline
+\end{DoxyParams}
+Directly reads bytes from stream (calls \mbox{\hyperlink{classString_ad76bb9eca15651c67332808cdaad6344}{read()}} function). First reads the string length, then the underlying C-\/style string (including terminating zero).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ifstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classString_a7b0ea809587c21bc1d2b87bfee53e628}\label{classString_a7b0ea809587c21bc1d2b87bfee53e628}} 
+\index{String@{String}!write@{write}}
+\index{write@{write}!String@{String}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void String\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr }\end{DoxyParamCaption}) const}
+
+
+
+Writes \mbox{\hyperlink{classString}{String}} to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostr} & An output stream\\
+\hline
+\end{DoxyParams}
+Directly writes bytes to stream (calls \mbox{\hyperlink{classString_a7b0ea809587c21bc1d2b87bfee53e628}{write()}} function). First writes the string length, then the underlying C-\/style string (including terminating zero).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ofstream 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classString_aa00d824f40064ff356aa7c15d6a9da12}\label{classString_aa00d824f40064ff356aa7c15d6a9da12}} 
+\index{String@{String}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{const \mbox{\hyperlink{classString}{String}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Writes \mbox{\hyperlink{classString}{String}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to write the underlying C-\/style string
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cout or text std\+::ofstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classString_a1918adea635f3f340dbecd6fb05341f8}\label{classString_a1918adea635f3f340dbecd6fb05341f8}} 
+\index{String@{String}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr,  }\item[{\mbox{\hyperlink{classString}{String}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Reads \mbox{\hyperlink{classString}{String}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. 
+
+Uses the stream\textquotesingle{}s getline function to read the data.
+
+\begin{DoxyWarning}{Warning}
+It takes at most 1024 characters from the stream! 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Best used with std\+::cin or text std\+::ifstream 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Generic/\+String/\mbox{\hyperlink{String_8h}{String.\+h}}\item 
+src/\+Generic/\+String/String.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\label{index_mainpage}%
+\Hypertarget{index_mainpage}%
+ \begin{DoxyAuthor}{Author}
+Kamen Mladenov; FMI Computer Science, Year 1, Group 6; Project 1, Topic 4 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+12 May 2022 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GNU General Public License v3.\+0
+\end{DoxyCopyright}
+
+\begin{DoxyDescription}
+\item[Source Code ]\href{https://github.com/Syndamia/FMI-OOP-P1_TicketSystem}{\texttt{ https\+://github.\+com/\+Syndamia/\+FMI-\/\+OOP-\/\+P1\+\_\+\+Ticket\+System}} 
+\end{DoxyDescription}\hypertarget{index_autotoc_md0}{}\doxysection{About}\label{index_autotoc_md0}
+The \char`\"{}\+FMI Ticket System\char`\"{} is a small project, designed for managing the seats for different events. You can create or cancel an event in any available hall, reserve or straight out buy tickets for any given event and create some reports.\hypertarget{index_autotoc_md1}{}\doxysection{Structure overview}\label{index_autotoc_md1}
+The project is roughly divided into 4 main components\+: User Interface, Services, Models and Generic \mbox{\hyperlink{index_fig1}{fig1}}.
+\begin{DoxyItemize}
+\item The User Interface is the messenger between a user and the underlying application. All input and output is handled here.
+\item Services contain the business logic of the whole application. All requests to do anything like buying a ticket or creating an event must be sent to here.
+\item Models are the general classes that are used in the previous two layers.
+\item Generic is a place for all code that is can be used independently from the project. Stuff like \mbox{\hyperlink{classDate}{Date}}, \mbox{\hyperlink{classString}{String}} or \mbox{\hyperlink{classList}{List}}.
+\end{DoxyItemize}
+
+This offers a fairly modular and flexible architecture, which should make big changes or additions to the code easier and more pain-\/free.\hypertarget{index_autotoc_md2}{}\doxysection{Building the project}\label{index_autotoc_md2}
+Instructions are all for {\ttfamily gcc}. All commands should be executed while in the {\ttfamily src} folder.\hypertarget{index_autotoc_md3}{}\doxysubsection{Linux/\+BSD/\+Mac\+OS}\label{index_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ *.cpp */*.cpp */*/*.cpp -\/o TicketSystem.out \&\& ./TicketSystem.out}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{Windows (\+Power\+Shell)}\label{index_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ (Get-\/ChildItem -\/Recurse *.cpp) -\/o TicketSystem.exe \&\& ./TicketSystem.exe}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysection{Acknowledgements}\label{index_autotoc_md5}
+
+\begin{DoxyDescription}
+\item[Wikipedia ]Leap year calculation for \mbox{\hyperlink{classDate}{Date}} ~\newline
+ \href{https://en.wikipedia.org/wiki/Leap_year\#Gregorian_calendar}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Leap\+\_\+year\#\+Gregorian\+\_\+calendar}} 
+\item[Stack\+Overflow ]Way to clear the console in \mbox{\hyperlink{Toolbox_8hpp}{Toolbox.\+hpp}} ~\newline
+ \href{https://stackoverflow.com/a/52895729/12036073}{\texttt{ https\+://stackoverflow.\+com/a/52895729/12036073}} 
+\end{DoxyDescription}\hypertarget{index_autotoc_md6}{}\doxysection{Figures}\label{index_autotoc_md6}
+\label{index_fig1}%
+\Hypertarget{index_fig1}%
+{\bfseries{Figure 1\+:}} Overview of the \char`\"{}\+FMI Ticket System\char`\"{} design
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{FMI-OOP-P1_TicketSystem Overview.svg}
+\doxyfigcaption{Not available in La\+Te\+X!}
+\end{DoxyImage}
+ 

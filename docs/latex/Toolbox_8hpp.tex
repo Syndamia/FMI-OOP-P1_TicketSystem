@@ -1,0 +1,423 @@
+\hypertarget{Toolbox_8hpp}{}\doxysection{src/\+Generic/\+Console\+Interface/\+Toolbox.hpp File Reference}
+\label{Toolbox_8hpp}\index{src/Generic/ConsoleInterface/Toolbox.hpp@{src/Generic/ConsoleInterface/Toolbox.hpp}}
+
+
+Stores a wide range of functions for simpler/more automated printing.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Toolbox_8hpp_a09f908aa6474fe2b1f82b1aaade947f6}\label{Toolbox_8hpp_a09f908aa6474fe2b1f82b1aaade947f6}} 
+\#define {\bfseries MAX\+\_\+\+LINE\+\_\+\+WIDTH}~1024
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Toolbox_8hpp_ac8bb3912a3ce86b15842e79d0b421204}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the console screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a24a3fa9050ea032396c213ea85a1de0b}{title\+Box}} (const char $\ast$title)
+\begin{DoxyCompactList}\small\item\em Prints a title box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_ad557e4a1167be4e0c57fe530ce74a120}{sub\+Title\+Box}} (const char $\ast$title)
+\begin{DoxyCompactList}\small\item\em Prints a title sub box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a6c82ac6987703376c17c74a81fb0a91a}{success\+Box}} (const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Prints a success box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_aa78e2e87fff9b64ca032a5b1c7054081}{success\+Sub\+Box}} (const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Prints a success box as a sub box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a52222c9ff8739ef87c89df899deb5052}{warning\+Box}} (const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Prints a warning box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a22f8b3135115d1b9fca09eea98dc6d92}{warning\+Sub\+Box}} (const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Prints a warning box as a sub box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a9d709a3db7de05368cc38671c896bb2d}{error\+Box}} (const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Prints an error box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_ade748c3f15151748c9f978097715d2e7}{error\+Sub\+Box}} (const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Prints an error box as a sub box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_aa49b4d5a7b00249bc1fb08eec5e3aeaf}{input\+Line\+Box}} (const char $\ast$label, char $\ast$output, unsigned max\+Width, bool ignore=true)
+\begin{DoxyCompactList}\small\item\em Prints label, gets a whole line of input and stores it to output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_ad2c61ce27ec52d14e427d6f6e93d38f2}{input\+Line\+Sub\+Box}} (const char $\ast$label, char $\ast$output, unsigned max\+Width, bool ignore=true)
+\begin{DoxyCompactList}\small\item\em Prints label as a sub box, gets a whole line of input and stores it to output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_ac7f54319bf4e70a46e3155ae1b39e832}{press\+Enter\+To\+Continue}} (bool ignore=true)
+\begin{DoxyCompactList}\small\item\em Waits for user to press enter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a4456d10f7e141c4fc1a29aff4ad29108}{reset\+Ordered\+List}} (int starter=1)
+\begin{DoxyCompactList}\small\item\em Resets the ordered list starting number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a6c90056ede686f0319d0fb0a408d02e5}{table}} (unsigned start\+Number, unsigned columns, const char $\ast$items)
+\begin{DoxyCompactList}\small\item\em Prints a string as a table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\+\_\+print\+Sub\+Box\+Spacing}} ()
+\begin{DoxyCompactList}\small\item\em Semi-\/internal function that prints the spacing for sub boxes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_ab3ce613add75d2385c8e1424527d2c3d}{\+\_\+print\+Input\+Box\+Label}} (const char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Semi-\/internal function that prints the label of an input box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Toolbox_8hpp_a27b565355e018d36b6ce47169cc26fad}{\+\_\+print\+Ordered\+List\+Beginning}} ()
+\begin{DoxyCompactList}\small\item\em Semi-\/internal function that prints the latest ordered list index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_a3c9098dc2b305107367c56ded5dec787}\label{Toolbox_8hpp_a3c9098dc2b305107367c56ded5dec787}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries read} (T $\ast$storage)
+\begin{DoxyCompactList}\small\item\em Reads user input and stores it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_a06ca09434be2a02543a2371d477acfa0}\label{Toolbox_8hpp_a06ca09434be2a02543a2371d477acfa0}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries read} (T \&storage)
+\begin{DoxyCompactList}\small\item\em Reads user input and stores it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_a5ca1093462d3266fceb8522e144c1e73}\label{Toolbox_8hpp_a5ca1093462d3266fceb8522e144c1e73}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries print} (const T $\ast$item)
+\begin{DoxyCompactList}\small\item\em Prints given item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_a9c0a0d7d3210ca5f12f02ac4cb88476e}\label{Toolbox_8hpp_a9c0a0d7d3210ca5f12f02ac4cb88476e}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries print} (const T \&item)
+\begin{DoxyCompactList}\small\item\em Prints given item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_a148d9d6b8b15bbfc2b1f4cdb16c2ee81}\label{Toolbox_8hpp_a148d9d6b8b15bbfc2b1f4cdb16c2ee81}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries print\+Line} (const T $\ast$item)
+\begin{DoxyCompactList}\small\item\em Prints given item and an endline character. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_a799f4cb5b4da3d40261e25d9e41995aa}\label{Toolbox_8hpp_a799f4cb5b4da3d40261e25d9e41995aa}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries print\+Line} (const T \&item)
+\begin{DoxyCompactList}\small\item\em Prints given item and an endline character. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_abe3a449632ee6d40eb59101dd2d2f114}\label{Toolbox_8hpp_abe3a449632ee6d40eb59101dd2d2f114}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries print\+Ordered\+List\+Elem} (const T \&elem)
+\begin{DoxyCompactList}\small\item\em Prints the element as the latest list item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Toolbox_8hpp_ab7651f0a92f8d0d0be3d63c1045eee1e}\label{Toolbox_8hpp_ab7651f0a92f8d0d0be3d63c1045eee1e}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries input\+Box} (const char $\ast$label, T $\ast$output)
+\begin{DoxyCompactList}\small\item\em Prints a label and then reads user input and stores it. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{Toolbox_8hpp_a92da1c5f0023cd5c4809d9c1f682e92f}{input\+Sub\+Box}} (const char $\ast$label, T $\ast$output)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores a wide range of functions for simpler/more automated printing. 
+
+Adds a lot of functions for printing.
+
+\begin{DoxyRemark}{Remarks}
+iostream is included by necessity (templated functions), you should only use the provided functions, if you can. 
+\end{DoxyRemark}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Toolbox_8hpp_ab3ce613add75d2385c8e1424527d2c3d}\label{Toolbox_8hpp_ab3ce613add75d2385c8e1424527d2c3d}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!\_printInputBoxLabel@{\_printInputBoxLabel}}
+\index{\_printInputBoxLabel@{\_printInputBoxLabel}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{\_printInputBoxLabel()}{\_printInputBoxLabel()}}
+{\footnotesize\ttfamily void \+\_\+print\+Input\+Box\+Label (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+Semi-\/internal function that prints the label of an input box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Prints \char`\"{}(+)\char`\"{} and then the given label. It doesn\textquotesingle{}t create spacing after label, so it should exist in the label itself.
+
+\begin{DoxyRemark}{Remarks}
+Semi-\/internal means the function is defined in the header out of necessity (for templated functions) 
+\end{DoxyRemark}
+\mbox{\Hypertarget{Toolbox_8hpp_a27b565355e018d36b6ce47169cc26fad}\label{Toolbox_8hpp_a27b565355e018d36b6ce47169cc26fad}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!\_printOrderedListBeginning@{\_printOrderedListBeginning}}
+\index{\_printOrderedListBeginning@{\_printOrderedListBeginning}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{\_printOrderedListBeginning()}{\_printOrderedListBeginning()}}
+{\footnotesize\ttfamily void \+\_\+print\+Ordered\+List\+Beginning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Semi-\/internal function that prints the latest ordered list index. 
+
+Prints the latests ordered list index, surrounded by square brackets, and increments the ordered list index.
+
+\begin{DoxyRemark}{Remarks}
+There are no size checks, so list index could overflow.
+
+Semi-\/internal means the function is defined in the header out of necessity (for templated functions) 
+\end{DoxyRemark}
+\mbox{\Hypertarget{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}\label{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!\_printSubBoxSpacing@{\_printSubBoxSpacing}}
+\index{\_printSubBoxSpacing@{\_printSubBoxSpacing}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{\_printSubBoxSpacing()}{\_printSubBoxSpacing()}}
+{\footnotesize\ttfamily void \+\_\+print\+Sub\+Box\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Semi-\/internal function that prints the spacing for sub boxes. 
+
+Sub boxes are like normal boxes, but indented with 4 spaces. \mbox{\Hypertarget{Toolbox_8hpp_ac8bb3912a3ce86b15842e79d0b421204}\label{Toolbox_8hpp_ac8bb3912a3ce86b15842e79d0b421204}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!clear@{clear}}
+\index{clear@{clear}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the console screen. 
+
+Erases display and moves cursor to top left corner via ANSI escape sequences\+: {\ttfamily ESC}\mbox{[}2J {\ttfamily ESC}\mbox{[}1;1H
+
+\begin{DoxyWarning}{Warning}
+Not all terminals support any or all ANSI escape sequences
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Source\+: \href{https://stackoverflow.com/a/52895729/12036073}{\texttt{ https\+://stackoverflow.\+com/a/52895729/12036073}} 
+\end{DoxyNote}
+\mbox{\Hypertarget{Toolbox_8hpp_a9d709a3db7de05368cc38671c896bb2d}\label{Toolbox_8hpp_a9d709a3db7de05368cc38671c896bb2d}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!errorBox@{errorBox}}
+\index{errorBox@{errorBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{errorBox()}{errorBox()}}
+{\footnotesize\ttfamily void error\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Prints an error box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Error boxes start with \char`\"{}$<$\+E$>$\char`\"{} and print the message.
+
+\begin{DoxyRemark}{Remarks}
+Success/\+Warning/\+Error boxes start with \char`\"{}$<$\+C$>$\char`\"{} where C is an appropriate character. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{Toolbox_8hpp_ade748c3f15151748c9f978097715d2e7}\label{Toolbox_8hpp_ade748c3f15151748c9f978097715d2e7}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!errorSubBox@{errorSubBox}}
+\index{errorSubBox@{errorSubBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{errorSubBox()}{errorSubBox()}}
+{\footnotesize\ttfamily void error\+Sub\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Prints an error box as a sub box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Error boxes start with \char`\"{}$<$\+E$>$\char`\"{} and print the message.
+
+\begin{DoxyRemark}{Remarks}
+Success/\+Warning/\+Error boxes start with \char`\"{}$<$\+C$>$\char`\"{} where C is an appropriate character. 
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\+\_\+print\+Sub\+Box\+Spacing()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{Toolbox_8hpp_aa49b4d5a7b00249bc1fb08eec5e3aeaf}\label{Toolbox_8hpp_aa49b4d5a7b00249bc1fb08eec5e3aeaf}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!inputLineBox@{inputLineBox}}
+\index{inputLineBox@{inputLineBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{inputLineBox()}{inputLineBox()}}
+{\footnotesize\ttfamily void input\+Line\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label,  }\item[{char $\ast$}]{output,  }\item[{unsigned}]{max\+Width,  }\item[{bool}]{ignore }\end{DoxyParamCaption})}
+
+
+
+Prints label, gets a whole line of input and stores it to output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & C-\/style string, there are no size check so it could wrap \\
+\hline
+{\em output} & Pointer to a char array \\
+\hline
+{\em max\+Width} & Maximum count of characters to read from user input. output MUST be able to hold that many characters! \\
+\hline
+{\em ignore} & Whether or not to ignore the first new-\/line delimiter. true by default, should be set to false only when an input\+Line\+Box/\+Sub\+Box has been issued directly prior or when it\textquotesingle{}s the very first issued box command.\\
+\hline
+\end{DoxyParams}
+Prints \char`\"{}(+)\char`\"{} before the label. \mbox{\Hypertarget{Toolbox_8hpp_ad2c61ce27ec52d14e427d6f6e93d38f2}\label{Toolbox_8hpp_ad2c61ce27ec52d14e427d6f6e93d38f2}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!inputLineSubBox@{inputLineSubBox}}
+\index{inputLineSubBox@{inputLineSubBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{inputLineSubBox()}{inputLineSubBox()}}
+{\footnotesize\ttfamily void input\+Line\+Sub\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label,  }\item[{char $\ast$}]{output,  }\item[{unsigned}]{max\+Width,  }\item[{bool}]{ignore }\end{DoxyParamCaption})}
+
+
+
+Prints label as a sub box, gets a whole line of input and stores it to output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & C-\/style string, there are no size check so it could wrap \\
+\hline
+{\em output} & Pointer to a char array \\
+\hline
+{\em max\+Width} & Maximum count of characters to read from user input. output MUST be able to hold that many characters! \\
+\hline
+{\em ignore} & Whether or not to ignore the first new-\/line delimiter. true by default, should be set to false only when an input\+Line\+Box/\+Sub\+Box has been issued directly prior or when it\textquotesingle{}s the very first issued box command.\\
+\hline
+\end{DoxyParams}
+Prints \char`\"{}(+)\char`\"{} before the label. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\+\_\+print\+Sub\+Box\+Spacing()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{Toolbox_8hpp_a92da1c5f0023cd5c4809d9c1f682e92f}\label{Toolbox_8hpp_a92da1c5f0023cd5c4809d9c1f682e92f}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!inputSubBox@{inputSubBox}}
+\index{inputSubBox@{inputSubBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{inputSubBox()}{inputSubBox()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void input\+Sub\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label,  }\item[{T $\ast$}]{output }\end{DoxyParamCaption})}
+
+Prints a label with sub box spacing and then reads user input and stores it \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\+\_\+print\+Sub\+Box\+Spacing()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{Toolbox_8hpp_ac7f54319bf4e70a46e3155ae1b39e832}\label{Toolbox_8hpp_ac7f54319bf4e70a46e3155ae1b39e832}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!pressEnterToContinue@{pressEnterToContinue}}
+\index{pressEnterToContinue@{pressEnterToContinue}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{pressEnterToContinue()}{pressEnterToContinue()}}
+{\footnotesize\ttfamily void press\+Enter\+To\+Continue (\begin{DoxyParamCaption}\item[{bool}]{ignore }\end{DoxyParamCaption})}
+
+
+
+Waits for user to press enter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ignore} & Whether or not to ignore the first new-\/line delimiter. true by default, should be set to false only when an input\+Line\+Box/\+Sub\+Box has been issued directly prior or when it\textquotesingle{}s the very first issued box command.\\
+\hline
+\end{DoxyParams}
+Prints a \char`\"{}\+Press enter to continue\char`\"{} message and waits for the user \mbox{\Hypertarget{Toolbox_8hpp_a4456d10f7e141c4fc1a29aff4ad29108}\label{Toolbox_8hpp_a4456d10f7e141c4fc1a29aff4ad29108}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!resetOrderedList@{resetOrderedList}}
+\index{resetOrderedList@{resetOrderedList}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{resetOrderedList()}{resetOrderedList()}}
+{\footnotesize\ttfamily void reset\+Ordered\+List (\begin{DoxyParamCaption}\item[{int}]{starter }\end{DoxyParamCaption})}
+
+
+
+Resets the ordered list starting number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em starter} & Sets the starting number by which ordered list will enumerate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+Although starter can be a negative number, ordered list will always increment up the number. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{Toolbox_8hpp_ad557e4a1167be4e0c57fe530ce74a120}\label{Toolbox_8hpp_ad557e4a1167be4e0c57fe530ce74a120}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!subTitleBox@{subTitleBox}}
+\index{subTitleBox@{subTitleBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{subTitleBox()}{subTitleBox()}}
+{\footnotesize\ttfamily void sub\+Title\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
+
+
+
+Prints a title sub box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Prints the title, surrounded by \char`\"{}-\/-\/-\/\char`\"{}. \mbox{\Hypertarget{Toolbox_8hpp_a6c82ac6987703376c17c74a81fb0a91a}\label{Toolbox_8hpp_a6c82ac6987703376c17c74a81fb0a91a}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!successBox@{successBox}}
+\index{successBox@{successBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{successBox()}{successBox()}}
+{\footnotesize\ttfamily void success\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Prints a success box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Success boxes start with \char`\"{}$<$\+S$>$\char`\"{} and print the message.
+
+\begin{DoxyRemark}{Remarks}
+Success/\+Warning/\+Error boxes start with \char`\"{}$<$\+C$>$\char`\"{} where C is an appropriate character. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{Toolbox_8hpp_aa78e2e87fff9b64ca032a5b1c7054081}\label{Toolbox_8hpp_aa78e2e87fff9b64ca032a5b1c7054081}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!successSubBox@{successSubBox}}
+\index{successSubBox@{successSubBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{successSubBox()}{successSubBox()}}
+{\footnotesize\ttfamily void success\+Sub\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Prints a success box as a sub box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Success boxes start with \char`\"{}$<$\+S$>$\char`\"{} and print the message.
+
+\begin{DoxyRemark}{Remarks}
+Success/\+Warning/\+Error boxes start with \char`\"{}$<$\+C$>$\char`\"{} where C is an appropriate character. 
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\+\_\+print\+Sub\+Box\+Spacing()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{Toolbox_8hpp_a6c90056ede686f0319d0fb0a408d02e5}\label{Toolbox_8hpp_a6c90056ede686f0319d0fb0a408d02e5}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!table@{table}}
+\index{table@{table}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{table()}{table()}}
+{\footnotesize\ttfamily void table (\begin{DoxyParamCaption}\item[{unsigned}]{start\+Number,  }\item[{unsigned}]{columns,  }\item[{const char $\ast$}]{items }\end{DoxyParamCaption})}
+
+
+
+Prints a string as a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Number} & The number by which column and row enumeration begins \\
+\hline
+{\em columns} & How many columns the table should have \\
+\hline
+{\em items} & C-\/style string, each cell is a single character from the string\\
+\hline
+\end{DoxyParams}
+Prints a string as a grid/table of characters from top to bottom, left to right. The first character is on the top left, the last one is on the bottom right.
+
+Table is printed until a terminating zero is encountered. The rows are \char`\"{}calculated\char`\"{} from the columns count and the items length. \mbox{\Hypertarget{Toolbox_8hpp_a24a3fa9050ea032396c213ea85a1de0b}\label{Toolbox_8hpp_a24a3fa9050ea032396c213ea85a1de0b}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!titleBox@{titleBox}}
+\index{titleBox@{titleBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{titleBox()}{titleBox()}}
+{\footnotesize\ttfamily void title\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
+
+
+
+Prints a title box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Prints the title, surrounded by \char`\"{}===\char`\"{}. \mbox{\Hypertarget{Toolbox_8hpp_a52222c9ff8739ef87c89df899deb5052}\label{Toolbox_8hpp_a52222c9ff8739ef87c89df899deb5052}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!warningBox@{warningBox}}
+\index{warningBox@{warningBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{warningBox()}{warningBox()}}
+{\footnotesize\ttfamily void warning\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Prints a warning box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Warning boxes start with \char`\"{}$<$\+W$>$\char`\"{} and print the message.
+
+\begin{DoxyRemark}{Remarks}
+Success/\+Warning/\+Error boxes start with \char`\"{}$<$\+C$>$\char`\"{} where C is an appropriate character. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{Toolbox_8hpp_a22f8b3135115d1b9fca09eea98dc6d92}\label{Toolbox_8hpp_a22f8b3135115d1b9fca09eea98dc6d92}} 
+\index{Toolbox.hpp@{Toolbox.hpp}!warningSubBox@{warningSubBox}}
+\index{warningSubBox@{warningSubBox}!Toolbox.hpp@{Toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{warningSubBox()}{warningSubBox()}}
+{\footnotesize\ttfamily void warning\+Sub\+Box (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Prints a warning box as a sub box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & C-\/style string, there are no size checks so it could wrap\\
+\hline
+\end{DoxyParams}
+Warning boxes start with \char`\"{}$<$\+W$>$\char`\"{} and print the message.
+
+\begin{DoxyRemark}{Remarks}
+Success/\+Warning/\+Error boxes start with \char`\"{}$<$\+C$>$\char`\"{} where C is an appropriate character. 
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{Toolbox_8hpp_ac17b91efad13dbe9e10e5550ee4707c6}{\+\_\+print\+Sub\+Box\+Spacing()}} 
+\end{DoxySeeAlso}

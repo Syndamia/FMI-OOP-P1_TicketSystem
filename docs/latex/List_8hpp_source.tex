@@ -1,0 +1,263 @@
+\hypertarget{List_8hpp_source}{}\doxysection{List.\+hpp}
+\label{List_8hpp_source}\index{src/Generic/List/List.hpp@{src/Generic/List/List.hpp}}
+\mbox{\hyperlink{List_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_LIST}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_LIST}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <istream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{21 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classList}{List}} \{}
+\DoxyCodeLine{23 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{24     T* elements;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{unsigned} length;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{unsigned} count;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} resize();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} free();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} copyFrom(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& other);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{classList_a93cd36efc12aa5ef5fc28866edce7e61}{List}}(\textcolor{keyword}{const} T* elements, \textcolor{keywordtype}{unsigned} elementsCount);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classList_abfec4f2e7990d06c143852ecfdf907bb}{add}}(\textcolor{keyword}{const} T\& element);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classList_ae4586debf72af33bccb3c2fbfce420e8}{insertAt}}(\textcolor{keyword}{const} T\& element, \textcolor{keywordtype}{unsigned} index);}
+\DoxyCodeLine{40     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classList_ad9c0a5b5bca6286f458d6fab280de65a}{removeAt}}(\textcolor{keywordtype}{unsigned} index);}
+\DoxyCodeLine{42     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classList_a3804f03273ef5e339b504e439c5b6534}{findIndex}}(\textcolor{keyword}{const} T\& element) \textcolor{keyword}{const};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classList_a163a070c7d5dc77ca3c1726b8f2d4bc1}{contain}}(\textcolor{keyword}{const} T\& element) \textcolor{keyword}{const};}
+\DoxyCodeLine{45     T\& \mbox{\hyperlink{classList_a321bb581943398344aad07198d1f02ac}{operator[]}}(\textcolor{keywordtype}{unsigned} index);}
+\DoxyCodeLine{47     \textcolor{keyword}{const} T\& \mbox{\hyperlink{classList_a5fa582de3aec5094a871852b658cf853}{operator[]}}(\textcolor{keywordtype}{unsigned} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \mbox{\hyperlink{classList}{List<T>}}\& \mbox{\hyperlink{classList_aa4332ce5a589da28528f035ded6d41e5}{operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List<T>}} other);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     std::istream\& \mbox{\hyperlink{classList_a5e3581ee07649f462aa8bb3221a5466e}{read}}(std::istream\& istr);}
+\DoxyCodeLine{55     std::ostream\& \mbox{\hyperlink{classList_a8d2babffd2fb4a5e0a40dbd306e19956}{write}}(std::ostream\& ostr) \textcolor{keyword}{const};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classList_aa32109b77dccd8241b125ebabdda876c}{get\_length}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classList_a3c1e3a3fc085f5b7ae68514c4758687b}{get\_count}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \mbox{\hyperlink{classList}{List}}();}
+\DoxyCodeLine{63     \mbox{\hyperlink{classList}{List}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& other);}
+\DoxyCodeLine{64     \mbox{\hyperlink{classList}{List}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& other);}
+\DoxyCodeLine{65     \mbox{\hyperlink{classList}{\string~List}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \mbox{\hyperlink{classList}{List}}(\mbox{\hyperlink{classList}{List}}\&\& other);}
+\DoxyCodeLine{68     \mbox{\hyperlink{classList}{List}}\& operator=(\mbox{\hyperlink{classList}{List}}\&\& other);}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{73 std::istream\& \mbox{\hyperlink{List_8hpp_a7469c3479753bfbada761697c539aa07}{operator>>}}(std::istream\& istr, \mbox{\hyperlink{classList}{List<T>}}\& obj);}
+\DoxyCodeLine{75 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{76 std::ostream\& \mbox{\hyperlink{List_8hpp_ac8590f4d4ba6c820c34afe14df54f2c2}{operator<<}}(std::ostream\& ostr, \textcolor{keyword}{const} \mbox{\hyperlink{classList}{List<T>}}\& obj);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{/* Private */}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{81 \textcolor{keywordtype}{void} \mbox{\hyperlink{classList}{List<T>::resize}}() \{}
+\DoxyCodeLine{82     length = (length == 0) ? 8 : length << 1;}
+\DoxyCodeLine{83     T* temp = \textcolor{keyword}{new} T[length];}
+\DoxyCodeLine{84     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; i++)}
+\DoxyCodeLine{85         temp[i] = elements[i];}
+\DoxyCodeLine{86     \textcolor{keyword}{delete}[] elements;}
+\DoxyCodeLine{87     elements = temp;}
+\DoxyCodeLine{88 \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} \mbox{\hyperlink{classList}{List<T>::free}}() \{}
+\DoxyCodeLine{92     \textcolor{keyword}{delete}[] elements;}
+\DoxyCodeLine{93 \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{96 \textcolor{keywordtype}{void} \mbox{\hyperlink{classList}{List<T>::copyFrom}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& other) \{}
+\DoxyCodeLine{97     elements = \textcolor{keyword}{new} T[other.length];}
+\DoxyCodeLine{98     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < other.count; i++)}
+\DoxyCodeLine{99         elements[i] = other.elements[i];}
+\DoxyCodeLine{100     length = other.length;}
+\DoxyCodeLine{101     count = other.count;}
+\DoxyCodeLine{102 \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{/* Public */}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{107 \mbox{\hyperlink{classList}{List<T>::List}}(\textcolor{keyword}{const} T* elements, \textcolor{keywordtype}{unsigned} elementsCount) \{}
+\DoxyCodeLine{108     length = 8;}
+\DoxyCodeLine{109     count = elementsCount;}
+\DoxyCodeLine{110     this-\/>elements = \textcolor{keyword}{new} T[length];}
+\DoxyCodeLine{111     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < count; i++)}
+\DoxyCodeLine{112         this-\/>elements[i] = elements[i];}
+\DoxyCodeLine{113 \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{118 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{119 \textcolor{keywordtype}{void} \mbox{\hyperlink{classList_abfec4f2e7990d06c143852ecfdf907bb}{List<T>::add}}(\textcolor{keyword}{const} T\& element) \{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{if} (length == count) resize();}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     elements[count++] = element;}
+\DoxyCodeLine{123 \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{131 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{132 \textcolor{keywordtype}{void} \mbox{\hyperlink{classList_ae4586debf72af33bccb3c2fbfce420e8}{List<T>::insertAt}}(\textcolor{keyword}{const} T\& element, \textcolor{keywordtype}{unsigned} index) \{}
+\DoxyCodeLine{133     \textcolor{keywordflow}{if} (index >= count) \{}
+\DoxyCodeLine{134         add(element);}
+\DoxyCodeLine{135         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{136     \}}
+\DoxyCodeLine{137     \textcolor{keywordflow}{if} (length == count) resize();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = count; i > index; i-\/-\/)}
+\DoxyCodeLine{140         elements[i] = elements[i -\/ 1];}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     elements[index] = element;}
+\DoxyCodeLine{143     count++;}
+\DoxyCodeLine{144 \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{151 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{152 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classList_ad9c0a5b5bca6286f458d6fab280de65a}{List<T>::removeAt}}(\textcolor{keywordtype}{unsigned} index) \{}
+\DoxyCodeLine{153     \textcolor{keywordflow}{if} (index >= count) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = index; i < count; i++)}
+\DoxyCodeLine{156         elements[i] = elements[i + 1];}
+\DoxyCodeLine{157     count-\/-\/;}
+\DoxyCodeLine{158     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{159 \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{166 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{167 \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classList_a3804f03273ef5e339b504e439c5b6534}{List<T>::findIndex}}(\textcolor{keyword}{const} T\& element)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{168     \textcolor{keywordtype}{unsigned} ind = 0;}
+\DoxyCodeLine{169     \textcolor{keywordflow}{while} (ind < count \&\& elements[ind].compare(element) != 0)}
+\DoxyCodeLine{170         ind++;}
+\DoxyCodeLine{171     \textcolor{keywordflow}{return} ind;}
+\DoxyCodeLine{172 \}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{179 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{180 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classList_a163a070c7d5dc77ca3c1726b8f2d4bc1}{List<T>::contain}}(\textcolor{keyword}{const} T\& element)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{181     \textcolor{keywordflow}{return} findIndex(element) < count;}
+\DoxyCodeLine{182 \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{185 T\& \mbox{\hyperlink{classList_a321bb581943398344aad07198d1f02ac}{List<T>::operator[]}}(\textcolor{keywordtype}{unsigned} index) \{}
+\DoxyCodeLine{186     \textcolor{keywordflow}{return} elements[index];}
+\DoxyCodeLine{187 \}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{190 \textcolor{keyword}{const} T\& \mbox{\hyperlink{classList_a321bb581943398344aad07198d1f02ac}{List<T>::operator[]}}(\textcolor{keywordtype}{unsigned} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{191     \textcolor{keywordflow}{return} elements[index];}
+\DoxyCodeLine{192 \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{195 \mbox{\hyperlink{classList}{List<T>}}\& \mbox{\hyperlink{classList_aa4332ce5a589da28528f035ded6d41e5}{List<T>::operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List<T>}} other) \{}
+\DoxyCodeLine{196     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < other.length; i++)}
+\DoxyCodeLine{197         add(other[i]);}
+\DoxyCodeLine{198     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{199 \}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{210 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{211 std::istream\& \mbox{\hyperlink{classList_a5e3581ee07649f462aa8bb3221a5466e}{List<T>::read}}(std::istream\& istr) \{}
+\DoxyCodeLine{212     istr.read((\textcolor{keywordtype}{char}*)\&length, \textcolor{keyword}{sizeof}(length));}
+\DoxyCodeLine{213     istr.read((\textcolor{keywordtype}{char}*)\&count, \textcolor{keyword}{sizeof}(count));}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \textcolor{keyword}{delete}[] elements;}
+\DoxyCodeLine{216     elements = \textcolor{keyword}{new} T[length];}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; i++)}
+\DoxyCodeLine{219         elements[i].\mbox{\hyperlink{Toolbox_8hpp_a3c9098dc2b305107367c56ded5dec787}{read}}(istr);}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \textcolor{keywordflow}{return} istr;}
+\DoxyCodeLine{222 \}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{232 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{233 std::ostream\& \mbox{\hyperlink{classList_a8d2babffd2fb4a5e0a40dbd306e19956}{List<T>::write}}(std::ostream\& ostr)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{234     ostr.write((\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)\&length, \textcolor{keyword}{sizeof}(length));}
+\DoxyCodeLine{235     ostr.write((\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)\&count, \textcolor{keyword}{sizeof}(count));}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; i++)}
+\DoxyCodeLine{238         elements[i].write(ostr);}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \textcolor{keywordflow}{return} ostr;}
+\DoxyCodeLine{241 \}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{246 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{247 \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classList_aa32109b77dccd8241b125ebabdda876c}{List<T>::get\_length}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{248     \textcolor{keywordflow}{return} length;}
+\DoxyCodeLine{249 \}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{254 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{255 \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classList_a3c1e3a3fc085f5b7ae68514c4758687b}{List<T>::get\_count}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{256     \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{257 \}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{comment}{// Rule of 4}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{262 \mbox{\hyperlink{classList}{List<T>::List}}() : \mbox{\hyperlink{classList}{List}}(nullptr, 0) \{\}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{265 \mbox{\hyperlink{classList}{List<T>}}\& \mbox{\hyperlink{classList}{List<T>::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& other) \{}
+\DoxyCodeLine{266     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&other) \{}
+\DoxyCodeLine{267         free();}
+\DoxyCodeLine{268         copyFrom(other);}
+\DoxyCodeLine{269     \}}
+\DoxyCodeLine{270     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{271 \}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{274 \mbox{\hyperlink{classList}{List<T>::List}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& other) \{}
+\DoxyCodeLine{275     copyFrom(other);}
+\DoxyCodeLine{276 \}}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{279 \mbox{\hyperlink{classList}{List<T>::\string~List}}() \{}
+\DoxyCodeLine{280     free();}
+\DoxyCodeLine{281 \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{comment}{// Move semantics}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{286 \mbox{\hyperlink{classList}{List<T>::List}}(\mbox{\hyperlink{classList}{List}}\&\& other) \{}
+\DoxyCodeLine{287     length = other.length;}
+\DoxyCodeLine{288     count = other.count;}
+\DoxyCodeLine{289     elements = other.elements;}
+\DoxyCodeLine{290     other.elements = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{291 \}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{294 \mbox{\hyperlink{classList}{List<T>}}\& \mbox{\hyperlink{classList}{List<T>::operator=}}(\mbox{\hyperlink{classList}{List}}\&\& other) \{}
+\DoxyCodeLine{295     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&other) \{}
+\DoxyCodeLine{296         free();}
+\DoxyCodeLine{297         length = other.length;}
+\DoxyCodeLine{298         count = other.count;}
+\DoxyCodeLine{299         elements = other.elements;}
+\DoxyCodeLine{300         other.elements = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{301     \}}
+\DoxyCodeLine{302     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{303 \}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 \textcolor{comment}{/* Outside of class */}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{314 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{315 std::istream\& \mbox{\hyperlink{List_8hpp_a7469c3479753bfbada761697c539aa07}{operator>>}}(std::istream\& istr, \mbox{\hyperlink{classList}{List<T>}}\& obj) \{}
+\DoxyCodeLine{316     \mbox{\hyperlink{classList}{List<T>}} newObj;}
+\DoxyCodeLine{317     \textcolor{keywordtype}{unsigned} count;}
+\DoxyCodeLine{318     istr >> count;}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     T temp;}
+\DoxyCodeLine{321     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; i++) \{}
+\DoxyCodeLine{322         istr >> temp;}
+\DoxyCodeLine{323         obj.\mbox{\hyperlink{classList_abfec4f2e7990d06c143852ecfdf907bb}{add}}(temp);}
+\DoxyCodeLine{324     \}}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326     \textcolor{keywordflow}{return} istr;}
+\DoxyCodeLine{327 \}}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{335 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{336 std::ostream\& \mbox{\hyperlink{List_8hpp_ac8590f4d4ba6c820c34afe14df54f2c2}{operator<<}}(std::ostream\& ostr, \textcolor{keyword}{const} \mbox{\hyperlink{classList}{List<T>}}\& obj) \{}
+\DoxyCodeLine{337     ostr << obj.\mbox{\hyperlink{classList_a3c1e3a3fc085f5b7ae68514c4758687b}{get\_count}}() << std::endl;}
+\DoxyCodeLine{338     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < obj.\mbox{\hyperlink{classList_a3c1e3a3fc085f5b7ae68514c4758687b}{get\_count}}(); i++)}
+\DoxyCodeLine{339         ostr << obj[i];}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341     \textcolor{keywordflow}{return} ostr;}
+\DoxyCodeLine{342 \}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

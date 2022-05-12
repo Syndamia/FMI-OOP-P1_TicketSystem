@@ -1,0 +1,41 @@
+\hypertarget{OrderedList_8hpp_source}{}\doxysection{Ordered\+List.\+hpp}
+\label{OrderedList_8hpp_source}\index{src/Generic/List/OrderedList.hpp@{src/Generic/List/OrderedList.hpp}}
+\mbox{\hyperlink{OrderedList_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_ORDEREDLIST}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_ORDEREDLIST}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{List_8hpp}{List.hpp}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classOrderedList}{OrderedList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classList}{List}}<T> \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{classOrderedList}{OrderedList}}();}
+\DoxyCodeLine{19     \mbox{\hyperlink{classOrderedList}{OrderedList}}(\textcolor{keyword}{const} T* elements, \textcolor{keywordtype}{unsigned} elementsCount);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{classOrderedList_a8b2748c3cdefe4869e0d7a2fc9b4b2cd}{add}}(T element) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{classOrderedList_a45af729846bacc77fc8292e5d0690f99}{insertAt}}(T element, \textcolor{keywordtype}{unsigned} index) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{insert}}(T element);}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{35 \mbox{\hyperlink{classOrderedList}{OrderedList<T>::OrderedList}}() : \mbox{\hyperlink{classOrderedList}{OrderedList}}(nullptr, 0) \{\}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{38 \mbox{\hyperlink{classOrderedList}{OrderedList<T>::OrderedList}}(\textcolor{keyword}{const} T* elements, \textcolor{keywordtype}{unsigned} elementsCount) : \mbox{\hyperlink{classList}{List}}<T>::\mbox{\hyperlink{classList}{List}}(elements, elementsCount) \{\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{44 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{45 \textcolor{keywordtype}{void} \mbox{\hyperlink{classOrderedList_a1132cd9c92901e9b9950a4a409b0fc8b}{OrderedList<T>::insert}}(T element) \{}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classList}{List<T>::length}} == \mbox{\hyperlink{classList}{List<T>::count}}) \mbox{\hyperlink{classList}{List<T>::resize}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{unsigned} insertionInd = 0;}
+\DoxyCodeLine{49     \textcolor{keywordflow}{while} (insertionInd < \mbox{\hyperlink{classList}{List<T>::count}} \&\& \mbox{\hyperlink{classList}{List<T>::elements}}[insertionInd].compare(element) < 0)}
+\DoxyCodeLine{50         insertionInd++;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \mbox{\hyperlink{classList_ae4586debf72af33bccb3c2fbfce420e8}{List<T>::insertAt}}(element, insertionInd);}
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

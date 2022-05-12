@@ -1,0 +1,109 @@
+\hypertarget{classHall}{}\doxysection{Hall Class Reference}
+\label{classHall}\index{Hall@{Hall}}
+
+
+Each hall contains a number, rows and seats per row.  
+
+
+
+
+{\ttfamily \#include $<$Hall.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHall_a122ed8085be305339c89cadb3e360b86}\label{classHall_a122ed8085be305339c89cadb3e360b86}} 
+{\bfseries Hall} ()
+\begin{DoxyCompactList}\small\item\em Sets values to 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHall_af88f012be2e7671366e10d4e154a8d8f}\label{classHall_af88f012be2e7671366e10d4e154a8d8f}} 
+{\bfseries Hall} (int number)
+\begin{DoxyCompactList}\small\item\em Sets values, except number, to 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHall_ab93a2ca8463f3b3d398374a6efea4c71}\label{classHall_ab93a2ca8463f3b3d398374a6efea4c71}} 
+{\bfseries Hall} (int number, unsigned rows, unsigned seats\+Per\+Row)
+\begin{DoxyCompactList}\small\item\em Sets values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHall_a84186aee50631f25b214f18f7b0dc178}\label{classHall_a84186aee50631f25b214f18f7b0dc178}} 
+int {\bfseries get\+\_\+number} () const
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{classHall}{Hall}}\textquotesingle{}s number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHall_a6b3c304a95d3f56980c6faf0cc2073a2}\label{classHall_a6b3c304a95d3f56980c6faf0cc2073a2}} 
+unsigned {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{classHall}{Hall}}\textquotesingle{}s row count. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHall_a42e1cd716086d8a42a627e00cde17a7e}\label{classHall_a42e1cd716086d8a42a627e00cde17a7e}} 
+unsigned {\bfseries get\+\_\+seats\+Per\+Row} () const
+\begin{DoxyCompactList}\small\item\em Return a \mbox{\hyperlink{classHall}{Hall}}\textquotesingle{}s seats per row count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHall_acef974f302d8131ef4608e15f96c2df9}{read}} (std\+::istream \&istr)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classHall}{Hall}} from stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHall_a0239d59ab0f832f16cf35c820d0eba5a}{write}} (std\+::ostream \&ostr) const
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classHall}{Hall}} to steam. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHall_a4259837f943c488c6b15ed6c80d5f30b}{compare}} (const \mbox{\hyperlink{classHall}{Hall}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compare two Halls. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Each hall contains a number, rows and seats per row. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHall_a4259837f943c488c6b15ed6c80d5f30b}\label{classHall_a4259837f943c488c6b15ed6c80d5f30b}} 
+\index{Hall@{Hall}!compare@{compare}}
+\index{compare@{compare}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int Hall\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHall}{Hall}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compare two Halls. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 if number \texorpdfstring{$<$}{<} other.\+number, 1 if number \texorpdfstring{$>$}{>} other.\+number, 0 if number == other.\+number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHall_acef974f302d8131ef4608e15f96c2df9}\label{classHall_acef974f302d8131ef4608e15f96c2df9}} 
+\index{Hall@{Hall}!read@{read}}
+\index{read@{read}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Hall\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classHall}{Hall}} from stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istr} & An input stream\\
+\hline
+\end{DoxyParams}
+Directly reads bytes from stream (calls \mbox{\hyperlink{classHall_acef974f302d8131ef4608e15f96c2df9}{read()}} function).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ifstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classHall_a0239d59ab0f832f16cf35c820d0eba5a}\label{classHall_a0239d59ab0f832f16cf35c820d0eba5a}} 
+\index{Hall@{Hall}!write@{write}}
+\index{write@{write}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Hall\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr }\end{DoxyParamCaption}) const}
+
+
+
+Writes \mbox{\hyperlink{classHall}{Hall}} to steam. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostr} & An output stream\\
+\hline
+\end{DoxyParams}
+Directly writes bytes to stream (calls \mbox{\hyperlink{classHall_a0239d59ab0f832f16cf35c820d0eba5a}{write()}} function).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ofstream 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Models/\mbox{\hyperlink{Hall_8h}{Hall.\+h}}\item 
+src/\+Models/Hall.\+cpp\end{DoxyCompactItemize}

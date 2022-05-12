@@ -1,0 +1,207 @@
+\hypertarget{classDate}{}\doxysection{Date Class Reference}
+\label{classDate}\index{Date@{Date}}
+
+
+Stores a day, month and year.  
+
+
+
+
+{\ttfamily \#include $<$Date.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDate_a4e59ed4ba66eec61c27460c5d09fa1bd}\label{classDate_a4e59ed4ba66eec61c27460c5d09fa1bd}} 
+{\bfseries Date} ()
+\begin{DoxyCompactList}\small\item\em Sets date as 01 May 2022. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDate_a99d57b698afdacd18f5a414cdc7524fd}{Date}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Parses string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDate_a87b3c3ede7dee726e8779eebfcc0a299}{Date}} (unsigned short day, unsigned short month, unsigned short year)
+\begin{DoxyCompactList}\small\item\em Sets day, month and year. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDate_a2e4dc4249f8cccd40acc5950b42e1339}\label{classDate_a2e4dc4249f8cccd40acc5950b42e1339}} 
+unsigned short {\bfseries get\+\_\+day} () const
+\begin{DoxyCompactList}\small\item\em Returns the day. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDate_acaf0c3ee1b2d36edf4f870ddd8acce08}{set\+\_\+day}} (unsigned short day)
+\begin{DoxyCompactList}\small\item\em Sets the day. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDate_a79ebbf3cb46f892604dc79ffc82bcfcc}\label{classDate_a79ebbf3cb46f892604dc79ffc82bcfcc}} 
+unsigned short {\bfseries get\+\_\+month} () const
+\begin{DoxyCompactList}\small\item\em Returns the month. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDate_ad0a591a557ddde0871389c3d716e6044}{set\+\_\+month}} (unsigned short month)
+\begin{DoxyCompactList}\small\item\em Sets the month. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDate_a025aae2b290ba357e049d054085f91e3}\label{classDate_a025aae2b290ba357e049d054085f91e3}} 
+unsigned short {\bfseries get\+\_\+year} () const
+\begin{DoxyCompactList}\small\item\em Returns the year. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDate_a6a0f3124e1850cd9f1514ebffcdd0cae}{set\+\_\+year}} (unsigned short year)
+\begin{DoxyCompactList}\small\item\em Sets the year. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classString}{String}} \mbox{\hyperlink{classDate_a6e00ace9f8c923c96188bd76f1e064c2}{create\+String}} () const
+\begin{DoxyCompactList}\small\item\em Returns the date as a \mbox{\hyperlink{classString}{String}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDate_a982c0c9098056aa33c5cbc9eba093852}{read}} (std\+::istream \&istr)
+\begin{DoxyCompactList}\small\item\em Reads date from stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDate_a9c728831f35f27abf3348132a13b7844}{write}} (std\+::ostream \&ostr)
+\begin{DoxyCompactList}\small\item\em Writes date to stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDate_a3cda588bf2f65b84639303a1aa1105be}{compare}} (const \mbox{\hyperlink{classDate}{Date}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two dates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores a day, month and year. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDate_a99d57b698afdacd18f5a414cdc7524fd}\label{classDate_a99d57b698afdacd18f5a414cdc7524fd}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Parses string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & C-\/style string\\
+\hline
+\end{DoxyParams}
+Values are initialized with zeroes. Then it parses the string\+:
+
+Skips spaces, saves day with atoi, skips two characters, skips spaces, saves month with atoi, skips two characters, skips spaces, saves year with atoi.
+
+Values are validated with setters. You should always have spaces between day, month and year and no non-\/numeric characters between them.
+
+\begin{DoxyRemark}{Remarks}
+If there are non-\/numeric characters, as per atoi() spec, the appropriate property is zero. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classDate_a87b3c3ede7dee726e8779eebfcc0a299}\label{classDate_a87b3c3ede7dee726e8779eebfcc0a299}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{unsigned short}]{day,  }\item[{unsigned short}]{month,  }\item[{unsigned short}]{year }\end{DoxyParamCaption})}
+
+
+
+Sets day, month and year. 
+
+Initializes values with zeroes and then uses setters to save the function arguments. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDate_a3cda588bf2f65b84639303a1aa1105be}\label{classDate_a3cda588bf2f65b84639303a1aa1105be}} 
+\index{Date@{Date}!compare@{compare}}
+\index{compare@{compare}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int Date\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two dates. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 if this \texorpdfstring{$<$}{<} other, 1 if this \texorpdfstring{$>$}{>} other, 0 if this == other 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a6e00ace9f8c923c96188bd76f1e064c2}\label{classDate_a6e00ace9f8c923c96188bd76f1e064c2}} 
+\index{Date@{Date}!createString@{createString}}
+\index{createString@{createString}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{createString()}{createString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classString}{String}} Date\+::create\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the date as a \mbox{\hyperlink{classString}{String}} object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classString}{String}} object in the format \char`\"{}day.\+month.\+year\char`\"{}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Currently there isn\textquotesingle{}t any way to change the formatting 
+\end{DoxyNote}
+\mbox{\Hypertarget{classDate_a982c0c9098056aa33c5cbc9eba093852}\label{classDate_a982c0c9098056aa33c5cbc9eba093852}} 
+\index{Date@{Date}!read@{read}}
+\index{read@{read}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Date\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+Reads date from stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istr} & An input stream\\
+\hline
+\end{DoxyParams}
+Directly reads bytes from stream (calls \mbox{\hyperlink{classDate_a982c0c9098056aa33c5cbc9eba093852}{read()}} function).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ifstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classDate_acaf0c3ee1b2d36edf4f870ddd8acce08}\label{classDate_acaf0c3ee1b2d36edf4f870ddd8acce08}} 
+\index{Date@{Date}!set\_day@{set\_day}}
+\index{set\_day@{set\_day}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{set\_day()}{set\_day()}}
+{\footnotesize\ttfamily bool Date\+::set\+\_\+day (\begin{DoxyParamCaption}\item[{unsigned short}]{new\+Day }\end{DoxyParamCaption})}
+
+
+
+Sets the day. 
+
+\begin{DoxyReturn}{Returns}
+Whether new\+Day was saved or not
+\end{DoxyReturn}
+If new\+Day is equal to 0, or is more than the appropriate days in the month, the day isn\textquotesingle{}t set. \mbox{\Hypertarget{classDate_ad0a591a557ddde0871389c3d716e6044}\label{classDate_ad0a591a557ddde0871389c3d716e6044}} 
+\index{Date@{Date}!set\_month@{set\_month}}
+\index{set\_month@{set\_month}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{set\_month()}{set\_month()}}
+{\footnotesize\ttfamily bool Date\+::set\+\_\+month (\begin{DoxyParamCaption}\item[{unsigned short}]{new\+Month }\end{DoxyParamCaption})}
+
+
+
+Sets the month. 
+
+\begin{DoxyReturn}{Returns}
+Whether new\+Month was saved or not
+\end{DoxyReturn}
+If new\+Month is equal to 0 or is more than 12, the month isn\textquotesingle{}t set. \mbox{\Hypertarget{classDate_a6a0f3124e1850cd9f1514ebffcdd0cae}\label{classDate_a6a0f3124e1850cd9f1514ebffcdd0cae}} 
+\index{Date@{Date}!set\_year@{set\_year}}
+\index{set\_year@{set\_year}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{set\_year()}{set\_year()}}
+{\footnotesize\ttfamily bool Date\+::set\+\_\+year (\begin{DoxyParamCaption}\item[{unsigned short}]{new\+Year }\end{DoxyParamCaption})}
+
+
+
+Sets the year. 
+
+\begin{DoxyReturn}{Returns}
+Whether year was saved or not
+\end{DoxyReturn}
+Year isn\textquotesingle{}t set when new\+Year is zero \mbox{\Hypertarget{classDate_a9c728831f35f27abf3348132a13b7844}\label{classDate_a9c728831f35f27abf3348132a13b7844}} 
+\index{Date@{Date}!write@{write}}
+\index{write@{write}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Date\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr }\end{DoxyParamCaption})}
+
+
+
+Writes date to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostr} & An output stream\\
+\hline
+\end{DoxyParams}
+Directly writes bytes to stream (calls \mbox{\hyperlink{classDate_a9c728831f35f27abf3348132a13b7844}{write()}} function).
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ofstream 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Generic/\+Date/\mbox{\hyperlink{Date_8h}{Date.\+h}}\item 
+src/\+Generic/\+Date/Date.\+cpp\end{DoxyCompactItemize}

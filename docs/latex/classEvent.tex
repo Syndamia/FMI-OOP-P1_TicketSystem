@@ -1,0 +1,118 @@
+\hypertarget{classEvent}{}\doxysection{Event Class Reference}
+\label{classEvent}\index{Event@{Event}}
+
+
+Stores an event\textquotesingle{}s hall, name, date, bought tickets and reservations.  
+
+
+
+
+{\ttfamily \#include $<$Event.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEvent_a5a40dd4708297f7031e29b39e039ae10}\label{classEvent_a5a40dd4708297f7031e29b39e039ae10}} 
+{\bfseries Event} ()
+\begin{DoxyCompactList}\small\item\em Calls default constructors on data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_a6ecbd134ada51629f30b2d1cf352d88f}\label{classEvent_a6ecbd134ada51629f30b2d1cf352d88f}} 
+{\bfseries Event} (const \mbox{\hyperlink{classHall}{Hall}} \&hall, \mbox{\hyperlink{classString}{String}} name, \mbox{\hyperlink{classDate}{Date}} date)
+\begin{DoxyCompactList}\small\item\em Copies given hall and sets name and date. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_ae3023ae2c487f46b3235f67554e58615}\label{classEvent_ae3023ae2c487f46b3235f67554e58615}} 
+const \mbox{\hyperlink{classHall}{Hall}} \& {\bfseries get\+\_\+hall} () const
+\begin{DoxyCompactList}\small\item\em Returns constant reference \mbox{\hyperlink{classHall}{Hall}} in which event will be held. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_a7bf717630c32826689df41e0bb3ecbce}\label{classEvent_a7bf717630c32826689df41e0bb3ecbce}} 
+const \mbox{\hyperlink{classString}{String}} \& {\bfseries get\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Returns constant reference to name of event. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_a222904d44dfaf3f1f96e2190c5ea4293}\label{classEvent_a222904d44dfaf3f1f96e2190c5ea4293}} 
+const \mbox{\hyperlink{classDate}{Date}} \& {\bfseries get\+\_\+date} () const
+\begin{DoxyCompactList}\small\item\em Returns constant reference to date on which event will be held. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_a16a84fced8e02f756232c54c27bb22ad}\label{classEvent_a16a84fced8e02f756232c54c27bb22ad}} 
+\mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ \mbox{\hyperlink{classTicket}{Ticket}} $>$ \& {\bfseries get\+\_\+tickets} ()
+\begin{DoxyCompactList}\small\item\em Returns reference to bought tickets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_a1f914fc91044a5c10d71f31b8e712c46}\label{classEvent_a1f914fc91044a5c10d71f31b8e712c46}} 
+const \mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ \mbox{\hyperlink{classTicket}{Ticket}} $>$ \& {\bfseries get\+\_\+tickets} () const
+\begin{DoxyCompactList}\small\item\em Returns constant reference to bought tickets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_a43c6b2bddd42435eb6c8cd0f15d75c6f}\label{classEvent_a43c6b2bddd42435eb6c8cd0f15d75c6f}} 
+\mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ \mbox{\hyperlink{classReservation}{Reservation}} $>$ \& {\bfseries get\+\_\+reservations} ()
+\begin{DoxyCompactList}\small\item\em Returns reference to reservations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEvent_a7af1c5d57d41701e6411b7c251bf904e}\label{classEvent_a7af1c5d57d41701e6411b7c251bf904e}} 
+const \mbox{\hyperlink{classOrderedList}{Ordered\+List}}$<$ \mbox{\hyperlink{classReservation}{Reservation}} $>$ \& {\bfseries get\+\_\+reservations} () const
+\begin{DoxyCompactList}\small\item\em Returns constant reference to reservations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEvent_ae58d2ed716836adcdacaeec4dd08c1cf}{read}} (std\+::istream \&istr)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classEvent}{Event}} from stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEvent_a05a302aa998977c30950987c07f0fbba}{write}} (std\+::ostream \&ostr)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classEvent}{Event}} to stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEvent_af5c84a902db8f29f8b8737026011f1f6}{compare}} (const \mbox{\hyperlink{classEvent}{Event}} \&other)
+\begin{DoxyCompactList}\small\item\em Compares two events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores an event\textquotesingle{}s hall, name, date, bought tickets and reservations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEvent_af5c84a902db8f29f8b8737026011f1f6}\label{classEvent_af5c84a902db8f29f8b8737026011f1f6}} 
+\index{Event@{Event}!compare@{compare}}
+\index{compare@{compare}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int Event\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Compares two events. 
+
+\begin{DoxyReturn}{Returns}
+compare of halls, or if they are equal, compare of dates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEvent_ae58d2ed716836adcdacaeec4dd08c1cf}\label{classEvent_ae58d2ed716836adcdacaeec4dd08c1cf}} 
+\index{Event@{Event}!read@{read}}
+\index{read@{read}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Event\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classEvent}{Event}} from stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istr} & An input stream\\
+\hline
+\end{DoxyParams}
+Directly reads bytes from stream (calls \mbox{\hyperlink{classEvent_ae58d2ed716836adcdacaeec4dd08c1cf}{read()}} function). Stored types must have defined a \mbox{\hyperlink{classEvent_ae58d2ed716836adcdacaeec4dd08c1cf}{read()}} function.
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ifstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEvent_a05a302aa998977c30950987c07f0fbba}\label{classEvent_a05a302aa998977c30950987c07f0fbba}} 
+\index{Event@{Event}!write@{write}}
+\index{write@{write}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Event\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr }\end{DoxyParamCaption})}
+
+
+
+Writes \mbox{\hyperlink{classEvent}{Event}} to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostr} & An output stream\\
+\hline
+\end{DoxyParams}
+Directly writes bytes to stream (calls \mbox{\hyperlink{classEvent_a05a302aa998977c30950987c07f0fbba}{write()}} function). Stored types must have defined a \mbox{\hyperlink{classEvent_ae58d2ed716836adcdacaeec4dd08c1cf}{read()}} function.
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ofstream 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Models/\mbox{\hyperlink{Event_8h}{Event.\+h}}\item 
+src/\+Models/Event.\+cpp\end{DoxyCompactItemize}

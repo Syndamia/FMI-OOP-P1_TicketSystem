@@ -1,0 +1,44 @@
+\hypertarget{Date_8h_source}{}\doxysection{Date.\+h}
+\label{Date_8h_source}\index{src/Generic/Date/Date.h@{src/Generic/Date/Date.h}}
+\mbox{\hyperlink{Date_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_DATE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_DATE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <istream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../String/String.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}} \{}
+\DoxyCodeLine{15     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} day;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} month;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} year;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordtype}{bool} isLeapYear();}
+\DoxyCodeLine{20     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} daysInMonth();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classDate_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date}}();}
+\DoxyCodeLine{26     \mbox{\hyperlink{classDate_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str);}
+\DoxyCodeLine{28     \mbox{\hyperlink{classDate_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} day, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} month, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} year);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{classDate_a2e4dc4249f8cccd40acc5950b42e1339}{get\_day}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDate_acaf0c3ee1b2d36edf4f870ddd8acce08}{set\_day}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} day);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{classDate_a79ebbf3cb46f892604dc79ffc82bcfcc}{get\_month}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{37     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDate_ad0a591a557ddde0871389c3d716e6044}{set\_month}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} month);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{classDate_a025aae2b290ba357e049d054085f91e3}{get\_year}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDate_a6a0f3124e1850cd9f1514ebffcdd0cae}{set\_year}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} year);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \mbox{\hyperlink{classString}{String}} \mbox{\hyperlink{classDate_a6e00ace9f8c923c96188bd76f1e064c2}{createString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{classDate_a982c0c9098056aa33c5cbc9eba093852}{read}}(std::istream\& istr);}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classDate_a9c728831f35f27abf3348132a13b7844}{write}}(std::ostream\& ostr);}
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} \mbox{\hyperlink{classDate_a3cda588bf2f65b84639303a1aa1105be}{compare}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55 std::istream\& \mbox{\hyperlink{Date_8h_ae020cf1772268f1a43d172d3adfc9797}{operator>>}}(std::istream\& istr, \mbox{\hyperlink{classDate}{Date}}\& dt);}
+\DoxyCodeLine{57 std::ostream\& \mbox{\hyperlink{Date_8h_ad12d4bbc4f7919efdec583d1478a6a76}{operator<<}}(std::ostream\& ostr, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& dt);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

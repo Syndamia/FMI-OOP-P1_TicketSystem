@@ -1,0 +1,243 @@
+\indexentry{Command@{Command}|hyperpage}{9}
+\indexentry{Command@{Command}!Command@{Command}|hyperpage}{9}
+\indexentry{Command@{Command}!Command@{Command}|hyperpage}{9}
+\indexentry{Command@{Command}!run@{run}|hyperpage}{10}
+\indexentry{run@{run}!Command@{Command}|hyperpage}{10}
+\indexentry{Date@{Date}|hyperpage}{10}
+\indexentry{Date@{Date}!Date@{Date}|hyperpage}{11}
+\indexentry{Date@{Date}!Date@{Date}|hyperpage}{11}
+\indexentry{Date@{Date}!Date@{Date}|hyperpage}{11}
+\indexentry{Date@{Date}!Date@{Date}|hyperpage}{11}
+\indexentry{Date@{Date}!compare@{compare}|hyperpage}{12}
+\indexentry{compare@{compare}!Date@{Date}|hyperpage}{12}
+\indexentry{Date@{Date}!createString@{createString}|hyperpage}{12}
+\indexentry{createString@{createString}!Date@{Date}|hyperpage}{12}
+\indexentry{Date@{Date}!read@{read}|hyperpage}{12}
+\indexentry{read@{read}!Date@{Date}|hyperpage}{12}
+\indexentry{Date@{Date}!set\_day@{set\_day}|hyperpage}{13}
+\indexentry{set\_day@{set\_day}!Date@{Date}|hyperpage}{13}
+\indexentry{Date@{Date}!set\_month@{set\_month}|hyperpage}{13}
+\indexentry{set\_month@{set\_month}!Date@{Date}|hyperpage}{13}
+\indexentry{Date@{Date}!set\_year@{set\_year}|hyperpage}{13}
+\indexentry{set\_year@{set\_year}!Date@{Date}|hyperpage}{13}
+\indexentry{Date@{Date}!write@{write}|hyperpage}{13}
+\indexentry{write@{write}!Date@{Date}|hyperpage}{13}
+\indexentry{Event@{Event}|hyperpage}{14}
+\indexentry{Event@{Event}!compare@{compare}|hyperpage}{15}
+\indexentry{compare@{compare}!Event@{Event}|hyperpage}{15}
+\indexentry{Event@{Event}!read@{read}|hyperpage}{15}
+\indexentry{read@{read}!Event@{Event}|hyperpage}{15}
+\indexentry{Event@{Event}!write@{write}|hyperpage}{15}
+\indexentry{write@{write}!Event@{Event}|hyperpage}{15}
+\indexentry{EventService@{EventService}|hyperpage}{16}
+\indexentry{EventService@{EventService}!buyTicket@{buyTicket}|hyperpage}{17}
+\indexentry{buyTicket@{buyTicket}!EventService@{EventService}|hyperpage}{17}
+\indexentry{EventService@{EventService}!buyTicket@{buyTicket}|hyperpage}{17}
+\indexentry{buyTicket@{buyTicket}!EventService@{EventService}|hyperpage}{17}
+\indexentry{EventService@{EventService}!cancelEvent@{cancelEvent}|hyperpage}{18}
+\indexentry{cancelEvent@{cancelEvent}!EventService@{EventService}|hyperpage}{18}
+\indexentry{EventService@{EventService}!cancelTicketReservation@{cancelTicketReservation}|hyperpage}{18}
+\indexentry{cancelTicketReservation@{cancelTicketReservation}!EventService@{EventService}|hyperpage}{18}
+\indexentry{EventService@{EventService}!createEvent@{createEvent}|hyperpage}{18}
+\indexentry{createEvent@{createEvent}!EventService@{EventService}|hyperpage}{18}
+\indexentry{EventService@{EventService}!createSeatingString@{createSeatingString}|hyperpage}{19}
+\indexentry{createSeatingString@{createSeatingString}!EventService@{EventService}|hyperpage}{19}
+\indexentry{EventService@{EventService}!load@{load}|hyperpage}{19}
+\indexentry{load@{load}!EventService@{EventService}|hyperpage}{19}
+\indexentry{EventService@{EventService}!queryInsufficientlyVisited@{queryInsufficientlyVisited}|hyperpage}{19}
+\indexentry{queryInsufficientlyVisited@{queryInsufficientlyVisited}!EventService@{EventService}|hyperpage}{19}
+\indexentry{EventService@{EventService}!queryMostWatched@{queryMostWatched}|hyperpage}{20}
+\indexentry{queryMostWatched@{queryMostWatched}!EventService@{EventService}|hyperpage}{20}
+\indexentry{EventService@{EventService}!reportBoughtTickets@{reportBoughtTickets}|hyperpage}{20}
+\indexentry{reportBoughtTickets@{reportBoughtTickets}!EventService@{EventService}|hyperpage}{20}
+\indexentry{EventService@{EventService}!reportReservations@{reportReservations}|hyperpage}{20}
+\indexentry{reportReservations@{reportReservations}!EventService@{EventService}|hyperpage}{20}
+\indexentry{EventService@{EventService}!reserveTicket@{reserveTicket}|hyperpage}{21}
+\indexentry{reserveTicket@{reserveTicket}!EventService@{EventService}|hyperpage}{21}
+\indexentry{EventService@{EventService}!save@{save}|hyperpage}{21}
+\indexentry{save@{save}!EventService@{EventService}|hyperpage}{21}
+\indexentry{EventService@{EventService}!ticketIsReserved@{ticketIsReserved}|hyperpage}{22}
+\indexentry{ticketIsReserved@{ticketIsReserved}!EventService@{EventService}|hyperpage}{22}
+\indexentry{Hall@{Hall}|hyperpage}{22}
+\indexentry{Hall@{Hall}!compare@{compare}|hyperpage}{23}
+\indexentry{compare@{compare}!Hall@{Hall}|hyperpage}{23}
+\indexentry{Hall@{Hall}!read@{read}|hyperpage}{23}
+\indexentry{read@{read}!Hall@{Hall}|hyperpage}{23}
+\indexentry{Hall@{Hall}!write@{write}|hyperpage}{24}
+\indexentry{write@{write}!Hall@{Hall}|hyperpage}{24}
+\indexentry{HallService@{HallService}|hyperpage}{24}
+\indexentry{HallService@{HallService}!load@{load}|hyperpage}{25}
+\indexentry{load@{load}!HallService@{HallService}|hyperpage}{25}
+\indexentry{HallService@{HallService}!save@{save}|hyperpage}{25}
+\indexentry{save@{save}!HallService@{HallService}|hyperpage}{25}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}|hyperpage}{26}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!add@{add}|hyperpage}{27}
+\indexentry{add@{add}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{27}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!contain@{contain}|hyperpage}{27}
+\indexentry{contain@{contain}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{27}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!findIndex@{findIndex}|hyperpage}{28}
+\indexentry{findIndex@{findIndex}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{28}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!get\_count@{get\_count}|hyperpage}{28}
+\indexentry{get\_count@{get\_count}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{28}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!get\_length@{get\_length}|hyperpage}{28}
+\indexentry{get\_length@{get\_length}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{28}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!insertAt@{insertAt}|hyperpage}{29}
+\indexentry{insertAt@{insertAt}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{29}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!read@{read}|hyperpage}{29}
+\indexentry{read@{read}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{29}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!removeAt@{removeAt}|hyperpage}{29}
+\indexentry{removeAt@{removeAt}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{29}
+\indexentry{List$<$ T $>$@{List$<$ T $>$}!write@{write}|hyperpage}{30}
+\indexentry{write@{write}!List$<$ T $>$@{List$<$ T $>$}|hyperpage}{30}
+\indexentry{Menu@{Menu}|hyperpage}{30}
+\indexentry{Menu@{Menu}!Menu@{Menu}|hyperpage}{31}
+\indexentry{Menu@{Menu}!Menu@{Menu}|hyperpage}{31}
+\indexentry{Menu@{Menu}!Menu@{Menu}|hyperpage}{31}
+\indexentry{Menu@{Menu}!Menu@{Menu}|hyperpage}{31}
+\indexentry{Menu@{Menu}!navigate@{navigate}|hyperpage}{32}
+\indexentry{navigate@{navigate}!Menu@{Menu}|hyperpage}{32}
+\indexentry{Menu@{Menu}!registerError@{registerError}|hyperpage}{32}
+\indexentry{registerError@{registerError}!Menu@{Menu}|hyperpage}{32}
+\indexentry{Menu@{Menu}!registerSuccess@{registerSuccess}|hyperpage}{33}
+\indexentry{registerSuccess@{registerSuccess}!Menu@{Menu}|hyperpage}{33}
+\indexentry{Menu@{Menu}!registerWarning@{registerWarning}|hyperpage}{33}
+\indexentry{registerWarning@{registerWarning}!Menu@{Menu}|hyperpage}{33}
+\indexentry{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}|hyperpage}{33}
+\indexentry{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}!add@{add}|hyperpage}{34}
+\indexentry{add@{add}!OrderedList$<$ T $>$@{OrderedList$<$ T $>$}|hyperpage}{34}
+\indexentry{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}!insert@{insert}|hyperpage}{34}
+\indexentry{insert@{insert}!OrderedList$<$ T $>$@{OrderedList$<$ T $>$}|hyperpage}{34}
+\indexentry{OrderedList$<$ T $>$@{OrderedList$<$ T $>$}!insertAt@{insertAt}|hyperpage}{35}
+\indexentry{insertAt@{insertAt}!OrderedList$<$ T $>$@{OrderedList$<$ T $>$}|hyperpage}{35}
+\indexentry{Reservation@{Reservation}|hyperpage}{35}
+\indexentry{Reservation@{Reservation}!compare@{compare}|hyperpage}{36}
+\indexentry{compare@{compare}!Reservation@{Reservation}|hyperpage}{36}
+\indexentry{Reservation@{Reservation}!read@{read}|hyperpage}{36}
+\indexentry{read@{read}!Reservation@{Reservation}|hyperpage}{36}
+\indexentry{Reservation@{Reservation}!write@{write}|hyperpage}{37}
+\indexentry{write@{write}!Reservation@{Reservation}|hyperpage}{37}
+\indexentry{Reservation@{Reservation}!operator$<$$<$@{operator$<$$<$}|hyperpage}{37}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Reservation@{Reservation}|hyperpage}{37}
+\indexentry{Reservation@{Reservation}!operator$>$$>$@{operator$>$$>$}|hyperpage}{38}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Reservation@{Reservation}|hyperpage}{38}
+\indexentry{String@{String}|hyperpage}{38}
+\indexentry{String@{String}!String@{String}|hyperpage}{39}
+\indexentry{String@{String}!String@{String}|hyperpage}{39}
+\indexentry{String@{String}!String@{String}|hyperpage}{39}
+\indexentry{String@{String}!String@{String}|hyperpage}{39}
+\indexentry{String@{String}!compare@{compare}|hyperpage}{39}
+\indexentry{compare@{compare}!String@{String}|hyperpage}{39}
+\indexentry{String@{String}!operator+=@{operator+=}|hyperpage}{39}
+\indexentry{operator+=@{operator+=}!String@{String}|hyperpage}{39}
+\indexentry{String@{String}!operator+=@{operator+=}|hyperpage}{40}
+\indexentry{operator+=@{operator+=}!String@{String}|hyperpage}{40}
+\indexentry{String@{String}!read@{read}|hyperpage}{40}
+\indexentry{read@{read}!String@{String}|hyperpage}{40}
+\indexentry{String@{String}!write@{write}|hyperpage}{40}
+\indexentry{write@{write}!String@{String}|hyperpage}{40}
+\indexentry{String@{String}!operator$<$$<$@{operator$<$$<$}|hyperpage}{41}
+\indexentry{operator$<$$<$@{operator$<$$<$}!String@{String}|hyperpage}{41}
+\indexentry{String@{String}!operator$>$$>$@{operator$>$$>$}|hyperpage}{41}
+\indexentry{operator$>$$>$@{operator$>$$>$}!String@{String}|hyperpage}{41}
+\indexentry{Ticket@{Ticket}|hyperpage}{42}
+\indexentry{Ticket@{Ticket}!compare@{compare}|hyperpage}{42}
+\indexentry{compare@{compare}!Ticket@{Ticket}|hyperpage}{42}
+\indexentry{Ticket@{Ticket}!read@{read}|hyperpage}{42}
+\indexentry{read@{read}!Ticket@{Ticket}|hyperpage}{42}
+\indexentry{Ticket@{Ticket}!write@{write}|hyperpage}{43}
+\indexentry{write@{write}!Ticket@{Ticket}|hyperpage}{43}
+\indexentry{src/Generic/ConsoleInterface/Command.h@{src/Generic/ConsoleInterface/Command.h}|hyperpage}{45}
+\indexentry{src/Generic/ConsoleInterface/Command.h@{src/Generic/ConsoleInterface/Command.h}|hyperpage}{45}
+\indexentry{src/Generic/ConsoleInterface/Menu.h@{src/Generic/ConsoleInterface/Menu.h}|hyperpage}{45}
+\indexentry{src/Generic/ConsoleInterface/Menu.h@{src/Generic/ConsoleInterface/Menu.h}|hyperpage}{46}
+\indexentry{src/Generic/ConsoleInterface/Toolbox.hpp@{src/Generic/ConsoleInterface/Toolbox.hpp}|hyperpage}{46}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!\_printInputBoxLabel@{\_printInputBoxLabel}|hyperpage}{48}
+\indexentry{\_printInputBoxLabel@{\_printInputBoxLabel}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{48}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!\_printOrderedListBeginning@{\_printOrderedListBeginning}|hyperpage}{48}
+\indexentry{\_printOrderedListBeginning@{\_printOrderedListBeginning}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{48}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!\_printSubBoxSpacing@{\_printSubBoxSpacing}|hyperpage}{49}
+\indexentry{\_printSubBoxSpacing@{\_printSubBoxSpacing}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{49}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!clear@{clear}|hyperpage}{49}
+\indexentry{clear@{clear}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{49}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!errorBox@{errorBox}|hyperpage}{49}
+\indexentry{errorBox@{errorBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{49}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!errorSubBox@{errorSubBox}|hyperpage}{50}
+\indexentry{errorSubBox@{errorSubBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{50}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!inputLineBox@{inputLineBox}|hyperpage}{50}
+\indexentry{inputLineBox@{inputLineBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{50}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!inputLineSubBox@{inputLineSubBox}|hyperpage}{51}
+\indexentry{inputLineSubBox@{inputLineSubBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{51}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!inputSubBox@{inputSubBox}|hyperpage}{51}
+\indexentry{inputSubBox@{inputSubBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{51}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!pressEnterToContinue@{pressEnterToContinue}|hyperpage}{51}
+\indexentry{pressEnterToContinue@{pressEnterToContinue}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{51}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!resetOrderedList@{resetOrderedList}|hyperpage}{52}
+\indexentry{resetOrderedList@{resetOrderedList}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{52}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!subTitleBox@{subTitleBox}|hyperpage}{52}
+\indexentry{subTitleBox@{subTitleBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{52}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!successBox@{successBox}|hyperpage}{52}
+\indexentry{successBox@{successBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{52}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!successSubBox@{successSubBox}|hyperpage}{53}
+\indexentry{successSubBox@{successSubBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{53}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!table@{table}|hyperpage}{53}
+\indexentry{table@{table}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{53}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!titleBox@{titleBox}|hyperpage}{54}
+\indexentry{titleBox@{titleBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{54}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!warningBox@{warningBox}|hyperpage}{54}
+\indexentry{warningBox@{warningBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{54}
+\indexentry{Toolbox.hpp@{Toolbox.hpp}!warningSubBox@{warningSubBox}|hyperpage}{54}
+\indexentry{warningSubBox@{warningSubBox}!Toolbox.hpp@{Toolbox.hpp}|hyperpage}{54}
+\indexentry{src/Generic/ConsoleInterface/Toolbox.hpp@{src/Generic/ConsoleInterface/Toolbox.hpp}|hyperpage}{55}
+\indexentry{src/Generic/Date/Date.h@{src/Generic/Date/Date.h}|hyperpage}{56}
+\indexentry{Date.h@{Date.h}!operator$<$$<$@{operator$<$$<$}|hyperpage}{56}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Date.h@{Date.h}|hyperpage}{56}
+\indexentry{Date.h@{Date.h}!operator$>$$>$@{operator$>$$>$}|hyperpage}{56}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Date.h@{Date.h}|hyperpage}{56}
+\indexentry{src/Generic/Date/Date.h@{src/Generic/Date/Date.h}|hyperpage}{57}
+\indexentry{src/Generic/List/List.hpp@{src/Generic/List/List.hpp}|hyperpage}{57}
+\indexentry{List.hpp@{List.hpp}!operator$<$$<$@{operator$<$$<$}|hyperpage}{58}
+\indexentry{operator$<$$<$@{operator$<$$<$}!List.hpp@{List.hpp}|hyperpage}{58}
+\indexentry{List.hpp@{List.hpp}!operator$>$$>$@{operator$>$$>$}|hyperpage}{58}
+\indexentry{operator$>$$>$@{operator$>$$>$}!List.hpp@{List.hpp}|hyperpage}{58}
+\indexentry{src/Generic/List/List.hpp@{src/Generic/List/List.hpp}|hyperpage}{59}
+\indexentry{src/Generic/List/OrderedList.hpp@{src/Generic/List/OrderedList.hpp}|hyperpage}{62}
+\indexentry{src/Generic/List/OrderedList.hpp@{src/Generic/List/OrderedList.hpp}|hyperpage}{62}
+\indexentry{src/Generic/String/String.h@{src/Generic/String/String.h}|hyperpage}{63}
+\indexentry{src/Generic/String/String.h@{src/Generic/String/String.h}|hyperpage}{63}
+\indexentry{src/main.cpp@{src/main.cpp}|hyperpage}{64}
+\indexentry{main.cpp@{main.cpp}!main@{main}|hyperpage}{64}
+\indexentry{main@{main}!main.cpp@{main.cpp}|hyperpage}{64}
+\indexentry{src/Models/Event.h@{src/Models/Event.h}|hyperpage}{65}
+\indexentry{Event.h@{Event.h}!configureEventInsertionOp@{configureEventInsertionOp}|hyperpage}{65}
+\indexentry{configureEventInsertionOp@{configureEventInsertionOp}!Event.h@{Event.h}|hyperpage}{65}
+\indexentry{Event.h@{Event.h}!operator$<$$<$@{operator$<$$<$}|hyperpage}{66}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Event.h@{Event.h}|hyperpage}{66}
+\indexentry{Event.h@{Event.h}!operator$>$$>$@{operator$>$$>$}|hyperpage}{66}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Event.h@{Event.h}|hyperpage}{66}
+\indexentry{src/Models/Event.h@{src/Models/Event.h}|hyperpage}{67}
+\indexentry{src/Models/Hall.h@{src/Models/Hall.h}|hyperpage}{67}
+\indexentry{Hall.h@{Hall.h}!operator$<$$<$@{operator$<$$<$}|hyperpage}{68}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Hall.h@{Hall.h}|hyperpage}{68}
+\indexentry{Hall.h@{Hall.h}!operator$>$$>$@{operator$>$$>$}|hyperpage}{68}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Hall.h@{Hall.h}|hyperpage}{68}
+\indexentry{src/Models/Hall.h@{src/Models/Hall.h}|hyperpage}{69}
+\indexentry{src/Models/Reservation.h@{src/Models/Reservation.h}|hyperpage}{69}
+\indexentry{src/Models/Reservation.h@{src/Models/Reservation.h}|hyperpage}{70}
+\indexentry{src/Models/Ticket.h@{src/Models/Ticket.h}|hyperpage}{70}
+\indexentry{Ticket.h@{Ticket.h}!operator$<$$<$@{operator$<$$<$}|hyperpage}{71}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Ticket.h@{Ticket.h}|hyperpage}{71}
+\indexentry{Ticket.h@{Ticket.h}!operator$>$$>$@{operator$>$$>$}|hyperpage}{71}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Ticket.h@{Ticket.h}|hyperpage}{71}
+\indexentry{src/Models/Ticket.h@{src/Models/Ticket.h}|hyperpage}{71}
+\indexentry{src/Services/EventService.h@{src/Services/EventService.h}|hyperpage}{72}
+\indexentry{src/Services/EventService.h@{src/Services/EventService.h}|hyperpage}{72}
+\indexentry{src/Services/HallService.h@{src/Services/HallService.h}|hyperpage}{73}
+\indexentry{src/Services/HallService.h@{src/Services/HallService.h}|hyperpage}{73}
+\indexentry{src/Services/StatusCode.h@{src/Services/StatusCode.h}|hyperpage}{73}
+\indexentry{StatusCode.h@{StatusCode.h}!StatusCode@{StatusCode}|hyperpage}{74}
+\indexentry{StatusCode@{StatusCode}!StatusCode.h@{StatusCode.h}|hyperpage}{74}
+\indexentry{src/Services/StatusCode.h@{src/Services/StatusCode.h}|hyperpage}{74}
+\indexentry{src/UserInterface/FMITicketSystemConsoleUI.h@{src/UserInterface/FMITicketSystemConsoleUI.h}|hyperpage}{74}
+\indexentry{FMITicketSystemConsoleUI.h@{FMITicketSystemConsoleUI.h}!runUI@{runUI}|hyperpage}{75}
+\indexentry{runUI@{runUI}!FMITicketSystemConsoleUI.h@{FMITicketSystemConsoleUI.h}|hyperpage}{75}
+\indexentry{src/UserInterface/FMITicketSystemConsoleUI.h@{src/UserInterface/FMITicketSystemConsoleUI.h}|hyperpage}{75}

@@ -1,0 +1,49 @@
+\hypertarget{EventService_8h_source}{}\doxysection{Event\+Service.\+h}
+\label{EventService_8h_source}\index{src/Services/EventService.h@{src/Services/EventService.h}}
+\mbox{\hyperlink{EventService_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_SERVICES\_EVENTSERVICE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_SERVICES\_EVENTSERVICE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Generic/List/OrderedList.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../Generic/Date/Date.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../Models/Event.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{HallService_8h}{HallService.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{StatusCode_8h}{StatusCode.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classEventService}{EventService}} \{}
+\DoxyCodeLine{17     \mbox{\hyperlink{classOrderedList}{OrderedList<Event>}} events;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{const} \mbox{\hyperlink{classHallService}{HallService}}* hs;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordtype}{unsigned} indexOfEvent(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{classEventService_a9b30bb95890abac259ba27b53cabe545}{EventService}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHallService}{HallService}}* hs);}
+\DoxyCodeLine{27     \mbox{\hyperlink{classEventService_a9b30bb95890abac259ba27b53cabe545}{EventService}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHallService}{HallService}}* hs, \textcolor{keyword}{const} \mbox{\hyperlink{classEvent}{Event}}* events, \textcolor{keywordtype}{unsigned} eventCount);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{30     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_a7a21a5909116215e402254510d6d81d6}{createEvent}}(\textcolor{keywordtype}{int} hallNumber, \textcolor{keyword}{const} \mbox{\hyperlink{classString}{String}}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date);}
+\DoxyCodeLine{32     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_ac7ea565af5ad78e84749558477ceaf26}{cancelEvent}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_a3c0d2a05e2a3026044b9e13e6802fbdb}{reserveTicket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* password, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* note, \textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket);}
+\DoxyCodeLine{37     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_aa6fd620de878f225f7c51bb0df6ea749}{cancelTicketReservation}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date, \textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket);}
+\DoxyCodeLine{39     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_ad1efbed6111da8e755d86b5bc9ada806}{ticketIsReserved}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date, \textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_ac447cac3e4974b9cc676d9bb90152979}{buyTicket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date, \textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* password, \mbox{\hyperlink{classString}{String}}* reservationNoteOutput);}
+\DoxyCodeLine{44     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_ac447cac3e4974b9cc676d9bb90152979}{buyTicket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date, \textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \mbox{\hyperlink{classString}{String}} \mbox{\hyperlink{classEventService_a7f4632e3beae5d24087047ab0223f85e}{createSeatingString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date, \textcolor{keywordtype}{unsigned}* seatsPerRow);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \mbox{\hyperlink{classList}{List<Event>}} \mbox{\hyperlink{classEventService_a6700bd4f9da6d12a47812b9c8549556e}{queryMostWatched}}(\textcolor{keywordtype}{unsigned} topN);}
+\DoxyCodeLine{52     \mbox{\hyperlink{classList}{List<Event>}} \mbox{\hyperlink{classEventService_a814de3510f72150f2e54d44f8c8948bb}{queryInsufficientlyVisited}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_a277194aea79a2c9bf955b7706a20c54c}{reportReservations}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& date);}
+\DoxyCodeLine{57     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_afc74fc6d44fca054bce8e54997c0cd3e}{reportBoughtTickets}}(\textcolor{keywordtype}{int} hallNumber, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& start, \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& end, \textcolor{keywordtype}{bool} all = \textcolor{keyword}{false});}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_a1225c23dae83fa928da47113cd1c5617}{load}}();}
+\DoxyCodeLine{62     \mbox{\hyperlink{StatusCode_8h_ae98a46f4ea1a43ca48acaf15d2eb7113}{StatusCode}} \mbox{\hyperlink{classEventService_a5aac3df17ef30f84c1c28277c256ec32}{save}}();}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

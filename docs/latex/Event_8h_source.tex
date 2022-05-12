@@ -1,0 +1,48 @@
+\hypertarget{Event_8h_source}{}\doxysection{Event.\+h}
+\label{Event_8h_source}\index{src/Models/Event.h@{src/Models/Event.h}}
+\mbox{\hyperlink{Event_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_MODEL\_EVENT}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_MODEL\_EVENT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Generic/List/OrderedList.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../Generic/Date/Date.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../Generic/String/String.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Hall_8h}{Hall.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Ticket_8h}{Ticket.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Reservation_8h}{Reservation.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <istream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classEvent}{Event}} \{}
+\DoxyCodeLine{20     \mbox{\hyperlink{classHall}{Hall}} hall;}
+\DoxyCodeLine{21     \mbox{\hyperlink{classString}{String}} name;}
+\DoxyCodeLine{22     \mbox{\hyperlink{classDate}{Date}} date;}
+\DoxyCodeLine{23     \mbox{\hyperlink{classOrderedList}{OrderedList<Ticket>}} tickets;}
+\DoxyCodeLine{24     \mbox{\hyperlink{classOrderedList}{OrderedList<Reservation>}} reservations;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{classEvent_a5a40dd4708297f7031e29b39e039ae10}{Event}}();}
+\DoxyCodeLine{30     \mbox{\hyperlink{classEvent_a5a40dd4708297f7031e29b39e039ae10}{Event}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHall}{Hall}}\& hall, \mbox{\hyperlink{classString}{String}} name, \mbox{\hyperlink{classDate}{Date}} date);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33     \textcolor{keyword}{const} \mbox{\hyperlink{classHall}{Hall}}\& \mbox{\hyperlink{classEvent_ae3023ae2c487f46b3235f67554e58615}{get\_hall}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{35     \textcolor{keyword}{const} \mbox{\hyperlink{classString}{String}}\& \mbox{\hyperlink{classEvent_a7bf717630c32826689df41e0bb3ecbce}{get\_name}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{37     \textcolor{keyword}{const} \mbox{\hyperlink{classDate}{Date}}\& \mbox{\hyperlink{classEvent_a222904d44dfaf3f1f96e2190c5ea4293}{get\_date}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classOrderedList}{OrderedList<Ticket>}}\& \mbox{\hyperlink{classEvent_a16a84fced8e02f756232c54c27bb22ad}{get\_tickets}}();}
+\DoxyCodeLine{42     \textcolor{keyword}{const} \mbox{\hyperlink{classOrderedList}{OrderedList<Ticket>}}\& \mbox{\hyperlink{classEvent_a16a84fced8e02f756232c54c27bb22ad}{get\_tickets}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{44     \mbox{\hyperlink{classOrderedList}{OrderedList<Reservation>}}\& \mbox{\hyperlink{classEvent_a43c6b2bddd42435eb6c8cd0f15d75c6f}{get\_reservations}}();}
+\DoxyCodeLine{46     \textcolor{keyword}{const} \mbox{\hyperlink{classOrderedList}{OrderedList<Reservation>}}\& \mbox{\hyperlink{classEvent_a43c6b2bddd42435eb6c8cd0f15d75c6f}{get\_reservations}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classEvent_ae58d2ed716836adcdacaeec4dd08c1cf}{read}}(std::istream\& istr);}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classEvent_a05a302aa998977c30950987c07f0fbba}{write}}(std::ostream\& ostr);}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{classEvent_af5c84a902db8f29f8b8737026011f1f6}{compare}}(\textcolor{keyword}{const} \mbox{\hyperlink{classEvent}{Event}}\& other);}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57 std::istream\& \mbox{\hyperlink{Event_8h_a31d9c76919809491b346728ec6659b19}{operator>>}}(std::istream\& istr, \mbox{\hyperlink{classEvent}{Event}}\& event);}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{Event_8h_ad423797aa9adadabb5651f8955c001bb}{configureEventInsertionOp}}(\textcolor{keywordtype}{unsigned} setting);}
+\DoxyCodeLine{61 std::ostream\& \mbox{\hyperlink{Event_8h_a08eaf45abee385d26c4934afeb9be163}{operator<<}}(std::ostream\& ostr, \textcolor{keyword}{const} \mbox{\hyperlink{classEvent}{Event}}\& event);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

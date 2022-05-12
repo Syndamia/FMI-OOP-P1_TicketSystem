@@ -1,0 +1,39 @@
+\hypertarget{Reservation_8h_source}{}\doxysection{Reservation.\+h}
+\label{Reservation_8h_source}\index{src/Models/Reservation.h@{src/Models/Reservation.h}}
+\mbox{\hyperlink{Reservation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_MODEL\_RESERVATION}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_MODEL\_RESERVATION}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Ticket_8h}{Ticket.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <istream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define PASSWORD\_LEN 8}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define NOTE\_LEN 32}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classReservation}{Reservation}} \{}
+\DoxyCodeLine{18     \mbox{\hyperlink{classTicket}{Ticket}} ticket;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{char} password[PASSWORD\_LEN];}
+\DoxyCodeLine{20     \textcolor{keywordtype}{char} note[NOTE\_LEN];}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classReservation_a63b283053695e6f50fa44c50da2b3de5}{Reservation}}();}
+\DoxyCodeLine{26     \mbox{\hyperlink{classReservation_a63b283053695e6f50fa44c50da2b3de5}{Reservation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket);}
+\DoxyCodeLine{28     \mbox{\hyperlink{classReservation_a63b283053695e6f50fa44c50da2b3de5}{Reservation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& ticket, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* password, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* note);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     \textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}}\& \mbox{\hyperlink{classReservation_af1b95b3d7c46f506dec4d275d6821cdb}{get\_ticket}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{33     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{classReservation_aa34cd16a057a4a483e569ec5d7527ad9}{get\_password}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{35     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{classReservation_a2285881510bf07f469bf360bb1050f12}{get\_note}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classReservation_a03f0d1a522edb2c5fba7538f0c879573}{read}}(std::istream\& istr);}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classReservation_a1aba46b8e181750bd89fdfca6ff8ba32}{write}}(std::ostream\& ostr) \textcolor{keyword}{const};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{classReservation_a31cc66beeaf85befe2185dfc88086d38}{compare}}(\textcolor{keyword}{const} \mbox{\hyperlink{classReservation}{Reservation}}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \textcolor{keyword}{friend} std::istream\& \mbox{\hyperlink{classReservation_a2b7331e532f77bbc67eab217bfeb1f25}{operator>>}}(std::istream\& istr, \mbox{\hyperlink{classReservation}{Reservation}}\& reservation);}
+\DoxyCodeLine{47     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classReservation_abf734c0a55da55ef89dab1e2f12b8ebd}{operator<<}}(std::ostream\& ostr, \textcolor{keyword}{const} \mbox{\hyperlink{classReservation}{Reservation}}\& reservation);}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

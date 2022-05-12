@@ -1,0 +1,60 @@
+\hypertarget{Date_8h}{}\doxysection{src/\+Generic/\+Date/\+Date.h File Reference}
+\label{Date_8h}\index{src/Generic/Date/Date.h@{src/Generic/Date/Date.h}}
+
+
+Stores the declaration of class \mbox{\hyperlink{classDate}{Date}}.  
+
+
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include \char`\"{}../\+String/\+String.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDate}{Date}}
+\begin{DoxyCompactList}\small\item\em Stores a day, month and year. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{Date_8h_ae020cf1772268f1a43d172d3adfc9797}{operator$>$$>$}} (std\+::istream \&istr, \mbox{\hyperlink{classDate}{Date}} \&dt)
+\begin{DoxyCompactList}\small\item\em Reads date from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{Date_8h_ad12d4bbc4f7919efdec583d1478a6a76}{operator$<$$<$}} (std\+::ostream \&ostr, const \mbox{\hyperlink{classDate}{Date}} \&dt)
+\begin{DoxyCompactList}\small\item\em Writes date to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores the declaration of class \mbox{\hyperlink{classDate}{Date}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Date_8h_ad12d4bbc4f7919efdec583d1478a6a76}\label{Date_8h_ad12d4bbc4f7919efdec583d1478a6a76}} 
+\index{Date.h@{Date.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Date.h@{Date.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{dt }\end{DoxyParamCaption})}
+
+
+
+Writes date to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to write the date in the format \char`\"{}day.\+month.\+year\char`\"{}
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cout or text std\+::ofstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{Date_8h_ae020cf1772268f1a43d172d3adfc9797}\label{Date_8h_ae020cf1772268f1a43d172d3adfc9797}} 
+\index{Date.h@{Date.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Date.h@{Date.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr,  }\item[{\mbox{\hyperlink{classDate}{Date}} \&}]{dt }\end{DoxyParamCaption})}
+
+
+
+Reads date from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator to read and parse the day, month and year.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cin or text std\+::ifstream 
+\end{DoxyNote}

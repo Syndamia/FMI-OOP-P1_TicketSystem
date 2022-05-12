@@ -1,0 +1,59 @@
+\hypertarget{Ticket_8h}{}\doxysection{src/\+Models/\+Ticket.h File Reference}
+\label{Ticket_8h}\index{src/Models/Ticket.h@{src/Models/Ticket.h}}
+
+
+Stores the declaration of class \mbox{\hyperlink{classTicket}{Ticket}}.  
+
+
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTicket}{Ticket}}
+\begin{DoxyCompactList}\small\item\em Each \mbox{\hyperlink{classTicket}{Ticket}} contains a row and a seat number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{Ticket_8h_ac5c53ae039e173faa4cce85c2e32c920}{operator$>$$>$}} (std\+::istream \&istr, \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classTicket}{Ticket}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{Ticket_8h_ae1686d3505df5e86e64e6e1b263e92ce}{operator$<$$<$}} (std\+::ostream \&ostr, const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classTicket}{Ticket}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores the declaration of class \mbox{\hyperlink{classTicket}{Ticket}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Ticket_8h_ae1686d3505df5e86e64e6e1b263e92ce}\label{Ticket_8h_ae1686d3505df5e86e64e6e1b263e92ce}} 
+\index{Ticket.h@{Ticket.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Ticket.h@{Ticket.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})}
+
+
+
+Writes \mbox{\hyperlink{classTicket}{Ticket}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to write row and seat, separated by a space.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cout or text std\+::ofstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{Ticket_8h_ac5c53ae039e173faa4cce85c2e32c920}\label{Ticket_8h_ac5c53ae039e173faa4cce85c2e32c920}} 
+\index{Ticket.h@{Ticket.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Ticket.h@{Ticket.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr,  }\item[{\mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classTicket}{Ticket}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator to read and parse row and seat.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cin or text std\+::ifstream 
+\end{DoxyNote}

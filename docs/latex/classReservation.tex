@@ -1,0 +1,149 @@
+\hypertarget{classReservation}{}\doxysection{Reservation Class Reference}
+\label{classReservation}\index{Reservation@{Reservation}}
+
+
+Each Reservations contains a ticket, a password and a note.  
+
+
+
+
+{\ttfamily \#include $<$Reservation.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReservation_a63b283053695e6f50fa44c50da2b3de5}\label{classReservation_a63b283053695e6f50fa44c50da2b3de5}} 
+{\bfseries Reservation} ()
+\begin{DoxyCompactList}\small\item\em Sets ticket as default value and leaves password and note blank. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReservation_a7320a032f87c7d45cf287a146c73695c}\label{classReservation_a7320a032f87c7d45cf287a146c73695c}} 
+{\bfseries Reservation} (const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\begin{DoxyCompactList}\small\item\em Sets ticket and leaves password and note blank. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReservation_ac6fdecd9bc06f3de2e28129ab370f4f7}\label{classReservation_ac6fdecd9bc06f3de2e28129ab370f4f7}} 
+{\bfseries Reservation} (const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket, const char $\ast$password, const char $\ast$note)
+\begin{DoxyCompactList}\small\item\em Sets ticket, password and note. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReservation_af1b95b3d7c46f506dec4d275d6821cdb}\label{classReservation_af1b95b3d7c46f506dec4d275d6821cdb}} 
+const \mbox{\hyperlink{classTicket}{Ticket}} \& {\bfseries get\+\_\+ticket} () const
+\begin{DoxyCompactList}\small\item\em Returns constant reference to ticket. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReservation_aa34cd16a057a4a483e569ec5d7527ad9}\label{classReservation_aa34cd16a057a4a483e569ec5d7527ad9}} 
+const char $\ast$ {\bfseries get\+\_\+password} () const
+\begin{DoxyCompactList}\small\item\em Returns constant C-\/style string to password. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReservation_a2285881510bf07f469bf360bb1050f12}\label{classReservation_a2285881510bf07f469bf360bb1050f12}} 
+const char $\ast$ {\bfseries get\+\_\+note} () const
+\begin{DoxyCompactList}\small\item\em Returns constant C-\/style string to note. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReservation_a03f0d1a522edb2c5fba7538f0c879573}{read}} (std\+::istream \&istr)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classReservation}{Reservation}} from stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReservation_a1aba46b8e181750bd89fdfca6ff8ba32}{write}} (std\+::ostream \&ostr) const
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classReservation}{Reservation}} to stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classReservation_a31cc66beeaf85befe2185dfc88086d38}{compare}} (const \mbox{\hyperlink{classReservation}{Reservation}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two Reservations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{classReservation_a2b7331e532f77bbc67eab217bfeb1f25}{operator$>$$>$}} (std\+::istream \&istr, \mbox{\hyperlink{classReservation}{Reservation}} \&reservation)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{classReservation}{Reservation}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classReservation_abf734c0a55da55ef89dab1e2f12b8ebd}{operator$<$$<$}} (std\+::ostream \&ostr, const \mbox{\hyperlink{classReservation}{Reservation}} \&reservation)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{classReservation}{Reservation}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Each Reservations contains a ticket, a password and a note. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classReservation_a31cc66beeaf85befe2185dfc88086d38}\label{classReservation_a31cc66beeaf85befe2185dfc88086d38}} 
+\index{Reservation@{Reservation}!compare@{compare}}
+\index{compare@{compare}!Reservation@{Reservation}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int Reservation\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classReservation}{Reservation}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two Reservations. 
+
+\begin{DoxyReturn}{Returns}
+Compares tickets 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classReservation_a03f0d1a522edb2c5fba7538f0c879573}\label{classReservation_a03f0d1a522edb2c5fba7538f0c879573}} 
+\index{Reservation@{Reservation}!read@{read}}
+\index{read@{read}!Reservation@{Reservation}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Reservation\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+Reads \mbox{\hyperlink{classReservation}{Reservation}} from stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istr} & An input stream\\
+\hline
+\end{DoxyParams}
+Directly reads bytes from stream (calls \mbox{\hyperlink{classReservation_a03f0d1a522edb2c5fba7538f0c879573}{read()}} function). Uses ticket\textquotesingle{}s \mbox{\hyperlink{classReservation_a03f0d1a522edb2c5fba7538f0c879573}{read()}} function.
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ifstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classReservation_a1aba46b8e181750bd89fdfca6ff8ba32}\label{classReservation_a1aba46b8e181750bd89fdfca6ff8ba32}} 
+\index{Reservation@{Reservation}!write@{write}}
+\index{write@{write}!Reservation@{Reservation}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Reservation\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr }\end{DoxyParamCaption}) const}
+
+
+
+Writes \mbox{\hyperlink{classReservation}{Reservation}} to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostr} & An output stream\\
+\hline
+\end{DoxyParams}
+Directly writes bytes to stream (calls \mbox{\hyperlink{classReservation_a1aba46b8e181750bd89fdfca6ff8ba32}{write()}} function). Uses ticket\textquotesingle{}s \mbox{\hyperlink{classReservation_a1aba46b8e181750bd89fdfca6ff8ba32}{write()}} function.
+
+\begin{DoxyRemark}{Remarks}
+Doesn\textquotesingle{}t alter the stream in any other way. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+Best used with binary ofstream 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classReservation_abf734c0a55da55ef89dab1e2f12b8ebd}\label{classReservation_abf734c0a55da55ef89dab1e2f12b8ebd}} 
+\index{Reservation@{Reservation}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Reservation@{Reservation}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{const \mbox{\hyperlink{classReservation}{Reservation}} \&}]{reservation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Writes \mbox{\hyperlink{classReservation}{Reservation}} to stream with \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to write the ticket only.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cout or text std\+::ofstream 
+\end{DoxyNote}
+\mbox{\Hypertarget{classReservation_a2b7331e532f77bbc67eab217bfeb1f25}\label{classReservation_a2b7331e532f77bbc67eab217bfeb1f25}} 
+\index{Reservation@{Reservation}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Reservation@{Reservation}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{istr,  }\item[{\mbox{\hyperlink{classReservation}{Reservation}} \&}]{reservation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Reads \mbox{\hyperlink{classReservation}{Reservation}} from stream with \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator. 
+
+Uses the stream\textquotesingle{}s \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} operator to read and parse the ticket. Password and note are left blank.
+
+\begin{DoxyNote}{Note}
+Best used with std\+::cin or text std\+::ifstream 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Models/\mbox{\hyperlink{Reservation_8h}{Reservation.\+h}}\item 
+src/\+Models/Reservation.\+cpp\end{DoxyCompactItemize}
