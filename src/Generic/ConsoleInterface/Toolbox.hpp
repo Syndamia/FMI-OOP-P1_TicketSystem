@@ -13,7 +13,7 @@
 
 #define MAX_LINE_WIDTH 1024
 
-//! Clears the console screen (Linux-only)
+//! Clears the console screen
 void clear();
 //! Prints a title box
 void titleBox(const char* title);

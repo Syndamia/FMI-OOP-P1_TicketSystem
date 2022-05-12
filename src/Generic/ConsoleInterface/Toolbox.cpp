@@ -1,11 +1,13 @@
 #include "Toolbox.hpp"
 
 /*!
- * Prints an ANSI escape sequence to clear the console. 
+ * Erases display and moves cursor to top left corner via ANSI escape sequences: \c ESC[2J \c ESC[1;1H
+ *
+ * \warning Not all terminals support any or all ANSI escape sequences
+ *
+ * \note Source: https://stackoverflow.com/a/52895729/12036073
  */
 void clear() {
-	// Clears console on Linux
-	// Source: https://stackoverflow.com/a/52895729/12036073
 	std::cout << u8"\033[2J\033[1;1H"; 
 }
 
