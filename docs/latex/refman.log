@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020 Funtoo Linux) (preloaded format=pdflatex 2022.4.8)  12 MAY 2022 20:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020 Funtoo Linux) (preloaded format=pdflatex 2022.4.8)  12 MAY 2022 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1019,7 +1019,9 @@ LaTeX Warning: Font shape declaration has incorrect series value `mc'.
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 19.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 30.
+(Font)              scaled to size 10.79993pt on input line 26.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 26.
  [1
 
 
@@ -1031,7 +1033,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.39 ...rue]{FMI-OOP-P1_TicketSystem Overview.svg}
+l.59 ...rue]{FMI-OOP-P1_TicketSystem Overview.svg}
                                                   
 ? 
 ) [2]
@@ -1218,8 +1220,6 @@ nput line 18.
 ]
 Chapter 5.
 (./classCommand.tex
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 12.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 17.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
@@ -1477,7 +1477,7 @@ Underfull \hbox (badness 10000) detected at line 60
  []
 
 ) (./classList.tex <./classList.pdf>
-<classList.pdf, id=582, 501.875pt x 340.25119pt>
+<classList.pdf, id=592, 501.875pt x 340.25119pt>
 File: classList.pdf Graphic file (type pdf)
 <use classList.pdf>
 Package pdftex.def Info: classList.pdf  used on input line 15.
@@ -1590,7 +1590,7 @@ Package longtable Warning: Column widths have changed
 (longtable)                in table 5.17 on input line 148.
 
 ) (./classOrderedList.tex <./classOrderedList.pdf>
-<classOrderedList.pdf, id=766, 501.875pt x 340.25119pt>
+<classOrderedList.pdf, id=776, 501.875pt x 340.25119pt>
 File: classOrderedList.pdf Graphic file (type pdf)
 <use classOrderedList.pdf>
 Package pdftex.def Info: classOrderedList.pdf  used on input line 15.
@@ -2080,7 +2080,7 @@ Package rerunfilecheck Warning: File `refman.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `refman.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  3440AC0C41982DE2B7FFE393A388B650;41850.
+(rerunfilecheck)             After:  B8054B7EE97E48507319E9C6C798020D;42752.
 
 LaTeX Warning: There were undefined references.
 
@@ -2089,10 +2089,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 17924 strings out of 482368
- 269195 string characters out of 5952188
- 530503 words of memory out of 5000000
- 32188 multiletter control sequences out of 15000+600000
+ 17939 strings out of 482368
+ 269445 string characters out of 5952188
+ 529503 words of memory out of 5000000
+ 32193 multiletter control sequences out of 15000+600000
  598871 words of font info for 113 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  55i,16n,96p,891b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2107,10 +2107,10 @@ fb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf
 -dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/ur
 w/helvetic/uhvb8ac.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
 fb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (78 pages, 287272 bytes).
+Output written on refman.pdf (78 pages, 288245 bytes).
 PDF statistics:
- 2004 PDF objects out of 2073 (max. 8388607)
- 1876 compressed objects within 19 object streams
- 596 named destinations out of 1000 (max. 500000)
+ 2015 PDF objects out of 2073 (max. 8388607)
+ 1887 compressed objects within 19 object streams
+ 606 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,9 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "../doctest/doctest/doctest.h"
+#include "Tests_Command.h"
+#include "Tests_Date.h"
+#include "Tests_Event.h"
+#include "Tests_Hall.h"
+#include "Tests_Reservation.h"
+#include "Tests_String.h"
+#include "Tests_Ticket.h"

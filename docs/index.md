@@ -39,6 +39,16 @@ g++ *.cpp */*.cpp */*/*.cpp -o TicketSystem.out && ./TicketSystem.out
 g++ (Get-ChildItem -Recurse *.cpp) -o TicketSystem.exe && ./TicketSystem.exe
 ```
 
+## Running the tests
+
+Instructions are all for `gcc`. All commands should be executed while in the `tests` folder.
+
+### Linux/BSD/MacOS
+
+```bash
+g++ Tests_ALL.cpp ../src/*/*.cpp ../src/*/*/*.cpp -o Tests_ALL.out && ./Tests_ALL.out
+```
+
 ## Acknowledgements
 
 <dl>
