@@ -64,9 +64,9 @@ void command_reserveTicket() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputSubBox("Enter event date: ", &date);
+	inputSubBox("Enter event date [day month year]: ", &date);
 	Ticket tic;
-	inputSubBox("Enter row and seat: ", &tic);
+	inputSubBox("Enter row and seat [row seat]: ", &tic);
 	char password[PASSWORD_LEN];
 	inputLineSubBox("Enter password [Max 8 characters]: ", password, PASSWORD_LEN);
 	char note[NOTE_LEN];
@@ -80,9 +80,9 @@ void command_cancelReservation() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputSubBox("Enter event date: ", &date);
+	inputSubBox("Enter event date [day month year]: ", &date);
 	Ticket tic;
-	inputSubBox("Enter row and seat: ", &tic);
+	inputSubBox("Enter row and seat [row seat]: ", &tic);
 
 	StatusCode s = es->cancelTicketReservation(name, date, tic);
 	handleStatusCode(s, ticketManagementMenu);
@@ -92,9 +92,9 @@ void command_buyTicket() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputSubBox("Enter event date: ", &date);
+	inputSubBox("Enter event date [day month year]: ", &date);
 	Ticket tic;
-	inputSubBox("Enter row and seat: ", &tic);
+	inputSubBox("Enter row and seat [row seat]: ", &tic);
 
 	StatusCode s = es->ticketIsReserved(name, date, tic);
 	if (s == Success) {
@@ -125,12 +125,12 @@ void submenu_ticketManagement() {
 /* Event Management */
 
 void command_createEvent() {
-	unsigned hallNumber;
+	int hallNumber;
 	inputSubBox("Enter hall number: ", &hallNumber);
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputSubBox("Enter event date: ", &date);
+	inputSubBox("Enter event date [day month year]: ", &date);
 	
 	StatusCode s = es->createEvent(hallNumber, name, date);
 	handleStatusCode(s, eventManagementMenu);
@@ -140,7 +140,7 @@ void command_cancelEvent() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	Date date;
-	inputSubBox("Enter event date: ", &date);
+	inputSubBox("Enter event date [day month year]: ", &date);
 
 	StatusCode s = es->cancelEvent(name, date);
 	handleStatusCode(s, eventManagementMenu);
@@ -202,7 +202,7 @@ void command_reservationsList() {
 	char name[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter event name: ", name, MAX_LINE_WIDTH);
 	char dateStr[MAX_LINE_WIDTH];
-	inputLineSubBox("Enter event date: ", dateStr, MAX_LINE_WIDTH, false);
+	inputLineSubBox("Enter event date [day month year]: ", dateStr, MAX_LINE_WIDTH, false);
 
 	Date date(dateStr);
 
@@ -214,8 +214,8 @@ void command_boughtTickets() {
 	char hallNumber[MAX_LINE_WIDTH];
 	inputLineSubBox("Enter hall number: ", hallNumber, MAX_LINE_WIDTH);
 	Date start, end;
-	inputSubBox("Enter start date: ", &start);
-	inputSubBox("Enter end date: ", &end);
+	inputSubBox("Enter start date [day month year]: ", &start);
+	inputSubBox("Enter end date [day month year]: ", &end);
 
 	StatusCode s;
 	if (strcmp(hallNumber, "ALL") == 0)
