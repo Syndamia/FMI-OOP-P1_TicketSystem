@@ -121,6 +121,8 @@ String& String::operator=(String&& other) {
  */
 void String::read(std::istream& istr) {
 	istr.read((char*)&length, sizeof(length));
+	delete[] str;
+	str = new char[length + 1];
 	istr.read(str, sizeof(char) * (length + 1));
 }
 
