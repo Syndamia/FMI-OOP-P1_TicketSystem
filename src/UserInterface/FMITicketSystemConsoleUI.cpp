@@ -36,6 +36,8 @@ void handleStatusCode(StatusCode sc, Menu menu) {
 			menu.registerError("Wrong reservation password!"); break;
 		case E_FileCouldNotBeOpened:
 			menu.registerError("An error occurred while trying to open a file!"); break;
+		case E_InvalidSeat:
+			menu.registerError("The seat doesn't exist!"); break;
 		default: 
 			menu.registerError("An unhandled status code was returned!"); break;
 	}

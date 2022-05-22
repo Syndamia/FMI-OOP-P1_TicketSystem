@@ -74,6 +74,9 @@ StatusCode EventService::reserveTicket(const char* name, const Date& date, const
 	if (eInd == events.get_count())
 		return E_EventDoesNotExist;
 
+	if (events[eInd].get_hall().get_rows() < ticket.get_row() || events[eInd].get_hall().get_seatsPerRow() < ticket.get_seat())
+		return E_InvalidSeat;
+
 	unsigned tInd = events[eInd].get_tickets().findIndex(ticket);
 	if (tInd < events[eInd].get_tickets().get_count())
 		return E_TicketAlreadyBought;
@@ -99,6 +102,9 @@ StatusCode EventService::cancelTicketReservation(const char* name, const Date& d
 	unsigned eInd = indexOfEvent(name, date);
 	if (eInd == events.get_count())
 		return E_EventDoesNotExist;
+
+	if (events[eInd].get_hall().get_rows() < ticket.get_row() || events[eInd].get_hall().get_seatsPerRow() < ticket.get_seat())
+		return E_InvalidSeat;
 
 	unsigned rInd = events[eInd].get_reservations().findIndex(ticket);
 	if (rInd == events[eInd].get_reservations().get_count())
@@ -143,6 +149,9 @@ StatusCode EventService::buyTicket(const char* name, const Date& date, const Tic
 	unsigned eInd = indexOfEvent(name, date);
 	if (eInd == events.get_count())
 		return E_EventDoesNotExist;
+
+	if (events[eInd].get_hall().get_rows() < ticket.get_row() || events[eInd].get_hall().get_seatsPerRow() < ticket.get_seat())
+		return E_InvalidSeat;
 
 	unsigned tInd = events[eInd].get_tickets().findIndex(ticket);
 	if (tInd < events[eInd].get_tickets().get_count())
